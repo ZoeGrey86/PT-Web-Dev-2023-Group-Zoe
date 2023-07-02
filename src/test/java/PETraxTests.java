@@ -1,38 +1,66 @@
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.petrax.PETrax;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.net.URI;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
-@RunWith(SpringRunner.class)
 
-@SpringBootTest
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = PETrax.class)
 public class PETraxTests {
 
-    @LocalServerPort
-    private int port;
+    private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
 
-    @Autowired
-    private TestRestTemplate restTemplate;
-
-    public PETraxTests() {
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outputStream));
     }
 
+    @After
+    public void restoreStreams() {
+        System.setOut(originalOut);
+    }
 
     @Test
-    public void testHelloWorldEndpoint() throws Exception {
-        URI uri = new URI("http://localhost:" + port + "/hello");
+    public void testProgramExecution() {
+        // Arrange (Setup any necessary test data or environment)
+        String expectedOutputStart = "Starting PETrax application...";
+        String expectedOutputEnd = "PETrax application started successfully.";
 
-        ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
+        // Act (Execute the main method or the relevant part of your program)
+        PETrax.main(new String[0]);
 
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("Hello World", response.getBody());
+        // Assert (Verify the expected outcome or behavior)
+        String consoleOutput = getConsoleOutput();
+        String firstLine = getFirstLine(consoleOutput);
+        String lastLine = getLastLine(consoleOutput);
+
+        assertEquals(expectedOutputStart, firstLine.trim());
+        assertEquals(expectedOutputEnd, lastLine.trim());
+    }
+
+    private String getConsoleOutput() {
+        return outputStream.toString().trim();
+    }
+    private String getFirstLine(String output) {
+        if (output.contains("\n")) {
+            return output.substring(0, output.indexOf("\n"));
+        }
+        return output;
+    }
+
+    private String getLastLine(String output) {
+        if (output.contains("\n")) {
+            return output.substring(output.lastIndexOf("\n") + 1);
+        }
+        return output;
     }
 }

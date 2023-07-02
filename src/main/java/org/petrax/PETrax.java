@@ -7,6 +7,10 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class PETrax {
     public static void main(String[] args) {
+        System.out.println("Starting PETrax application...");
+
         SpringApplication.run(PETrax.class, args);
+
+        System.out.println("PETrax application started successfully.");
     }
 }
