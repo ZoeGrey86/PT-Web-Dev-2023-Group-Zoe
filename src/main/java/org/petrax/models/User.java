@@ -15,23 +15,28 @@ public class User {
     private int id;
 
 
-    @NotBlank(message = "Name is required")
+    @NotBlank(message = "First name is required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
-    private String name;
+    private String firstName;
 
-    @Size(max = 500, message = "Description too long!")
-    private String description;
+    @NotBlank(message = "Last name is required")
+    @Size(min = 2, max = 50, message = "Last name must be between 2 and 50 characters")
+    private String lastName;
 
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
+    private String address;
+
     private UserType type;
 
-    public User(String name, String description, String contactEmail, UserType type) {
-        this.name = name;
-        this.description = description;
+
+    public User(String firstName, String lastName, String contactEmail, String address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.contactEmail = contactEmail;
+        this.address = address;
         this.type = type;
     }
 
@@ -39,22 +44,21 @@ public class User {
 
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-
     public String getContactEmail() {
         return contactEmail;
     }
@@ -63,6 +67,14 @@ public class User {
         this.contactEmail = contactEmail;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+
+    }
     public UserType getType() {
         return type;
     }
@@ -74,18 +86,20 @@ public class User {
     public int getId() {
         return id;
     }
-
+    public void setId(int id) {
+        this.id = id;
+    }
     @Override
     public String toString() {
-        return name;
+        return firstName + " " + lastName;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User event = (User) o;
-        return id == event.id;
+        User user = (User) o;
+        return id == user.id;
     }
 
     @Override
