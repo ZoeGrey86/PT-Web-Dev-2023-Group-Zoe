@@ -7,8 +7,9 @@ public enum PetType {
     TURTLE("Turtle"),
     BIRD("Bird"),
     FISH("Fish"),
-    LIZARD("Lizard"),
-    RODENT("Rodent");
+    LIZARD("Reptile"),
+    SMALLMAMMAL("Small Mammal"),
+    LARGEMAMMAL("Large Mammal");
 
     private final String petType;
     PetType(String petType) {
