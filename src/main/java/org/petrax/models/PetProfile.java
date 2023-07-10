@@ -44,13 +44,16 @@ public class PetProfile {
     @Size(max = 500, message = "Diagnoses too long!")
     private String diagnoses;
 
+    //Enum class PetType
+    @NotBlank(message = "Must select pet type")
+    private PetType petType;
 
     //public constructor used to instantiate an object
 
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
     public PetProfile(String name, String breed, double age, double weight, Date birthdate,
-               String medication, String allergy, double microchip, String diagnoses) {
+               String medication, String allergy, double microchip, String diagnoses, PetType petType) {
         this.name = name;
         this.breed = breed;
         this.age = age;
@@ -60,6 +63,7 @@ public class PetProfile {
         this.allergy = allergy;
         this.microchip = microchip;
         this.diagnoses = diagnoses;
+        this.petType = petType; //enum declaration
     }
 
 
@@ -140,6 +144,13 @@ public class PetProfile {
         this.diagnoses = diagnoses;
     }
 
+    public PetType getPetType() {
+        return petType;
+    }
+
+    public void setPetType(PetType type) {
+        this.petType = petType;
+    }
 
     //public toString method of most relevant/identifying field petId
 
