@@ -4,12 +4,11 @@ public enum PetType {
 
     CAT("Cat"),
     DOG("Dog"),
-    TURTLE("Turtle"),
     BIRD("Bird"),
     FISH("Fish"),
     REPTILE("Reptile"),
-    SMALL_MAMMAL("Small Mammal"),
-    LARGE_MAMMAL("Large Mammal");
+    OTHER("Other");
+    //other category with blank field they can edit
 
     private final String petType;
     PetType(String petType) {

@@ -39,7 +39,7 @@ public class PetProfile {
     private String allergy;
 
     @Size(max = 500, message = "Microchip number too long!")
-    private double microchip; //microchip #s are sometimes alpha-numeric, should this be String?
+    private String microchip; //some are alpha-numeric, so string not double
 
     @Size(max = 500, message = "Diagnoses too long!")
     private String diagnoses;
@@ -53,7 +53,7 @@ public class PetProfile {
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
     public PetProfile(String name, String breed, double age, double weight, Date birthdate,
-               String medication, String allergy, double microchip, String diagnoses, PetType petType) {
+               String medication, String allergy, String microchip, String diagnoses, PetType petType) {
         this.name = name;
         this.breed = breed;
         this.age = age;
@@ -128,11 +128,11 @@ public class PetProfile {
         this.allergy = allergy;
     }
 
-    public double getMicrochip() {
+    public String getMicrochip() {
         return microchip;
     }
 
-    public void setMicrochip(double microchip) {
+    public void setMicrochip(String microchip) {
         this.microchip = microchip;
     }
 
