@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--created PetType enum class with 7 pet types, and added to model class PetProfile">
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--edited PetType enum class options">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetProfileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +54,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -244,7 +246,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688956671552</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Tayler--edited PetType enum class options">
+      <created>1689032406772</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689032406772</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Tayler--edited PetType enum class options">
+      <created>1689032520486</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689032520486</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -252,7 +268,8 @@
     <MESSAGE value="Tayler--created PetProfile Java class (fields, constructor, psvm, toString, hashmap, getters, and setters)" />
     <MESSAGE value="Tayler--added comments and edits to PetProfile model class" />
     <MESSAGE value="Tayler--created PetType enum class with 7 pet types, and added to model class PetProfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--created PetType enum class with 7 pet types, and added to model class PetProfile" />
+    <MESSAGE value="Tayler--edited PetType enum class options" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--edited PetType enum class options" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
