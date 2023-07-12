@@ -14,7 +14,6 @@ public class User {
     @GeneratedValue
     private int id;
 
-
     @NotBlank(message = "First name is required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String firstName;
@@ -27,22 +26,25 @@ public class User {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
+    @NotBlank(message = "Username is required")
+    @Size(min = 2, max = 50, message = "Username must be between 2 and 50 characters")
+    private String username;
     private String address;
 
     private UserType type;
 
+    public User () {
 
-    public User(String firstName, String lastName, String contactEmail, String address) {
+    }
+    public User(String firstName, String lastName, String contactEmail, String username) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactEmail = contactEmail;
+        this.username = username;
         this.address = address;
         this.type = type;
     }
 
-    public User() {
-
-    }
 
     public String getFirstName() {
         return firstName;
@@ -65,6 +67,14 @@ public class User {
 
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getAddress() {
@@ -91,8 +101,16 @@ public class User {
     }
     @Override
     public String toString() {
-        return firstName + " " + lastName;
-    }
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", contactEmail='" + contactEmail + '\'' +
+                ", username='" + username + '\'' +
+                ", address='" + address + '\'' +
+                ", type=" + type +
+                '}';
+        }
 
     @Override
     public boolean equals(Object o) {
@@ -106,4 +124,6 @@ public class User {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
 }
