@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
@@ -33,27 +34,27 @@ public class PetProfile {
     private Date birthdate;
 
     @Size(max = 500, message = "Medications too long!")
-    private String medication;
+    private ArrayList<String> medication = new ArrayList<>(); //ArrayList since one pet can have multiple
 
     @Size(max = 500, message = "Allergies too long!")
-    private String allergy;
+    private ArrayList<String> allergy = new ArrayList<>(); //ArrayList since one pet can have multiple
 
     @Size(max = 500, message = "Microchip number too long!")
-    private String microchip; //some are alpha-numeric, so string not double
+    private String microchip; //Some microchip #s are alpha-numeric, so string not double
 
     @Size(max = 500, message = "Diagnoses too long!")
-    private String diagnoses;
+    private ArrayList<String> diagnoses = new ArrayList<>(); //ArrayList since one pet can have multiple
+
 
     //Enum class PetType
     @NotBlank(message = "Must select pet type")
     private PetType petType;
 
     //public constructor used to instantiate an object
-
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
     public PetProfile(String name, String breed, double age, double weight, Date birthdate,
-               String medication, String allergy, String microchip, String diagnoses, PetType petType) {
+               ArrayList<String> medication, ArrayList<String> allergy, String microchip, ArrayList<String> diagnoses, PetType petType) {
         this.name = name;
         this.breed = breed;
         this.age = age;
@@ -71,21 +72,16 @@ public class PetProfile {
     public PetProfile() {}
 
 
-    //public getters & setters, no petId since petId it will be auto-generated
+    //public getters & setters
+    //Refresher: Setter methods are used to set the value of a field/property in an object
+    //If a field is not meant to be changed once it is set, omit the setter
+    //No setter for name, breed, birthdate, microchip, or petId (petId will be auto-generated)
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getBreed() {
         return breed;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
     }
 
     public double getAge() {
@@ -108,23 +104,19 @@ public class PetProfile {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public String getMedication() {
+    public ArrayList<String> getMedication() {
         return medication;
     }
 
-    public void setMedication(String medication) {
+    public void setMedication(ArrayList<String> medication) {
         this.medication = medication;
     }
 
-    public String getAllergy() {
+    public ArrayList<String> getAllergy() {
         return allergy;
     }
 
-    public void setAllergy(String allergy) {
+    public void setAllergy(ArrayList<String> allergy) {
         this.allergy = allergy;
     }
 
@@ -132,15 +124,11 @@ public class PetProfile {
         return microchip;
     }
 
-    public void setMicrochip(String microchip) {
-        this.microchip = microchip;
-    }
-
-    public String getDiagnoses() {
+    public ArrayList<String> getDiagnoses() {
         return diagnoses;
     }
 
-    public void setDiagnoses(String diagnoses) {
+    public void setDiagnoses(ArrayList<String> diagnoses) {
         this.diagnoses = diagnoses;
     }
 
@@ -151,6 +139,8 @@ public class PetProfile {
     public void setPetType(PetType type) {
         this.petType = petType;
     }
+
+
 
     //public toString method of most relevant/identifying field petId
 
