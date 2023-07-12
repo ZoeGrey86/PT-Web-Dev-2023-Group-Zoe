@@ -2,9 +2,43 @@
 <html>
 <head>
     <title>PETrax</title>
+    <script>
+    function selectOption(wut){
+    if(wut == "sign-up"){
+    window.location = "authentication/signUp.html";
+    }
+    if(wut == "sign-in"){
+    window.location = "authentication/signIn.html";
+    }
+    if(wut == "sign-in-with-google"){
+    window.location = "authentication/signInGoogle.html";
+    }
+    alert("" + wut + " Submit");
+    }
+</script>
 </head>
 <body>
 <h1>Welcome to PETrax!</h1>
 <p>Congratulations! Your application is up and running.</p>
+<h2>Select an option:</h2>
+<ul>
+    <li>
+        <button onclick="selectOption('sign-up')">Sign Up</button>
+    </li>
+    <li>
+        <button onclick="selectOption('sign-in')">Sign In</button>
+    </li>
+    <li>
+        <button onclick="selectOption('sign-in-with-google')">Sign In with Google</button>
+    </li>
+</ul>
+
+
+
+
+
+
+
+</div>
 </body>
 </html>

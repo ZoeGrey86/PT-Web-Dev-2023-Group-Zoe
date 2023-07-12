@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<h2>Select an option:</h2>
+<ul>
+    <li>
+        <button (click)="selectOption('sign-up')">Sign Up</button>
+    </li>
+    <li>
+        <button (click)="selectOption('sign-in')">Sign In</button>
+    </li>
+    <li>
+        <button (click)="selectOption('sign-in-with-google')">Sign In with Google</button>
+    </li>
+</ul>
+
+<div *ngIf="showSignUpForm">
+    <!-- Sign Up form -->
+    <h3>Sign Up Form</h3>
+    <form (ngSubmit)="signUp()">
+        <!-- Add the necessary form fields for Sign Up -->
+        <input type="text" [(ngModel)]="signUpFormData.username" name="username" required>
+        <input type="password" [(ngModel)]="signUpFormData.password" name="password" required>
+        <!-- Add other form fields as needed -->
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+
+<div *ngIf="showSignInForm">
+    <!-- Sign In form -->
+    <h3>Sign In Form</h3>
+    <form (ngSubmit)="signIn()">
+        <!-- Add the necessary form fields for Sign In -->
+        <input type="text" [(ngModel)]="signInFormData.username" name="username" required>
+        <input type="password" [(ngModel)]="signInFormData.password" name="password" required>
+        <!-- Add other form fields as needed -->
+        <button type="submit">Sign In</button>
+    </form>
+</div>
+
+<div *ngIf="showGoogleSignInForm">
+    <!-- Sign In with Google form -->
+    <h3>Sign In with Google Form</h3>
+    <button (click)="signInWithGoogle()">Sign In with Google</button>
+</div>
+
+<body>
+
+</body>
+</html>

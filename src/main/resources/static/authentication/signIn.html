@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div *ngIf="showSignInForm">
+    <!-- Sign In form -->
+    <h3>Sign In Form</h3>
+    <form (ngSubmit)="signIn()">
+        <!-- Add the necessary form fields for Sign In -->
+        <input type="text" [(ngModel)]="signInFormData.username" name="username" required>
+        <input type="password" [(ngModel)]="signInFormData.password" name="password" required>
+        <!-- Add other form fields as needed -->
+        <button type="submit">Sign In</button>
+    </form>
+</div>
+</body>
+</html>

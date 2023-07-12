@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div *ngIf="showSignUpForm">
+    <!-- Sign Up form -->
+    <h3>Sign Up Form</h3>
+    <form (ngSubmit)="signUp()">
+        <!-- Add the necessary form fields for Sign Up -->
+        <input type="text" [(ngModel)]="signUpFormData.username" name="username" required>
+        <input type="password" [(ngModel)]="signUpFormData.password" name="password" required>
+        <!-- Add other form fields as needed -->
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+</body>
+</html>
