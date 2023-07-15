@@ -1,9 +1,17 @@
 package org.petrax.models;
 
+
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-
+@Entity
 public class SignUpRequest {
+
+    @Id
+    @GeneratedValue
+    private int id;
     @NotBlank(message = "Name is required")
     private String name;
     private String username;
@@ -12,6 +20,23 @@ public class SignUpRequest {
     @Email(message = "Invalid email format")
     private String email;
 
+    public SignUpRequest(String name, String username,String password) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+    }
+
+    public SignUpRequest() {
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

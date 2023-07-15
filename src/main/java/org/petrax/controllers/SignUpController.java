@@ -15,7 +15,7 @@ public class SignUpController {
     private SignUpRepository signUpRepository;
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody SignUpRequest request) {
+    public ResponseEntity<String> username(@RequestBody SignUpRequest request) {
         // Create a new User entity from the registration request data
         SignUpRequest signUpRequest = new SignUpRequest();
         signUpRequest.setUsername(request.getUsername());
