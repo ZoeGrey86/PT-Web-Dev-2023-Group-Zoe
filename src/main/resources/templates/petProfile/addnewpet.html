@@ -1,13 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Add New Pet</title>
+    <script>
+        function showPopup() {
+            alert("NEW PET ADDED");
+        }
+    </script>
 </head>
-<body>
 
-<form method="post" action="/petProfile/addnewpet">
-    <input type="submit" value="Add New Pet" class="btn btn-success">
+<!--<body>-->
+<!--<form method="post">-->
+
+<!--    <div class="form-group">-->
+<!--        <label>Name-->
+<!--            <input th:field="${PetProfile.name}" class="form-control">-->
+<!--        </label>-->
+<!--        <p class="error" th:errors="${PetProfile.name}"></p>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--        <label>Breed-->
+<!--            <input th:field="${PetProfile.breed}" class="form-control">-->
+<!--        </label>-->
+<!--        <p class="error" th:errors="${PetProfile.breed}"></p>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--        <label>Age-->
+<!--            <input th:field="${PetProfile.age}" class="form-control">-->
+<!--        </label>-->
+<!--        <p class="error" th:errors="${PetProfile.age}"></p>-->
+<!--    </div>-->
+
+    <div class="form-group">
+        <input type="submit" value="Add New Pet" class="btn btn-success" onClick="showPopup()">
+    </div>
 </form>
-
 </body>
+
 </html>

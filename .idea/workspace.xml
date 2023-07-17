@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--working on addnewpet.html">
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/success.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetTypeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addnewpet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addnewpet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,10 +55,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -301,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689611026098</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!">
+      <created>1689612046061</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689612046061</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -323,7 +332,8 @@
     <MESSAGE value="Tayler--edited PetType enum class options" />
     <MESSAGE value="Tayler--edited PetType enum class options and PetProfile data type to String for microchip since it is alpha-numeric" />
     <MESSAGE value="Tayler--working on addnewpet.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--working on addnewpet.html" />
+    <MESSAGE value="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
