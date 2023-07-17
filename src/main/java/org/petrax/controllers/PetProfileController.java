@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("petprofile")
+@RequestMapping("petProfile")
 public class PetProfileController {
 
     //Refresher: @Autowired annotation specifies that SB should auto-populate this field.
@@ -19,56 +19,56 @@ public class PetProfileController {
     @Autowired
     private PetProfileRepository petProfileRepository;
 
-    @GetMapping("addnewpet")
+    @GetMapping("petProfile/addnewpet")
     public String displayAddNewPetForm(Model model) {
         model.addAttribute("add", "Add New Pet");
         model.addAttribute(new PetProfile());
         model.addAttribute("petProfile", petProfileRepository.findAll());
-        return "petprofile/addnewpet";
+        return "petProfile/addnewpet";
     }
 
-    @PostMapping("addnewpet")
-    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
-                                         Errors errors, Model model) {
-        if(errors.hasErrors()) {
-            model.addAttribute("add", "Add New Pet");
-            return "petprofile/addnewpet";
-        }
-        petProfileRepository.save(newPet);
-        return "redirect:";
-    }
-
-    @GetMapping("deletepet")
-    public String displayDeletePetForm(Model model) {
-        model.addAttribute("delete", "Delete Pet");
-        model.addAttribute("pets", petProfileRepository.findAll());
-        return "petprofile/deletepet";
-    }
-
-    @PostMapping("deletepet")
-    public String processDeletePetForm(@RequestParam(required = false) int[] petId) {
-        if (petId != null) {
-            for (int id : petId) {
-                petProfileRepository.deleteById(id);
-            }
-        }
-        return "redirect:";
-    }
-
-    @GetMapping("detail")
-    public String displayPetDetails(@RequestParam Integer petId, Model model) {
-
-        Optional<PetProfile> result = petProfileRepository.findById(petId);
-
-        if (result.isEmpty()) {
-            model.addAttribute("pets", "Invalid Pet ID: " + petId);
-        } else {
-            PetProfile petProfile = result.get();
-            model.addAttribute("pets", petProfile.getName() + " Details");
-            model.addAttribute("pets", petProfile);
-        }
-
-        return "petprofile/detail";
-    }
+//    @PostMapping("addnewpet")
+//    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
+//                                         Errors errors, Model model) {
+//        if(errors.hasErrors()) {
+//            model.addAttribute("add", "Add New Pet");
+//            return "addnewpet";
+//        }
+//        petProfileRepository.save(newPet);
+//        return "redirect:";
+//    }
+//
+//    @GetMapping("deletepet")
+//    public String displayDeletePetForm(Model model) {
+//        model.addAttribute("delete", "Delete Pet");
+//        model.addAttribute("pets", petProfileRepository.findAll());
+//        return "petProfile/deletepet";
+//    }
+//
+//    @PostMapping("deletepet")
+//    public String processDeletePetForm(@RequestParam(required = false) int[] petId) {
+//        if (petId != null) {
+//            for (int id : petId) {
+//                petProfileRepository.deleteById(id);
+//            }
+//        }
+//        return "redirect:";
+//    }
+//
+//    @GetMapping("detail")
+//    public String displayPetDetails(@RequestParam Integer petId, Model model) {
+//
+//        Optional<PetProfile> result = petProfileRepository.findById(petId);
+//
+//        if (result.isEmpty()) {
+//            model.addAttribute("pets", "Invalid Pet ID: " + petId);
+//        } else {
+//            PetProfile petProfile = result.get();
+//            model.addAttribute("pets", petProfile.getName() + " Details");
+//            model.addAttribute("pets", petProfile);
+//        }
+//
+//        return "petProfile/detail";
+//    }
 
 } 
