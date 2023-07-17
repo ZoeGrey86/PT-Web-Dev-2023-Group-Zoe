@@ -1,5 +1,6 @@
 package org.petrax.controllers;
 import org.petrax.data.PetProfileRepository;
+import org.petrax.data.PetTypeRepository;
 import org.petrax.models.PetProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class PetProfileController {
     //This is a dependency injection, what happens is the Autowired code tells SB we need a PetProfileRepository object
     @Autowired
     private PetProfileRepository petProfileRepository;
+
+    @Autowired
+    private PetTypeRepository petTypeRepository;
 
     @GetMapping("addnewpet")
     public String displayAddNewPetForm(Model model) {
