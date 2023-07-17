@@ -19,7 +19,7 @@ public class PetProfileController {
     @Autowired
     private PetProfileRepository petProfileRepository;
 
-    @GetMapping("petProfile/addnewpet")
+    @GetMapping("addnewpet")
     public String displayAddNewPetForm(Model model) {
         model.addAttribute("add", "Add New Pet");
         model.addAttribute(new PetProfile());
@@ -27,16 +27,16 @@ public class PetProfileController {
         return "petProfile/addnewpet";
     }
 
-//    @PostMapping("addnewpet")
-//    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
-//                                         Errors errors, Model model) {
-//        if(errors.hasErrors()) {
-//            model.addAttribute("add", "Add New Pet");
-//            return "addnewpet";
-//        }
-//        petProfileRepository.save(newPet);
-//        return "redirect:";
-//    }
+    @PostMapping("addnewpet")
+    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
+                                         Errors errors, Model model) {
+        if(errors.hasErrors()) {
+            model.addAttribute("add", "Add New Pet");
+            return "petProfile/addnewpet";
+        }
+        petProfileRepository.save(newPet);
+        return "redirect:";
+    }
 //
 //    @GetMapping("deletepet")
 //    public String displayDeletePetForm(Model model) {
