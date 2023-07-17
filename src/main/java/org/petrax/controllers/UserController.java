@@ -42,9 +42,17 @@ public class UserController {
             model.addAttribute("title", "Create User");
             return "users/create";
         }
+        // Set the address field based on the auto-populated value
+        newUser.setAddress(newUser.getAddress());
 
         userRepository.save(newUser);
-        return "redirect:";
+        return "redirect:/success.html"; // Redirect to the success page
+    }
+
+    @GetMapping("success")
+    public String showSuccessPage(Model model) {
+        model.addAttribute("title", "Registration Successful");
+        return "users/success.html";
     }
 
     @GetMapping("delete")
