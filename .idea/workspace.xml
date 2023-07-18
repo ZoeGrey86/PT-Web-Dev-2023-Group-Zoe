@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetTypeRepository.java" beforeDir="false" />
-    </list>
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--working on PetPicUpload" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,9 +50,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -66,11 +64,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -327,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689638527535</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Tayler--working on PetPicUpload">
+      <created>1689638882430</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689638882430</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -352,7 +357,8 @@
     <MESSAGE value="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!" />
     <MESSAGE value="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear with pop-up!" />
     <MESSAGE value="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up" />
+    <MESSAGE value="Tayler--working on PetPicUpload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--working on PetPicUpload" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
