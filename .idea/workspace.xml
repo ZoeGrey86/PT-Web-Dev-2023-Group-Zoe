@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,29 +49,31 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Calendar-Jenn" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-    &quot;lastFilter&quot;: {
+  &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;
-    }
-    }</component>
+  }
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="20d9b389-7607-491f-9e75-3202b25f063a" />
-        <option name="url" value="git@github.com:ZoeGrey86/PT-Web-Dev-2023-Group-Zoe.git" />
+        <option name="accountId" value="38a9269e-27da-4d97-b592-1997f32a2731" />
+        <option name="url" value="https://github.com/ZoeGrey86/PT-Web-Dev-2023-Group-Zoe.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -90,7 +90,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
-    &quot;keyToString&quot;: {
+  &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -99,8 +99,8 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
-    }
-    }</component>
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
@@ -260,13 +260,76 @@
       <updated>1688858000630</updated>
     </task>
     <task id="LOCAL-00003" summary="Tayler--trying to fix workspace.xml merge issue">
-      <created>1689642780692</created>
+      <created>1689641034894</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1689642780692</updated>
+      <updated>1689641034895</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00009" summary="Tayler--working on addnewpet.html">
+      <created>1689610191069</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689610191069</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Tayler--working on addnewpet.html">
+      <created>1689611026098</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1689611026098</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!">
+      <created>1689612046061</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689612046061</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear with pop-up!">
+      <created>1689634277070</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689634277070</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up">
+      <created>1689637806904</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1689637806904</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up">
+      <created>1689638527534</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1689638527535</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Tayler--working on PetPicUpload">
+      <created>1689638882430</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689638882430</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Tayler--trying to fix workspace.xml merge issue">
+      <created>1689639771521</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1689639771521</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Tayler--trying to fix workspace.xml merge issue">
+      <created>1689639982775</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1689639982775</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,7 +341,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <MESSAGE value="initial commit to User branch" />
+    <MESSAGE value="Tayler--created PetProfile Java class (fields, constructor, psvm, toString, hashmap, getters, and setters)" />
+    <MESSAGE value="Tayler--added comments and edits to PetProfile model class" />
+    <MESSAGE value="Tayler--created PetType enum class with 7 pet types, and added to model class PetProfile" />
+    <MESSAGE value="Tayler--edited PetType enum class options" />
+    <MESSAGE value="Tayler--edited PetType enum class options and PetProfile data type to String for microchip since it is alpha-numeric" />
+    <MESSAGE value="Tayler--working on addnewpet.html" />
+    <MESSAGE value="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!" />
+    <MESSAGE value="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear with pop-up!" />
+    <MESSAGE value="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up" />
+    <MESSAGE value="Tayler--working on PetPicUpload" />
     <MESSAGE value="Tayler--trying to fix workspace.xml merge issue" />
     <option name="LAST_COMMIT_MESSAGE" value="Tayler--trying to fix workspace.xml merge issue" />
   </component>
