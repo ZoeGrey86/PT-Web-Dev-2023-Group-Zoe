@@ -49,10 +49,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+
         <option value="Enum" />
         <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -60,6 +62,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,6 +77,7 @@
       <UrlAndAccount>
         <option name="accountId" value="38a9269e-27da-4d97-b592-1997f32a2731" />
         <option name="url" value="https://github.com/ZoeGrey86/PT-Web-Dev-2023-Group-Zoe.git" />
+
       </UrlAndAccount>
     </option>
   </component>
@@ -192,6 +196,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;UserTest&quot;" />
+
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;UserTest.testUserConstructorAndGetters&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -330,29 +358,22 @@
       <updated>1689639982775</updated>
     </task>
     <option name="localTasksCounter" value="18" />
+
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN" />
+
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <MESSAGE value="Tayler--created PetProfile Java class (fields, constructor, psvm, toString, hashmap, getters, and setters)" />
-    <MESSAGE value="Tayler--added comments and edits to PetProfile model class" />
-    <MESSAGE value="Tayler--created PetType enum class with 7 pet types, and added to model class PetProfile" />
-    <MESSAGE value="Tayler--edited PetType enum class options" />
-    <MESSAGE value="Tayler--edited PetType enum class options and PetProfile data type to String for microchip since it is alpha-numeric" />
-    <MESSAGE value="Tayler--working on addnewpet.html" />
-    <MESSAGE value="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!" />
-    <MESSAGE value="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear with pop-up!" />
-    <MESSAGE value="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up" />
-    <MESSAGE value="Tayler--working on PetPicUpload" />
-    <MESSAGE value="Tayler--trying to fix workspace.xml merge issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--trying to fix workspace.xml merge issue" />
+
+    <MESSAGE value="initial commit to User branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit to User branch" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
