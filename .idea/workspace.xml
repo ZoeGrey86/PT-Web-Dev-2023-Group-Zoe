@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--edited PetType enum class options and PetProfile data type to String for microchip since it is alpha-numeric">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +49,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
         <option value="HTML File" />
       </list>
@@ -59,7 +61,8 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Calendar-Jenn" />
+        <entry key="$PROJECT_DIR$" value="main" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,8 +75,9 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="20d9b389-7607-491f-9e75-3202b25f063a" />
-        <option name="url" value="git@github.com:ZoeGrey86/PT-Web-Dev-2023-Group-Zoe.git" />
+        <option name="accountId" value="38a9269e-27da-4d97-b592-1997f32a2731" />
+        <option name="url" value="https://github.com/ZoeGrey86/PT-Web-Dev-2023-Group-Zoe.git" />
+
       </UrlAndAccount>
     </option>
   </component>
@@ -127,6 +131,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="PETraxTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -150,6 +155,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="PETraxTests.testProgramExecution" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -173,6 +179,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -189,6 +196,7 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;UserTest&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,6 +227,31 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;UserTest.testUserConstructorAndGetters&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -254,22 +287,91 @@
       <option name="project" value="LOCAL" />
       <updated>1688858000630</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Tayler--trying to fix workspace.xml merge issue">
+      <created>1689641034894</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689641034895</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Tayler--working on addnewpet.html">
+      <created>1689610191069</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689610191069</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Tayler--working on addnewpet.html">
+      <created>1689611026098</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1689611026098</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!">
+      <created>1689612046061</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689612046061</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear with pop-up!">
+      <created>1689634277070</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689634277070</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up">
+      <created>1689637806904</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1689637806904</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up">
+      <created>1689638527534</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1689638527535</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Tayler--working on PetPicUpload">
+      <created>1689638882430</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689638882430</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Tayler--trying to fix workspace.xml merge issue">
+      <created>1689639771521</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1689639771521</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Tayler--trying to fix workspace.xml merge issue">
+      <created>1689639982775</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1689639982775</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN">
-          <value>
+        <entry key="MAIN" />
 
-          </value>
-        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
+
     <MESSAGE value="initial commit to User branch" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit to User branch" />
   </component>
