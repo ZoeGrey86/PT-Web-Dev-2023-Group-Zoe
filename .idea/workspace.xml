@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue" />
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--editing controller to fix addNewPetSuccess issue">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +53,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-
         <option value="Enum" />
         <option value="Interface" />
         <option value="HTML File" />
@@ -61,8 +64,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-
+        <entry key="$PROJECT_DIR$" value="PetProfileTayler" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,7 +79,6 @@
       <UrlAndAccount>
         <option name="accountId" value="38a9269e-27da-4d97-b592-1997f32a2731" />
         <option name="url" value="https://github.com/ZoeGrey86/PT-Web-Dev-2023-Group-Zoe.git" />
-
       </UrlAndAccount>
     </option>
   </component>
@@ -196,7 +197,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;UserTest&quot;" />
-
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,6 +204,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -357,23 +358,36 @@
       <option name="project" value="LOCAL" />
       <updated>1689639982775</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
-
+    <task id="LOCAL-00018" summary="Tayler--editing html template to sync validation from model">
+      <created>1689779270201</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1689779270201</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Tayler--editing controller to fix addNewPetSuccess issue">
+      <created>1689780065628</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1689780065628</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN" />
-
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-
     <MESSAGE value="initial commit to User branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit to User branch" />
+    <MESSAGE value="Tayler--editing html template to sync validation from model" />
+    <MESSAGE value="Tayler--editing controller to fix addNewPetSuccess issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--editing controller to fix addNewPetSuccess issue" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
