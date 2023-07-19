@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <title>Add New Pet</title>
@@ -10,62 +10,39 @@
     </script>
 </head>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Add New Pet</title>
-</head>
 <body>
-<form method="post">
+    <h1>Add New Pet</h1>
+<form action = "/petProfile/addNewPet" method = "post">
 
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input id="name" name="name" class="form-control" type="text">
-    </div>
+    <label for = "name">Pet Name:</label>
+    <input type="text" id="name" name="name" required><br>
 
-    <div class="form-group">
-        <label for="breed">Breed</label>
-        <input id="breed" name="breed" class="form-control" type="text">
-    </div>
+    <label for = "breed">Breed:</label>
+    <input type="text" id="breed" name="breed" required><br>
 
-    <div class="form-group">
-        <label for="age">Age</label>
-        <input id="age" name="age" class="form-control" type="text">
-    </div>
+    <label for = "age">Age:</label>
+    <input type="text" id="age" name="age" required><br>
 
-    <div class="form-group">
-        <label for="weight">Weight</label>
-        <input id="weight" name="weight" class="form-control" type="text">
-    </div>
+    <label for = "weight">Weight:</label>
+    <input type="text" id="weight" name="weight" required><br>
 
-    <div class="form-group">
-        <label for="birthdate">Birthdate</label>
-        <input id="birthdate" name="birthdate" class="form-control" type="text">
-    </div>
+    <label for = "birthdate">Birthdate:</label>
+    <input type="text" id="birthdate" name="birthdate" required><br>
 
-    <div class="form-group">
-        <label for="medication">Medication</label>
-        <input id="medication" name="medication" class="form-control" type="text">
-    </div>
+    <label for = "medication">Medication:</label>
+    <input type="text" id="medication" name="medication"><br>
 
-    <div class="form-group">
-        <label for="allergy">Allergy</label>
-        <input id="allergy" name="allergy" class="form-control" type="text">
-    </div>
+    <label for = "allergy">Allergy:</label>
+    <input type="text" id="allergy" name="allergy"><br>
 
-    <div class="form-group">
-        <label for="microchip">Microchip Number</label>
-        <input id="microchip" name="microchip" class="form-control" type="text">
-    </div>
+    <label for = "microchip">Microchip Number:</label>
+    <input type="text" id="microchip" name="microchip"><br>
 
-    <div class="form-group">
-        <label for="diagnoses">Diagnoses</label>
-        <input id="diagnoses" name="diagnoses" class="form-control" type="text">
-    </div>
+    <label for = "diagnoses">Diagnoses:</label>
+    <input type="text" id="diagnoses" name="diagnoses"><br>
 
-    <div class="form-group">
+
         <input type="submit" value="Add New Pet" class="btn btn-success" onClick="showPopup()">
-    </div>
 </form>
 </body>
 
