@@ -30,6 +30,9 @@ public class SignUpRequest {
 
     }
 
+    public SignUpRequest(String username, String password) {
+    }
+
     public int getId() {
         return id;
     }
@@ -69,6 +72,9 @@ public class SignUpRequest {
     public void setEmail(String email) {
         this.email = email;
     }
-// Generate getters and setters
+
+    public boolean isMatchingPassword(String password) {
+        return false;
+    }
 }
 
