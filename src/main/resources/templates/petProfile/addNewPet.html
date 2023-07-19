@@ -3,19 +3,26 @@
 
 <head>
     <title>Add New Pet</title>
-<!--    <script>-->
-<!--        function showPopup() {-->
-<!--            alert("NEW PET ADDED");-->
-<!--        }-->
-<!--    </script>-->
 </head>
 
 <body>
+
     <h1>Add New Pet</h1>
+
 <form action = "/petProfile/addNewPet" method = "post">
 
-    <label for = "name">Pet Name:</label>
+    <label for = "name">Name:</label>
     <input type="text" id="name" name="name" required><br>
+
+    <label for="petType">Pet Type:</label>
+    <select id="petType" name="petType" required>
+        <option value="CAT">Cat</option>
+        <option value="DOG">Dog</option>
+        <option value="BIRD">Bird</option>
+        <option value="FISH">Fish</option>
+        <option value="REPTILE">Reptile</option>
+        <option value="OTHER">Other</option>
+    </select><br>
 
     <label for = "breed">Breed:</label>
     <input type="text" id="breed" name="breed" required><br>
@@ -41,14 +48,8 @@
     <label for = "diagnoses">Diagnoses:</label>
     <input type="text" id="diagnoses" name="diagnoses"><br>
 
-
-        <input type="submit" value="Add New Pet">
+        <input type="submit" value="Add New Pet" class="btn btn-success">
 </form>
-
-    <script>
-        // Initialize the Places Autocomplete
-        initAutocomplete();
-    </script>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 package org.petrax.controllers;
 import org.petrax.data.PetProfileRepository;
 import org.petrax.models.PetProfile;
+import org.petrax.models.PetType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,39 +40,41 @@ public class PetProfileController {
 
     @PostMapping("/addNewPet")
     public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
+                                       @RequestParam String petType,
                                        Errors errors, Model model) {
-        if(errors.hasErrors()) {
+        if (errors.hasErrors()) {
             model.addAttribute("title", "Add New Pet");
             return "petProfile/addNewPet";
         }
 
+        newPet.setPetType(PetType.valueOf(petType));
         petProfileRepository.save(newPet);
-        return "redirect:/addNewPetSuccess.html";
+        return "redirect:/petProfile/addNewPetSuccess";
     }
 
     @GetMapping("addNewPetSuccess")
     public String showSuccessPage(Model model) {
         model.addAttribute("title", "New Pet Added");
-        return "petProfile/addNewPetSuccess.html";
+        return "petProfile/addNewPetSuccess";
     }
 
-//    @GetMapping("deletePet")
-//    public String displayDeletePetForm(Model model) {
-//        model.addAttribute("title", "Delete Pet");
-//        model.addAttribute("pets", petProfileRepository.findAll());
-//        return "petProfile/deletePet";
-//    }
-//
-//    @PostMapping("deletePet")
-//    public String processDeletePetForm(@RequestParam(required = false) int[] petId) {
-//        if (petId != null) {
-//            for (int id : petId) {
-//                petProfileRepository.deleteById(id);
-//            }
-//        }
-//        return "redirect:";
-//    }
-//
+    @GetMapping("deletePet")
+    public String displayDeletePetForm(Model model) {
+        model.addAttribute("title", "Delete Pet");
+        model.addAttribute("pets", petProfileRepository.findAll());
+        return "petProfile/deletePet";
+    }
+
+    @PostMapping("deletePet")
+    public String processDeletePetForm(@RequestParam(required = false) int[] petId) {
+        if (petId != null) {
+            for (int id : petId) {
+                petProfileRepository.deleteById(id);
+            }
+        }
+        return "redirect:";
+    }
+
 //    @GetMapping("detail")
 //    public String displayPetDetails(@RequestParam Integer petId, Model model) {
 //

@@ -3,6 +3,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,6 +22,10 @@ public class PetProfile {
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
 
+    //Enum class PetType
+    @NotNull(message = "Must select pet type")
+    private PetType petType;
+
     @NotBlank(message = "Breed is required")
     @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
     private String breed;
@@ -27,10 +33,11 @@ public class PetProfile {
     @NotBlank(message = "Age is required")
     private double age;
 
-    @NotBlank(message = "Weight is required")
+    @NotNull(message = "Weight is required")
     private double weight;
 
-    @NotBlank(message = "Birthdate is required")
+    @Past(message = "Birthdate must be in the past")
+    @NotNull(message = "Age is required")
     private Date birthdate;
 
     @Size(max = 500, message = "Medications too long!")
@@ -45,10 +52,6 @@ public class PetProfile {
     @Size(max = 500, message = "Diagnoses too long!")
     private ArrayList<String> diagnoses = new ArrayList<>(); //ArrayList since one pet can have multiple
 
-
-    //Enum class PetType
-    @NotBlank(message = "Must select pet type")
-    private PetType petType;
 
     //public constructor used to instantiate an object
     //Refresher: petId value not added since it will be auto-generated
