@@ -30,11 +30,11 @@ public class PetProfile {
     @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
     private String breed;
 
-    @NotBlank(message = "Age is required")
-    private double age;
+    @NotNull(message = "Age is required")
+    private Double age;
 
     @NotNull(message = "Weight is required")
-    private double weight;
+    private Double weight;
 
     @Past(message = "Birthdate must be in the past")
     @NotNull(message = "Age is required")

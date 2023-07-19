@@ -40,7 +40,7 @@ public class PetProfileController {
 
     @PostMapping("/addNewPet")
     public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
-                                       @RequestParam String petType,
+                                       @ModelAttribute("petType") PetType petType,
                                        Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add New Pet");
@@ -51,6 +51,7 @@ public class PetProfileController {
         petProfileRepository.save(newPet);
         return "redirect:/petProfile/addNewPetSuccess";
     }
+
 
     @GetMapping("addNewPetSuccess")
     public String showSuccessPage(Model model) {
