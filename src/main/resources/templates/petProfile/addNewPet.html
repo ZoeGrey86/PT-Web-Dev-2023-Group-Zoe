@@ -3,11 +3,11 @@
 
 <head>
     <title>Add New Pet</title>
-    <script>
-        function showPopup() {
-            alert("NEW PET ADDED");
-        }
-    </script>
+<!--    <script>-->
+<!--        function showPopup() {-->
+<!--            alert("NEW PET ADDED");-->
+<!--        }-->
+<!--    </script>-->
 </head>
 
 <body>
@@ -42,8 +42,13 @@
     <input type="text" id="diagnoses" name="diagnoses"><br>
 
 
-        <input type="submit" value="Add New Pet" class="btn btn-success" onClick="showPopup()">
+        <input type="submit" value="Add New Pet">
 </form>
-</body>
 
+    <script>
+        // Initialize the Places Autocomplete
+        initAutocomplete();
+    </script>
+
+</body>
 </html>

@@ -1,6 +1,5 @@
 package org.petrax.controllers;
 import org.petrax.data.PetProfileRepository;
-import org.petrax.data.UserRepository;
 import org.petrax.models.PetProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +20,8 @@ public class PetProfileController {
     //This is a dependency injection, what happens is the Autowired code tells SB we need a PetProfileRepository object
     @Autowired
     public PetProfileController(PetProfileRepository petProfileRepository) {this.petProfileRepository = petProfileRepository;}
+
+
     @GetMapping
     public String displayAllPets(Model model) {
         model.addAttribute("title", "All Pets");
@@ -28,33 +29,40 @@ public class PetProfileController {
         return "petProfile/index";
     }
 
-    @GetMapping("addnewpet")
+    @GetMapping("addNewPet")
     public String displayAddNewPetForm(Model model) {
         model.addAttribute("title", "Add New Pet");
         model.addAttribute(new PetProfile());
-        model.addAttribute("petProfile", petProfileRepository.findAll());
-        return "petProfile/addnewpet";
+//        model.addAttribute("petProfile", petProfileRepository.findAll());
+        return "petProfile/addNewPet";
     }
 
-    @PostMapping("addnewpet")
+    @PostMapping("addNewPet")
     public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
                                        Errors errors, Model model) {
         if(errors.hasErrors()) {
             model.addAttribute("title", "Add New Pet");
-            return "petProfile/addnewpet";
+            return "petProfile/addNewPet";
         }
+
         petProfileRepository.save(newPet);
         return "redirect:/addNewPetSuccess.html";
     }
 
-    @GetMapping("deletepet")
+    @GetMapping("addNewPetSuccess")
+    public String showSuccessPage(Model model) {
+        model.addAttribute("title", "New Pet Added");
+        return "petProfile/addNewPetSuccess.html";
+    }
+
+    @GetMapping("deletePet")
     public String displayDeletePetForm(Model model) {
         model.addAttribute("title", "Delete Pet");
         model.addAttribute("pets", petProfileRepository.findAll());
-        return "petProfile/deletepet";
+        return "petProfile/deletePet";
     }
 
-    @PostMapping("deletepet")
+    @PostMapping("deletePet")
     public String processDeletePetForm(@RequestParam(required = false) int[] petId) {
         if (petId != null) {
             for (int id : petId) {
