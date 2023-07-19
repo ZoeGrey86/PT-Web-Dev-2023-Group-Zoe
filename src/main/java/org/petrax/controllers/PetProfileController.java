@@ -40,14 +40,14 @@ public class PetProfileController {
 
     @PostMapping("/addNewPet")
     public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
-                                       @ModelAttribute("petType") PetType petType,
+                                       @RequestParam String petType,
                                        Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add New Pet");
             return "petProfile/addNewPet";
         }
 
-        newPet.setPetType(PetType.valueOf(petType));
+        newPet.setPetType(PetType.valueOf(petType.toUpperCase()));
         petProfileRepository.save(newPet);
         return "redirect:/petProfile/addNewPetSuccess";
     }
