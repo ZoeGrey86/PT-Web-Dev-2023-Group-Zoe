@@ -18,26 +18,26 @@ public class PetProfile {
     @GeneratedValue
     private int petId;
 
-    @NotBlank(message = "Name is required")
+//    @NotBlank(message = "Name is required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
 
     //Enum class PetType
-    @NotNull(message = "Must select pet type")
+//    @NotNull(message = "Must select pet type")
     private PetType petType;
 
-    @NotBlank(message = "Breed is required")
+//    @NotBlank(message = "Breed is required")
     @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
     private String breed;
 
-    @NotNull(message = "Age is required")
+//    @NotNull(message = "Age is required")
     private Double age;
 
-    @NotNull(message = "Weight is required")
+//    @NotNull(message = "Weight is required")
     private Double weight;
 
     @Past(message = "Birthdate must be in the past")
-    @NotNull(message = "Age is required")
+//    @NotNull(message = "Age is required")
     private Date birthdate;
 
     @Size(max = 500, message = "Medications too long!")
