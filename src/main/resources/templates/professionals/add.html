@@ -12,17 +12,30 @@
 
 <h1>Add Shit Here</h1>
 <form action= "/professionals/add" method="post" style="max-width:600px;">
+
+
     <div class="form-group">
         <label th:for="name">Professional Name</label>
-        <input class="form-control" type ="text"/>
-<!--        <span th:errors="${employer.name}" class="error"></span>-->
+        <input class="form-control" type ="text" th:field="${name}" />
     </div>
-
+    <div class="form-group">
+        <label th:for="businessName">Business Name</label>
+        <input class="form-control" type ="text" th:field="${businessName}" />
+    </div>
+    <div class="form-group">
+        <label th:for="website">Website</label>
+        <input class="form-control" type ="text" th:field="${website}" />
+    </div>
+    <div class="form-group">
+        <label th:for="phoneNumber">Website</label>
+        <input class="form-control" type ="text" th:field="${phoneNumber}" />
+    </div>
     <div class="form-group">
         <label th:for="careType">Care Type</label>
         <input class="form-control" th:field="${careType}" />
-<!--        <span th:errors="${employer.location}" class="error"></span>-->
+        <!--        <span th:errors="${employer.location}" class="error"></span>-->
     </div>
+
 
     <input type="submit" value="Add Professional" />
 </form>
