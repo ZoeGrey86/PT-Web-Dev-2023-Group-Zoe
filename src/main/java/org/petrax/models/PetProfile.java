@@ -18,46 +18,50 @@ public class PetProfile {
     @GeneratedValue
     private int petId;
 
-//    @NotBlank(message = "Name is required")
+    @NotBlank(message = "Name is required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
 
     //Enum class PetType
-//    @NotNull(message = "Must select pet type")
+    @NotNull(message = "Must select pet type")
     private PetType petType;
 
-//    @NotBlank(message = "Breed is required")
+    @NotBlank(message = "Breed is required")
     @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
     private String breed;
 
-//    @NotNull(message = "Age is required")
+    @NotNull(message = "Age is required")
     private Double age;
 
-//    @NotNull(message = "Weight is required")
+    @NotNull(message = "Weight is required")
     private Double weight;
 
     @Past(message = "Birthdate must be in the past")
-//    @NotNull(message = "Age is required")
+    @NotNull(message = "Age is required")
     private Date birthdate;
 
+    @NotNull(message = "Enter N/A if not applicable")
     @Size(max = 500, message = "Medications too long!")
-    private ArrayList<String> medication = new ArrayList<>(); //ArrayList since one pet can have multiple
+    private String medication;
 
+    @NotNull(message = "Enter N/A if not applicable")
     @Size(max = 500, message = "Allergies too long!")
-    private ArrayList<String> allergy = new ArrayList<>(); //ArrayList since one pet can have multiple
+    private String allergy;
 
+    @NotNull(message = "Enter N/A if not applicable")
     @Size(max = 500, message = "Microchip number too long!")
     private String microchip; //Some microchip #s are alpha-numeric, so string not double
 
+    @NotNull(message = "Enter N/A if not applicable")
     @Size(max = 500, message = "Diagnoses too long!")
-    private ArrayList<String> diagnoses = new ArrayList<>(); //ArrayList since one pet can have multiple
+    private String diagnoses;
 
 
     //public constructor used to instantiate an object
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
-    public PetProfile(String name, String breed, double age, double weight, Date birthdate,
-               ArrayList<String> medication, ArrayList<String> allergy, String microchip, ArrayList<String> diagnoses, PetType petType) {
+    public PetProfile(String name, PetType petType, String breed, double age, double weight, Date birthdate,
+               String medication, String allergy, String microchip, String diagnoses) {
         this.name = name;
         this.petType = petType; //enum declaration
         this.breed = breed;
@@ -107,19 +111,19 @@ public class PetProfile {
         return birthdate;
     }
 
-    public ArrayList<String> getMedication() {
+    public String getMedication() {
         return medication;
     }
 
-    public void setMedication(ArrayList<String> medication) {
+    public void setMedication(String medication) {
         this.medication = medication;
     }
 
-    public ArrayList<String> getAllergy() {
+    public String getAllergy() {
         return allergy;
     }
 
-    public void setAllergy(ArrayList<String> allergy) {
+    public void setAllergy(String allergy) {
         this.allergy = allergy;
     }
 
@@ -127,11 +131,11 @@ public class PetProfile {
         return microchip;
     }
 
-    public ArrayList<String> getDiagnoses() {
+    public String getDiagnoses() {
         return diagnoses;
     }
 
-    public void setDiagnoses(ArrayList<String> diagnoses) {
+    public void setDiagnoses(String diagnoses) {
         this.diagnoses = diagnoses;
     }
 
