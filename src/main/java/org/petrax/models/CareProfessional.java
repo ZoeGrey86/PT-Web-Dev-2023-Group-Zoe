@@ -3,6 +3,7 @@ package org.petrax.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class CareProfessional {
@@ -10,7 +11,10 @@ public class CareProfessional {
     @GeneratedValue
     private int id;
 
-    private int userId;
+//    @ManyToOne
+//    private User user;
+
+    private String careType;
 
     private String name;
     private String businessName;
@@ -19,19 +23,28 @@ public class CareProfessional {
 
     public CareProfessional (){};
 
-    public CareProfessional(String name, String businessName, String website, String phoneNumber) {
+    public CareProfessional(String name, String businessName, String website, String phoneNumber, String careType) {
         this.name = name;
         this.businessName = businessName;
         this.website = website;
         this.phoneNumber = phoneNumber;
+        this.careType= careType;
     }
 
     public int getId() {
         return id;
     }
 
-    public int getUserId() {
-        return userId;
+//    public User getUser() {
+//        return user;
+//    }
+
+    public String getCareType() {
+        return careType;
+    }
+
+    public void setCareType(String careType) {
+        this.careType = careType;
     }
 
     public String getName() {

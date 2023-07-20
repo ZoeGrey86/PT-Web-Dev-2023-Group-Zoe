@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<h1>IT GO HERE</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Care Professionals</th>
+    </tr>
+    </thead>
+    <tr th:each="professional : ${professionals}">
+        <td><a th:text="${professional.name}" th:href="@{'/professionals/view/ + ${professional.id}"></a></td>
+    </tr>
+
+</table>
+
+</body>
+
+</html>

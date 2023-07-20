@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+
+<h1>Add Shit Here</h1>
+<form action= "/professionals/add" method="post" style="max-width:600px;">
+    <div class="form-group">
+        <label th:for="name">Professional Name</label>
+        <input class="form-control" type ="text"/>
+<!--        <span th:errors="${employer.name}" class="error"></span>-->
+    </div>
+
+    <div class="form-group">
+        <label th:for="careType">Care Type</label>
+        <input class="form-control" th:field="${careType}" />
+<!--        <span th:errors="${employer.location}" class="error"></span>-->
+    </div>
+
+    <input type="submit" value="Add Professional" />
+</form>
+
+</body>
+
+</html>
