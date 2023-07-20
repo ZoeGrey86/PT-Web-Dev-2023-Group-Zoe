@@ -2,6 +2,7 @@ package org.petrax.controllers;
 import org.petrax.data.PetProfileRepository;
 import org.petrax.models.PetProfile;
 import org.petrax.models.PetType;
+import org.petrax.models.dto.PetProfileDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,6 +52,7 @@ public class PetProfileController {
 
         newPet.setPetType(PetType.valueOf(petType.toUpperCase()));
         petProfileRepository.save(newPet);
+        PetProfileDTO petProfileDTO = new PetProfileDTO();
         return "petProfile/addNewPetSuccess";
     }
 
