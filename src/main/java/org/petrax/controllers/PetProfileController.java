@@ -26,7 +26,7 @@ public class PetProfileController {
     @GetMapping
     public String displayAllPets(Model model) {
         model.addAttribute("title", "All Pets");
-        model.addAttribute("pets", petProfileRepository.findAll());
+        model.addAttribute("petProfile", petProfileRepository.findAll());
         return "petProfile/index";
     }
 
@@ -49,7 +49,7 @@ public class PetProfileController {
 
         newPet.setPetType(PetType.valueOf(petType.toUpperCase()));
         petProfileRepository.save(newPet);
-        return "redirect:/petProfile/addNewPetSuccess";
+        return "redirect:/addNewPetSuccess";
     }
 
 
@@ -62,7 +62,7 @@ public class PetProfileController {
     @GetMapping("deletePet")
     public String displayDeletePetForm(Model model) {
         model.addAttribute("title", "Delete Pet");
-        model.addAttribute("pets", petProfileRepository.findAll());
+        model.addAttribute("petProfile", petProfileRepository.findAll());
         return "petProfile/deletePet";
     }
 
