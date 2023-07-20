@@ -5,6 +5,7 @@ import org.petrax.models.PetType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -36,11 +37,13 @@ public class PetProfileController {
         return "petProfile/addNewPet";
     }
 
+
     @PostMapping("/addNewPet")
     public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
+                                       BindingResult result,
                                        @RequestParam String petType,
-                                       Errors errors, Model model) {
-        if (errors.hasErrors()) {
+                                       Model model) {
+        if (result.hasErrors()) {
             model.addAttribute("title", "Add New Pet");
             return "petProfile/addNewPet";
         }
@@ -49,6 +52,21 @@ public class PetProfileController {
         petProfileRepository.save(newPet);
         return "redirect:/addNewPetSuccess";
     }
+
+
+//    @PostMapping("/addNewPet")
+//    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
+//                                       @RequestParam String petType,
+//                                       Errors errors, Model model) {
+//        if (errors.hasErrors()) {
+//            model.addAttribute("title", "Add New Pet");
+//            return "petProfile/addNewPet";
+//        }
+//
+//        newPet.setPetType(PetType.valueOf(petType.toUpperCase()));
+//        petProfileRepository.save(newPet);
+//        return "redirect:/addNewPetSuccess";
+//    }
 
 
     @GetMapping("addNewPetSuccess")

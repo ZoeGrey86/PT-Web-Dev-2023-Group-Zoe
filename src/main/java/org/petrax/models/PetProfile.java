@@ -1,4 +1,6 @@
 package org.petrax.models;
+import org.springframework.validation.annotation.Validated;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,6 +13,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
+@Validated
 public class PetProfile {
 
     //private fields petId, name, breed, age, weight, birthday, medications, allergies, microchip number, and diagnoses
