@@ -146,7 +146,7 @@ public class PetProfile {
         return petType;
     }
 
-    public void setPetType(PetType type) {
+    public void setPetType(PetType petType) {
         this.petType = petType;
     }
 

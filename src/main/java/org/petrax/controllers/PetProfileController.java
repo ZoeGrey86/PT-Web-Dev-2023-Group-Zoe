@@ -6,56 +6,102 @@ import org.petrax.models.dto.PetProfileDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("petProfile")
+@RequestMapping("/petProfile")
 public class PetProfileController {
 
     private final PetProfileRepository petProfileRepository;
 
-    //Refresher: @Autowired annotation specifies that SB should auto-populate this field.
-    //This is a dependency injection, what happens is the Autowired code tells SB we need a PetProfileRepository object
     @Autowired
-    public PetProfileController(PetProfileRepository petProfileRepository) {this.petProfileRepository = petProfileRepository;}
-
-
-    @GetMapping
-    public String displayAllPets(Model model) {
-        model.addAttribute("title", "All Pets");
-        model.addAttribute("petProfile", petProfileRepository.findAll());
-        return "petProfile/index";
+    public PetProfileController(PetProfileRepository petProfileRepository) {
+        this.petProfileRepository = petProfileRepository;
     }
 
-    @GetMapping("addNewPet")
+    @GetMapping("/addNewPet")
     public String displayAddNewPetForm(Model model) {
         model.addAttribute("title", "Add New Pet");
         model.addAttribute(new PetProfile());
-//        model.addAttribute("petProfile", petProfileRepository.findAll());
         return "petProfile/addNewPet";
     }
 
-
-    //THIS CODE ALLOWS FORM TO BE SUBMIT, STILL NOT ON SQL
+    @GetMapping("/addNewPetSuccess")
+    public String showSuccessPage(Model model) {
+        model.addAttribute("title", "New Pet Added");
+        return "petProfile/addNewPetSuccess.html";
+    }
     @PostMapping("/addNewPet")
-    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
-                                       BindingResult result,
-                                       @RequestParam String petType,
+    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet, Errors errors,
                                        Model model) {
-        if (result.hasErrors()) {
+        if (errors.hasErrors()) {
             model.addAttribute("title", "Add New Pet");
             return "petProfile/addNewPet";
         }
 
-        newPet.setPetType(PetType.valueOf(petType.toUpperCase()));
+
         petProfileRepository.save(newPet);
-        PetProfileDTO petProfileDTO = new PetProfileDTO();
-        return "petProfile/addNewPetSuccess";
+        return "redirect:/petProfile/addNewPetSuccess.html"; // Redirect to the success page
     }
 
+
+
+
+//@Controller
+//@RequestMapping("petProfile")
+//public class PetProfileController {
+//
+//    @Autowired
+//    private final PetProfileRepository petProfileRepository;
+//
+//    //Refresher: @Autowired annotation specifies that SB should auto-populate this field.
+//    //This is a dependency injection, what happens is the Autowired code tells SB we need a PetProfileRepository object
+//
+//    public PetProfileController(PetProfileRepository petProfileRepository) {this.petProfileRepository = petProfileRepository;}
+//
+//
+//    @GetMapping
+//    public String displayAllPets(Model model) {
+//        model.addAttribute("title", "All Pets");
+//        model.addAttribute("petProfile", petProfileRepository.findAll());
+//        return "petProfile/index";
+//    }
+//
+//    @GetMapping("addNewPet")
+//    public String displayAddNewPetForm(Model model) {
+//        model.addAttribute("title", "Add New Pet");
+//        model.addAttribute(new PetProfile());
+////        model.addAttribute("petProfile", petProfileRepository.findAll());
+//        return "petProfile/addNewPet";
+//    }
+//
+//
+//    //THIS CODE ALLOWS FORM TO BE SUBMIT, STILL NOT ON SQL
+//    @PostMapping("/addNewPet")
+//    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
+//                                       BindingResult result,
+//                                       @RequestParam String petType,
+//                                       Model model) {
+//        if (result.hasErrors()) {
+//            model.addAttribute("title", "Add New Pet");
+//            return "petProfile/addNewPet";
+//        }
+//
+//        newPet.setPetType(PetType.valueOf(petType.toUpperCase()));
+//        petProfileRepository.save(newPet);
+//        PetProfileDTO petProfileDTO = new PetProfileDTO();
+//        petProfileDTO.setPetProfile(newPet);
+//        model.addAttribute("petProfileDTO", petProfileDTO);
+//        return "petProfile/addNewPetSuccess.html";
+//    }
+//
+//    @GetMapping("/addNewPetSuccess")
+//    public String showSuccessPage(Model model) {
+//        model.addAttribute("title", "New Pet Added");
+//        return "petProfile/addNewPetSuccess.html";
+//    }
 
 //    @PostMapping("/addNewPet")
 //    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
@@ -71,12 +117,6 @@ public class PetProfileController {
 //        return "redirect:/addNewPetSuccess";
 //    }
 
-
-    @GetMapping("/addNewPetSuccess")
-    public String showSuccessPage(Model model) {
-        model.addAttribute("title", "New Pet Added");
-        return "petProfile/addNewPetSuccess.html";
-    }
 
     @GetMapping("deletePet")
     public String displayDeletePetForm(Model model) {
