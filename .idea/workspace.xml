@@ -7,10 +7,9 @@
     <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--working on sql connection issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/userForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/addNewPet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPetSuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/addNewPetSuccess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/addNewPet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/addNewPetSuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPetSuccess.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,17 +110,24 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static/petProfile" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.PETrax [bootRun]">
     <configuration name="PETrax [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
+        <option name="env">
+          <map>
+            <entry key="password" value="Liftoff123" />
+            <entry key="username" value="petrax" />
+          </map>
+        </option>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -258,6 +264,13 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.PETrax [bootRun]" />
+      <item itemvalue="Gradle.PETraxTests" />
+      <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
+      <item itemvalue="Gradle.UserTest" />
+      <item itemvalue="Gradle.UserTest.testUserConstructorAndGetters" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.PETrax [bootRun]" />
@@ -452,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689883969318</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Tayler--working on sql connection issue">
+      <created>1689884542429</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1689884542429</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

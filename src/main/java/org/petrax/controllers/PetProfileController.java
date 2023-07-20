@@ -38,6 +38,7 @@ public class PetProfileController {
     }
 
 
+    //THIS CODE ALLOWS FORM TO BE SUBMIT, STILL NOT ON SQL
     @PostMapping("/addNewPet")
     public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
                                        BindingResult result,
@@ -50,7 +51,7 @@ public class PetProfileController {
 
         newPet.setPetType(PetType.valueOf(petType.toUpperCase()));
         petProfileRepository.save(newPet);
-        return "redirect:/addNewPetSuccess";
+        return "petProfile/addNewPetSuccess";
     }
 
 
@@ -69,10 +70,10 @@ public class PetProfileController {
 //    }
 
 
-    @GetMapping("addNewPetSuccess")
+    @GetMapping("/addNewPetSuccess")
     public String showSuccessPage(Model model) {
         model.addAttribute("title", "New Pet Added");
-        return "petProfile/addNewPetSuccess";
+        return "petProfile/addNewPetSuccess.html";
     }
 
     @GetMapping("deletePet")
