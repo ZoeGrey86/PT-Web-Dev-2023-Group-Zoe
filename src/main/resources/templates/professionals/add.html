@@ -16,23 +16,23 @@
 
     <div class="form-group">
         <label th:for="name">Professional Name</label>
-        <input class="form-control" type ="text" th:field="${name}" />
+        <input id="name" name="name" class="form-control" type="text">
     </div>
     <div class="form-group">
         <label th:for="businessName">Business Name</label>
-        <input class="form-control" type ="text" th:field="${businessName}" />
+        <input id="businessName" name="businessName" class="form-control" type="text">
     </div>
     <div class="form-group">
         <label th:for="website">Website</label>
-        <input class="form-control" type ="text" th:field="${website}" />
+        <input id="website" name="website" class="form-control" type="text">
     </div>
     <div class="form-group">
-        <label th:for="phoneNumber">Website</label>
-        <input class="form-control" type ="text" th:field="${phoneNumber}" />
+        <label th:for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" name="phoneNumber" class="form-control" type="text">
     </div>
     <div class="form-group">
         <label th:for="careType">Care Type</label>
-        <input class="form-control" th:field="${careType}" />
+        <input id="careType" name="careType" class="form-control" type="text">
         <!--        <span th:errors="${employer.location}" class="error"></span>-->
     </div>
 

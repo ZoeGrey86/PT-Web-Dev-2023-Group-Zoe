@@ -27,13 +27,13 @@ public class CareProfController {
     }
 
     @GetMapping("add")
-    public String displayAddProfessionalsForm (@ModelAttribute @Valid CareProfessional newProfessional, Model model){
-        careProfRepository.save(newProfessional);
+    public String displayAddProfessionalsForm (Model model){
+        model.addAttribute("professional", new CareProfessional());
         return "professionals/add";
     }
     @PostMapping("add")
     public String processAddProfessionalsForm (@ModelAttribute @Valid CareProfessional newProfessional, Model model){
         careProfRepository.save(newProfessional);
-        return "redirect :";
+        return "redirect:";
     }
 }
