@@ -43,19 +43,19 @@ public class PetProfile {
     @NotNull(message = "Age is required")
     private Date birthdate;
 
-    @NotNull(message = "Enter N/A if not applicable")
+    @NotNull(message = "Enter None if not applicable")
     @Size(max = 500, message = "Medications too long!")
     private String medication;
 
-    @NotNull(message = "Enter N/A if not applicable")
+    @NotNull(message = "Enter None if not applicable")
     @Size(max = 500, message = "Allergies too long!")
     private String allergy;
 
-    @NotNull(message = "Enter N/A if not applicable")
+    @NotNull(message = "Enter None if not applicable")
     @Size(max = 500, message = "Microchip number too long!")
     private String microchip; //Some microchip #s are alpha-numeric, so string not double
 
-    @NotNull(message = "Enter N/A if not applicable")
+    @NotNull(message = "Enter None if not applicable")
     @Size(max = 500, message = "Diagnoses too long!")
     private String diagnoses;
 
