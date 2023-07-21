@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Controller
 // Map all requests to /petProfile
-@RequestMapping("/petProfile")
+@RequestMapping("petProfile")
 public class PetProfileController {
 
     //Refresher: @Autowired annotation specifies that SB should auto-populate this field.
@@ -20,10 +20,14 @@ public class PetProfileController {
     @Autowired
     public PetProfileRepository petProfileRepository;
 
-    @GetMapping("/addNewPet")
+    @GetMapping
+    public String displayPetIndex(){return "petProfile/index";}
+
+    @GetMapping("addNewPet")
     public String displayAddNewPetForm(Model model) {
         model.addAttribute("Add New Pet", "Add New Pet");
         model.addAttribute("petProfileDTO", new PetProfileDTO()); // Create a new PetProfileDTO instance
+        model.addAttribute(new PetProfile());
         return "petProfile/addNewPet";
     }
 
@@ -34,7 +38,7 @@ public class PetProfileController {
     }
 
     @PostMapping("/addNewPet")
-    public String processAddNewPetForm(@ModelAttribute @Valid PetProfileDTO petProfileDTO,
+    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
                                        Errors errors,
                                        Model model) {
         // Check if there are any validation errors
@@ -44,7 +48,7 @@ public class PetProfileController {
             return "petProfile/addNewPet"; // Return the addNewPet view to show the form again
         }
         // If there are no errors, extract the PetProfile object from the PetProfileDTO
-        PetProfile newPet = petProfileDTO.getPetProfile();
+        //PetProfile newPet = petProfileDTO.getPetProfile();
         // Save the newPet object to the database using the petProfileRepository
         petProfileRepository.save(newPet);
         // Redirect to the success page
@@ -93,3 +97,4 @@ public class PetProfileController {
     }
 
 }
+

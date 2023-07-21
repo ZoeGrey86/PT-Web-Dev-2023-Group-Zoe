@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--edited PetProfileController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/users/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/users/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/users/userForm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,9 +116,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/petProfile" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/users" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/petProfile" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.PETrax [bootRun]">
@@ -499,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689960170013</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Tayler--edited PetProfileController">
+      <created>1689967282354</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1689967282354</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -27,7 +27,7 @@ public class PetProfile {
 
     //Enum class PetType
 //    @NotNull(message = "Must select pet type")
-    private PetType petType;
+    private Enum petType;
 
 //    @NotBlank(message = "Breed is required")
 //    @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
@@ -63,7 +63,7 @@ public class PetProfile {
     //public constructor used to instantiate an object
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
-    public PetProfile(String name, PetType petType, String breed, double age, double weight, Date birthdate,
+    public PetProfile(String name, Enum petType, String breed, double age, double weight, Date birthdate,
                String medication, String allergy, String microchip, String diagnoses) {
         this.name = name;
         this.petType = petType; //enum declaration
@@ -142,11 +142,11 @@ public class PetProfile {
         this.diagnoses = diagnoses;
     }
 
-    public PetType getPetType() {
+    public Enum getPetType() {
         return petType;
     }
 
-    public void setPetType(PetType petType) {
+    public void setPetType(Enum petType) {
         this.petType = petType;
     }
 
