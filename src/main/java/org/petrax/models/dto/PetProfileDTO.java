@@ -19,11 +19,11 @@ public class PetProfileDTO {
         return petProfile;
     }
 
+    public void setPetProfile(PetProfile petProfile) {this.petProfile = petProfile;}
+
     public PetType getPetType() {
         return petType;
     }
-
-    public void setPetProfile(PetProfile petProfile) {this.petProfile = petProfile;}
 
     public void setPetType(PetType petType) {this.petType = petType;}
 }
