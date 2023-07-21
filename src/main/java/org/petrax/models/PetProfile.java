@@ -21,42 +21,42 @@ public class PetProfile {
     @GeneratedValue
     private int petId;
 
-    @NotBlank(message = "Name is required")
-    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
+//    @NotBlank(message = "Name is required")
+//    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
 
     //Enum class PetType
-    @NotNull(message = "Must select pet type")
+//    @NotNull(message = "Must select pet type")
     private PetType petType;
 
-    @NotBlank(message = "Breed is required")
-    @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
+//    @NotBlank(message = "Breed is required")
+//    @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
     private String breed;
 
-    @NotNull(message = "Age is required")
+//    @NotNull(message = "Age is required")
     private Double age;
 
-    @NotNull(message = "Weight is required")
+//    @NotNull(message = "Weight is required")
     private Double weight;
 
-    @Past(message = "Birthdate must be in the past")
-    @NotNull(message = "Age is required")
+//    @Past(message = "Birthdate must be in the past")
+//    @NotNull(message = "Age is required")
     private Date birthdate;
 
-    @NotNull(message = "Enter None if not applicable")
-    @Size(max = 500, message = "Medications too long!")
+//    @NotNull(message = "Enter None if not applicable")
+//    @Size(max = 500, message = "Medications too long!")
     private String medication;
 
-    @NotNull(message = "Enter None if not applicable")
-    @Size(max = 500, message = "Allergies too long!")
+//    @NotNull(message = "Enter None if not applicable")
+//    @Size(max = 500, message = "Allergies too long!")
     private String allergy;
 
-    @NotNull(message = "Enter None if not applicable")
-    @Size(max = 500, message = "Microchip number too long!")
+//    @NotNull(message = "Enter None if not applicable")
+//    @Size(max = 500, message = "Microchip number too long!")
     private String microchip; //Some microchip #s are alpha-numeric, so string not double
 
-    @NotNull(message = "Enter None if not applicable")
-    @Size(max = 500, message = "Diagnoses too long!")
+//    @NotNull(message = "Enter None if not applicable")
+//    @Size(max = 500, message = "Diagnoses too long!")
     private String diagnoses;
 
 
