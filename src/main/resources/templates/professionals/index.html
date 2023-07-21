@@ -17,7 +17,7 @@
     </tr>
     </thead>
     <tr th:each="professional : ${professionals}">
-        <td><a th:text="${professional.name}" th:href="@{'/professionals/view/ + ${professional.id}"></a></td>
+        <td th:text="${professional.name} + ${professional.id}"></td>
     </tr>
 
 </table>

@@ -5,10 +5,7 @@ import org.petrax.models.CareProfessional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -34,6 +31,25 @@ public class CareProfController {
     @PostMapping("add")
     public String processAddProfessionalsForm (@ModelAttribute @Valid CareProfessional newProfessional, Model model){
         careProfRepository.save(newProfessional);
+        return "redirect:";
+    }
+
+    @GetMapping("delete")
+    public String displayDeleteEventForm(Model model) {
+        model.addAttribute("title", "Delete Events");
+        model.addAttribute("professionals", careProfRepository.findAll());
+        return "professionals/delete";
+    }
+
+    @PostMapping("delete")
+    public String processDeleteEventsForm(@RequestParam(required = false) int[] professionalIds) {
+
+        if (professionalIds != null) {
+            for (int id : professionalIds) {
+                careProfRepository.deleteById(id);
+            }
+        }
+
         return "redirect:";
     }
 }
