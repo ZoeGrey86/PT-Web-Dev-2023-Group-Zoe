@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8"/>
     <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
 
@@ -17,6 +13,7 @@
     <div class="form-group">
         <label th:for="name">Professional Name</label>
         <input id="name" name="name" class="form-control" type="text">
+<!--        <span th:errors="${professional.name}" class="error"></span>-->
     </div>
     <div class="form-group">
         <label th:for="businessName">Business Name</label>
@@ -29,11 +26,12 @@
     <div class="form-group">
         <label th:for="phoneNumber">Phone Number</label>
         <input id="phoneNumber" name="phoneNumber" class="form-control" type="text">
+<!--        <span th:errors="${professional.phoneNumber}" class="error"></span>-->
     </div>
     <div class="form-group">
         <label th:for="careType">Care Type</label>
         <input id="careType" name="careType" class="form-control" type="text">
-        <!--        <span th:errors="${employer.location}" class="error"></span>-->
+        <span th:errors="${professional.careType}" class="error"></span>
     </div>
 
 

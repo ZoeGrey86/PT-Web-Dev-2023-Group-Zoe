@@ -5,6 +5,7 @@ import org.petrax.models.CareProfessional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -18,7 +19,7 @@ public class CareProfController {
 
     @GetMapping
     public String displayAllProfessionals (Model model) {
-        model.addAttribute("title", "Care Professionals");
+        model.addAttribute("title", "My Care Professionals");
         model.addAttribute("professionals", careProfRepository.findAll());
         return "professionals/index";
     }
@@ -29,7 +30,13 @@ public class CareProfController {
         return "professionals/add";
     }
     @PostMapping("add")
-    public String processAddProfessionalsForm (@ModelAttribute @Valid CareProfessional newProfessional, Model model){
+    public String processAddProfessionalsForm (@ModelAttribute @Valid CareProfessional newProfessional, Errors errors, Model model){
+        if(errors.hasErrors()) {
+            System.out.println("error found");
+            model.addAttribute("title", "Add New Professional");
+            model.addAttribute(new CareProfessional());
+            return "professionals/add";
+        }
         careProfRepository.save(newProfessional);
         return "redirect:";
     }
