@@ -31,7 +31,6 @@ public class User {
     private String username;
     private String address;
 
-    private UserType type;
 
     public User () {
 
@@ -42,7 +41,7 @@ public class User {
         this.contactEmail = contactEmail;
         this.username = username;
         this.address = address;
-        this.type = type;
+
     }
 
 
@@ -85,13 +84,6 @@ public class User {
         this.address = address;
 
     }
-    public UserType getType() {
-        return type;
-    }
-
-    public void setType(UserType type) {
-        this.type = type;
-    }
 
     public int getId() {
         return id;
@@ -108,7 +100,6 @@ public class User {
                 ", contactEmail='" + contactEmail + '\'' +
                 ", username='" + username + '\'' +
                 ", address='" + address + '\'' +
-                ", type=" + type +
                 '}';
         }
 

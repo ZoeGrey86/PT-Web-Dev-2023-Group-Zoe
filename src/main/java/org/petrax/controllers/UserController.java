@@ -46,13 +46,13 @@ public class UserController {
         newUser.setAddress(newUser.getAddress());
 
         userRepository.save(newUser);
-        return "redirect:/success.html"; // Redirect to the success page
+        return "redirect:success"; // Redirect to the success page
     }
 
     @GetMapping("success")
     public String showSuccessPage(Model model) {
         model.addAttribute("title", "Registration Successful");
-        return "users/success.html";
+        return "users/success";
     }
 
     @GetMapping("delete")
