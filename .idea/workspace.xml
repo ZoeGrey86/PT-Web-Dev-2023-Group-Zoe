@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Major Changes to validation structure">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/AbstractEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Combining user class and authentication controller, some forms still need to be fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/SignUpRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/SignUpRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/SignUpRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/AbstractEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/LoginFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/LoginFormDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +95,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.petrax.models.dto" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\LaunchCode\Documents\JavaPractice\PT-Web-Dev-2023-Group-Zoe\src\main\resources\static" />
     </key>
@@ -289,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689736160279</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Combining user class and authentication controller, some forms still need to be fixed">
+      <option name="closed" value="true" />
+      <created>1689996883702</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689996883702</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -298,7 +298,8 @@
     <MESSAGE value="SignUpRepository Added" />
     <MESSAGE value="validation back end complete" />
     <MESSAGE value="Major Changes to validation structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Major Changes to validation structure" />
+    <MESSAGE value="Combining user class and authentication controller, some forms still need to be fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Combining user class and authentication controller, some forms still need to be fixed" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

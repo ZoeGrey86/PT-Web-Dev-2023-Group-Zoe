@@ -29,7 +29,7 @@ public class User {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
     @NotNull
-    private String username;
+    public String username;
 
     private String password;
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

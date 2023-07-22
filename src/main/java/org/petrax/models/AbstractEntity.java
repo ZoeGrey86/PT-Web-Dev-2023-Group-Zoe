@@ -9,7 +9,7 @@ import java.util.Objects;
 public class AbstractEntity {
     @Id
     @GeneratedValue
-    private int id;
+    public int id;
 
     public int getId() {return id;}
     @Override
