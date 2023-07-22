@@ -2,22 +2,62 @@ package org.petrax.models.dto;
 
 public class RegisterFormDTO {
     public String getUsername() {
-        return null;
+        return getUsername();
     }
 
     public String getPassword() {
-        return null;
+        return getPassword();
     }
 
     public String getVerifyPassword() {
-        return null;
+        return getVerifyPassword();
+    }
+
+    public String getName() {
+        return getName();
+    }
+
+    public String getDescription() {
+        return getDescription();
+    }
+
+    public String getContactEmail() {
+        return getContactEmail();
     }
 
     public class RegisterFormDto extends LoginFormDTO {
+        private String name;
+        private String description;
 
+        private String contactEmail;
         private String username;
         private String password;
         private String verifyPassword;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public String getContactEmail() {
+            return contactEmail;
+        }
+
+        public void setContactEmail(String contactEmail) {
+            this.contactEmail = contactEmail;
+        }
+
 
         public String getUsername() {
             return username;

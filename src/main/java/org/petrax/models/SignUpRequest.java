@@ -7,20 +7,19 @@ import javax.persistence.GeneratedValue;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 @Entity
-public class SignUpRequest {
+public class SignUpRequest extends AbstractEntity{
 
-    @Id
-    @GeneratedValue
-    private int id;
     @NotBlank(message = "Name is required")
     private String name;
-    private String username;
+    @NotBlank
+    public String username;
     private String password;
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email format")
     private String email;
 
     public SignUpRequest(String name, String username,String password) {
+        super();
         this.name = name;
         this.username = username;
         this.password = password;
@@ -33,14 +32,9 @@ public class SignUpRequest {
     public SignUpRequest(String username, String password) {
     }
 
-    public int getId() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }

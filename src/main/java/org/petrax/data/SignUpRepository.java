@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SignUpRepository extends CrudRepository<SignUpRequest, Integer>
-{SignUpRequest findByUsername(String username);
+{
 
 }

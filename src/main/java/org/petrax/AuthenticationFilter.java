@@ -1,9 +1,7 @@
 package org.petrax;
 
 import org.petrax.controllers.SignUpController;
-import org.petrax.data.SignUpRepository;
 import org.petrax.data.UserRepository;
-import org.petrax.models.SignUpRequest;
 import org.petrax.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -20,8 +18,6 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    SignUpRepository signUpRepository;
     private static final List<String> whitelist = Arrays.asList("/login", "/register", "/logout", "/css");
     private static boolean isWhitelisted(String path) {
         for (String pathRoot : whitelist) {
@@ -36,8 +32,11 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
                              HttpServletResponse response,
                              Object handler) throws IOException {
 
+        if (isWhitelisted(request.getRequestURI())) {
+            return true;
+        }
         HttpSession session = request.getSession();
-        SignUpRequest user = SignUpController.getUserFromSession(session);
+        User user = SignUpController.getUserFromSession(session);
 
         // The user is logged in
         if (user != null) {

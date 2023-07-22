@@ -5,9 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 import org.petrax.models.SignUpRequest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 public class User {
@@ -26,18 +28,31 @@ public class User {
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
+    @NotNull
+    private String username;
 
+    private String password;
+    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
     private UserType type;
 
-    public User(String name, String description, String contactEmail, UserType type) {
+    public User() {
+    }
+    public User(String name, String description, String contactEmail, String username, String password) {
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
-        this.type = type;
+        this.username = username;
+        this.password = encoder.encode(password);
+
     }
 
-    public User() {
-
+    public User(String name, String description, String contactEmail, UserType type, String username, String password) {
+        this.name = name;
+        this.description = description;
+        this.contactEmail = contactEmail;
+        this.username = username;
+        this.password = encoder.encode(password);
+        this.type = type;
     }
 
     public String getName() {
@@ -92,5 +107,9 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public boolean isMatchingPassword(String password) {
+        return false;
     }
 }

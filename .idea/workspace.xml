@@ -4,23 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="validation back end complete">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/AuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/WebApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/LoginFormDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Major Changes to validation structure">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/AbstractEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/AuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/SignUpRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/SignUpRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/SignUpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/authentication/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/authentication/menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/authentication/signIn.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/authentication/signInGoogle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/authentication/signUp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/LoginFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/LoginFormDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +105,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LaunchCode\Documents\JavaPractice\PT-Web-Dev-2023-Group-Zoe\src\main\resources\static" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.PETrax [bootRun]">
     <configuration name="PETrax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.petrax.PETrax" />
@@ -122,10 +126,16 @@
     </configuration>
     <configuration name="PETrax [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
+        <option name="env">
+          <map>
+            <entry key="Password" value="LiftOff123" />
+            <entry key="Username" value="petrax" />
+          </map>
+        </option>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -214,6 +224,13 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.PETrax" />
+      <item itemvalue="Gradle.PETrax [bootRun]" />
+      <item itemvalue="Gradle.PETraxTests" />
+      <item itemvalue="Gradle.PETraxTests.testHelloWorldEndpoint" />
+      <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.PETrax [bootRun]" />
@@ -264,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689464514066</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Major Changes to validation structure">
+      <option name="closed" value="true" />
+      <created>1689736160279</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689736160279</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -272,7 +297,8 @@
     <MESSAGE value="beginnings of Thymeleaf and Angular" />
     <MESSAGE value="SignUpRepository Added" />
     <MESSAGE value="validation back end complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation back end complete" />
+    <MESSAGE value="Major Changes to validation structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Major Changes to validation structure" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -1,11 +1,12 @@
 package org.petrax.controllers;
 
-import org.petrax.data.SignUpRepository;
-import org.petrax.models.SignUpRequest;
+
+import org.petrax.data.UserRepository;
 import org.petrax.models.User;
 import org.petrax.models.dto.LoginFormDTO;
 import org.petrax.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
@@ -15,20 +16,23 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class SignUpController {
     @Autowired
-    private static SignUpRepository signUpRepository;
+    static
+    UserRepository userRepository;
+
+    RegisterFormDTO registerFormDTO;
 
     private static final String userSessionKey = "user";
 
-    public static SignUpRequest getUserFromSession(HttpSession session) {
+    public static User getUserFromSession(HttpSession session) {
         Integer userId = (Integer) session.getAttribute(userSessionKey);
         if (userId == null) {
             return null;
         }
 
-        Optional<SignUpRequest> user = signUpRepository.findById(userId);
+        Optional<User> user = userRepository.findById(userId);
 
         if (user.isEmpty()) {
             return null;
@@ -37,7 +41,7 @@ public class SignUpController {
         return user.get();
     }
 
-    private static void setUserInSession(HttpSession session, SignUpRequest user) {
+    private static void setUserInSession(HttpSession session, User user) {
         session.setAttribute(userSessionKey, user.getId());
     }
 
@@ -58,7 +62,7 @@ public class SignUpController {
             return "register";
         }
 
-        SignUpRequest existingUser = signUpRepository.findByUsername(registerFormDTO.getUsername());
+        User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
 
         if (existingUser != null) {
             errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
@@ -74,8 +78,8 @@ public class SignUpController {
             return "register";
         }
 
-        SignUpRequest newUser = new SignUpRequest(registerFormDTO.getUsername(), registerFormDTO.getPassword());
-        signUpRepository.save(newUser);
+        User newUser = new User(registerFormDTO.getName(),registerFormDTO.getDescription(), registerFormDTO.getContactEmail(), registerFormDTO.getUsername(), registerFormDTO.getPassword());
+        userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
 
         return "redirect:";
@@ -98,7 +102,7 @@ public class SignUpController {
             return "login";
         }
 
-        SignUpRequest theUser = signUpRepository.findByUsername(loginFormDTO.getUsername());
+        User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
 
         if (theUser == null) {
             errors.rejectValue("username", "user.invalid", "The given username does not exist");
@@ -115,8 +119,8 @@ public class SignUpController {
         }
 
         setUserInSession(request.getSession(), theUser);
-
-        return "redirect:";
+        model.addAttribute("user", theUser.username);
+        return "/success";
     }
     @GetMapping("/logout")
     public String logout(HttpServletRequest request){
