@@ -8,12 +8,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Validated
+//@Validated
 public class PetProfile {
 
     //private fields petId, name, breed, age, weight, birthday, medications, allergies, microchip number, and diagnoses
@@ -40,24 +39,28 @@ public class PetProfile {
     private Double weight;
 
 //    @Past(message = "Birthdate must be in the past")
-//    @NotNull(message = "Age is required")
+//    @NotNull(message = "Birthdate is required")
     private Date birthdate;
 
-//    @NotNull(message = "Enter None if not applicable")
+//    @NotBlank(message = "Enter 'None' if not applicable")
 //    @Size(max = 500, message = "Medications too long!")
     private String medication;
 
-//    @NotNull(message = "Enter None if not applicable")
+//    @NotBlank(message = "Enter 'None' if not applicable")
 //    @Size(max = 500, message = "Allergies too long!")
     private String allergy;
 
-//    @NotNull(message = "Enter None if not applicable")
+//    @NotBlank(message = "Enter 'None' if not applicable")
 //    @Size(max = 500, message = "Microchip number too long!")
     private String microchip; //Some microchip #s are alpha-numeric, so string not double
 
-//    @NotNull(message = "Enter None if not applicable")
+//    @NotBlank(message = "Enter 'None' if not applicable")
 //    @Size(max = 500, message = "Diagnoses too long!")
     private String diagnoses;
+
+
+    //public empty constructor, what the JPA uses to instantiate an object (entity class)
+    public PetProfile() {}
 
 
     //public constructor used to instantiate an object
@@ -78,40 +81,66 @@ public class PetProfile {
     }
 
 
-    //public empty constructor, what the JPA uses to instantiate an object (entity class)
-    public PetProfile() {}
-
 
     //public getters & setters
     //Refresher: Setter methods are used to set the value of a field/property in an object
     //If a field is not meant to be changed once it is set, omit the setter
     //No setter for name, breed, birthdate, microchip, or petId (petId will be auto-generated)
+    //Added setters to all, trying to resolve sql connection issue
+    public int getPetId() {
+        return petId;
+    }
+
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Enum getPetType() {
+        return petType;
+    }
+
+    public void setPetType(Enum petType) {
+        this.petType = petType;
     }
 
     public String getBreed() {
         return breed;
     }
 
-    public double getAge() {
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public Double getAge() {
         return age;
     }
 
-    public void setAge(double age) {
+    public void setAge(Double age) {
         this.age = age;
     }
 
-    public double getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(Double weight) {
         this.weight = weight;
     }
 
     public Date getBirthdate() {
         return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
     }
 
     public String getMedication() {
@@ -134,6 +163,10 @@ public class PetProfile {
         return microchip;
     }
 
+    public void setMicrochip(String microchip) {
+        this.microchip = microchip;
+    }
+
     public String getDiagnoses() {
         return diagnoses;
     }
@@ -141,15 +174,6 @@ public class PetProfile {
     public void setDiagnoses(String diagnoses) {
         this.diagnoses = diagnoses;
     }
-
-    public Enum getPetType() {
-        return petType;
-    }
-
-    public void setPetType(Enum petType) {
-        this.petType = petType;
-    }
-
 
 
     //public toString method of most relevant/identifying field petId

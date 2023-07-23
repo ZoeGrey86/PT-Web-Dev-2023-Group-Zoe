@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--edited PetProfileController">
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--rearranged html files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetPicUpload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetPicUploadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/users/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/users/success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/users/userForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +56,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="HTML File" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -115,11 +112,11 @@
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/users" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/petProfile" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/users" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/petProfile" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.PETrax [bootRun]">
@@ -512,7 +509,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689967282354</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Tayler--changed stuff with Zoe. The form renders, redirects, and adds to the DB on her computer. Still not working on mine.">
+      <created>1689972377539</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1689972377540</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Tayler--rearranged html files">
+      <created>1689972726087</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1689972726087</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -533,7 +544,9 @@
     <MESSAGE value="Tayler--struggling with form. White label error states validation annotations aren't correct, but they are." />
     <MESSAGE value="Tayler--working on sql connection issue" />
     <MESSAGE value="Tayler--edited PetProfileController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--edited PetProfileController" />
+    <MESSAGE value="Tayler--changed stuff with Zoe. The form renders, redirects, and adds to the DB on her computer. Still not working on mine." />
+    <MESSAGE value="Tayler--rearranged html files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--rearranged html files" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PT_Web_Dev_2023_Group_Zoe$PETrax__bootRun_.ic" NAME="PETrax [bootRun] Coverage Results" MODIFIED="1689865120125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
