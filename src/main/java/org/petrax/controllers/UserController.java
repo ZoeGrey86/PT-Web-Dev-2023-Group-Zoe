@@ -10,15 +10,23 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
+import java.util.List;
 
-@Controller
-@RequestMapping("users")
+@RestController
+@RequestMapping("/api/v1")
 public class UserController {
     private final UserRepository userRepository;
 
     @Autowired
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    //test list all users
+    @GetMapping("/users")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
     }
 
     @GetMapping
@@ -46,14 +54,14 @@ public class UserController {
         newUser.setAddress(newUser.getAddress());
 
         userRepository.save(newUser);
-        return "redirect:/success.html"; // Redirect to the success page
+        return "redirect:success"; // Redirect to the success page
     }
 
 
     @GetMapping("success")
     public String showSuccessPage(Model model) {
         model.addAttribute("title", "Registration Successful");
-        return "users/success.html";
+        return "users/success";
     }
 
     @GetMapping("delete")

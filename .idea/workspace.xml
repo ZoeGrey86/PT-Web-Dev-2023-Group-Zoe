@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--created a photo upload field">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/index.html" afterDir="false" />
+
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPetSuccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPetSuccess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/UserType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/create.html" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +71,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Calendar-Jenn" />
+        
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,25 +101,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tlede/Desktop/LC 101/JAVA/PT-Web-Dev-2023-Group-Zoe/src/main/resources/templates/petProfile&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/jennifer/Desktop/java/LCLiftoff/PT-Web-Dev-2023-Group-Zoe",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/users" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile" />
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/petProfile" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/users" />
@@ -148,7 +150,6 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="PETraxTests" type="GradleRunConfiguration" factoryName="Gradle">
@@ -172,7 +173,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="PETraxTests.testProgramExecution" type="GradleRunConfiguration" factoryName="Gradle">
@@ -196,7 +196,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -244,7 +243,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -378,174 +376,11 @@
       <option name="project" value="LOCAL" />
       <updated>1689639982775</updated>
     </task>
-    <task id="LOCAL-00018" summary="Tayler--editing html template to sync validation from model">
-      <created>1689779270201</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1689779270201</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Tayler--editing controller to fix addNewPetSuccess issue">
-      <created>1689780065628</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1689780065628</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Tayler--editing controller to fix addNewPet issue">
-      <created>1689780607775</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1689780607775</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Tayler--successfully implemented PetType enum class to the path petProfile/addNewPet!">
-      <created>1689785348068</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1689785348068</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Tayler--successfully implemented date feature to the path petProfile/addNewPet!">
-      <created>1689786921240</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1689786921240</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Tayler--struggling with form. White label error states validation annotations aren't correct, but they are.">
-      <created>1689787219557</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1689787219557</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Tayler--edited PetProfileController">
-      <created>1689864663784</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1689864663784</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Tayler--edited PetProfileController">
-      <created>1689866318197</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1689866318197</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Tayler--working on sql connection issue">
-      <created>1689866343858</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1689866343858</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Tayler--working on sql connection issue">
-      <created>1689868476158</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1689868476158</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Tayler--working on sql connection issue">
-      <created>1689869610468</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1689869610468</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Tayler--working on sql connection issue">
-      <created>1689870667116</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1689870667116</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Tayler--working on sql connection issue">
-      <created>1689883969318</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1689883969318</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Tayler--working on sql connection issue">
-      <created>1689884542429</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1689884542429</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Tayler--working on sql connection issue">
-      <created>1689891607579</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1689891607579</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Tayler--working on sql connection issue">
-      <created>1689892547903</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1689892547903</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Tayler--edited PetProfileController">
-      <created>1689958893339</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1689958893340</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Tayler--edited PetProfileController">
-      <created>1689960170013</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1689960170013</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Tayler--edited PetProfileController">
-      <created>1689967282354</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1689967282354</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Tayler--changed stuff with Zoe. The form renders, redirects, and adds to the DB on her computer. Still not working on mine.">
-      <created>1689972377539</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1689972377540</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Tayler--rearranged html files">
-      <created>1689972726087</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1689972726087</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Tayler--made some edits, PetProfile form still not working">
-      <created>1690114739413</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1690114739415</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Tayler--created a photo upload field">
-      <created>1690132849047</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1690132849047</updated>
-    </task>
-    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN" />
       </map>
     </option>
   </component>
