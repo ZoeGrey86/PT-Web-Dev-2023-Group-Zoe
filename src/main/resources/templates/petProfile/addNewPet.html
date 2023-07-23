@@ -9,13 +9,13 @@
 
 <h1>Add New Pet</h1>
 
-<form action="/petProfile/addNewPet" method="post">
+<form action="/petProfile/addNewPet" method="post" onsubmit="formatDate()">
 
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br>
+    <input type="text" id="name" name="name"><br>
 
     <label for="petType">Pet Type:</label>
-    <select id="petType" name="petType" required>
+    <select id="petType" name="petType">
         <option value="CAT">Cat</option>
         <option value="DOG">Dog</option>
         <option value="BIRD">Bird</option>
@@ -25,31 +25,31 @@
     </select><br>
 
     <label for="breed">Breed:</label>
-    <input type="text" id="breed" name="breed" required><br>
+    <input type="text" id="breed" name="breed"><br>
 
     <label for="age">Age:</label>
-    <input type="number" id="age" name="age" required><br>
+    <input type="number" id="age" name="age"><br>
 
     <label for="weight">Weight:</label>
-    <input type="number" id="weight" name="weight" required><br>
+    <input type="number" id="weight" name="weight"><br>
 
     <label for="birthdate">Birthdate:</label>
-    <input type="date" id="birthdate" name="birthdate" required><br>
+    <input type="date" id="birthdate" name="birthdate"><br>
 
     <label for="medication">Medication:</label>
-    <input type="text" id="medication" name="medication" required><br>
+    <input type="text" id="medication" name="medication"><br>
 
     <label for="allergy">Allergy:</label>
-    <input type="text" id="allergy" name="allergy" required><br>
+    <input type="text" id="allergy" name="allergy"><br>
 
     <label for="microchip">Microchip Number:</label>
-    <input type="text" id="microchip" name="microchip" required><br>
+    <input type="text" id="microchip" name="microchip"><br>
 
     <label for="diagnoses">Diagnoses:</label>
-    <input type="text" id="diagnoses" name="diagnoses" required><br>
+    <input type="text" id="diagnoses" name="diagnoses"><br>
 
-    <label for="diagnoses">Photo:</label>
-    <input type="file" id="photo" name="photo" required><br>
+    <label for="petPic">Photo:</label>
+    <input type="file" id="petPic" name="petPic"><br>
 <!--    <input type="submit" value="Upload">-->
 
     <input type="submit" value="Add New Pet">

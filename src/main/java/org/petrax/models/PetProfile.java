@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -29,7 +30,7 @@ public class PetProfile {
 
     //Enum class PetType
 //    @NotNull(message = "Must select pet type")
-    private Enum petType;
+    private PetType petType;
 
 //    @NotBlank(message = "Breed is required")
 //    @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
@@ -43,7 +44,7 @@ public class PetProfile {
 
 //    @Past(message = "Birthdate must be in the past")
 //    @NotNull(message = "Birthdate is required")
-    private Date birthdate;
+    private LocalDate birthdate;
 
 //    @NotBlank(message = "Enter 'None' if not applicable")
 //    @Size(max = 500, message = "Medications too long!")
@@ -69,7 +70,7 @@ public class PetProfile {
     //public constructor used to instantiate an object
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
-    public PetProfile(String name, byte[] petPic, Enum petType, String breed, double age, double weight, Date birthdate,
+    public PetProfile(String name, byte[] petPic, PetType petType, String breed, double age, double weight, LocalDate birthdate,
                String medication, String allergy, String microchip, String diagnoses) {
         this.name = name;
         this.petPic = petPic; //blob SQL type
@@ -115,11 +116,11 @@ public class PetProfile {
         this.name = name;
     }
 
-    public Enum getPetType() {
+    public PetType getPetType() {
         return petType;
     }
 
-    public void setPetType(Enum petType) {
+    public void setPetType(PetType petType) {
         this.petType = petType;
     }
 
@@ -147,11 +148,11 @@ public class PetProfile {
         this.weight = weight;
     }
 
-    public Date getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 

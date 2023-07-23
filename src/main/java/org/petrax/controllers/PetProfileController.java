@@ -38,7 +38,7 @@ public class PetProfileController {
     @GetMapping("/addNewPetSuccess")
     public String showSuccessPage(Model model) {
         model.addAttribute("New Pet Added", "New Pet Added");
-        return "redirect:/addNewPetSuccess"; //do I need .html at the end?
+        return "petProfile/addNewPetSuccess"; //do I need .html at the end?
     }
 
     @PostMapping("/addNewPet")
@@ -46,17 +46,17 @@ public class PetProfileController {
                                        Errors errors,
                                        Model model) {
         // Check if there are any validation errors
-        if (errors.hasErrors()) {
-            // If there are errors, display the form again with error messages
-            model.addAttribute("Add New Pet", "Add New Pet");
-            return "petProfile/addNewPet"; // Return the addNewPet view to show the form again
-        }
+//        if (errors.hasErrors()) {
+//            // If there are errors, display the form again with error messages
+//            model.addAttribute("Add New Pet", "Add New Pet");
+//            return "petProfile/index"; // Return the addNewPet view to show the form again
+//        }
         // If there are no errors, extract the PetProfile object from the PetProfileDTO
         //PetProfile newPet = petProfileDTO.getPetProfile();
         // Save the newPet object to the database using the petProfileRepository
         petProfileRepository.save(newPet);
         // Redirect to the success page
-        return "petProfile/addNewPetSuccess"; //do I need .html at the end?
+        return "redirect:addNewPetSuccess"; //do I need .html at the end?
     }
 
     //Method to display the form for uploading a profile picture
