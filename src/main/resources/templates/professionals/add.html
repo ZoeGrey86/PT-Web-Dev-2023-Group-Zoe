@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+
+<h1>Add Shit Here</h1>
+<form action= "/professionals/add" method="post" style="max-width:600px;">
+
+
+    <div class="form-group">
+        <label th:for="name">Professional Name</label>
+        <input id="name" name="name" class="form-control" type="text">
+<!--        <span th:errors="${professional.name}" class="error"></span>-->
+    </div>
+    <div class="form-group">
+        <label th:for="businessName">Business Name</label>
+        <input id="businessName" name="businessName" class="form-control" type="text">
+    </div>
+    <div class="form-group">
+        <label th:for="website">Website</label>
+        <input id="website" name="website" class="form-control" type="text">
+    </div>
+    <div class="form-group">
+        <label th:for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" name="phoneNumber" class="form-control" type="text">
+<!--        <span th:errors="${professional.phoneNumber}" class="error"></span>-->
+    </div>
+    <div class="form-group">
+        <label th:for="careType">Care Type</label>
+        <input id="careType" name="careType" class="form-control" type="text">
+<!--        <span th:errors="${professional.careType}" class="error"></span>-->
+    </div>
+
+
+    <input type="submit" value="Add Professional" />
+</form>
+
+</body>
+
+</html>

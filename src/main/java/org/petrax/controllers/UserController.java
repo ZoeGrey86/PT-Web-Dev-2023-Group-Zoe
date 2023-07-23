@@ -10,15 +10,23 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
+import java.util.List;
 
-@Controller
-@RequestMapping("users")
+@RestController
+@RequestMapping("/api/v1")
 public class UserController {
     private final UserRepository userRepository;
 
     @Autowired
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    //test list all users
+    @GetMapping("/users")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
     }
 
     @GetMapping

@@ -41,7 +41,6 @@ public class User {
         this.contactEmail = contactEmail;
         this.username = username;
         this.address = address;
-
     }
 
 
