@@ -20,7 +20,10 @@ public class PetProfile {
     @GeneratedValue
     private int petId;
 
-//    @NotBlank(message = "Name is required")
+    private byte[] petPic; // The field to store the uploaded image as a byte array (BLOB)
+
+
+    //    @NotBlank(message = "Name is required")
 //    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
 
@@ -66,9 +69,10 @@ public class PetProfile {
     //public constructor used to instantiate an object
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
-    public PetProfile(String name, Enum petType, String breed, double age, double weight, Date birthdate,
+    public PetProfile(String name, byte[] petPic, Enum petType, String breed, double age, double weight, Date birthdate,
                String medication, String allergy, String microchip, String diagnoses) {
         this.name = name;
+        this.petPic = petPic; //blob SQL type
         this.petType = petType; //enum declaration
         this.breed = breed;
         this.age = age;
@@ -93,6 +97,14 @@ public class PetProfile {
 
     public void setPetId(int petId) {
         this.petId = petId;
+    }
+
+    public byte[] getPetPic() {
+        return petPic;
+    }
+
+    public void setPetPic(byte[] petPic) {
+        this.petPic = petPic;
     }
 
     public String getName() {

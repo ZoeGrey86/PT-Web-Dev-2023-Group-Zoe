@@ -7,7 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.Optional;
 
 @Controller
@@ -54,6 +58,56 @@ public class PetProfileController {
         // Redirect to the success page
         return "petProfile/addNewPetSuccess"; //do I need .html at the end?
     }
+
+    //Method to display the form for uploading a profile picture
+//    @GetMapping("/{petId}/upload")
+//    public String displayUploadForm(@PathVariable int petId, Model model) {
+//        Optional<PetProfile> result = petProfileRepository.findById(petId);
+//
+//        if (result.isEmpty()) {
+//            model.addAttribute("Invalid Pet ID", "Invalid Pet ID: " + petId);
+//            return "petProfile/error"; // Create an "error" template to handle invalid pet IDs
+//        } else {
+//            PetProfile petProfile = result.get();
+//            model.addAttribute("Upload Profile Picture", "Upload Profile Picture for " + petProfile.getName());
+//            model.addAttribute("petProfile", petProfile);
+//            return "petProfile/upload_form";
+//        }
+//    }
+//
+//    //Method to handle the image upload
+//    @PostMapping("/{petId}/upload")
+//    public String handleImageUpload(@PathVariable int petId, @RequestParam("imageFile") MultipartFile imageFile, RedirectAttributes redirectAttributes) {
+//        if (!imageFile.isEmpty()) {
+//            try {
+//                // Perform validation on the image file (size, format, etc.) before saving to the database
+//                imageFile.getSize(); //gets size
+//                // Convert the image data to a byte array
+//                byte[] imageBytes = imageFile.getBytes();
+//
+//                // Save the image data to the pet profile using the petId
+//                Optional<PetProfile> result = petProfileRepository.findById(petId);
+//                if (result.isPresent()) {
+//                    PetProfile petProfile = result.get();
+//                    petProfile.setPetPic(imageBytes);
+//                    petProfileRepository.save(petProfile);
+//                }
+//
+//                // Redirect to the pet profile page after successful upload
+//                redirectAttributes.addFlashAttribute("successMessage", "Image uploaded successfully!");
+//                return "redirect:/petProfile/detail?petId=" + petId;
+////            } catch (IOException e) {
+////                e.printStackTrace();
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        } else {
+//            redirectAttributes.addFlashAttribute("errorMessage", "Please select an image to upload.");
+//        }
+//
+//        // If there's an error, redirect back to the upload form
+//        return "redirect:/petProfile/" + petId + "/upload";
+//    }
 
 
 //----------------------------------------------------------------------------------------------
