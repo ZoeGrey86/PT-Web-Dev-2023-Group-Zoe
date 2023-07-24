@@ -1,0 +1,17 @@
+<!-- /resources/templates/petProfile/upload_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Profile Picture</title>
+</head>
+<body>
+<h2 th:text="${Upload Profile Picture}"></h2>
+<form method="post" action="/petProfile/{petId}/upload" enctype="multipart/form-data">
+    <input type="file" name="imageFile" accept="image/*" required>
+    <input type="submit" value="Upload">
+</form>
+<p>
+    <a href="/petProfile/detail?petId=${petProfile.petId}">Back to Pet Profile</a>
+</p>
+</body>
+</html>

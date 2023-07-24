@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Combining user class and authentication controller, some forms still need to be fixed">
+
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/AbstractEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/LoginFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/LoginFormDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/UserType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/userForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/create.html" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +39,17 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="PETrax" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PETrax" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PETrax" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -43,16 +60,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,7 +84,7 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="858750bb-f506-471c-99d7-1d0198c31159" />
+        <option name="accountId" value="38a9269e-27da-4d97-b592-1997f32a2731" />
         <option name="url" value="https://github.com/ZoeGrey86/PT-Web-Dev-2023-Group-Zoe.git" />
       </UrlAndAccount>
     </option>
@@ -82,46 +101,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/LaunchCode/Documents/JavaPractice/LiftOffProject&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/jennifer/Desktop/java/LCLiftoff/PT-Web-Dev-2023-Group-Zoe",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.petrax.models.dto" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\LaunchCode\Documents\JavaPractice\PT-Web-Dev-2023-Group-Zoe\src\main\resources\static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/petProfile" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/users" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.PETrax [bootRun]">
-    <configuration name="PETrax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.petrax.PETrax" />
-      <module name="PETrax.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.petrax.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PETrax [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PETrax [bootRun]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="env">
           <map>
-            <entry key="Password" value="LiftOff123" />
-            <entry key="Username" value="petrax" />
+            <entry key="PASSWORD" value="Liftoff123" />
+            <entry key="USERNAME" value="petrax" />
           </map>
         </option>
         <option name="executionName" />
@@ -141,10 +150,9 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="PETraxTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PETraxTests" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -165,34 +173,9 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="PETraxTests.testHelloWorldEndpoint" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;PETraxTests.testHelloWorldEndpoint&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="PETraxTests.testProgramExecution" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PETraxTests.testProgramExecution" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -213,23 +196,90 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;UserTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;UserTest.testUserConstructorAndGetters&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;UserTest.testUserConstructorAndGetters&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.PETrax" />
       <item itemvalue="Gradle.PETrax [bootRun]" />
       <item itemvalue="Gradle.PETraxTests" />
-      <item itemvalue="Gradle.PETraxTests.testHelloWorldEndpoint" />
       <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
+      <item itemvalue="Gradle.UserTest" />
+      <item itemvalue="Gradle.UserTest.testUserConstructorAndGetters" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PETrax [bootRun]" />
-        <item itemvalue="Gradle.PETraxTests" />
-        <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
-        <item itemvalue="Application.PETrax" />
-        <item itemvalue="Gradle.PETraxTests.testHelloWorldEndpoint" />
+        <item itemvalue="Gradle.UserTest.testUserConstructorAndGetters" />
+        <item itemvalue="Gradle.UserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -249,59 +299,110 @@
       <option name="project" value="LOCAL" />
       <updated>1688223686424</updated>
     </task>
-    <task id="LOCAL-00002" summary="beginnings of Thymeleaf and Angular">
-      <option name="closed" value="true" />
-      <created>1689202051547</created>
+    <task id="LOCAL-00002" summary="initial commit to User branch">
+      <created>1688858000630</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1689202051547</updated>
+      <updated>1688858000630</updated>
     </task>
-    <task id="LOCAL-00003" summary="SignUpRepository Added">
-      <option name="closed" value="true" />
-      <created>1689286450229</created>
+    <task id="LOCAL-00003" summary="Tayler--trying to fix workspace.xml merge issue">
+      <created>1689641034894</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1689286450229</updated>
+      <updated>1689641034895</updated>
     </task>
-    <task id="LOCAL-00004" summary="validation back end complete">
-      <option name="closed" value="true" />
-      <created>1689464514066</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
+    <task id="LOCAL-00009" summary="Tayler--working on addnewpet.html">
+      <created>1689610191069</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1689464514066</updated>
+      <updated>1689610191069</updated>
     </task>
-    <task id="LOCAL-00005" summary="Major Changes to validation structure">
-      <option name="closed" value="true" />
-      <created>1689736160279</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
+    <task id="LOCAL-00010" summary="Tayler--working on addnewpet.html">
+      <created>1689611026098</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1689736160279</updated>
+      <updated>1689611026098</updated>
     </task>
-    <task id="LOCAL-00006" summary="Combining user class and authentication controller, some forms still need to be fixed">
-      <option name="closed" value="true" />
-      <created>1689996883702</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
+    <task id="LOCAL-00011" summary="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear!">
+      <created>1689612046061</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1689996883702</updated>
+      <updated>1689612046061</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00012" summary="Tayler--edited build.gradle file to implement thymeleaf html template, successfully got an Add New Pet button to appear with pop-up!">
+      <created>1689634277070</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689634277070</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up">
+      <created>1689637806904</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1689637806904</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Tayler--path petprofile/addnewpet now has all PetProfile fields, &quot;Add New Pet&quot; button, and a success pop-up">
+      <created>1689638527534</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1689638527535</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Tayler--working on PetPicUpload">
+      <created>1689638882430</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689638882430</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Tayler--trying to fix workspace.xml merge issue">
+      <created>1689639771521</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1689639771521</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Tayler--trying to fix workspace.xml merge issue">
+      <created>1689639982775</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1689639982775</updated>
+    </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <MESSAGE value="beginnings of Thymeleaf and Angular" />
-    <MESSAGE value="SignUpRepository Added" />
-    <MESSAGE value="validation back end complete" />
-    <MESSAGE value="Major Changes to validation structure" />
-    <MESSAGE value="Combining user class and authentication controller, some forms still need to be fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Combining user class and authentication controller, some forms still need to be fixed" />
+    <MESSAGE value="initial commit to User branch" />
+    <MESSAGE value="Tayler--editing html template to sync validation from model" />
+    <MESSAGE value="Tayler--editing controller to fix addNewPetSuccess issue" />
+    <MESSAGE value="Tayler--editing controller to fix addNewPet issue" />
+    <MESSAGE value="Tayler--successfully implemented PetType enum class to the path petProfile/addNewPet!" />
+    <MESSAGE value="Tayler--successfully implemented date feature to the path petProfile/addNewPet!" />
+    <MESSAGE value="Tayler--struggling with form. White label error states validation annotations aren't correct, but they are." />
+    <MESSAGE value="Tayler--working on sql connection issue" />
+    <MESSAGE value="Tayler--edited PetProfileController" />
+    <MESSAGE value="Tayler--changed stuff with Zoe. The form renders, redirects, and adds to the DB on her computer. Still not working on mine." />
+    <MESSAGE value="Tayler--rearranged html files" />
+    <MESSAGE value="Tayler--made some edits, PetProfile form still not working" />
+    <MESSAGE value="Tayler--created a photo upload field" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--created a photo upload field" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PT_Web_Dev_2023_Group_Zoe$PETrax__bootRun_.ic" NAME="PETrax [bootRun] Coverage Results" MODIFIED="1689865120125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

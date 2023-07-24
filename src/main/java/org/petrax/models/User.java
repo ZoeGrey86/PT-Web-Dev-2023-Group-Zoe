@@ -5,11 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
-import org.petrax.models.SignUpRequest;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 public class User {
@@ -17,60 +14,51 @@ public class User {
     @GeneratedValue
     private int id;
 
-
-    @NotBlank(message = "Name is required")
+    @NotBlank(message = "First name is required")
     @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
-    private String name;
+    private String firstName;
 
-    @Size(max = 500, message = "Description too long!")
-    private String description;
+    @NotBlank(message = "Last name is required")
+    @Size(min = 2, max = 50, message = "Last name must be between 2 and 50 characters")
+    private String lastName;
 
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
-    @NotNull
-    public String username;
 
-    private String password;
-    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-    private UserType type;
+    @NotBlank(message = "Username is required")
+    @Size(min = 2, max = 50, message = "Username must be between 2 and 50 characters")
+    private String username;
+    private String address;
 
-    public User() {
+
+    public User () {
+
     }
-    public User(String name, String description, String contactEmail, String username, String password) {
-        this.name = name;
-        this.description = description;
+    public User(String firstName, String lastName, String contactEmail, String username) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.contactEmail = contactEmail;
         this.username = username;
-        this.password = encoder.encode(password);
-
+        this.address = address;
     }
 
-    public User(String name, String description, String contactEmail, UserType type, String username, String password) {
-        this.name = name;
-        this.description = description;
-        this.contactEmail = contactEmail;
-        this.username = username;
-        this.password = encoder.encode(password);
-        this.type = type;
+
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getName() {
-        return name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getDescription() {
-        return description;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getContactEmail() {
         return contactEmail;
     }
@@ -79,29 +67,47 @@ public class User {
         this.contactEmail = contactEmail;
     }
 
-    public UserType getType() {
-        return type;
+    public String getUsername() {
+        return username;
     }
 
-    public void setType(UserType type) {
-        this.type = type;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+
     }
 
     public int getId() {
         return id;
     }
-
+    public void setId(int id) {
+        this.id = id;
+    }
     @Override
     public String toString() {
-        return name;
-    }
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", contactEmail='" + contactEmail + '\'' +
+                ", username='" + username + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+        }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User event = (User) o;
-        return id == event.id;
+        User user = (User) o;
+        return id == user.id;
     }
 
     @Override
@@ -109,7 +115,5 @@ public class User {
         return Objects.hash(id);
     }
 
-    public boolean isMatchingPassword(String password) {
-        return false;
-    }
+
 }
