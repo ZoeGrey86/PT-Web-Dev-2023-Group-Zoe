@@ -4,7 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
     <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -14,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/success.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/userForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/create.html" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +60,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
         <option value="HTML File" />
       </list>
     </option>
@@ -71,7 +69,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,7 +99,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
@@ -115,17 +112,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/user" />
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/petProfile" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/users" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.PETrax [bootRun]">
-    <configuration name="PETrax [bootRun]" type="GradleRunConfiguration" factoryName="Gradle">
+    <configuration name="PETrax [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="env">
           <map>
@@ -152,7 +146,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PETraxTests" type="GradleRunConfiguration" factoryName="Gradle">
+    <configuration name="PETraxTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -175,7 +169,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PETraxTests.testProgramExecution" type="GradleRunConfiguration" factoryName="Gradle">
+    <configuration name="PETraxTests.testProgramExecution" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -219,7 +213,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -278,8 +271,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UserTest.testUserConstructorAndGetters" />
+        <item itemvalue="Gradle.PETrax [bootRun]" />
         <item itemvalue="Gradle.UserTest" />
+        <item itemvalue="Gradle.UserTest.testUserConstructorAndGetters" />
+        <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
+        <item itemvalue="Gradle.PETraxTests" />
       </list>
     </recent_temporary>
   </component>
@@ -376,33 +372,26 @@
       <option name="project" value="LOCAL" />
       <updated>1689639982775</updated>
     </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="initial commit to User branch" />
-    <MESSAGE value="Tayler--editing html template to sync validation from model" />
-    <MESSAGE value="Tayler--editing controller to fix addNewPetSuccess issue" />
-    <MESSAGE value="Tayler--editing controller to fix addNewPet issue" />
-    <MESSAGE value="Tayler--successfully implemented PetType enum class to the path petProfile/addNewPet!" />
-    <MESSAGE value="Tayler--successfully implemented date feature to the path petProfile/addNewPet!" />
-    <MESSAGE value="Tayler--struggling with form. White label error states validation annotations aren't correct, but they are." />
-    <MESSAGE value="Tayler--working on sql connection issue" />
-    <MESSAGE value="Tayler--edited PetProfileController" />
-    <MESSAGE value="Tayler--changed stuff with Zoe. The form renders, redirects, and adds to the DB on her computer. Still not working on mine." />
-    <MESSAGE value="Tayler--rearranged html files" />
-    <MESSAGE value="Tayler--made some edits, PetProfile form still not working" />
-    <MESSAGE value="Tayler--created a photo upload field" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--created a photo upload field" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit to User branch" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PT_Web_Dev_2023_Group_Zoe$PETrax__bootRun_.ic" NAME="PETrax [bootRun] Coverage Results" MODIFIED="1689865120125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

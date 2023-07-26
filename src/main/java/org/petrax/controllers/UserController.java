@@ -57,7 +57,6 @@ public class UserController {
         return "redirect:success"; // Redirect to the success page
     }
 
-
     @GetMapping("success")
     public String showSuccessPage(Model model) {
         model.addAttribute("title", "Registration Successful");

@@ -1,59 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Add New Pet</title>
+    <script>
+        function showPopup() {
+            alert("NEW PET ADDED");
+        }
+    </script>
 </head>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add New Pet</title>
+</head>
 <body>
+<form method="post">
 
-<h1>Add New Pet</h1>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" name="name" class="form-control" type="text">
+    </div>
 
-<form action="/petProfile/addNewPet" method="post" onsubmit="formatDate()">
+    <div class="form-group">
+        <label for="breed">Breed</label>
+        <input id="breed" name="breed" class="form-control" type="text">
+    </div>
 
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input id="age" name="age" class="form-control" type="text">
+    </div>
 
-    <label for="petType">Pet Type:</label>
-    <select id="petType" name="petType">
-        <option value="CAT">Cat</option>
-        <option value="DOG">Dog</option>
-        <option value="BIRD">Bird</option>
-        <option value="FISH">Fish</option>
-        <option value="REPTILE">Reptile</option>
-        <option value="OTHER">Other</option>
-    </select><br>
+    <div class="form-group">
+        <label for="weight">Weight</label>
+        <input id="weight" name="weight" class="form-control" type="text">
+    </div>
 
-    <label for="breed">Breed:</label>
-    <input type="text" id="breed" name="breed"><br>
+    <div class="form-group">
+        <label for="birthdate">Birthdate</label>
+        <input id="birthdate" name="birthdate" class="form-control" type="text">
+    </div>
 
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age"><br>
+    <div class="form-group">
+        <label for="medication">Medication</label>
+        <input id="medication" name="medication" class="form-control" type="text">
+    </div>
 
-    <label for="weight">Weight:</label>
-    <input type="number" id="weight" name="weight"><br>
+    <div class="form-group">
+        <label for="allergy">Allergy</label>
+        <input id="allergy" name="allergy" class="form-control" type="text">
+    </div>
 
-    <label for="birthdate">Birthdate:</label>
-    <input type="date" id="birthdate" name="birthdate"><br>
+    <div class="form-group">
+        <label for="microchip">Microchip Number</label>
+        <input id="microchip" name="microchip" class="form-control" type="text">
+    </div>
 
-    <label for="medication">Medication:</label>
-    <input type="text" id="medication" name="medication"><br>
+    <div class="form-group">
+        <label for="diagnoses">Diagnoses</label>
+        <input id="diagnoses" name="diagnoses" class="form-control" type="text">
+    </div>
 
-    <label for="allergy">Allergy:</label>
-    <input type="text" id="allergy" name="allergy"><br>
-
-    <label for="microchip">Microchip Number:</label>
-    <input type="text" id="microchip" name="microchip"><br>
-
-    <label for="diagnoses">Diagnoses:</label>
-    <input type="text" id="diagnoses" name="diagnoses"><br>
-
-    <label for="petPic">Photo:</label>
-    <input type="file" id="petPic" name="petPic"><br>
-<!--    <input type="submit" value="Upload">-->
-
-    <input type="submit" value="Add New Pet">
+    <div class="form-group">
+        <input type="submit" value="Add New Pet" class="btn btn-success" onClick="showPopup()">
+    </div>
 </form>
-
 </body>
+
 </html>
