@@ -12,6 +12,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.io.IOException;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Controller
@@ -28,7 +31,7 @@ public class PetProfileController {
     public String displayPetIndex(){return "petProfile/index";}
 
     @GetMapping("addNewPet")
-    public String displayAddNewPetForm(Model model) {
+    public String displayAddNewPetForm(Model model) throws ParseException {
         model.addAttribute("Add New Pet", "Add New Pet");
         model.addAttribute("petProfileDTO", new PetProfileDTO()); // Create a new PetProfileDTO instance
         model.addAttribute(new PetProfile());

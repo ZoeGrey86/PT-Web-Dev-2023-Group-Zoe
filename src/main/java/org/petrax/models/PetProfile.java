@@ -8,6 +8,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -32,33 +34,33 @@ public class PetProfile {
 //    @NotNull(message = "Must select pet type")
     private PetType petType;
 
-//    @NotBlank(message = "Breed is required")
+    //    @NotBlank(message = "Breed is required")
 //    @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
     private String breed;
 
-//    @NotNull(message = "Age is required")
+    //    @NotNull(message = "Age is required")
     private Double age;
 
-//    @NotNull(message = "Weight is required")
+    //    @NotNull(message = "Weight is required")
     private Double weight;
 
-//    @Past(message = "Birthdate must be in the past")
+    //    @Past(message = "Birthdate must be in the past")
 //    @NotNull(message = "Birthdate is required")
     private LocalDate birthdate;
 
-//    @NotBlank(message = "Enter 'None' if not applicable")
+    //    @NotBlank(message = "Enter 'None' if not applicable")
 //    @Size(max = 500, message = "Medications too long!")
     private String medication;
 
-//    @NotBlank(message = "Enter 'None' if not applicable")
+    //    @NotBlank(message = "Enter 'None' if not applicable")
 //    @Size(max = 500, message = "Allergies too long!")
     private String allergy;
 
-//    @NotBlank(message = "Enter 'None' if not applicable")
+    //    @NotBlank(message = "Enter 'None' if not applicable")
 //    @Size(max = 500, message = "Microchip number too long!")
     private String microchip; //Some microchip #s are alpha-numeric, so string not double
 
-//    @NotBlank(message = "Enter 'None' if not applicable")
+    //    @NotBlank(message = "Enter 'None' if not applicable")
 //    @Size(max = 500, message = "Diagnoses too long!")
     private String diagnoses;
 
@@ -71,7 +73,7 @@ public class PetProfile {
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
     public PetProfile(String name, byte[] petPic, PetType petType, String breed, double age, double weight, LocalDate birthdate,
-               String medication, String allergy, String microchip, String diagnoses) {
+                      String medication, String allergy, String microchip, String diagnoses) {
         this.name = name;
         this.petPic = petPic; //blob SQL type
         this.petType = petType; //enum declaration
@@ -146,10 +148,6 @@ public class PetProfile {
 
     public void setWeight(Double weight) {
         this.weight = weight;
-    }
-
-    public LocalDate getBirthdate() {
-        return birthdate;
     }
 
     public void setBirthdate(LocalDate birthdate) {
