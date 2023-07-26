@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-public class SignUpController {
+public class AuthenticationController {
     @Autowired
     static
     UserRepository userRepository;
@@ -119,7 +119,7 @@ public class SignUpController {
         }
 
         setUserInSession(request.getSession(), theUser);
-        model.addAttribute("user", theUser.username);
+        model.addAttribute("user", theUser.getUsername());
         return "/success";
     }
     @GetMapping("/logout")

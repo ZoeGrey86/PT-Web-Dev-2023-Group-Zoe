@@ -35,12 +35,19 @@ public class User {
     public User () {
 
     }
-    public User(String firstName, String lastName, String contactEmail, String username) {
+    public User(String firstName, String lastName, String contactEmail, String username, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactEmail = contactEmail;
         this.username = username;
         this.address = address;
+    }
+
+    public User(String firstName, String lastName, String contactEmail, String username) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.contactEmail = contactEmail;
+        this.username = username;
     }
 
 
@@ -116,4 +123,7 @@ public class User {
     }
 
 
+    public boolean isMatchingPassword(String password) {
+        return false;
+    }
 }

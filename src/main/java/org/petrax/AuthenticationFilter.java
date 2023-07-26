@@ -1,6 +1,6 @@
 package org.petrax;
 
-import org.petrax.controllers.SignUpController;
+import org.petrax.controllers.AuthenticationController;
 import org.petrax.data.UserRepository;
 import org.petrax.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
             return true;
         }
         HttpSession session = request.getSession();
-        User user = SignUpController.getUserFromSession(session);
+        User user = AuthenticationController.getUserFromSession(session);
 
         // The user is logged in
         if (user != null) {
