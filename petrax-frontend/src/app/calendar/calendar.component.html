@@ -1,0 +1,19 @@
+<div class="app-container">
+  <h1>Yay!! Our calendar works!!</h1>
+  <div class="flex-container">
+    <div class="calendar-container">
+      <full-calendar [options]="calendarOptions"></full-calendar>
+      <button class="add-event-button" (click)="onAddEvent()">Add Event</button>
+    </div>
+    <div class="list-container">
+      <h2>List of Events</h2>
+      <ul>
+        <li>Get this project done!</li>
+        <li>Add dynamic data here</li>
+        <!-- Add more list items as needed -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
