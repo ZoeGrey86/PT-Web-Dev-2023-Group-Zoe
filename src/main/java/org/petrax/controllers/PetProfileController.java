@@ -1,20 +1,12 @@
 package org.petrax.controllers;
 import org.petrax.data.PetProfileRepository;
 import org.petrax.models.PetProfile;
-import org.petrax.models.dto.PetProfileDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import javax.validation.Valid;
-import java.io.IOException;
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Controller
@@ -25,37 +17,32 @@ public class PetProfileController {
     //Refresher: @Autowired annotation specifies that SB should auto-populate this field.
     //This is a dependency injection, what happens is the Autowired code tells SB we need a PetProfileRepository object
     @Autowired
-    public PetProfileRepository petProfileRepository;
+    PetProfileRepository petProfileRepository;
 
     @GetMapping
     public String displayPetIndex(){return "petProfile/index";}
 
     @GetMapping("addNewPet")
-    public String displayAddNewPetForm(Model model) throws ParseException {
+    public String displayAddNewPetForm(Model model) {
         model.addAttribute("Add New Pet", "Add New Pet");
-        model.addAttribute("petProfileDTO", new PetProfileDTO()); // Create a new PetProfileDTO instance
-        model.addAttribute(new PetProfile());
         return "petProfile/addNewPet";
     }
 
-    @GetMapping("/addNewPetSuccess")
+    @GetMapping("addNewPetSuccess")
     public String showSuccessPage(Model model) {
         model.addAttribute("New Pet Added", "New Pet Added");
+        model.addAttribute(new PetProfile());
         return "petProfile/addNewPetSuccess"; //do I need .html at the end?
     }
 
-    @PostMapping("/addNewPet")
-    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
-                                       Errors errors,
-                                       Model model) {
+    @PostMapping("addNewPet")
+    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet, Errors errors, Model model) {
         // Check if there are any validation errors
-//        if (errors.hasErrors()) {
-//            // If there are errors, display the form again with error messages
-//            model.addAttribute("Add New Pet", "Add New Pet");
-//            return "petProfile/index"; // Return the addNewPet view to show the form again
-//        }
-        // If there are no errors, extract the PetProfile object from the PetProfileDTO
-        //PetProfile newPet = petProfileDTO.getPetProfile();
+        if (errors.hasErrors()) {
+            // If there are errors, display the form again with error messages
+            model.addAttribute("Add New Pet", "Add New Pet");
+            return "petProfile/addNewPet"; // Return the addNewPet view to show the form again
+        }
         // Save the newPet object to the database using the petProfileRepository
         petProfileRepository.save(newPet);
         // Redirect to the success page
