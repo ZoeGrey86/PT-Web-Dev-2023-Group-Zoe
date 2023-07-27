@@ -3,7 +3,7 @@ export class User {
     firstName: string;
     lastName: string;
     contactEmail: string;
-    userName: string;
+    username: string;
     address: string;
 }
 

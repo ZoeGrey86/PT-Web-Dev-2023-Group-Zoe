@@ -29,6 +29,13 @@ public class UserController {
         return userRepository.findAll();
     }
 
+    @PostMapping("/users")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public User createUser(@RequestBody User user) {
+        return userRepository.save(user);
+    }
+
+
     @GetMapping
     public String displayAllUsers(Model model) {
         model.addAttribute("title", "All Users");

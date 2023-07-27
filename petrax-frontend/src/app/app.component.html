@@ -1,2 +1,14 @@
 <h1>FRONTEND TEST</h1>
-<app-user-list></app-user-list>
+<nav>
+    <ul>
+        <li>
+            <a routerLink="users" routerLinkActive="active" href="">User List</a>
+        </li>
+        <li>
+            <a routerLink="create-user" routerLinkActive="active" href="">Create User test</a>
+        </li>
+    </ul>
+</nav>
+<div>
+    <router-outlet></router-outlet>
+</div>
