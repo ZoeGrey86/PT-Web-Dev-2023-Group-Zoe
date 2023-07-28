@@ -105,46 +105,49 @@ public class PetProfileController {
     @GetMapping("deletePetSuccess")
     public String showDeletePage(Model model) {
         model.addAttribute("Pet Deleted", "Pet Deleted");
-        return "petProfile/deletePetSuccess"; //do I need .html at the end?
+        return "petProfile/deletePetSuccess";
     }
 
     @GetMapping("deletePet")
     public String displayDeletePetForm(Model model) {
         model.addAttribute("Delete Pet", "Delete Pet");
         model.addAttribute("Name", petProfileRepository.findAll());
+        model.addAttribute("Birthdate", petProfileRepository.findAll());
         return "petProfile/deletePet";
     }
 
     @PostMapping("deletePet")
-    public String processDeletePetForm(@RequestParam(required = false) String name) {
-        if (name != null) {
-            PetProfile petToDelete = petProfileRepository.findByName(name);
+    public String processDeletePetForm(@RequestParam(required = false) String name,
+                                       @RequestParam(required = false) String birthdate) {
+        if (name != null && birthdate != null) {
+            PetProfile petToDelete = petProfileRepository.findFirstByNameAndBirthdate(name, birthdate);
             if (petToDelete != null) {
                 petProfileRepository.delete(petToDelete);
             }
         }
-        return "redirect:deletePetSuccess";
+        return "redirect:/petProfile/deletePetSuccess";
     }
+
 
 
 
 
     //html not set up yet
-    @GetMapping("detail")
-    public String displayPetDetails(@RequestParam Integer petId, Model model) {
-
-        Optional<PetProfile> result = petProfileRepository.findById(petId);
-
-        if (result.isEmpty()) {
-            model.addAttribute("Invalid Pet ID", "Invalid Pet ID: " + petId);
-        } else {
-            PetProfile petProfile = result.get();
-            model.addAttribute("Details", petProfile.getName() + " Details");
-            model.addAttribute("petProfile", petProfile);
-        }
-
-        return "petProfile/detail";
-    }
+//    @GetMapping("detail")
+//    public String displayPetDetails(@RequestParam Integer petId, Model model) {
+//
+//        Optional<PetProfile> result = petProfileRepository.findById(petId);
+//
+//        if (result.isEmpty()) {
+//            model.addAttribute("Invalid Pet ID", "Invalid Pet ID: " + petId);
+//        } else {
+//            PetProfile petProfile = result.get();
+//            model.addAttribute("Details", petProfile.getName() + " Details");
+//            model.addAttribute("petProfile", petProfile);
+//        }
+//
+//        return "petProfile/detail";
+//    }
 
 }
 

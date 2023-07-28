@@ -10,7 +10,11 @@ import org.springframework.stereotype.Repository;
     @Repository
     public interface PetProfileRepository extends CrudRepository<PetProfile, Integer> {
 
-        PetProfile findByName(String name);
+//        PetProfile findByName(String name);
+//
+//        PetProfile findByBirthdate(String birthdate);
+
+        PetProfile findFirstByNameAndBirthdate(String name, String birthdate);
 
 
     }

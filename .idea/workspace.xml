@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--if(errors.hasErrors()) code block is working, but validation messages don't pop up?">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/deletePet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/deletePetSuccess.html" afterDir="false" />
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--deletePet form is working and removes pet from database by name.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/deletePet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/deletePet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -559,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690488681312</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Tayler--deletePet form is working and removes pet from database by name.">
+      <created>1690557813418</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1690557813418</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -590,7 +596,8 @@
     <MESSAGE value="Tayler--FINALLY going to the database!!!!" />
     <MESSAGE value="Tayler--initial commit PetValidationTayler" />
     <MESSAGE value="Tayler--if(errors.hasErrors()) code block is working, but validation messages don't pop up?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--if(errors.hasErrors()) code block is working, but validation messages don't pop up?" />
+    <MESSAGE value="Tayler--deletePet form is working and removes pet from database by name." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--deletePet form is working and removes pet from database by name." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PT_Web_Dev_2023_Group_Zoe$PETrax__bootRun_.ic" NAME="PETrax [bootRun] Coverage Results" MODIFIED="1689865120125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
