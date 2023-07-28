@@ -102,26 +102,32 @@ public class PetProfileController {
 
 //----------------------------------------------------------------------------------------------
 
+    @GetMapping("deletePetSuccess")
+    public String showDeletePage(Model model) {
+        model.addAttribute("Pet Deleted", "Pet Deleted");
+        return "petProfile/deletePetSuccess"; //do I need .html at the end?
+    }
 
-    //html not set up yet
     @GetMapping("deletePet")
     public String displayDeletePetForm(Model model) {
         model.addAttribute("Delete Pet", "Delete Pet");
-        model.addAttribute("petProfile", petProfileRepository.findAll());
+        model.addAttribute("Name", petProfileRepository.findAll());
         return "petProfile/deletePet";
     }
 
-
-    //html not set up yet
     @PostMapping("deletePet")
-    public String processDeletePetForm(@RequestParam(required = false) int[] petId) {
-        if (petId != null) {
-            for (int id : petId) {
-                petProfileRepository.deleteById(id);
+    public String processDeletePetForm(@RequestParam(required = false) String name) {
+        if (name != null) {
+            PetProfile petToDelete = petProfileRepository.findByName(name);
+            if (petToDelete != null) {
+                petProfileRepository.delete(petToDelete);
             }
         }
-        return "redirect:";
+        return "redirect:deletePetSuccess";
     }
+
+
+
 
     //html not set up yet
     @GetMapping("detail")

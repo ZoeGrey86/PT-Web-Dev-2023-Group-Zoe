@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
     //Extends CrudRepository so we can perform CRUD operations on data
     @Repository
     public interface PetProfileRepository extends CrudRepository<PetProfile, Integer> {
+
+        PetProfile findByName(String name);
+
+
     }
 
 
