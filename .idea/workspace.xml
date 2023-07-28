@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_16_23__4_19_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_16_23__4_58_PM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petrax-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/petrax-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users/userForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

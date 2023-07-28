@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions } from '@fullcalendar/angular';
-import { HttpClient } from '@angular/common/http';
-
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { RouterOutlet } from '@angular/router';
+
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -13,49 +13,51 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
+export class CalendarComponent {
+  calendarVisible = true;
 
-export class CalendarComponent implements OnInit {
-Events: any[] = [];
+ // Add the methods: goPrev, goNext, goToday
+  goPrev() {
+    // Implement the logic to go to the previous period (e.g., previous month or week)
+    // You can use the FullCalendar API to change the view or date as needed
+  }
+
+  goNext() {
+    // Implement the logic to go to the next period (e.g., next month or week)
+    // You can use the FullCalendar API to change the view or date as needed
+  }
+
+  goToday() {
+    // Implement the logic to go to today's date
+    // You can use the FullCalendar API to change the view or date as needed
+  }
+
+  // Add the missing property: upcomingEvents
+  upcomingEvents = [
+    // Sample event data (you can replace this with your actual event data)
+    { title: 'Event 1', start: '2023-07-30' },
+    { title: 'Event 2', start: '2023-08-02' },
+    { title: 'Event 3', start: '2023-08-05' }
+  ];
+
   calendarOptions: CalendarOptions = {
-    plugins: [dayGridPlugin, interactionPlugin],
-    initialView: 'dayGridMonth',
+    plugins: [
+      dayGridPlugin,
+      interactionPlugin
+    ],
     headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
+      left: 'prev, next today',
+      center: 'Petrax Calendar',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
     },
-    weekends: true,
-    editable: true,
-    selectable: true,
-    selectMirror: true,
-    dayMaxEvents: true,
+    initialView: 'dayGridMonth'
   };
-  constructor(private httpClient: HttpClient) {}
-  onDateClick(res: any) {
-    alert('Clicked on date : ' + res.dateStr);
-  }
- onAddEvent() {
-    // Implement the logic to handle the "Add Event" button click here.
-    // For example, you can show a dialog/modal to let the user add event details.
-    // Or you can navigate to a new component/page where the user can add the event.
-    console.log("Add Event button clicked!");
-  }
-
-  ngOnInit() {
-    setTimeout(() => {
-      return this.httpClient
-        .get('http://localhost:8888/event.php')
-        .subscribe((res: any) => {
-          this.Events.push(res);
-          console.log(this.Events);
-        });
-    }, 2200);
-    setTimeout(() => {
-      this.calendarOptions = {
-        initialView: 'dayGridMonth',
-        events: this.Events,
-        dateClick: this.onDateClick.bind(this),
-      };
-    }, 2500);
-  }
+   // Add the missing method: openAddEventModal
+    openAddEventModal() {
+      // Implement the logic to open a modal for adding events
+      // You can use a library like Angular Material or ngx-bootstrap to create the modal
+      // For demonstration purposes, you can use a simple JavaScript alert as follows:
+      alert('Implementing the logic to open the Add Event modal.');
+    }
 }
+

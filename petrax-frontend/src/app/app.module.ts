@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { FullCalendarModule } from '@fullcalendar/angular';
+import { HomeComponent } from './home/home.component';
+
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -13,12 +19,14 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     UserListComponent,
     CalendarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FullCalendarModule,
-    RouterModule
+    RouterModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
