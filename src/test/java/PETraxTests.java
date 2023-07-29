@@ -1,30 +1,29 @@
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.petrax.PETrax;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = PETrax.class)
 public class PETraxTests {
 
     private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
 
-    @Before
+    @BeforeEach
     public void setUpStreams() {
         System.setOut(new PrintStream(outputStream));
     }
 
-    @After
+    @AfterEach
     public void restoreStreams() {
         System.setOut(originalOut);
     }
