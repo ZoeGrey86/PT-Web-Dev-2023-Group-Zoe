@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
     FullCalendarModule,
     RouterModule,
     AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
