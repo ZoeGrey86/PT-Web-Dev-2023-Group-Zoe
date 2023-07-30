@@ -6,19 +6,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.beans.PropertyEditorSupport;
 import java.io.IOException;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
+
+
 
 @Controller
 // Map all requests to /petProfile
 @RequestMapping("petProfile")
 public class PetProfileController {
 
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
+            @Override
+            public void setAsText(String text) throws IllegalArgumentException {
+                setValue(LocalDate.parse(text, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            }
+        });
+    }
     //Refresher: @Autowired annotation specifies that SB should auto-populate this field.
     //This is a dependency injection, what happens is the Autowired code tells SB we need a PetProfileRepository object
     @Autowired
@@ -45,6 +61,11 @@ public class PetProfileController {
     public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
                                        Errors errors,
                                        Model model) {
+
+        LocalDate birthdateLocalDate = newPet.getBirthdate();
+
+        // Set the birthdate of newPet to the LocalDate value
+        newPet.setBirthdate(birthdateLocalDate);
         // Check if there are any validation errors
 //        if (errors.hasErrors()) {
 //            // If there are errors, display the form again with error messages
