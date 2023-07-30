@@ -4,23 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Combining user class and authentication controller, some forms still need to be fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_13_23__11_30_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_13_23__11_30_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_16_23,_4_19_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_16_23,_4_58_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_16_23__4_19_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_16_23__4_58_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Name change to help with confusion.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/WebApplicationConfigure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/PETrax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/PETrax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/WebApplicationConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/SignUpRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/AuthenticationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/SignUpRequest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authentication/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authentication/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authentication/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,10 +98,12 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/LaunchCode/Documents/JavaPractice/LiftOffProject&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/LaunchCode/Documents/JavaPractice/PT-Web-Dev-2023-Group-Zoe&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propDebugger&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -111,11 +111,12 @@
       <recent name="org.petrax.models.dto" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LaunchCode\Documents\JavaPractice\PT-Web-Dev-2023-Group-Zoe\src\main\resources\templates\authentication" />
       <recent name="C:\Users\LaunchCode\Documents\JavaPractice\PT-Web-Dev-2023-Group-Zoe\src\main\resources\templates" />
       <recent name="C:\Users\LaunchCode\Documents\JavaPractice\PT-Web-Dev-2023-Group-Zoe\src\main\resources\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PETrax [bootRun]">
+  <component name="RunManager" selected="Application.PETrax">
     <configuration name="PETrax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.petrax.PETrax" />
       <module name="PETrax.main" />
@@ -238,11 +239,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PETrax" />
         <item itemvalue="Gradle.PETrax [bootRun]" />
         <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
         <item itemvalue="Gradle.PETraxTests.testHelloWorldEndpoint" />
         <item itemvalue="Gradle.PETraxTests" />
-        <item itemvalue="Application.PETrax" />
       </list>
     </recent_temporary>
   </component>
@@ -302,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689996883702</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Name change to help with confusion.">
+      <option name="closed" value="true" />
+      <created>1690408600152</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1690408600153</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -340,18 +349,8 @@
     <MESSAGE value="validation back end complete" />
     <MESSAGE value="Major Changes to validation structure" />
     <MESSAGE value="Combining user class and authentication controller, some forms still need to be fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Combining user class and authentication controller, some forms still need to be fixed" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/petrax/models/User.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Name change to help with confusion." />
+    <option name="LAST_COMMIT_MESSAGE" value="Name change to help with confusion." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

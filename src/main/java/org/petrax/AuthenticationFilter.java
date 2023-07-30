@@ -17,6 +17,9 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    AuthenticationController authenticationController;
+
 
     private static final List<String> whitelist = Arrays.asList("/login", "/register", "/logout", "/css");
     private static boolean isWhitelisted(String path) {
@@ -36,7 +39,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
             return true;
         }
         HttpSession session = request.getSession();
-        User user = AuthenticationController.getUserFromSession(session);
+        User user = authenticationController.getUserFromSession(session);
 
         // The user is logged in
         if (user != null) {

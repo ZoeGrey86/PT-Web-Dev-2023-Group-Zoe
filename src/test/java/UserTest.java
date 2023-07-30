@@ -15,7 +15,7 @@ public class UserTest {
 
 
         // Create a User object using the constructor
-        User user = new User(firstName, lastName, contactEmail, username);
+        User user = new User(firstName, lastName, contactEmail, username, address);
         user.setAddress(address);
 
         // Verify that the constructor sets the fields correctly

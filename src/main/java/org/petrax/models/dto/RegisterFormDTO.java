@@ -1,87 +1,68 @@
 package org.petrax.models.dto;
 
 public class RegisterFormDTO {
-    public String getUsername() {
-        return getUsername();
+    private String FirstName;
+    private String LastName;
+    private String description;
+
+    private String contactEmail;
+    private String username;
+    private String password;
+    private String verifyPassword;
+
+    public String getFirstName() {
+        return FirstName;
     }
 
-    public String getPassword() {
-        return getPassword();
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
     }
 
-    public String getVerifyPassword() {
-        return getVerifyPassword();
+    public String getLastName() {
+        return LastName;
     }
 
-    public String getName() {
-        return getName();
+    public void setLastName(String lastName) {
+        LastName = lastName;
     }
 
     public String getDescription() {
-        return getDescription();
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getContactEmail() {
-        return getContactEmail();
+        return contactEmail;
     }
 
-    public class RegisterFormDto extends LoginFormDTO {
-        private String name;
-        private String description;
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
+    }
 
-        private String contactEmail;
-        private String username;
-        private String password;
-        private String verifyPassword;
+    public String getUsername() {
+        return username;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public String getPassword() {
+        return password;
+    }
 
-        public String getDescription() {
-            return description;
-        }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-        public void setDescription(String description) {
-            this.description = description;
-        }
+    public String getVerifyPassword() {
+        return verifyPassword;
+    }
 
-        public String getContactEmail() {
-            return contactEmail;
-        }
-
-        public void setContactEmail(String contactEmail) {
-            this.contactEmail = contactEmail;
-        }
-
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public String getVerifyPassword() {
-            return verifyPassword;
-        }
-
-        public void setVerifyPassword(String verifyPassword) {
-            this.verifyPassword = verifyPassword;
-        }
-
+    public void setVerifyPassword(String verifyPassword) {
+        this.verifyPassword = verifyPassword;
     }
 }
