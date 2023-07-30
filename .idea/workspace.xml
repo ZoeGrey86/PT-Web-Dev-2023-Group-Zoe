@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Name change to help with confusion.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/WebApplicationConfigure.java" afterDir="false" />
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Troubleshootng errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/WebApplicationConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/SignUpRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/AuthenticationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/SignUpRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authentication/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authentication/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authentication/success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +52,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="AuthenticationMars" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -239,10 +229,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PETrax [bootRun]" />
         <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
         <item itemvalue="Gradle.PETraxTests.testHelloWorldEndpoint" />
         <item itemvalue="Gradle.PETraxTests" />
-        <item itemvalue="Gradle.PETrax [bootRun]" />
         <item itemvalue="Application.PETrax" />
       </list>
     </recent_temporary>
@@ -311,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690408600153</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Troubleshootng errors">
+      <option name="closed" value="true" />
+      <created>1690742527675</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690742527675</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -350,7 +348,8 @@
     <MESSAGE value="Major Changes to validation structure" />
     <MESSAGE value="Combining user class and authentication controller, some forms still need to be fixed" />
     <MESSAGE value="Name change to help with confusion." />
-    <option name="LAST_COMMIT_MESSAGE" value="Name change to help with confusion." />
+    <MESSAGE value="Troubleshootng errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Troubleshootng errors" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
