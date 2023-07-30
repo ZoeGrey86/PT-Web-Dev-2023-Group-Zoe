@@ -116,7 +116,7 @@
       <recent name="C:\Users\LaunchCode\Documents\JavaPractice\PT-Web-Dev-2023-Group-Zoe\src\main\resources\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PETrax">
+  <component name="RunManager" selected="Gradle.PETrax [bootRun]">
     <configuration name="PETrax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.petrax.PETrax" />
       <module name="PETrax.main" />
@@ -134,8 +134,8 @@
       <ExternalSystemSettings>
         <option name="env">
           <map>
-            <entry key="Password" value="LiftOff123" />
-            <entry key="Username" value="petrax" />
+            <entry key="PASSWORD" value="LiftOff123" />
+            <entry key="USERNAME" value="petrax" />
           </map>
         </option>
         <option name="executionName" />
@@ -239,11 +239,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PETrax" />
-        <item itemvalue="Gradle.PETrax [bootRun]" />
         <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
         <item itemvalue="Gradle.PETraxTests.testHelloWorldEndpoint" />
         <item itemvalue="Gradle.PETraxTests" />
+        <item itemvalue="Gradle.PETrax [bootRun]" />
+        <item itemvalue="Application.PETrax" />
       </list>
     </recent_temporary>
   </component>
