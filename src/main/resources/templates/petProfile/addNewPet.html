@@ -9,7 +9,7 @@
 
 <h1>Add New Pet</h1>
 
-<form action="/petProfile/addNewPet" method="post" onsubmit="formatDate()">
+<form action="/petProfile/addNewPet" method="post">
 
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"><br>
@@ -34,7 +34,7 @@
     <input type="number" id="weight" name="weight"><br>
 
     <label for="birthdate">Birthdate:</label>
-    <input type="date" id="birthdate" name="birthdate"><br>
+    <input type="text" id="birthdate" name="birthdate"><br>
 
     <label for="medication">Medication:</label>
     <input type="text" id="medication" name="medication"><br>
@@ -50,7 +50,6 @@
 
     <label for="petPic">Photo:</label>
     <input type="file" id="petPic" name="petPic"><br>
-<!--    <input type="submit" value="Upload">-->
 
     <input type="submit" value="Add New Pet">
 </form>

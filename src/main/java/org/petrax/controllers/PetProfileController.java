@@ -1,22 +1,13 @@
 package org.petrax.controllers;
 import org.petrax.data.PetProfileRepository;
 import org.petrax.models.PetProfile;
-import org.petrax.models.dto.PetProfileDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import javax.validation.Valid;
-import java.beans.PropertyEditorSupport;
-import java.io.IOException;
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 
@@ -38,7 +29,7 @@ public class PetProfileController {
     //Refresher: @Autowired annotation specifies that SB should auto-populate this field.
     //This is a dependency injection, what happens is the Autowired code tells SB we need a PetProfileRepository object
     @Autowired
-    public PetProfileRepository petProfileRepository;
+    PetProfileRepository petProfileRepository;
 
     @GetMapping
     public String displayPetIndex(){return "petProfile/index";}
@@ -46,14 +37,13 @@ public class PetProfileController {
     @GetMapping("addNewPet")
     public String displayAddNewPetForm(Model model) {
         model.addAttribute("Add New Pet", "Add New Pet");
-        model.addAttribute("petProfileDTO", new PetProfileDTO()); // Create a new PetProfileDTO instance
-        model.addAttribute(new PetProfile());
         return "petProfile/addNewPet";
     }
 
-    @GetMapping("/addNewPetSuccess")
+    @GetMapping("addNewPetSuccess")
     public String showSuccessPage(Model model) {
         model.addAttribute("New Pet Added", "New Pet Added");
+        model.addAttribute(new PetProfile());
         return "petProfile/addNewPetSuccess"; //do I need .html at the end?
     }
 
@@ -67,13 +57,11 @@ public class PetProfileController {
         // Set the birthdate of newPet to the LocalDate value
         newPet.setBirthdate(birthdateLocalDate);
         // Check if there are any validation errors
-//        if (errors.hasErrors()) {
-//            // If there are errors, display the form again with error messages
-//            model.addAttribute("Add New Pet", "Add New Pet");
-//            return "petProfile/index"; // Return the addNewPet view to show the form again
-//        }
-        // If there are no errors, extract the PetProfile object from the PetProfileDTO
-        //PetProfile newPet = petProfileDTO.getPetProfile();
+        if (errors.hasErrors()) {
+            // If there are errors, display the form again with error messages
+            model.addAttribute("Add New Pet", "Add New Pet");
+            return "petProfile/addNewPet"; // Return the addNewPet view to show the form again
+        }
         // Save the newPet object to the database using the petProfileRepository
         petProfileRepository.save(newPet);
         // Redirect to the success page
@@ -133,43 +121,52 @@ public class PetProfileController {
 
 //----------------------------------------------------------------------------------------------
 
+    @GetMapping("deletePetSuccess")
+    public String showDeletePage(Model model) {
+        model.addAttribute("Pet Deleted", "Pet Deleted");
+        return "petProfile/deletePetSuccess";
+    }
 
-    //html not set up yet
     @GetMapping("deletePet")
     public String displayDeletePetForm(Model model) {
         model.addAttribute("Delete Pet", "Delete Pet");
-        model.addAttribute("petProfile", petProfileRepository.findAll());
+        model.addAttribute("Name", petProfileRepository.findAll());
+        model.addAttribute("Birthdate", petProfileRepository.findAll());
         return "petProfile/deletePet";
     }
 
-
-    //html not set up yet
     @PostMapping("deletePet")
-    public String processDeletePetForm(@RequestParam(required = false) int[] petId) {
-        if (petId != null) {
-            for (int id : petId) {
-                petProfileRepository.deleteById(id);
+    public String processDeletePetForm(@RequestParam(required = false) String name,
+                                       @RequestParam(required = false) String birthdate) {
+        if (name != null && birthdate != null) {
+            PetProfile petToDelete = petProfileRepository.findFirstByNameAndBirthdate(name, birthdate);
+            if (petToDelete != null) {
+                petProfileRepository.delete(petToDelete);
             }
         }
-        return "redirect:";
+        return "redirect:/petProfile/deletePetSuccess";
     }
+
+
+
+
 
     //html not set up yet
-    @GetMapping("detail")
-    public String displayPetDetails(@RequestParam Integer petId, Model model) {
-
-        Optional<PetProfile> result = petProfileRepository.findById(petId);
-
-        if (result.isEmpty()) {
-            model.addAttribute("Invalid Pet ID", "Invalid Pet ID: " + petId);
-        } else {
-            PetProfile petProfile = result.get();
-            model.addAttribute("Details", petProfile.getName() + " Details");
-            model.addAttribute("petProfile", petProfile);
-        }
-
-        return "petProfile/detail";
-    }
+//    @GetMapping("detail")
+//    public String displayPetDetails(@RequestParam Integer petId, Model model) {
+//
+//        Optional<PetProfile> result = petProfileRepository.findById(petId);
+//
+//        if (result.isEmpty()) {
+//            model.addAttribute("Invalid Pet ID", "Invalid Pet ID: " + petId);
+//        } else {
+//            PetProfile petProfile = result.get();
+//            model.addAttribute("Details", petProfile.getName() + " Details");
+//            model.addAttribute("petProfile", petProfile);
+//        }
+//
+//        return "petProfile/detail";
+//    }
 
 }
 

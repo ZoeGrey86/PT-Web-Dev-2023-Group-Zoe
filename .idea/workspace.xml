@@ -64,6 +64,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="HTML File" />
+        <option value="ThymeLeaf" />
         <option value="HTML File" />
       </list>
     </option>
@@ -116,6 +117,8 @@
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/users" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile" />
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/petProfile" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/petProfile/users" />
@@ -147,6 +150,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="PETraxTests" type="GradleRunConfiguration" factoryName="Gradle">
@@ -176,6 +180,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="PETraxTests.testProgramExecution" type="GradleRunConfiguration" factoryName="Gradle">
@@ -205,6 +210,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -263,6 +269,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -396,6 +403,196 @@
       <option name="project" value="LOCAL" />
       <updated>1689639982775</updated>
     </task>
+    <task id="LOCAL-00018" summary="Tayler--editing html template to sync validation from model">
+      <created>1689779270201</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1689779270201</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Tayler--editing controller to fix addNewPetSuccess issue">
+      <created>1689780065628</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1689780065628</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Tayler--editing controller to fix addNewPet issue">
+      <created>1689780607775</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1689780607775</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Tayler--successfully implemented PetType enum class to the path petProfile/addNewPet!">
+      <created>1689785348068</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1689785348068</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Tayler--successfully implemented date feature to the path petProfile/addNewPet!">
+      <created>1689786921240</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1689786921240</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Tayler--struggling with form. White label error states validation annotations aren't correct, but they are.">
+      <created>1689787219557</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1689787219557</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Tayler--edited PetProfileController">
+      <created>1689864663784</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1689864663784</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Tayler--edited PetProfileController">
+      <created>1689866318197</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1689866318197</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Tayler--working on sql connection issue">
+      <created>1689866343858</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1689866343858</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Tayler--working on sql connection issue">
+      <created>1689868476158</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1689868476158</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Tayler--working on sql connection issue">
+      <created>1689869610468</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1689869610468</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Tayler--working on sql connection issue">
+      <created>1689870667116</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1689870667116</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Tayler--working on sql connection issue">
+      <created>1689883969318</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1689883969318</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Tayler--working on sql connection issue">
+      <created>1689884542429</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1689884542429</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Tayler--working on sql connection issue">
+      <created>1689891607579</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1689891607579</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Tayler--working on sql connection issue">
+      <created>1689892547903</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1689892547903</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Tayler--edited PetProfileController">
+      <created>1689958893339</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1689958893340</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Tayler--edited PetProfileController">
+      <created>1689960170013</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1689960170013</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Tayler--edited PetProfileController">
+      <created>1689967282354</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1689967282354</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Tayler--changed stuff with Zoe. The form renders, redirects, and adds to the DB on her computer. Still not working on mine.">
+      <created>1689972377539</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1689972377540</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Tayler--rearranged html files">
+      <created>1689972726087</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1689972726087</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Tayler--made some edits, PetProfile form still not working">
+      <created>1690114739413</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1690114739415</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Tayler--created a photo upload field">
+      <created>1690132849047</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1690132849047</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Tayler--FINALLY going to the database!!!!">
+      <created>1690138665953</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1690138665953</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Tayler--initial commit PetValidationTayler">
+      <created>1690415262912</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1690415262912</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Tayler--if(errors.hasErrors()) code block is working, but validation messages don't pop up?">
+      <created>1690488681310</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1690488681312</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Tayler--deletePet form is working and removes pet from database by name.">
+      <created>1690557813418</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1690557813418</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -413,7 +610,11 @@
     <MESSAGE value="Tayler--rearranged html files" />
     <MESSAGE value="Tayler--made some edits, PetProfile form still not working" />
     <MESSAGE value="Tayler--created a photo upload field" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--created a photo upload field" />
+    <MESSAGE value="Tayler--FINALLY going to the database!!!!" />
+    <MESSAGE value="Tayler--initial commit PetValidationTayler" />
+    <MESSAGE value="Tayler--if(errors.hasErrors()) code block is working, but validation messages don't pop up?" />
+    <MESSAGE value="Tayler--deletePet form is working and removes pet from database by name." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--deletePet form is working and removes pet from database by name." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PT_Web_Dev_2023_Group_Zoe$PETrax__bootRun_.ic" NAME="PETrax [bootRun] Coverage Results" MODIFIED="1689865120125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
