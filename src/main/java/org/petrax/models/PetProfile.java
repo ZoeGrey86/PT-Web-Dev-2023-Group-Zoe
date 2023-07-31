@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -41,7 +42,7 @@ public class PetProfile {
     private Double weight;
 
     @NotNull(message = "Birthdate is required")
-    private String birthdate;
+    private LocalDate birthdate;
 
     @NotBlank(message = "Enter 'None' if not applicable")
     @Size(max = 500, message = "Medications too long!")
@@ -68,7 +69,7 @@ public class PetProfile {
     //public constructor used to instantiate an object
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
-    public PetProfile(String name, byte[] petPic, PetType petType, String breed, double age, double weight, String birthdate,
+    public PetProfile(String name, byte[] petPic, PetType petType, String breed, double age, double weight, LocalDate birthdate,
                       String medication, String allergy, String microchip, String diagnoses) {
         this.name = name;
         this.petPic = petPic; //blob SQL type
@@ -146,11 +147,11 @@ public class PetProfile {
         this.weight = weight;
     }
 
-    public String getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(String birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 
