@@ -1,28 +1,52 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org/">-->
+<!--<head th:replace="fragments :: head"></head>-->
+<!--<body class="container">-->
+
+<!--<header th:replace="fragments :: header"></header>-->
+
+<!--<form method="post">-->
+<!--  <div class="form-group">-->
+<!--    <label th:for="username">Username-->
+<!--      <input class="form-control" th:field="${loginFormDTO.username}">-->
+<!--    </label>-->
+<!--    <p class="error" th:errors="${loginFormDTO.username}"></p>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label>Password-->
+<!--      <input class="form-control" th:field="${loginFormDTO.password}" type="password">-->
+<!--    </label>-->
+<!--    <p class="error" th:errors="${loginFormDTO.password}"></p>-->
+<!--  </div>-->
+
+<!--  <input type="submit" class="btn btn-primary" value="Log In" />-->
+<!--</form>-->
+
+<!--<p>Don't have an account? <a href="/register">Register for one.</a></p>-->
+
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
-<body class="container">
-
-<header th:replace="fragments :: header"></header>
-
-<form method="post">
-  <div class="form-group">
-    <label th:for="username">Username
-      <input class="form-control" th:field="${loginFormDTO.username}">
-    </label>
-    <p class="error" th:errors="${loginFormDTO.username}"></p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+<h1>Login</h1>
+<form action="/authentication/login" method="post">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
   </div>
-  <div class="form-group">
-    <label>Password
-      <input class="form-control" th:field="${loginFormDTO.password}" type="password">
-    </label>
-    <p class="error" th:errors="${loginFormDTO.password}"></p>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
   </div>
-
-  <input type="submit" class="btn btn-primary" value="Log In" />
+  <div>
+    <input type="submit" value="Login">
+  </div>
 </form>
-
-<p>Don't have an account? <a href="/register">Register for one.</a></p>
-
 </body>
 </html>
