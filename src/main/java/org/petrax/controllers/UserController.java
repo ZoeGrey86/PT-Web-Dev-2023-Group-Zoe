@@ -14,32 +14,32 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/api/v1")  ///api/v1
+@Controller
+@RequestMapping("/users")  ///api/v1
 public class UserController {
-    private static UserRepository userRepository = null;
-
+    private UserRepository userRepository;
     @Autowired
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
+
     private static final String userSessionKey = "user";
 
-    public static User getUserFromSession(HttpSession session) {
-        HttpSession userId = (HttpSession) session.getAttribute(userSessionKey);
-        if (userId == null) {
-            return null;
-        }
-
-        Optional<User> user = userRepository.findById(userId);
-
-        if (user.isEmpty()) {
-            return null;
-        }
-
-        return user.get();
-    }
+//    public static User getUserFromSession(HttpSession session) {
+//        HttpSession userId = (HttpSession) session.getAttribute(userSessionKey);
+//        if (userId == null) {
+//            return null;
+//        }
+//
+//        Optional<User> user = userRepository.findById(userId);
+//
+//        if (user.isEmpty()) {
+//            return null;
+//        }
+//
+//        return user.get();
+//    }
 
     private static void setUserInSession(HttpSession session, User user) {
         session.setAttribute(userSessionKey, user.getId());
@@ -52,14 +52,14 @@ public class UserController {
         return (List<User>) userRepository.findAll();
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public String displayAllUsers(Model model) {
         model.addAttribute("title", "All Users");
         model.addAttribute("users", userRepository.findAll());
         return "users/index";
     }
 
-    @GetMapping("create")
+    @GetMapping("/create")
     public String displayCreateUserForm(Model model) {
         model.addAttribute("title", "Create User");
         model.addAttribute(new User());
@@ -77,7 +77,7 @@ public class UserController {
         newUser.setAddress(newUser.getAddress());
 
         userRepository.save(newUser);
-        return "redirect:success"; // Redirect to the success page
+        return "redirect:/users/success"; // Redirect to the success page
     }
 
 

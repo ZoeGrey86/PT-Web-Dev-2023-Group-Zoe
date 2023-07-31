@@ -19,22 +19,9 @@ public class AuthenticationController {
     public
     UserRepository userRepository;
 
-    @GetMapping
-    public String displayAuthenticationIndex() {
-        return "authentication/index";
-    }
     // The key to store user IDs
     private static final String userSessionKey = "user";
-    // Handlers for registration form
-//    @GetMapping("/register") //***remove slash?
-    @GetMapping("register")
-    public String displayRegistrationForm(Model model) {
-        model.addAttribute("Create an Account", "Register");
-        model.addAttribute("registerFormDTO", new RegisterFormDTO());
-//        model.addAttribute(new RegisterFormDTO()); //***should this be (new User()) ?
-        model.addAttribute(new User());
-        return "authentication/register";
-    }
+
     public User getUserFromSession(HttpSession session) {
         Integer userId = (Integer) session.getAttribute(userSessionKey);
         if (userId == null) {
@@ -51,17 +38,36 @@ public class AuthenticationController {
     private static void setUserInSession(HttpSession session, User user) {
         session.setAttribute(userSessionKey, user.getId());
     }
+    @GetMapping("authentication/")
+    public String displayAuthenticationIndex() {
+        return "authentication/index";
+    }
+
+    // Handlers for registration form
+//    @GetMapping("/register") //***remove slash?
+    @GetMapping("/register")
+    public String displayRegistrationForm(Model model) {
+        model.addAttribute("Create an Account", "Register");
+        model.addAttribute("registerFormDTO", new RegisterFormDTO());
+//        model.addAttribute(new RegisterFormDTO()); //***should this be (new User()) ?
+        model.addAttribute(new User());
+        return "authentication/register";
+    }
+
     @PostMapping("/register")
     public String processRegistrationForm(@ModelAttribute @Valid RegisterFormDTO registerFormDTO,
                                           Errors errors, HttpServletRequest request,
                                           Model model) {
+
         // Send user back to form if errors are found
         if (errors.hasErrors()) {
             model.addAttribute("title", "Register");
             return "authentication/register";
         }
+
         // Look up user in database using username they provided in the form
         User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
+
         // Send user back to form if username already exists
         if (existingUser != null) {
             errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
@@ -83,7 +89,7 @@ public class AuthenticationController {
         return "redirect:/success";
     }
     // Handlers for login form
-    @GetMapping("login")
+    @GetMapping("/login")
     public String displayLoginForm(Model model) {
         model.addAttribute(new LoginFormDTO());
         model.addAttribute("title", "Log In");
@@ -93,15 +99,19 @@ public class AuthenticationController {
     public String processLoginForm(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
                                    Errors errors, HttpServletRequest request,
                                    Model model) {
+
         // Send user back to form if errors are found
         if (errors.hasErrors()) {
             model.addAttribute("title", "Log In");
             return "authentication/login";
         }
+
         // Look up user in database using username they provided in the form
         User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
+
         // Get the password the user supplied in the form
         String password = loginFormDTO.getPassword();
+
         // Send user back to form if username does not exist OR if password hash doesn't match
         // "Security through obscurity" — don't reveal which one was the problem
         if (theUser == null || !theUser.isMatchingPassword(password)) {
@@ -115,7 +125,7 @@ public class AuthenticationController {
         if (theUser.encoder.matches(password, theUser.getPwHash())) {
             setUserInSession(request.getSession(), theUser);
 //            return "users/index"; //*** replace with return "redirect:/authentication/users/index"; ??
-            return "redirect:/authentication/users/index";
+            return "redirect:/users/index";
         } else {
             errors.rejectValue("password", "password.invalid", "Invalid password");
             model.addAttribute("title", "Log In");
@@ -126,6 +136,7 @@ public class AuthenticationController {
     @GetMapping("/logout")
     public String logout(HttpServletRequest request){
         request.getSession().invalidate();
+
 //        return "redirect:/login"; //*** repalce with return "redirect:/authentication/login"; ?
         return "redirect:/authentication/login";
     }
