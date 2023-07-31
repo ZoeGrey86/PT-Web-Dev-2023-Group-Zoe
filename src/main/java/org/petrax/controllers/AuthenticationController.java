@@ -49,8 +49,8 @@ public class AuthenticationController {
     public String displayRegistrationForm(Model model) {
         model.addAttribute("Create an Account", "Register");
         model.addAttribute("registerFormDTO", new RegisterFormDTO());
-//        model.addAttribute(new RegisterFormDTO()); //***should this be (new User()) ?
-        model.addAttribute(new User());
+        model.addAttribute(new RegisterFormDTO()); //***should this be (new User()) ?
+//        model.addAttribute(new User());
         return "authentication/register";
     }
 
@@ -83,10 +83,11 @@ public class AuthenticationController {
             return "authentication/register";
         }
         // OTHERWISE, save new username and hashed password in database, start a new session, and redirect to home page
-        User newUser = new User(registerFormDTO.getFirstName(),registerFormDTO.getLastName(),registerFormDTO.getDescription(), registerFormDTO.getContactEmail(), registerFormDTO.getUsername(), registerFormDTO.getPassword());
+//        User newUser = new User(registerFormDTO.getFirstName(),registerFormDTO.getLastName(),registerFormDTO.getDescription(), registerFormDTO.getContactEmail(), registerFormDTO.getUsername(), registerFormDTO.getPassword());
+        User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getPassword());
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
-        return "redirect:/success";
+        return "redirect:authentication/success";
     }
     // Handlers for login form
     @GetMapping("/login")
@@ -125,7 +126,7 @@ public class AuthenticationController {
         if (theUser.encoder.matches(password, theUser.getPwHash())) {
             setUserInSession(request.getSession(), theUser);
 //            return "users/index"; //*** replace with return "redirect:/authentication/users/index"; ??
-            return "redirect:/users/index";
+            return "redirect:/authentication/success";
         } else {
             errors.rejectValue("password", "password.invalid", "Invalid password");
             model.addAttribute("title", "Log In");
@@ -137,7 +138,7 @@ public class AuthenticationController {
     public String logout(HttpServletRequest request){
         request.getSession().invalidate();
 
-//        return "redirect:/login"; //*** repalce with return "redirect:/authentication/login"; ?
+//        return "redirect:/login"; //*** replace with return "redirect:/authentication/login"; ?
         return "redirect:/authentication/login";
     }
 }
