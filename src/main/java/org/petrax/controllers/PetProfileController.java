@@ -5,15 +5,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Optional;
+
+
 
 @Controller
 // Map all requests to /petProfile
 @RequestMapping("petProfile")
 public class PetProfileController {
 
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
+            @Override
+            public void setAsText(String text) throws IllegalArgumentException {
+                setValue(LocalDate.parse(text, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            }
+        });
+    }
     //Refresher: @Autowired annotation specifies that SB should auto-populate this field.
     //This is a dependency injection, what happens is the Autowired code tells SB we need a PetProfileRepository object
     @Autowired
@@ -35,8 +47,15 @@ public class PetProfileController {
         return "petProfile/addNewPetSuccess"; //do I need .html at the end?
     }
 
-    @PostMapping("addNewPet")
-    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet, Errors errors, Model model) {
+    @PostMapping("/addNewPet")
+    public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
+                                       Errors errors,
+                                       Model model) {
+
+        LocalDate birthdateLocalDate = newPet.getBirthdate();
+
+        // Set the birthdate of newPet to the LocalDate value
+        newPet.setBirthdate(birthdateLocalDate);
         // Check if there are any validation errors
         if (errors.hasErrors()) {
             // If there are errors, display the form again with error messages
