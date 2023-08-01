@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { FaqComponent } from './faq/faq.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
+import { AddPetSuccessComponent } from './add-pet/add-pet-success/add-pet-success.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AddPetComponent } from './add-pet/add-pet.component';
     CalendarComponent,
     HomeComponent,
     FaqComponent,
-    AddPetComponent
+    AddPetComponent,
+    AddPetSuccessComponent
   ],
   imports: [
     BrowserModule,

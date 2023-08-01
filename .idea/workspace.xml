@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue">
-      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet-success.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet.component.ts" afterDir="false" />
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--backend forms work with Ryan's date format fix">
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet-success/add-pet-success.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet-success/add-pet-success.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet-success/add-pet-success.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/petrax/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet-success.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet-success/add-pet-success.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetProfileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/deletePet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/deletePet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/PETrax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/PETrax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +62,10 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="ThymeLeaf" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -601,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690557813418</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Tayler--backend forms work with Ryan's date format fix">
+      <created>1690844716773</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1690844716773</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -623,7 +627,8 @@
     <MESSAGE value="Tayler--initial commit PetValidationTayler" />
     <MESSAGE value="Tayler--if(errors.hasErrors()) code block is working, but validation messages don't pop up?" />
     <MESSAGE value="Tayler--deletePet form is working and removes pet from database by name." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--deletePet form is working and removes pet from database by name." />
+    <MESSAGE value="Tayler--backend forms work with Ryan's date format fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--backend forms work with Ryan's date format fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PT_Web_Dev_2023_Group_Zoe$PETrax__bootRun_.ic" NAME="PETrax [bootRun] Coverage Results" MODIFIED="1689865120125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
