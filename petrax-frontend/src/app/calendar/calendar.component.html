@@ -3,7 +3,6 @@
   <div class="content-container">
     <div class="calendar-container">
       <full-calendar [options]="calendarOptions"></full-calendar>
-      <div id="calendar"></div>
     </div>
     <div class="upcoming-events">
       <div class="event-list-container">
@@ -19,32 +18,3 @@
     </div>
   </div>
 </div>
-
-<router-outlet></router-outlet>
-
-
-
-
-
-
-
-
-<!--
-<div class="app-container">
-  <h1>Yay!! Our calendar works!!</h1>
-  <div class="content-container">
-    <div class="calendar-container">
-      <full-calendar [options]="calendarOptions"></full-calendar>
-    </div>
-    <div class="event-list-container">
-      <h2>Upcoming Events</h2>
-      <ul>
-        <li *ngFor="let event of upcomingEvents">{{ event.title }} - {{ event.start }}</li>
-      </ul>
-      <button class="add-event-button" (click)="openAddEventModal()">Add Event</button>
-    </div>
-  </div>
-</div>
-
-<router-outlet></router-outlet>
--->
