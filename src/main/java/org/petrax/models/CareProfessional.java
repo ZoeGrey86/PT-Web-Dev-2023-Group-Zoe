@@ -1,9 +1,6 @@
 package org.petrax.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -13,8 +10,9 @@ public class CareProfessional {
     @GeneratedValue
     private int id;
 
-//    @ManyToOne
-//    private User user;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @NotBlank(message = "This field is Required.")
     private String careType;
@@ -40,9 +38,9 @@ public class CareProfessional {
         return id;
     }
 
-//    public User getUser() {
-//        return user;
-//    }
+    public User getUser() {
+        return user;
+    }
 
     public String getCareType() {
         return careType;

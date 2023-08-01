@@ -1,10 +1,9 @@
 package org.petrax.models;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -30,11 +29,13 @@ public class User {
     private String username;
     private String address;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Event> events;
 
     public User () {
 
     }
-    public User(String firstName, String lastName, String contactEmail, String username) {
+    public User(String firstName, String lastName, String contactEmail, String username, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactEmail = contactEmail;
@@ -81,6 +82,10 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
 
+    }
+
+    public List<Event> getEvents() {
+        return events;
     }
 
     public int getId() {

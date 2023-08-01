@@ -1,16 +1,19 @@
 package org.petrax.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @Entity
 public class Event {
     @Id
     @GeneratedValue
     private String id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     @NotBlank(message = "This is a required field")
     @Size(min=3, max=50, message = "Event title must be between 3 and 50 characters")
     private String title;
@@ -34,6 +37,10 @@ public class Event {
 
     public String getId() {
         return id;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public String getTitle() {
@@ -68,4 +75,16 @@ public class Event {
         this.description = description;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Event)) return false;
+        Event event = (Event) o;
+        return getId().equals(event.getId()) && getUser().equals(event.getUser());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getUser());
+    }
 }
