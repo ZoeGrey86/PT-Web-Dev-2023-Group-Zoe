@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { AddPetComponent } from './add-pet/add-pet/add-pet.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     UserListComponent,
     CalendarComponent,
-    HomeComponent
+    HomeComponent,
+    AddPetComponent
   ],
   imports: [
     BrowserModule,
