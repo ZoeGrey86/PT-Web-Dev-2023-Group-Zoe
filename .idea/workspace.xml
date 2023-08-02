@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue">
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" afterDir="false" />
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--following Delaney suggested video, created add-pet.ts">
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/add-pet/add-pet.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -589,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690557813418</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Tayler--following Delaney suggested video, created add-pet.ts">
+      <created>1690994390249</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1690994390249</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -611,7 +621,8 @@
     <MESSAGE value="Tayler--initial commit PetValidationTayler" />
     <MESSAGE value="Tayler--if(errors.hasErrors()) code block is working, but validation messages don't pop up?" />
     <MESSAGE value="Tayler--deletePet form is working and removes pet from database by name." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tayler--deletePet form is working and removes pet from database by name." />
+    <MESSAGE value="Tayler--following Delaney suggested video, created add-pet.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tayler--following Delaney suggested video, created add-pet.ts" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PT_Web_Dev_2023_Group_Zoe$PETrax__bootRun_.ic" NAME="PETrax [bootRun] Coverage Results" MODIFIED="1689865120125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
