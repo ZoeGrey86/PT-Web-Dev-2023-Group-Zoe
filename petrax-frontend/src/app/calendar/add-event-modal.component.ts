@@ -9,7 +9,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./add-event-modal.component.css']
 })
 export class AddEventModalComponent {
-  newEvent: any = {}; // Object to store the new event details
+  newEvent: any = { // Object to store the new event details
+    title: '',
+    start: '',
+    end: '',
+    description: ''
+  };
 
   constructor(public activeModal: NgbActiveModal) {}
 
@@ -23,4 +28,3 @@ export class AddEventModalComponent {
     this.activeModal.close(this.newEvent);
   }
 }
-

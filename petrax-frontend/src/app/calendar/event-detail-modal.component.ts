@@ -1,4 +1,3 @@
-
 import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -10,7 +9,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class EventDetailModalComponent {
   @Input() eventTitle: string;
   @Input() eventStart: Date;
-
+  @Input() eventEnd: Date;
+  @Input() eventDescription: string;
 
   constructor(public activeModal: NgbActiveModal) {}
 

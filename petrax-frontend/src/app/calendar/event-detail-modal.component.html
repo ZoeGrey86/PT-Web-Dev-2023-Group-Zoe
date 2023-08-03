@@ -8,9 +8,10 @@
 </div>
 <div class="modal-body">
   <p><strong>Start Date:</strong> {{ eventStart | date }}</p>
+  <p><strong>End Date:</strong> {{ eventEnd | date }}</p>
+  <p><strong>Description:</strong> {{ eventDescription }}</p>
   <!-- Add other event details here -->
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
 </div>
-
