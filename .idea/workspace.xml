@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Tayler--trying to fix workspace.xml merge issue">
-      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/calendar/calendar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/PetProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/addNewPet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/petProfile/deletePet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/petProfile/deletePet.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +91,9 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2RyJcaRGFJTOvvWIoko6ZhkO0RD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -142,7 +140,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="bootRun" />
+            <option value=":bootRun" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -240,6 +238,7 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">

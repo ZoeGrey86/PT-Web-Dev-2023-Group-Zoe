@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { FaqComponent } from './faq/faq.component';
+import { PetProfileComponent } from './pet-profile/pet-profile.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FaqComponent } from './faq/faq.component';
     UserListComponent,
     CalendarComponent,
     HomeComponent,
-    FaqComponent
+    FaqComponent,
+    PetProfileComponent
   ],
   imports: [
     BrowserModule,
