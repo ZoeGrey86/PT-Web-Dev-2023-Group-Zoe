@@ -6,10 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
-import java.util.Date;
-import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -17,49 +14,50 @@ import java.util.Objects;
 public class PetProfile {
 
     //private fields petId, name, breed, age, weight, birthday, medications, allergies, microchip number, and diagnoses
+
     @Id
     @GeneratedValue
     private int petId;
 
-    private byte[] petPic; // The field to store the uploaded image as a byte array (BLOB)
-
+    //The field to store the uploaded image as a byte array (BLOB)
+    private byte[] petPic;
 
     //    @NotBlank(message = "Name is required")
-//    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
+    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
 
     //Enum class PetType
-//    @NotNull(message = "Must select pet type")
+    @NotNull(message = "Must select pet type")
     private PetType petType;
 
-//    @NotBlank(message = "Breed is required")
-//    @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
+    @NotBlank(message = "Breed is required")
+    @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
     private String breed;
 
-//    @NotNull(message = "Age is required")
+    @NotNull(message = "Age is required")
     private Double age;
 
-//    @NotNull(message = "Weight is required")
+    @NotNull(message = "Weight is required")
     private Double weight;
 
-//    @Past(message = "Birthdate must be in the past")
-//    @NotNull(message = "Birthdate is required")
-    private LocalDate birthdate;
+    @NotNull(message = "Birthdate is required")
+    private String birthdate;
 
-//    @NotBlank(message = "Enter 'None' if not applicable")
-//    @Size(max = 500, message = "Medications too long!")
+    @NotBlank(message = "Enter 'None' if not applicable")
+    @Size(max = 500, message = "Medications too long!")
     private String medication;
 
-//    @NotBlank(message = "Enter 'None' if not applicable")
-//    @Size(max = 500, message = "Allergies too long!")
+    @NotBlank(message = "Enter 'None' if not applicable")
+    @Size(max = 500, message = "Allergies too long!")
     private String allergy;
 
-//    @NotBlank(message = "Enter 'None' if not applicable")
-//    @Size(max = 500, message = "Microchip number too long!")
-    private String microchip; //Some microchip #s are alpha-numeric, so string not double
+    @NotBlank(message = "Enter 'None' if not applicable")
+    @Size(max = 500, message = "Microchip number too long!")
+    //Some microchip #s are alpha-numeric, so string not double
+    private String microchip;
 
-//    @NotBlank(message = "Enter 'None' if not applicable")
-//    @Size(max = 500, message = "Diagnoses too long!")
+    @NotBlank(message = "Enter 'None' if not applicable")
+    @Size(max = 500, message = "Diagnoses too long!")
     private String diagnoses;
 
 
@@ -70,8 +68,8 @@ public class PetProfile {
     //public constructor used to instantiate an object
     //Refresher: petId value not added since it will be auto-generated
     //automatically when the object is persisted or saved.
-    public PetProfile(String name, byte[] petPic, PetType petType, String breed, double age, double weight, LocalDate birthdate,
-               String medication, String allergy, String microchip, String diagnoses) {
+    public PetProfile(String name, byte[] petPic, PetType petType, String breed, double age, double weight, String birthdate,
+                      String medication, String allergy, String microchip, String diagnoses) {
         this.name = name;
         this.petPic = petPic; //blob SQL type
         this.petType = petType; //enum declaration
@@ -148,11 +146,11 @@ public class PetProfile {
         this.weight = weight;
     }
 
-    public LocalDate getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(LocalDate birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
 
