@@ -19,6 +19,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
 import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -30,7 +31,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     HomeComponent,
     FaqComponent,
     EventDetailModalComponent,
-    AddEventModalComponent
+    AddEventModalComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
