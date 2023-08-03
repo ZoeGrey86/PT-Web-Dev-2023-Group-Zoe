@@ -54,20 +54,20 @@ public class PetProfileController {
     public String processAddNewPetForm(@ModelAttribute @Valid PetProfile newPet,
                                        Errors errors,
                                        Model model) {
-
-        LocalDate birthdateLocalDate = newPet.getBirthdate();
-
-        // Set the birthdate of newPet to the LocalDate value
-        newPet.setBirthdate(birthdateLocalDate);
-        // Check if there are any validation errors
-        if (errors.hasErrors()) {
-            // If there are errors, display the form again with error messages
-            model.addAttribute("Add New Pet", "Add New Pet");
-            return "petProfile/addNewPet"; // Return the addNewPet view to show the form again
-        }
-        // Save the newPet object to the database using the petProfileRepository
-        petProfileRepository.save(newPet);
-        // Redirect to the success page
+//
+//        LocalDate birthdateLocalDate = newPet.getBirthdate();
+//
+//        // Set the birthdate of newPet to the LocalDate value
+//        newPet.setBirthdate(birthdateLocalDate);
+//        // Check if there are any validation errors
+//        if (errors.hasErrors()) {
+//            // If there are errors, display the form again with error messages
+//            model.addAttribute("Add New Pet", "Add New Pet");
+//            return "petProfile/addNewPet"; // Return the addNewPet view to show the form again
+//        }
+//        // Save the newPet object to the database using the petProfileRepository
+//        petProfileRepository.save(newPet);
+//        // Redirect to the success page
         return "redirect:addNewPetSuccess"; //do I need .html at the end?
     }
 

@@ -6,7 +6,6 @@ public class RegisterFormDTO {
     private String description;
 
     private String contactEmail;
-    private String username;
     private String password;
     private String verifyPassword;
 
@@ -40,14 +39,6 @@ public class RegisterFormDTO {
 
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {

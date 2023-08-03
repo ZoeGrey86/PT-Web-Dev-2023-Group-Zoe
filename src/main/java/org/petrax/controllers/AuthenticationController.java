@@ -65,8 +65,8 @@ public class AuthenticationController {
             return "authentication/register";
         }
 
-        // Look up user in database using username they provided in the form
-        User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
+        // Look up user in database using email they provided in the form
+        User existingUser = userRepository.findByContactEmail(registerFormDTO.getContactEmail());
 
         // Send user back to form if username already exists
         if (existingUser != null) {
@@ -84,7 +84,7 @@ public class AuthenticationController {
         }
         // OTHERWISE, save new username and hashed password in database, start a new session, and redirect to home page
 //        User newUser = new User(registerFormDTO.getFirstName(),registerFormDTO.getLastName(),registerFormDTO.getDescription(), registerFormDTO.getContactEmail(), registerFormDTO.getUsername(), registerFormDTO.getPassword());
-        User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getPassword());
+        User newUser = new User(registerFormDTO.getContactEmail(), registerFormDTO.getPassword());
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
         return "redirect:authentication/success";
@@ -108,7 +108,7 @@ public class AuthenticationController {
         }
 
         // Look up user in database using username they provided in the form
-        User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
+        User theUser = userRepository.findByContactEmail(loginFormDTO.getUsername());
 
         // Get the password the user supplied in the form
         String password = loginFormDTO.getPassword();

@@ -1,10 +1,13 @@
 package org.petrax.models;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
@@ -26,9 +29,14 @@ public class User {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
-    @NotBlank(message = "Username is required")
-    @Size(min = 2, max = 50, message = "Username must be between 2 and 50 characters")
-    private String username;
+//    @NotBlank(message = "Username is required")
+//    @Size(min = 2, max = 50, message = "Username must be between 2 and 50 characters")
+//    private String username;
+@NotNull
+private String pwHash;
+
+    public static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
     private String address;
 
 
@@ -39,8 +47,12 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactEmail = contactEmail;
-        this.username = username;
         this.address = address;
+    }
+
+    public User(String contactEmail, String password) {
+        this.contactEmail = contactEmail;
+        this.pwHash = encoder.encode(password);
     }
 
 
@@ -67,12 +79,12 @@ public class User {
         this.contactEmail = contactEmail;
     }
 
-    public String getUsername() {
-        return username;
+    public String getPwHash() {
+        return pwHash;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setPwHash(String pwHash) {
+        this.pwHash = pwHash;
     }
 
     public String getAddress() {
@@ -83,6 +95,10 @@ public class User {
         this.address = address;
 
     }
+    public boolean isMatchingPassword(String password) {
+        return encoder.matches(password, pwHash);
+    }
+
 
     public int getId() {
         return id;
@@ -97,7 +113,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", contactEmail='" + contactEmail + '\'' +
-                ", username='" + username + '\'' +
+                ", pwHash='" + pwHash + '\'' +
                 ", address='" + address + '\'' +
                 '}';
         }
