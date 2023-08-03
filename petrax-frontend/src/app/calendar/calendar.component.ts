@@ -1,63 +1,100 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient } from '@angular/common/http';
-
-
+import { EventDetailModalComponent } from './event-detail-modal.component';
+import { AddEventModalComponent } from './add-event-modal.component';
+import interactionPlugin from '@fullcalendar/interaction';
+import dayGridPlugin from '@fullcalendar/daygrid';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
-export class CalendarComponent {
-  calendarVisible = true;
-
- // Add the methods: goPrev, goNext, goToday
-  goPrev() {
-    // Implement the logic to go to the previous period (e.g., previous month or week)
-    // You can use the FullCalendar API to change the view or date as needed
-  }
-
-  goNext() {
-    // Implement the logic to go to the next period (e.g., next month or week)
-    // You can use the FullCalendar API to change the view or date as needed
-  }
-
-  goToday() {
-    // Implement the logic to go to today's date
-    // You can use the FullCalendar API to change the view or date as needed
-  }
-
-  // Add the missing property: upcomingEvents
-  upcomingEvents = [
-    // Sample event data (you can replace this with your actual event data)
-    { title: 'Event 1', start: '2023-07-30' },
-    { title: 'Event 2', start: '2023-08-02' },
-    { title: 'Event 3', start: '2023-08-05' }
+export class CalendarComponent implements OnInit {
+  events: any[] = [
+  {
+     title: 'Theodore has an appt ',
+     start: '2023-08-20T10:00:00',
+     end: '2023-08-20T14:00:00',
+     description: 'This is amazing',
+  },
+  {
+     title: 'Our project is DUE!! ',
+     start: '2023-08-14T10:00:00',
+     end: '2023-08-14T14:00:00',
+     description: 'WE GOT THIS',
+  },
   ];
-
   calendarOptions: CalendarOptions = {
-    plugins: [
-      dayGridPlugin,
-      interactionPlugin
-    ],
-    headerToolbar: {
-      left: 'prev, next today',
-      center: 'Petrax Calendar',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay'
-    },
-    initialView: 'dayGridMonth'
+      plugins: [dayGridPlugin, interactionPlugin],
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+         left: 'prev,next today',
+         center: 'title',
+         right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      events: this.events,
+      eventClick: this.handleEventClick.bind(this)
   };
-   // Add the missing method: openAddEventModal
-    openAddEventModal() {
-      // Implement the logic to open a modal for adding events
-      // You can use a library like Angular Material or ngx-bootstrap to create the modal
-      // For demonstration purposes, you can use a simple JavaScript alert as follows:
-      alert('Implementing the logic to open the Add Event modal.');
-    }
-}
 
+  constructor(private modalService: NgbModal, private http: HttpClient) {}
+
+  ngOnInit() {
+    this.fetchEventsFromServer();
+  }
+
+  fetchEventsFromServer() {
+    this.http.get<any[]>('/api/events', { params: { page: '0', size: '3' } }).subscribe((data) => {
+      this.events = [...this.events, ...data];
+      this.initializeCalendar();
+    });
+  }
+
+  initializeCalendar() {
+    this.calendarOptions.events = this.events
+ }
+
+//       plugins: [dayGridPlugin, interactionPlugin],
+//       initialView: 'dayGridMonth',
+//       headerToolbar: {
+//         left: 'prev,next today',
+//         center: 'title',
+//         right: 'dayGridMonth,timeGridWeek,timeGridDay'
+//       },
+//       events: this.events,
+//       eventClick: this.handleEventClick.bind(this)
+//     };
+
+
+  handleEventClick(eventInfo) {
+    const eventId = eventInfo.event.id;
+    const eventTitle = eventInfo.event.title;
+    const eventStart = eventInfo.event.start;
+    const eventEnd = eventInfo.event.end;
+    const eventDescription = eventInfo.event.extendedProps.description || eventInfo.event.description;
+
+    const modalRef = this.modalService.open(EventDetailModalComponent);
+    modalRef.componentInstance.eventId = eventId;
+    modalRef.componentInstance.eventTitle = eventTitle;
+    modalRef.componentInstance.eventStart = eventStart;
+    modalRef.componentInstance.eventEnd = eventEnd;
+    modalRef.componentInstance.eventDescription = eventDescription;
+  }
+
+  openAddEventModal() {
+    const modalRef = this.modalService.open(AddEventModalComponent);
+    modalRef.result.then((result) => {
+      if (result) {
+        const newEvent = result;
+        this.events.push(newEvent);
+        this.http.post('/api/events', newEvent).subscribe(() => {
+          console.log('Event added successfully.');
+          this.initializeCalendar(); // refresh the calendar to display the new event
+        });
+      }
+    });
+  }
+}
