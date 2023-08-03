@@ -41,14 +41,12 @@ public class UserTest {
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setContactEmail(contactEmail);
-        user.setUsername(username);
         user.setAddress(address);
 
         // Verify that the setters correctly update the fields
         Assertions.assertEquals(firstName, user.getFirstName());
         Assertions.assertEquals(lastName, user.getLastName());
         Assertions.assertEquals(contactEmail, user.getContactEmail());
-        Assertions.assertEquals(username, user.getUsername());
         Assertions.assertEquals(address, user.getAddress());
 
     }

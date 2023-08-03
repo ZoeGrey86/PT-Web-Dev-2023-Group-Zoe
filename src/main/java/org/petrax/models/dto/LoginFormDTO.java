@@ -9,20 +9,19 @@ public class LoginFormDTO {
     @NotNull
     @NotBlank
     @Size(min = 3, max = 20, message = "Invalid username. Must be between 3 and 20 characters.")
-    private String username;
+    private String contactEmail;
     @NotNull
     @NotBlank
     @Size(min = 5, max = 30, message = "Invalid password. Must be between 5 and 30 characters.")
     private String password;
 
-    public String getUsername() {
-        return username;
+    public String getContactEmail() {
+        return contactEmail;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
     }
-
 
     public String getPassword() {
         return password;

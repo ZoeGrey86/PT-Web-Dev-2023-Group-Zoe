@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="updating">
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Users now saving to the database!">
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/WebApplicationConfigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/WebApplicationConfigure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/controllers/PetProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/data/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/data/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/RegisterFormDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/PetType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/LoginFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/petrax/models/dto/LoginFormDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/authentication/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authentication/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/authentication/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authentication/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTest.java" afterDir="false" />
     </list>
@@ -300,12 +303,13 @@
       <option name="project" value="LOCAL" />
       <updated>1691027040031</updated>
     </task>
-    <task id="LOCAL-00002" summary="initial commit to User branch">
-      <created>1688858000630</created>
+    <task id="LOCAL-00002" summary="Users now saving to the database!">
+      <option name="closed" value="true" />
+      <created>1691032538960</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1688858000630</updated>
+      <updated>1691032538960</updated>
     </task>
     <task id="LOCAL-00003" summary="Tayler--trying to fix workspace.xml merge issue">
       <created>1689641034894</created>
@@ -377,7 +381,7 @@
       <option name="project" value="LOCAL" />
       <updated>1689639982775</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -396,7 +400,8 @@
     <MESSAGE value="Tayler--made some edits, PetProfile form still not working" />
     <MESSAGE value="Tayler--created a photo upload field" />
     <MESSAGE value="updating" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating" />
+    <MESSAGE value="Users now saving to the database!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Users now saving to the database!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PETrax$PETraxTests.ic" NAME="PETraxTests Coverage Results" MODIFIED="1688305284906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

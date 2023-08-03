@@ -87,7 +87,7 @@ public class AuthenticationController {
         User newUser = new User(registerFormDTO.getContactEmail(), registerFormDTO.getPassword());
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
-        return "redirect:authentication/success";
+        return "redirect:user/success";
     }
     // Handlers for login form
     @GetMapping("/login")
@@ -108,7 +108,7 @@ public class AuthenticationController {
         }
 
         // Look up user in database using username they provided in the form
-        User theUser = userRepository.findByContactEmail(loginFormDTO.getUsername());
+        User theUser = userRepository.findByContactEmail(loginFormDTO.getContactEmail());
 
         // Get the password the user supplied in the form
         String password = loginFormDTO.getPassword();
