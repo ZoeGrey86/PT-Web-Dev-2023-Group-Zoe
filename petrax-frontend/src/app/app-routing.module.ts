@@ -7,6 +7,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
+import { AddNewPetSuccessComponent } from './add-new-pet-success/add-new-pet-success.component';
+import { AddNewPetComponent } from './add-new-pet/add-new-pet.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent }, // Route for CalendarComponent
   {path: 'faq', component: FaqComponent}, //Route for FAQ
   {path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
+  { path: 'addNewPetSuccess', component: AddNewPetSuccessComponent } //Route for AddNewPetSuccessComponent
+  { path: 'addNewPet', component: AddNewPetComponent } //Route for AddNewPetComponent
 
 
   // Add more routes as needed

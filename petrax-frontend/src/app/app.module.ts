@@ -21,6 +21,8 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { AppRoutingModule } from './app-routing.module';
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AddPetSuccessComponent } from './add-pet-success/add-pet-success.component';
+import { AddPetComponent } from './add-pet/add-pet.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -34,7 +36,9 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     PetProfileComponent,
     EventDetailModalComponent,
     AddEventModalComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddPetSuccessComponent,
+    AddPetComponent
   ],
   imports: [
     BrowserModule,
