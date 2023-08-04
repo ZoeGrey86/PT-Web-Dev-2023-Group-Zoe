@@ -40,6 +40,8 @@ public class PetProfile {
     @NotNull(message = "Weight is required")
     private Double weight;
 
+    @NotNull(message = "Birthdate is required")
+
     private LocalDate birthdate;
 
     @NotBlank(message = "Enter 'None' if not applicable")

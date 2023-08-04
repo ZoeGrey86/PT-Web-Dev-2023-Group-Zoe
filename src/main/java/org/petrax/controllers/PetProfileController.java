@@ -141,7 +141,7 @@ public class PetProfileController {
 
     @PostMapping("deletePet")
     public String processDeletePetForm(@RequestParam(required = false) String name,
-                                       @RequestParam(required = false) String birthdate) {
+                                       @RequestParam(required = false) LocalDate birthdate) {
         if (name != null && birthdate != null) {
             PetProfile petToDelete = petProfileRepository.findFirstByNameAndBirthdate(name, birthdate);
             if (petToDelete != null) {
@@ -150,9 +150,6 @@ public class PetProfileController {
         }
         return "redirect:/petProfile/deletePetSuccess";
     }
-
-
-
 
 
     //html not set up yet

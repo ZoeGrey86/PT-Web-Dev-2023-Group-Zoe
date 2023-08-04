@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="Working on adding event handling to the calendar. The event works, but now the calendar doesn't show up. I have lots more debugging to do.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/app.component.html" afterDir="false" />
@@ -81,7 +82,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2RyJcaRGFJTOvvWIoko6ZhkO0RD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -129,7 +132,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="bootRun" />
+            <option value=":bootRun" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -249,7 +252,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -604,13 +606,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690557813418</updated>
     </task>
-    <task id="LOCAL-00045" summary="Working on adding event handling to the calendar. The event works, but now the calendar doesn't show up. I have lots more debugging to do.">
-      <option name="closed" value="true" />
-      <created>1690925747906</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1690925747906</updated>
+
     </task>
     <option name="localTasksCounter" value="46" />
     <servers />
@@ -634,8 +630,7 @@
     <MESSAGE value="Tayler--initial commit PetValidationTayler" />
     <MESSAGE value="Tayler--if(errors.hasErrors()) code block is working, but validation messages don't pop up?" />
     <MESSAGE value="Tayler--deletePet form is working and removes pet from database by name." />
-    <MESSAGE value="Working on adding event handling to the calendar. The event works, but now the calendar doesn't show up. I have lots more debugging to do." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on adding event handling to the calendar. The event works, but now the calendar doesn't show up. I have lots more debugging to do." />
+
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PT_Web_Dev_2023_Group_Zoe$PETrax__bootRun_.ic" NAME="PETrax [bootRun] Coverage Results" MODIFIED="1689865120125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
