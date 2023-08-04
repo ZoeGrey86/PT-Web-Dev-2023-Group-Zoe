@@ -1,4 +1,5 @@
 package org.petrax.controllers;
+
 import org.petrax.data.PetProfileRepository;
 import org.petrax.models.PetProfile;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,9 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.beans.PropertyEditorSupport;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 
@@ -137,7 +141,7 @@ public class PetProfileController {
 
     @PostMapping("deletePet")
     public String processDeletePetForm(@RequestParam(required = false) String name,
-                                       @RequestParam(required = false) String birthdate) {
+                                       @RequestParam(required = false) LocalDate birthdate) {
         if (name != null && birthdate != null) {
             PetProfile petToDelete = petProfileRepository.findFirstByNameAndBirthdate(name, birthdate);
             if (petToDelete != null) {
@@ -146,9 +150,6 @@ public class PetProfileController {
         }
         return "redirect:/petProfile/deletePetSuccess";
     }
-
-
-
 
 
     //html not set up yet

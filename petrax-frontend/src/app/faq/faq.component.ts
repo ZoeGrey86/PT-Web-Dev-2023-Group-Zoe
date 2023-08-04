@@ -11,6 +11,7 @@ export class FaqComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRandomCatFact();
+    this.loadGoogleSearch();
   }
 
   getRandomCatFact() {
@@ -31,5 +32,13 @@ export class FaqComponent implements OnInit {
       factElement.innerHTML = `<p>${fact}</p>`;
     }
   }
-
+  loadGoogleSearch() {
+    const cx = 'b51486f8d83c747a2'; 
+    const gcseScript = document.createElement('script');
+    gcseScript.src = "https://cse.google.com/cse.js?cx=b51486f8d83c747a2";
+    gcseScript.async = true;
+    gcseScript.defer = true;
+    document.getElementsByTagName('head')[0].appendChild(gcseScript);
+  }
 }
+
