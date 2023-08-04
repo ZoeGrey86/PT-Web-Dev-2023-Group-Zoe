@@ -30,12 +30,20 @@
               "src/assets"
             ],
             "styles": [
+
+              
+=======
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "node_modules/@fullcalendar/common/main.css",
               "node_modules/@fullcalendar/daygrid/main.css",
+              
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
