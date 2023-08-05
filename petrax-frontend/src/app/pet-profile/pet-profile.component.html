@@ -1,17 +1,22 @@
 <div class = "pet-profie">
+  <h1 class="app-heading">PETrax 🐕 🐈 🦜 🦎</h1>
 
+  <div class="pet-profile-container"></div>
+
+  <h2>Pet Profile</h2>
   <ul>
     <li *ngFor="let pet of pets">
       <span class="name">{{ pet.name }}</span>
       <span class="breed">{{ pet.breed }}</span>
-      <span class="age">{{ pet.age }}</span>
-      <span class="weight">{{ pet.weight }}</span>
-      <span class="birthday">{{ pet.birthday }}</span>
-      <span class="medications">{{ pet.medications }}</span>
-      <span class="allergies">{{ pet.allergies }}</span>
+      <span class="age">{{ pet.age | number}}</span>
+      <span class="weight">{{ pet.weight | number }}</span>
+      <span class="birthday">{{ pet.birthday |date }}</span>
+      <span class="medications">{{ pet.medication }}</span>
+      <span class="allergies">{{ pet.allergy }}</span>
       <span class="microchip">{{ pet.microchip }}</span>
       <span class="diagnoses">{{ pet.diagnoses }}</span>
     </li>
   </ul>
-
+  <button class="add-pet-button" (click)="openAddPetModal()">Add New Pet</button>
+</div>
 </div>

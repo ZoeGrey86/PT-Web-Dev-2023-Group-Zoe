@@ -23,6 +23,9 @@ import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddPetSuccessComponent } from './add-pet-success/add-pet-success.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
+import { AddNewPetComponent } from './add-new-pet/add-new-pet.component';
+import { AddPetModalComponent } from './pet-profile/add-pet-modal/add-pet-modal.component';
+import { PetDetailModalComponent } from './pet-profile/pet-detail-modal/pet-detail-modal.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -38,7 +41,10 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AddEventModalComponent,
     NavbarComponent,
     AddPetSuccessComponent,
-    AddPetComponent
+    AddPetComponent,
+    AddNewPetComponent,
+    AddPetModalComponent,
+    PetDetailModalComponent
   ],
   imports: [
     BrowserModule,

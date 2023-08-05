@@ -13,7 +13,7 @@ import java.util.Objects;
 //@Validated
 public class PetProfile {
 
-    //private fields petId, name, breed, age, weight, birthday, medications, allergies, microchip number, and diagnoses
+    //private fields petId, name, breed, age, weight, birthday, medication, allergy, microchip, and diagnoses
 
     @Id
     @GeneratedValue

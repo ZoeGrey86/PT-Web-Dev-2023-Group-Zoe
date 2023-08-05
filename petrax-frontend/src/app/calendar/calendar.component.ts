@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FullCalendarModule } from '@fullcalendar/angular';
+//provides the Angular integration for the FullCalendar library.
 import { CalendarOptions } from '@fullcalendar/angular';
+//defines the options for the FullCalendar calendar.
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+// provides the Angular implementation of the Bootstrap Modal component.
 import { HttpClient } from '@angular/common/http';
+//provides an HTTP client for making requests to the server.
 import { EventDetailModalComponent } from './event-detail-modal.component';
+//displays the details of an event.
 import { AddEventModalComponent } from './add-event-modal.component';
+//allows users to add new events to the calendar.
 import interactionPlugin from '@fullcalendar/interaction';
+//provides the day grid view for the FullCalendar calendar.
 import dayGridPlugin from '@fullcalendar/daygrid';
+//provides the interaction features for the FullCalendar calendar.
 
 @Component({
   selector: 'app-calendar',

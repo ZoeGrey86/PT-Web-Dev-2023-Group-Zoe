@@ -17,19 +17,15 @@
     </div>
 
     <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" [(ngModel)]="newPet.name" required>
-    </div>
-
-    <div class="form-group">
-    <label for="petType">Pet Type</label>
-      <option value="CAT">Cat</option>
-      <option value="DOG">Dog</option>
-      <option value="BIRD">Bird</option>
-      <option value="FISH">Fish</option>
-      <option value="REPTILE">Reptile</option>
-      <option value="OTHER">Other</option>
-      <input type="text" class="form-control" id="petType" [(ngModel)]="newPet.petType" required>
+      <label for="petType">Pet Type</label>
+      <select class="form-control" id="petType" [(ngModel)]="newPet.petType" required>
+        <option value="CAT">Cat</option>
+        <option value="DOG">Dog</option>
+        <option value="BIRD">Bird</option>
+        <option value="FISH">Fish</option>
+        <option value="REPTILE">Reptile</option>
+        <option value="OTHER">Other</option>
+      </select>
     </div>
 
     <div class="form-group">
@@ -53,13 +49,13 @@
     </div>
 
     <div class="form-group">
-      <label for="medications">Medications</label>
-      <input type="text" class="form-control" id="medications" [(ngModel)]="newPet.medications" required>
+      <label for="medication">Medication</label>
+      <input type="text" class="form-control" id="medication" [(ngModel)]="newPet.medication" required>
     </div>
 
     <div class="form-group">
-      <label for="allergies">Allergies</label>
-      <input type="text" class="form-control" id="allergies" [(ngModel)]="newPet.allergies" required>
+      <label for="allergy">Allergy</label>
+      <input type="text" class="form-control" id="allergy" [(ngModel)]="newPet.allergy" required>
     </div>
 
     <div class="form-group">
