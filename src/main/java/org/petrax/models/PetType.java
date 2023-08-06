@@ -1,6 +1,6 @@
 package org.petrax.models;
 
-public enum PetType {
+public enum  PetType {
 
     CAT("Cat"),
     DOG("Dog"),
