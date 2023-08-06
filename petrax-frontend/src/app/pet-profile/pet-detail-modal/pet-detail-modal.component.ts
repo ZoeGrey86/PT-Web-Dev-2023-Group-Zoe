@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { PetProfile } from './pet-profile';
 
 
 @Component({
@@ -21,6 +22,32 @@ export class PetDetailModalComponent {
 
 
   constructor(public activeModal: NgbActiveModal) {}
+
+openPetDetailModal(selectedPet: PetProfile) {
+    const modalRef = this.modalService.open(PetDetailModalComponent, { size: 'lg' });
+
+    // Pass the data to the modal using @Input properties STATIC
+//     modalRef.componentInstance.petName = 'Tegan';
+//     modalRef.componentInstance.petBreed = 'Sphynx';
+//     modalRef.componentInstance.petAge = 6;
+//     modalRef.componentInstance.petWeight = 11;
+//     modalRef.componentInstance.petBirthday = 03-03-2017;
+//     modalRef.componentInstance.petMedication = 'None';
+//     modalRef.componentInstance.petAllergy = 'None';
+//     modalRef.componentInstance.petMicrochip = '123456789';
+//     modalRef.componentInstance.petDiagnoses = 'Gingivitis';
+
+    // Pass the data to the modal using @Input properties DYNAMIC
+    modalRef.componentInstance.petName = selectedPet.petName;
+    modalRef.componentInstance.petBreed = selectedPet.petBreed;
+    modalRef.componentInstance.petAge = selectedPet.petAge;
+    modalRef.componentInstance.petWeight = selectedPet.petWeight;
+    modalRef.componentInstance.petBirthday =selectedPet.petBirthday;
+    modalRef.componentInstance.petMedication = selectedPet.petMedication;
+    modalRef.componentInstance.petAllergy = selectedPet.petAllergy;
+    modalRef.componentInstance.petMicrochip = selectedPet.petMicrochip;
+    modalRef.componentInstance.petDiagnoses = selectedPet.petDiagnoses;
+  }
 
   closeModal() {
     this.activeModal.dismiss();

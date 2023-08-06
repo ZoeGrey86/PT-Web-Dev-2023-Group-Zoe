@@ -1,6 +1,7 @@
-<div class = "pet-profie">
+<div class = "app-container">
   <h1 class="app-heading">PETrax 🐕 🐈 🦜 🦎</h1>
 
+  <div class="content-container">
   <div class="pet-profile-container"></div>
 
   <h2>Pet Profile</h2>
@@ -10,7 +11,7 @@
       <span class="breed">{{ pet.breed }}</span>
       <span class="age">{{ pet.age | number}}</span>
       <span class="weight">{{ pet.weight | number }}</span>
-      <span class="birthday">{{ pet.birthday |date }}</span>
+      <span class="birthday">{{ pet.birthday | date }}</span>
       <span class="medications">{{ pet.medication }}</span>
       <span class="allergies">{{ pet.allergy }}</span>
       <span class="microchip">{{ pet.microchip }}</span>
@@ -20,3 +21,4 @@
   <button class="add-pet-button" (click)="openAddPetModal()">Add New Pet</button>
 </div>
 </div>
+

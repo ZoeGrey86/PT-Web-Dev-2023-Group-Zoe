@@ -6,6 +6,8 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+
+<div class="modal-body">
   <p><strong>Name:</strong> {{ petName }}</p>
   <p><strong>Breed:</strong> {{ petBreed }}</p>
   <p><strong>Age:</strong> {{ petAge | number }}</p>
@@ -16,6 +18,8 @@
   <p><strong>Microchip:</strong> {{ petMicrochip }}</p>a
   <p><strong>Diagnoses:</strong> {{ petDiagnoses }}</p>
 </div>
+
 <div class="modal-footer">
+  <button class="btn btn-primary" (click)="openPetDetailModal()">View Pet Details</button>
   <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
 </div>

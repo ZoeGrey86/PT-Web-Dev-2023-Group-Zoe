@@ -19,11 +19,9 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
 import { AppRoutingModule } from './app-routing.module';
-import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AddPetSuccessComponent } from './add-pet-success/add-pet-success.component';
-import { AddPetComponent } from './add-pet/add-pet.component';
-import { AddNewPetComponent } from './add-new-pet/add-new-pet.component';
+import { PetProfileComponent } from './pet-profile/pet-profile.component';
+import { AddNewPetSuccessComponent } from './pet-profile/add-new-pet-success/add-new-pet-success.component';
 import { AddPetModalComponent } from './pet-profile/add-pet-modal/add-pet-modal.component';
 import { PetDetailModalComponent } from './pet-profile/pet-detail-modal/pet-detail-modal.component';
 
@@ -36,16 +34,15 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     CalendarComponent,
     HomeComponent,
     FaqComponent,
-    PetProfileComponent,
     EventDetailModalComponent,
     AddEventModalComponent,
     NavbarComponent,
-    AddPetSuccessComponent,
-    AddPetComponent,
-    AddNewPetComponent,
+    PetProfileComponent,
+    AddNewPetSuccessComponent,
     AddPetModalComponent,
     PetDetailModalComponent
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -56,8 +53,13 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AppRoutingModule,
     FullCalendarModule
   ],
+
   providers: [],
+
   bootstrap: [AppComponent],
+
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
+
 export class AppModule {}

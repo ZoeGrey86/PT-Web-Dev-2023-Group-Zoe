@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PetDetailModalComponent } from './pet-detail-modal/pet-detail-modal.component';
+import { AddPetModalComponent } from './add-pet-modal/add-pet-modal.component';
 
 @Component({
   selector: 'app-pet-profile',
