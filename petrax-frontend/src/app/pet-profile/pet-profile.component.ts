@@ -48,16 +48,36 @@ constructor(
     modalRef.componentInstance.petDiagnoses = petInfo.petDiagnoses;
   }
 
-  openAddPetModal() {
-    const modalRef = this.modalService.open(AddPetModalComponent);
-    modalRef.result.then((result: PetProfile) => {
-      if (result) {
-        this.pets.push(result);
-        this.http.post('/api/pet-profile', result).subscribe(() => {
-          console.log('Pet added successfully.');
-          // No need for initializePetProfile() here, directly update pets array
-        });
-      }
-    });
-  }
+//   openAddPetModal() {
+//     const modalRef = this.modalService.open(AddPetModalComponent);
+//     modalRef.result.then((result: PetProfile) => {
+//       if (result) {
+//         this.pets.push(result);
+//         this.http.post('/api/pet-profile', result).subscribe(() => {
+//           console.log('Pet added successfully.');
+//           // No need for initializePetProfile() here, directly update pets array
+//         });
+//       }
+//     });
+//   }
+openAddPetModal() {
+  const modalRef = this.modalService.open(AddPetModalComponent);
+  modalRef.result.then((result: PetProfile) => {
+    if (result) {
+      // Format the pet's birthday using DatePipe
+      result.petBirthday = this.datePipe.transform(result.petBirthday, 'yyyy-MM-dd');
+
+      // Push the formatted pet to the array
+      this.pets.push(result);
+
+      // Send POST request with the formatted pet
+      this.http.post('/api/pet-profile', result).subscribe(() => {
+        console.log('Pet added successfully.');
+        // No need for initializePetProfile() here, directly update pets array
+      });
+    }
+  });
+}
+
+
 }
