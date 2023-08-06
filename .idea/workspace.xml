@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="added angular component class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689639982775</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added angular component class">
+      <option name="closed" value="true" />
+      <created>1691112407891</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691112407891</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">

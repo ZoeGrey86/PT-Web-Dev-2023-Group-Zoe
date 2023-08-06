@@ -1,1 +1,23 @@
-<p>authentication works!</p>
+<div class="authentication-container">
+    <h2>Register User</h2>
+    <form (ngSubmit)="onSubmit()" #authForm="ngForm">
+        <div class="form-group">
+            <label for="contactEmail">Contact Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" [(ngModel)]="contactEmail" required email />
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" required minlength="8" />
+        </div>
+
+        <div class="form-group">
+            <label for="verifyPassword">Verify Password</label>
+            <input type="password" id="verifyPassword" name="verifyPassword" [(ngModel)]="verifyPassword" required minlength="8" />
+        </div>
+
+        <button type="submit" [disabled]="!authForm.valid || password !== verifyPassword">Register</button>
+    </form>
+</div>
+
+<router-outlet></router-outlet>
