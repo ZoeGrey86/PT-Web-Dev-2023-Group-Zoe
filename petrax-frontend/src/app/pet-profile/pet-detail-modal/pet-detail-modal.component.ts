@@ -11,6 +11,7 @@ import { PetProfile } from './pet-profile';
 export class PetDetailModalComponent {
 
   @Input() petName: string;
+  @Input() petName: enum;
   @Input() petBreed: string;
   @Input() petAge: number;
   @Input() petWeight: number;

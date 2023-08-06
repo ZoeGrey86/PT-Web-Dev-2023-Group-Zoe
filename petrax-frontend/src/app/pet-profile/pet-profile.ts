@@ -1,6 +1,7 @@
 export class PetProfile {
 
     petName: string;
+    petType: enum;
     petBreed: string;
     petAge: number;
     petWeight: number;
