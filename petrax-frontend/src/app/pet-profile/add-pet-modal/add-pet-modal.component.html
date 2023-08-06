@@ -12,8 +12,8 @@
   <form (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" [(ngModel)]="newPet.name" required>
+      <label for="petName">Name</label>
+      <input type="text" class="form-control" id="petName" [(ngModel)]="newPet.petName" required>
     </div>
 
     <div class="form-group">
@@ -29,13 +29,13 @@
     </div>
 
     <div class="form-group">
-      <label for="breed">Breed</label>
-      <input type="text" class="form-control" id="breed" [(ngModel)]="newPet.breed" required>
+      <label for="petBreed">Breed</label>
+      <input type="text" class="form-control" id="petBreed" [(ngModel)]="newPet.petBreed" required>
     </div>
 
     <div class="form-group">
-      <label for="age">Age</label>
-      <input type="number" class="form-control" id="age" [(ngModel)]="newPet.age" required>
+      <label for="petAge">Age</label>
+      <input type="number" class="form-control" id="petAge" [(ngModel)]="newPet.petAge" required>
     </div>
 
     <div class="form-group">
@@ -44,33 +44,33 @@
     </div>
 
     <div class="form-group">
-      <label for="birthdate">Birthdate</label>
-      <input type="date" class="form-control" id="birthdate" [(ngModel)]="newPet.birthdate" required>
+      <label for="petBirthdate">Birthdate</label>
+      <input type="date" class="form-control" id="petBirthdate" [(ngModel)]="newPet.petBirthdate" required>
     </div>
 
     <div class="form-group">
-      <label for="medication">Medication</label>
-      <input type="text" class="form-control" id="medication" [(ngModel)]="newPet.medication" required>
+      <label for="petMedication">Medication</label>
+      <input type="text" class="form-control" id="petMedication" [(ngModel)]="newPet.petMedication" required>
     </div>
 
     <div class="form-group">
-      <label for="allergy">Allergy</label>
-      <input type="text" class="form-control" id="allergy" [(ngModel)]="newPet.allergy" required>
+      <label for="petAllergy">Allergy</label>
+      <input type="text" class="form-control" id="petAllergy" [(ngModel)]="newPet.petAllergy" required>
     </div>
 
     <div class="form-group">
-      <label for="microchip">Microchip</label>
-      <input type="text" class="form-control" id="microchip" [(ngModel)]="newPet.microchip" required>
+      <label for="petMicrochip">Microchip</label>
+      <input type="text" class="form-control" id="petMicrochip" [(ngModel)]="newPet.petMicrochip" required>
     </div>
 
     <div class="form-group">
-      <label for="diagnoses">Diagnoses</label>
-      <input type="text" class="form-control" id="diagnoses" [(ngModel)]="newPet.diagnoses" required>
+      <label for="petDiagnoses">Diagnoses</label>
+      <input type="text" class="form-control" id="petDiagnoses" [(ngModel)]="newPet.petDiagnoses" required>
     </div>
 
   </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Pet</button>
+  <button class="add-pet-button" (click)="openAddPetModal()">Add New Pet</button>
   <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
 </div>

@@ -1,11 +1,11 @@
 export class PetProfile {
 
     petName: string;
-    petType: enum;
+    petType: string;
     petBreed: string;
     petAge: number;
     petWeight: number;
-    petBirthday: date;
+    petBirthday: Date;
     petMedication: string;
     petAllergy: string;
     petMicrochip: string;

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PetProfile } from './pet-profile';
 
 
@@ -11,11 +12,11 @@ import { PetProfile } from './pet-profile';
 export class PetDetailModalComponent {
 
   @Input() petName: string;
-  @Input() petName: enum;
+  @Input() petType: string;
   @Input() petBreed: string;
   @Input() petAge: number;
   @Input() petWeight: number;
-  @Input() petBirthday: Date;
+  @Input() petBirthday: date;
   @Input() petMedication: string;
   @Input() petAllergy: string;
   @Input() petMicrochip: string;
