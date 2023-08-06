@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="added angular component class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/petrax-frontend/src/app/authentication/authentication.component.html" afterDir="false" />
-    </list>
+    <list default="true" id="04dc92eb-4088-4146-8ef7-a2c6fd0063b2" name="Changes" comment="added angular component class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +59,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map />
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -117,18 +115,31 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.PETrax [bootRun]">
-    <configuration name="PETrax [bootRun]" type="GradleRunConfiguration" factoryName="Gradle">
+    <configuration name="PETrax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.petrax.PETrax" />
+      <module name="PETrax.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.petrax.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PETrax [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="env">
           <map>
-            <entry key="PASSWORD" value="Liftoff123" />
+            <entry key="PASSWORD" value="LiftOff123" />
             <entry key="USERNAME" value="petrax" />
           </map>
         </option>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" value="--stacktrace" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -145,7 +156,7 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="PETraxTests" type="GradleRunConfiguration" factoryName="Gradle">
+    <configuration name="PETraxTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +180,31 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="PETraxTests.testProgramExecution" type="GradleRunConfiguration" factoryName="Gradle">
+    <configuration name="PETraxTests.testHelloWorldEndpoint" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;PETraxTests.testHelloWorldEndpoint&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="PETraxTests.testProgramExecution" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -183,54 +218,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;PETraxTests.testProgramExecution&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;UserTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="UserTest.testUserConstructorAndGetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;UserTest.testUserConstructorAndGetters&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -266,16 +253,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.PETrax" />
+      <item itemvalue="Gradle.UserTest.testUserConstructorAndGetters" />
+      <item itemvalue="Gradle.PETraxTests.testHelloWorldEndpoint" />
       <item itemvalue="Gradle.PETrax [bootRun]" />
       <item itemvalue="Gradle.PETraxTests" />
       <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
-      <item itemvalue="Gradle.UserTest" />
-      <item itemvalue="Gradle.UserTest.testUserConstructorAndGetters" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UserTest.testUserConstructorAndGetters" />
-        <item itemvalue="Gradle.UserTest" />
+        <item itemvalue="Gradle.PETraxTests.testProgramExecution" />
+        <item itemvalue="Gradle.PETraxTests.testHelloWorldEndpoint" />
+        <item itemvalue="Gradle.PETraxTests" />
+        <item itemvalue="Gradle.PETrax [bootRun]" />
+        <item itemvalue="Application.PETrax" />
       </list>
     </recent_temporary>
   </component>
