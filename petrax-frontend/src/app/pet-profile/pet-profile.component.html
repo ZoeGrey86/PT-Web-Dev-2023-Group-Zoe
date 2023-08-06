@@ -1,27 +1,21 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Add New Pet</title>
-</head>
+<div class="add-new-pet">
 
-<body>
+  <h1>Add New Pet</h1>
 
-<h1>Add New Pet</h1>
-
-<form action="/petProfile/addNewPet" method="post">
+  <div class = "add-new-pet-form">
 
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"><br>
 
     <label for="petType">Pet Type:</label>
     <select id="petType" name="petType">
-        <option value="CAT">Cat</option>
-        <option value="DOG">Dog</option>
-        <option value="BIRD">Bird</option>
-        <option value="FISH">Fish</option>
-        <option value="REPTILE">Reptile</option>
-        <option value="OTHER">Other</option>
+      <option value="CAT">Cat</option>
+      <option value="DOG">Dog</option>
+      <option value="BIRD">Bird</option>
+      <option value="FISH">Fish</option>
+      <option value="REPTILE">Reptile</option>
+      <option value="OTHER">Other</option>
     </select><br>
 
     <label for="breed">Breed:</label>
@@ -51,8 +45,15 @@
     <label for="petPic">Photo:</label>
     <input type="file" id="petPic" name="petPic"><br>
 
-    <input type="submit" value="Add New Pet">
-</form>
+    <div class="add-new-pet-button">
+      <input type="submit" value="Add New Pet">
+    </div>
 
-</body>
-</html>
+<!--    <div class="add-new-pet-button">-->
+<!--      <a routerLink="/pet-profile/addNewPetSuccess">Add New Pet</a>-->
+<!--    </div>-->
+
+
+  </div>
+</div>
+

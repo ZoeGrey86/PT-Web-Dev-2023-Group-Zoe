@@ -1,0 +1,40 @@
+.navbar-container {
+    width: 100%;
+    max-width: 1440px;
+    background-color: #222E50;
+    border-radius: 52px;
+    border: 1.50px #F05D23 solid;
+    display: flex;
+    justify-content: space-between; /* This ensures items are at opposite ends */
+    align-items: center;
+    padding: 8px 20px;  /* reduce vertical padding of nav bar */
+    box-sizing: border-box;
+}
+
+.petrax {
+    color: #F7F7F2;
+    font-size: 16px;
+    font-family: Outfit;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.menu-items {
+    display: flex;
+    gap: 16px;
+}
+
+.navbar-item {
+    text-align: right;
+    color: white;
+    font-size: 16px;
+    font-family: Outfit;
+    font-weight: 400;
+    text-decoration: none;
+    word-wrap: break-word;
+    transition: color 0.3s;
+}
+
+.navbar-item:hover {
+    color: #F7F7F2;
+}
