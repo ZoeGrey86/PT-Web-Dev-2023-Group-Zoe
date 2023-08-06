@@ -1,0 +1,67 @@
+/* Ensures the footer stays at the bottom of the viewport */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Makes sure the main content pushes the footer to the bottom */
+main {
+    flex: 1;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1440px;
+    background-color: #222E50;
+    border-radius: 52px;
+    border: 1.50px #F05D23 solid;
+    display: flex;
+    justify-content: center; /* Centered horizontally */
+    align-items: center; /* Centered vertically */
+    padding: 8px 20px;
+    box-sizing: border-box;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footer-content {
+    width: 90%;
+    display: flex;
+    justify-content: space-between; /* distribute space evenly between items */
+    align-items: center;
+}
+
+.footer-logo {
+    color: #F7F7F2;
+    font-size: 20px;
+    font-family: Outfit;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    align-itmes: center;
+}
+
+.footer-link {
+    color: #F7F7F2;
+    font-size: 20px;
+    font-family: Outfit;
+    font-weight: 400;
+    text-decoration: none; /* removes the default underline from links */
+    margin-right: 20px; /* use margin to separate the links */
+}
+
+.footer-copyright {
+     color: #F7F7F2;
+     font-size: 20px;
+     font-family: Outfit;
+     font-weight: 400;
+ }
+
+
+/* Optional: add hover effect for the Contact us link */
+.footer-link:hover {
+    color: #F05D23;
+}

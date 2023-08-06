@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+/* Ensures the page is a flex container */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Your main content area should grow to take up available space */
+.app-container {
+  flex: 1 0 auto;
+}
+
+/* Your footer (and potentially header) should not grow,
+   but should self-adjust based on their content */
+footer, header {
+  flex-shrink: 0;
+}
+
