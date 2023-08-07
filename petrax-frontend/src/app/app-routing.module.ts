@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route redirects to home
   { path: 'home', component: HomeComponent }, // Route for HomeComponent
