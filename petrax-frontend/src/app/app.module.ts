@@ -19,7 +19,6 @@ import { AddEventModalComponent } from './calendar/add-event-modal.component';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
-
 import { AppRoutingModule } from './app-routing.module';
 
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
@@ -27,7 +26,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
-
 
 @NgModule({
   declarations: [
