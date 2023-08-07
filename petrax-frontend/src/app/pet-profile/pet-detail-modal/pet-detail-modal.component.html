@@ -13,7 +13,7 @@
   <p><strong>Breed:</strong> {{ petBreed }}</p>
   <p><strong>Age:</strong> {{ petAge | number }}</p>
   <p><strong>Weight:</strong> {{ petWeight | number }}</p>
-  <p><strong>Birthday:</strong> {{ petBirthday | date }}</p>
+  <p><strong>Birthday:</strong> {{ petBirthday | Date }}</p>
   <p><strong>Medication:</strong> {{ petMedication }}</p>
   <p><strong>Allergy:</strong> {{ petAllergy }}</p>
   <p><strong>Microchip:</strong> {{ petMicrochip }}</p>
@@ -21,6 +21,6 @@
 </div>
 
 <div class="modal-footer">
-  <button class="btn btn-primary" (click)="openPetDetailModal()">View Pet Details</button>
+<!--  <button class="btn btn-primary" (click)="openPetDetailModal()">View Pet Details</button>-->
   <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
 </div>

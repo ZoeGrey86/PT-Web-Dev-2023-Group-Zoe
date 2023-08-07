@@ -1,26 +1,14 @@
-<div class = "app-container">
+<div class="app-container">
   <h1 class="app-heading">PETrax 🐕 🐈 🦜 🦎</h1>
-
   <div class="content-container">
-  <div class="pet-profile-container"></div>
-
-  <h2>Pet Profile</h2>
-  <ul>
-    <li *ngFor="let pet of pets">
-      <span class="petName">{{ petName }}</span>
-      <span class="petType">{{ petType }}</span>
-      <span class="petBreed">{{ petBreed }}</span>
-      <span class="petAge">{{ petAge | number }}</span>
-      <span class="petWeight">{{ petWeight | number }}</span>
-<!--      <span class="petBirthday">{{ petBirthday | date }}</span>-->
-      <span class="petBirthday">{{ datePipe.transform(petBirthday, 'shortDate') }}</span>
-      <span class="petMedication">{{ petMedication }}</span>
-      <span class="petAllergy">{{ petAllergy }}</span>
-      <span class="petMicrochip">{{ petMicrochip }}</span>
-      <span class="petDiagnoses">{{ petDiagnoses }}</span>
-    </li>
-  </ul>
-    <button class="add-pet-button" (click)="openAddPetModal()">Add New Pet</button>
+    <div class="pet-profile-container">
+      <h2>Pets</h2>
+      <ul>
+        <li *ngFor="let pet of pets">
+          <span class="petName">{{ pet.petName }}</span>
+        </li>
+      </ul>
+      <button class="add-pet-button" (click)="openAddPetModal()">Add Pet</button>
+    </div>
+  </div>
 </div>
-</div>
-
