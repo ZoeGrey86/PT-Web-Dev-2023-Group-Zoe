@@ -3,9 +3,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // provides the Angular implementation of the Bootstrap Modal component.
 import { HttpClient } from '@angular/common/http';
 //provides an HTTP client for making requests to the server.
-import { AddPetModalComponent } from './add-pet-modal/add-pet-modal.component';
+import { AddPetModalComponent } from './add-pet-modal.component';
 //allows users to add new pets to the profile
-import { PetDetailModalComponent } from './pet-detail-modal/pet-detail-modal.component';
+import { PetDetailModalComponent } from './pet-detail-modal.component';
 //displays the details of a pet
 // import { PetProfile } from '../pet-profile';
 // import { PetProfileService } from '../pet-profile.service';
@@ -62,7 +62,7 @@ export class PetProfileComponent implements OnInit {
   }
 
    initializePetProfile() {
-   this.petName.pets = this.pets
+//    this.petName.pets = this.pets
    }
 
   handlePetClick(petInfo) {
@@ -95,7 +95,7 @@ openAddPetModal() {
   const modalRef = this.modalService.open(AddPetModalComponent);
   modalRef.result.then((result) => {
     if (result) {
-      const newPet: result;
+      const newPet = result;
       this.pets.push(newPet);
       this.http.post('/api/pet-profile', newPet).subscribe(() => {
         console.log('Pet added successfully.');
