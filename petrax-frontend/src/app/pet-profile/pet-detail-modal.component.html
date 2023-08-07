@@ -1,0 +1,26 @@
+<!-- pet-detail-modal.component.html -->
+
+<div class="modal-header">
+  <h4 class="modal-title">{{ petName }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <p><strong>Name:</strong> {{ petName }}</p>
+  <p><strong>Type:</strong> {{ petType }}</p>
+  <p><strong>Breed:</strong> {{ petBreed }}</p>
+  <p><strong>Age:</strong> {{ petAge | number }}</p>
+  <p><strong>Weight:</strong> {{ petWeight | number }}</p>
+  <p><strong>Birthday:</strong> {{ petBirthday | Date }}</p>
+  <p><strong>Medication:</strong> {{ petMedication }}</p>
+  <p><strong>Allergy:</strong> {{ petAllergy }}</p>
+  <p><strong>Microchip:</strong> {{ petMicrochip }}</p>
+  <p><strong>Diagnoses:</strong> {{ petDiagnoses }}</p>
+</div>
+
+<div class="modal-footer">
+  <!--  <button class="btn btn-primary" (click)="openPetDetailModal()">View Pet Details</button>-->
+  <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+</div>

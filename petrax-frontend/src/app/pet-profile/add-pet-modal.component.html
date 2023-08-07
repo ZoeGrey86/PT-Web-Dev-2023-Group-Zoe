@@ -1,0 +1,74 @@
+<!-- add-pet-modal.component.html -->
+
+<div class="modal-header">
+  <h4 class="modal-title">Add New Pet</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="petName">Name</label>
+      <input type="text" class="form-control" id="petName" [(ngModel)]="newPet.petName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="petType">Pet Type</label>
+      <select class="form-control" id="petType" [(ngModel)]="newPet.petType" required>
+        <option value="CAT">Cat</option>
+        <option value="DOG">Dog</option>
+        <option value="BIRD">Bird</option>
+        <option value="FISH">Fish</option>
+        <option value="REPTILE">Reptile</option>
+        <option value="OTHER">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="petBreed">Breed</label>
+      <input type="text" class="form-control" id="petBreed" [(ngModel)]="newPet.petBreed" required>
+    </div>
+
+    <div class="form-group">
+      <label for="petAge">Age</label>
+      <input type="number" class="form-control" id="petAge" [(ngModel)]="newPet.petAge" required>
+    </div>
+
+    <div class="form-group">
+      <label for="weight">Weight</label>
+      <input type="number" class="form-control" id="weight" [(ngModel)]="newPet.petWeight" required>
+    </div>
+
+    <div class="form-group">
+      <label for="petBirthdate">Birthdate</label>
+      <input type="datetime-local" class="form-control" id="petBirthdate" [(ngModel)]="newPet.petBirthdate" required>
+    </div>
+
+    <div class="form-group">
+      <label for="petMedication">Medication</label>
+      <input type="text" class="form-control" id="petMedication" [(ngModel)]="newPet.petMedication" required>
+    </div>
+
+    <div class="form-group">
+      <label for="petAllergy">Allergy</label>
+      <input type="text" class="form-control" id="petAllergy" [(ngModel)]="newPet.petAllergy" required>
+    </div>
+
+    <div class="form-group">
+      <label for="petMicrochip">Microchip</label>
+      <input type="text" class="form-control" id="petMicrochip" [(ngModel)]="newPet.petMicrochip" required>
+    </div>
+
+    <div class="form-group">
+      <label for="petDiagnoses">Diagnoses</label>
+      <input type="text" class="form-control" id="petDiagnoses" [(ngModel)]="newPet.petDiagnoses" required>
+    </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <!--  <button class="add-pet-button" (click)="openAddPetModal()">Add New Pet</button>-->
+  <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Pet</button>
+  <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+</div>
