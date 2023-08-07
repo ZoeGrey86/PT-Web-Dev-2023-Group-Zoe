@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'faq', component: FaqComponent}, //Route for FAQ
   {path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
 
+
   // Add more routes as needed
 ];
 

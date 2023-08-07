@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { HomeComponent } from './home/home.component';
+import { FaqComponent } from './faq/faq.component';
+
 import { EventDetailModalComponent } from './calendar/event-detail-modal.component';
 import { AddEventModalComponent } from './calendar/add-event-modal.component';
 
@@ -18,11 +20,12 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
 import { AppRoutingModule } from './app-routing.module';
-import { FaqComponent } from './faq/faq.component';
+
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddPetModalComponent } from './pet-profile/add-pet-modal.component';
 import { PetDetailModalComponent } from './pet-profile/pet-detail-modal.component';
+
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -32,13 +35,19 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     UserListComponent,
     CalendarComponent,
     HomeComponent,
-    FaqComponent,
+    
+    
+    
+    
+    
+    Component,
     PetProfileComponent,
     EventDetailModalComponent,
     AddEventModalComponent,
     NavbarComponent,
     AddPetModalComponent,
     PetDetailModalComponent
+
   ],
   imports: [
     BrowserModule,
