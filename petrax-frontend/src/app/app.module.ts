@@ -24,22 +24,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UserListComponent,
-    CalendarComponent,
-    HomeComponent,
-    FaqComponent,
-    PetProfileComponent,
-    EventDetailModalComponent,
     AddEventModalComponent,
+    CalendarComponent,
+    EventDetailModalComponent,
+    FaqComponent,
+    FooterComponent,
+    HomeComponent,
+    LogInComponent,
     NavbarComponent,
-    FooterComponent
-  ],
+    PetProfileComponent,
+    UserListComponent,
+    AppComponent
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,
