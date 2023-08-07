@@ -9,7 +9,7 @@ import { AddEventModalComponent } from './add-event-modal.component';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 
-import { CalendarService } from '.service/calendar.service';
+import { CalendarService } from './calendar.service';
 
 
 @Component({
@@ -28,7 +28,7 @@ export class CalendarComponent implements OnInit {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay'
     },
-    eventClick: this.handleEventClick.bind(this)
+    eventClick: (eventInfo) => this.handleEventClick(eventInfo)
   };
 
   constructor(private modalService: NgbModal, private http: HttpClient, private calendarService: CalendarService) {}
@@ -38,15 +38,24 @@ export class CalendarComponent implements OnInit {
     this.fetchEventsFromServer();
   }
 
-  fetchEventsFromServer() {
-    this.http.get<any[]>('/api/events', { params: { page: '0', size: '3' } }).subscribe((data) => {
-      this.events = [...this.events, ...data];
-      this.initializeCalendar();
-    });
-  }
+fetchEventsFromServer() {
+    this.http.get<any[]>('http://localhost:8080/api/events', { params: { page: '0', size: '3' } })
+    .subscribe(
+      (data) => {
+        this.events = [...this.events, ...data];
+        this.initializeCalendar();
+      },
+      (error) => {
+        console.error('Error fetching events', error);
+       }
+    );
+}
 
   initializeCalendar() {
-    this.calendarOptions.events = this.events;
+   this.calendarOptions.events = this.events.map(event => ({
+     ...event,
+     id: event.id.toString()
+   }));
   }
 
   handleEventClick(eventInfo) {
@@ -65,16 +74,18 @@ export class CalendarComponent implements OnInit {
   }
 
   openAddEventModal() {
-    const modalRef = this.modalService.open(AddEventModalComponent);
-    modalRef.result.then((result) => {
-      if (result) {
-        const newEvent = result;
-        this.events.push(newEvent);
-        this.http.post('/api/events', newEvent).subscribe(() => {
-          console.log('Event added successfully.');
-          this.initializeCalendar(); // refresh the calendar to display the new event
-        });
-      }
-    });
-  }
+     const modalRef = this.modalService.open(AddEventModalComponent);
+     modalRef.result.then((result) => {
+       if (result) {
+         this.calendarService.addEvent(result).subscribe(response => {
+           console.log('Event added to database:', response);
+           this.events.push(result);
+           this.initializeCalendar(); // refresh the calendar to display the new event
+         }, error => {
+           console.error('Error adding event:', error);
+         });
+       }
+     });
+   }
+
 }

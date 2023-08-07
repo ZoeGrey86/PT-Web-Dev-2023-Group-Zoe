@@ -14,4 +14,8 @@ export class CalendarService {
   getAllEvents(): Observable<Event[]> {
     return this.http.get<Event[]>(this.apiUrl);
   }
+  addEvent(event: Event): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}`, event);
+  }
+
 }

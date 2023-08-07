@@ -1,31 +1,31 @@
-<!-- add-event-modal.component.html -->
-
 <div class="modal-header">
   <h4 class="modal-title">Add New Event</h4>
   <button type="button" class="close" aria-label="Close" (click)="closeModal()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+
 <div class="modal-body">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" [(ngModel)]="newEvent.title" required>
+      <input type="text" class="form-control" id="title" name="title" [(ngModel)]="newEvent.title" required>
     </div>
     <div class="form-group">
       <label for="start">Start Date</label>
-      <input type="datetime-local" class="form-control" id="start" [(ngModel)]="newEvent.start" required>
+      <input type="datetime-local" class="form-control" id="start" name="start" [(ngModel)]="newEvent.start" required>
     </div>
     <div class="form-group">
       <label for="end">End Date</label>
-      <input type="datetime-local" class="form-control" id="end" [(ngModel)]="newEvent.end" required>
+      <input type="datetime-local" class="form-control" id="end" name="end" [(ngModel)]="newEvent.end" required>
     </div>
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea class="form-control" id="description" [(ngModel)]="newEvent.description" rows="3"></textarea>
+      <textarea class="form-control" id="description" name="description" [(ngModel)]="newEvent.description" rows="3"></textarea>
     </div>
   </form>
 </div>
+
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
   <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Event</button>
