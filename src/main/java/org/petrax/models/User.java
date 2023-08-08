@@ -1,18 +1,19 @@
 package org.petrax.models;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 @Entity
 public class User {
+
     @Id
     @GeneratedValue
     private int id;
@@ -29,16 +30,10 @@ public class User {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
-//    @NotBlank(message = "Username is required")
-//    @Size(min = 2, max = 50, message = "Username must be between 2 and 50 characters")
-//    private String username;
-@NotNull
-private String pwHash;
-
-    public static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    @NotNull
+    private String pwHash;
 
     private String address;
-
 
     public User () {
 
@@ -52,8 +47,10 @@ private String pwHash;
 
     public User(String contactEmail, String password) {
         this.contactEmail = contactEmail;
-        this.pwHash = encoder.encode(password);
+        this.pwHash = password; // Store the raw password here
+
     }
+
 
 
     public String getFirstName() {
@@ -95,11 +92,6 @@ private String pwHash;
         this.address = address;
 
     }
-    public boolean isMatchingPassword(String password) {
-        return encoder.matches(password, pwHash);
-    }
-
-
     public int getId() {
         return id;
     }

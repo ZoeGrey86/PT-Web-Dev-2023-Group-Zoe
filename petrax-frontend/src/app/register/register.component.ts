@@ -26,7 +26,7 @@ export class RegisterComponent {
      console.log('Last Name:', this.lastName);
      console.log('Email:', this.contactEmail);
      console.log('Password:', this.pwHash);
-     console.log('Address:', this.address);
+     console.log('Address :', this.address);
    }
 
   initAutocomplete() {

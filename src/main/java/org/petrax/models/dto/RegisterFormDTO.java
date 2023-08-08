@@ -3,7 +3,7 @@ package org.petrax.models.dto;
 public class RegisterFormDTO {
     private String FirstName;
     private String LastName;
-    private String description;
+    private String address;
 
     private String contactEmail;
     private String password;
@@ -25,12 +25,12 @@ public class RegisterFormDTO {
         LastName = lastName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getContactEmail() {
