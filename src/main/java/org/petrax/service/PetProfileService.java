@@ -1,7 +1,5 @@
 package org.petrax.service;
 import org.petrax.data.PetProfileRepository;
-import org.petrax.models.Event;
-import org.petrax.data.EventRepository;
 import org.petrax.models.PetProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +19,7 @@ public class PetProfileService {
     }
 
     public List<PetProfile> getAllPets() {
-        return petProfileRepository.findAll();
+        return (List<PetProfile>) petProfileRepository.findAll();
     }
 
     public Optional<PetProfile> getPetById(int petId) {
