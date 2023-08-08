@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PetProfile } from './pet-profile.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,7 @@ export class PetProfileService {
 getAllPets(): Observable<PetProfile[]> {
     return this.http.get<PetProfile[]>(this.apiUrl);
   }
-  addPet(event: PetProfile): Observable<any> {
+  addPet(pet: PetProfile): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}`, pet);
   }
 

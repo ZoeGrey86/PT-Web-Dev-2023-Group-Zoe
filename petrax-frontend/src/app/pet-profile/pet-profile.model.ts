@@ -12,6 +12,7 @@ export enum PetType {
 
 export interface PetProfile {
 
+     petId: number;
      petName: string;
      petType: PetType;
      petBreed: string;

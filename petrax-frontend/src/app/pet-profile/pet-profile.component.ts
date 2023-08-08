@@ -9,7 +9,7 @@ import { PetDetailModalComponent } from './pet-detail-modal.component';
 //displays the details of a pet
 import { PetProfile } from './pet-profile.model';
 // import { PetProfileService } from '../pet-profile.service';
-
+import { PetProfileService } from './pet-profile.service'
 
 
 @Component({
@@ -18,52 +18,62 @@ import { PetProfile } from './pet-profile.model';
   styleUrls: ['./pet-profile.component.css']
 })
 export class PetProfileComponent implements OnInit {
-  pets: any[] = [
-  {
-     petName: 'Tegan',
-     petType: 'Cat',
-     petBreed: 'Sphynx',
-     petAge: '6',
-     petWeight: '11',
-     petBirthdate: '2017-03-03',
-     petMedication: 'None',
-     petAllergy: 'None',
-     petMicrochip: '123456789',
-     petDiagnoses: 'Gingivitis',
-  },
-  {
-        petName: 'Gordon',
-        petType: 'Dog',
-        petBreed: 'Pittador',
-        petAge: '7',
-        petWeight: '33',
-        petBirthdate: '2016-01-04',
-        petMedication: 'Apoquel',
-        petAllergy: 'None',
-        petMicrochip: '987654321',
-        petDiagnoses: 'Anxiety',
+  pets: PetProfile[] = [];
+//   {
+//      petName: 'Tegan',
+//      petType: 'Cat',
+//      petBreed: 'Sphynx',
+//      petAge: '6',
+//      petWeight: '11',
+//      petBirthdate: '2017-03-03',
+//      petMedication: 'None',
+//      petAllergy: 'None',
+//      petMicrochip: '123456789',
+//      petDiagnoses: 'Gingivitis',
+//   },
+//   {
+//         petName: 'Gordon',
+//         petType: 'Dog',
+//         petBreed: 'Pittador',
+//         petAge: '7',
+//         petWeight: '33',
+//         petBirthdate: '2016-01-04',
+//         petMedication: 'Apoquel',
+//         petAllergy: 'None',
+//         petMicrochip: '987654321',
+//         petDiagnoses: 'Anxiety',
+//
+//   }
 
-  }
-  ];
 
-  constructor(private modalService: NgbModal, private http: HttpClient) {}
+  constructor(private modalService: NgbModal, private http: HttpClient, private petProfileService: PetProfileService) {}
 
 
   ngOnInit() {
+    this.initializePetProfile();
     this.fetchPetsFromServer();
   }
 
   fetchPetsFromServer() {
-    this.http.get<any[]>('/api/pet-profile', { params: { page: '0', size: '3' } })
+    this.http.get<PetProfile[]>('http://localhost:8080/api/petProfile', { params: { page: '0', size: '3' } })
       .subscribe((data) => {
         this.pets = [...this.pets, ...data];
           this.initializePetProfile();
-      });
+      },
+      (error) => {
+           console.error('Error fetching pets', error);
+        }
+     );
   }
 
-   initializePetProfile() {
-//    this.petName.pets = this.pets
-   }
+initializePetProfile() {
+  // Loop through each pet in the pets array
+  this.pets = this.pets.map(pet => ({
+    ...pet
+  }));
+}
+
+
 
   handlePetClick(petInfo) {
     const petName = petInfo.pet.petName;
@@ -95,14 +105,17 @@ openAddPetModal() {
   const modalRef = this.modalService.open(AddPetModalComponent);
   modalRef.result.then((result) => {
     if (result) {
-      const newPet = result;
-      this.pets.push(newPet);
-      this.http.post('/api/pet-profile', newPet).subscribe(() => {
-        console.log('Pet added successfully.');
-        this.initializePetProfile();
-      });
-    }
-  });
- }
+      this.petProfileService.addPet(result).subscribe(response => {
+                 console.log('Pet added to database:', response);
+                 this.pets.push(result);
+                 this.initializePetProfile();
+               }, error => {
+                 console.error('Error adding pet:', error);
+               });
+              }
+            });
+          }
+
+
 }
 
