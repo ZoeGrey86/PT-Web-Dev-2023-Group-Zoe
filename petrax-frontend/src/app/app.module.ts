@@ -23,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 import { AddPetModalComponent } from './pet-profile/add-pet-modal.component';
 import { PetDetailModalComponent } from './pet-profile/pet-detail-modal.component';
 
@@ -35,19 +36,14 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     UserListComponent,
     CalendarComponent,
     HomeComponent,
-    
-    
-    
-    
-    
-    Component,
+    FaqComponent,
     PetProfileComponent,
     EventDetailModalComponent,
     AddEventModalComponent,
     NavbarComponent,
+    FooterComponent,
     AddPetModalComponent,
     PetDetailModalComponent
-
   ],
   imports: [
     BrowserModule,
