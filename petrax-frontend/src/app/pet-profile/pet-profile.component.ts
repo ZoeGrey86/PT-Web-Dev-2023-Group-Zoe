@@ -7,7 +7,7 @@ import { AddPetModalComponent } from './add-pet-modal.component';
 //allows users to add new pets to the profile
 import { PetDetailModalComponent } from './pet-detail-modal.component';
 //displays the details of a pet
-// import { PetProfile } from '../pet-profile';
+import { PetProfile } from './pet-profile.model';
 // import { PetProfileService } from '../pet-profile.service';
 
 
@@ -105,5 +105,4 @@ openAddPetModal() {
   });
  }
 }
-
 

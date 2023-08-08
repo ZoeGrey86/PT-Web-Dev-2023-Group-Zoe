@@ -35,12 +35,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     UserListComponent,
     CalendarComponent,
     HomeComponent,
-    
-    
-    
-    
-    
-    Component,
+    FaqComponent,
     PetProfileComponent,
     EventDetailModalComponent,
     AddEventModalComponent,
