@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("professionals")
+@RequestMapping("/professionals")
 public class CareProfController {
 
     @Autowired
@@ -21,6 +21,12 @@ public class CareProfController {
     @GetMapping("/list")
     public List<CareProfessional> getAllProfessionals() {
         return (List<CareProfessional>) careProfRepository.findAll();
+    }
+
+    //create care prof call
+    @PostMapping("/add")
+    public CareProfessional createNewCareProfessional (@RequestBody CareProfessional newCareProfessional){
+        return careProfRepository.save(newCareProfessional);
     }
 
 //    @GetMapping

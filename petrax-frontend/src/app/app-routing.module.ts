@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { CareProfessionalComponent } from './care-professional/care-professional.component';
+import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent }, // Route for CalendarComponent
   {path: 'faq', component: FaqComponent}, //Route for FAQ
   {path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
-  {path: 'care-professional', component: CareProfessionalComponent}
+  {path: 'care-professional', component: CareProfessionalComponent},
+  {path: 'add-care-professional', component:AddCareProfessionalComponent}
 
 
   // Add more routes as needed
