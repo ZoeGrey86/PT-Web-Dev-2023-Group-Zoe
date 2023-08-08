@@ -25,6 +25,7 @@ import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { RegisterComponent } from './register/register.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -40,7 +41,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     NavbarComponent,
     PetProfileComponent,
     UserListComponent,
-    AppComponent
+    AppComponent,
+    RegisterComponent
     ],
   imports: [
     BrowserModule,

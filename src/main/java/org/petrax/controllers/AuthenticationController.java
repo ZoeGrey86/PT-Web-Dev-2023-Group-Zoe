@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Optional;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 @Controller
 @RequestMapping("authentication")
 public class AuthenticationController {
@@ -19,8 +21,14 @@ public class AuthenticationController {
     public
     UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+
     // The key to store user IDs
     private static final String userSessionKey = "user";
+
+
 
     public User getUserFromSession(HttpSession session) {
         Integer userId = (Integer) session.getAttribute(userSessionKey);
@@ -82,8 +90,11 @@ public class AuthenticationController {
             model.addAttribute("title", "Register");
             return "authentication/register";
         }
+
         // OTHERWISE, save new username and hashed password in database, start a new session, and redirect to home page
 //        User newUser = new User(registerFormDTO.getFirstName(),registerFormDTO.getLastName(),registerFormDTO.getDescription(), registerFormDTO.getContactEmail(), registerFormDTO.getUsername(), registerFormDTO.getPassword());
+
+
         User newUser = new User(registerFormDTO.getContactEmail(), registerFormDTO.getPassword());
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
