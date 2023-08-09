@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
          lastName: this.lastName,
          contactEmail: this.contactEmail,
          pwHash: this.pwHash,
+         pwHashConfirm: this.pwHashConfirm,
          address: this.address
     }).subscribe(response => {
       console.log("Registration successful", response);

@@ -1,48 +1,45 @@
 package org.petrax.controllers;
 
-import org.petrax.data.UserRepository;
+import org.petrax.service.UserService;
 import org.petrax.models.User;
+import org.petrax.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
-
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {
 
     @Autowired
-    public UserRepository userRepository;
- //   private static final String USER_SESSION_KEY = "user";
- @GetMapping("/all")
- public ResponseEntity<Iterable<User>> displayAllUsers() {
-     return ResponseEntity.ok(userRepository.findAll());
- }
+    private UserService userService;
 
-    @PostMapping("/register")
-    public ResponseEntity<String> processCreateUserForm(@RequestBody @Valid User newUser, Errors errors) {
-        if (errors.hasErrors()) {
-            return ResponseEntity.badRequest().body(errors.getAllErrors().toString());
-        }
-
-        userRepository.save(newUser);
-        return ResponseEntity.ok("Registration successful");
+    @GetMapping("/all")
+    public ResponseEntity<Iterable<User>> displayAllUsers() {
+        return ResponseEntity.ok(userService.findAllUsers());
     }
 
-    @PostMapping("/delete")
-    public ResponseEntity<String> processDeleteUsersForm(@RequestParam(required = false) int[] userIds) {
-        if (userIds != null) {
-            for (int id : userIds) {
-                userRepository.deleteById(id);
-            }
+    @PostMapping("/register")
+    public ResponseEntity<String> processCreateUserForm(@RequestBody @Valid RegisterFormDTO registerFormDTO) {
+        // Check validation in DTO (you might need to add appropriate validation annotations in RegisterFormDTO)
+
+        User savedUser = userService.createUser(registerFormDTO);
+        if (savedUser != null) {
+            return ResponseEntity.ok("Registration successful");
+        } else {
+            return ResponseEntity.badRequest().body("Registration failed");
         }
-        return ResponseEntity.ok("Deletion successful");
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable int id) {
+        try {
+            userService.deleteUser(id);
+            return ResponseEntity.ok("Deletion successful");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Deletion failed: " + e.getMessage());
+        }
     }
 }

@@ -1,8 +1,11 @@
 package org.petrax.models.dto;
 
+import javax.annotation.PostConstruct;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import javax.validation.ConstraintViolationException;
+import java.util.HashSet;
 
 public class RegisterFormDTO {
 
@@ -23,10 +26,17 @@ public class RegisterFormDTO {
 
     @NotBlank(message = "Password is required.")
     @Size(min = 5, message = "Password must be at least 5 characters.")
-    private String password;
+    private String pwHash;
 
     @NotBlank(message = "Please confirm your password.")
-    private String verifyPassword;
+    private String pwHashConfirm;
+
+    @PostConstruct
+    private void validatePasswords() {
+        if (this.pwHash != null && this.pwHashConfirm != null && !this.pwHash.equals(pwHashConfirm)) {
+            throw new ConstraintViolationException("Passwords do not match", new HashSet<>());
+        }
+    }
 
     public String getFirstName() {
         return firstName;
@@ -60,19 +70,19 @@ public class RegisterFormDTO {
         this.contactEmail = contactEmail;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPwHash() {
+        return pwHash;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPwHash(String pwHash) {
+        this.pwHash = pwHash;
     }
 
-    public String getVerifyPassword() {
-        return verifyPassword;
+    public String getPwHashConfirm() {
+        return pwHashConfirm;
     }
 
-    public void setVerifyPassword(String verifyPassword) {
-        this.verifyPassword = verifyPassword;
+    public void setPwHashConfirm(String pwHashConfirm) {
+        this.pwHashConfirm = pwHashConfirm;
     }
 }

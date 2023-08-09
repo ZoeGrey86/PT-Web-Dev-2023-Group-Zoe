@@ -3,7 +3,7 @@ export class User {
     firstName: string;
     lastName: string;
     contactEmail: string;
-    pwHash: string; // Add this line
+    password: string; // Add this line
     address: string;
 }
 

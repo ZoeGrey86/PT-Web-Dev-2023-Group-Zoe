@@ -68,8 +68,8 @@ public class AuthenticationController {
             return "authentication/register";
         }
         // Send user back to form if passwords didn't match
-        String password = registerFormDTO.getPassword();
-        String verifyPassword = registerFormDTO.getVerifyPassword();
+        String password = registerFormDTO.getPwHash();
+        String verifyPassword = registerFormDTO.getPwHashConfirm();
         if (!password.equals(verifyPassword)) {
             errors.rejectValue("password", "passwords.mismatch", "Passwords do not match");
             model.addAttribute("title", "Register");

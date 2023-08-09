@@ -38,20 +38,18 @@ public class User {
     public User () {
 
     }
-    public User(String firstName, String lastName, String contactEmail, String username) {
+    public User(String firstName, String lastName, String contactEmail, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactEmail = contactEmail;
         this.address = address;
     }
-
-    public User(String contactEmail, String password) {
-        this.contactEmail = contactEmail;
-        this.pwHash = password; // Store the raw password here
-
-    }
-
-
+//
+//    public User(String contactEmail, String password) {
+//        this.contactEmail = contactEmail;
+//        this.pwHash = password; // Store the raw password here
+//
+//    }
 
     public String getFirstName() {
         return firstName;
