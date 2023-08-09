@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import java.beans.PropertyEditorSupport;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import org.petrax.service.PetProfileService;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.Optional;
+import org.petrax.data.PetProfileRepository;
 
 
 
@@ -63,8 +65,8 @@ public class PetProfileController {
 
     @DeleteMapping("/{petId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletePet(@PathVariable int petId) {
-        petProfileService.deletePet(petId);  // Utilize the service method here
+    public void deletePet(@PathVariable String petName, Date petBirthdate) {
+        PetProfileRepository.findFirstByNameAndBirthdate(petName, petBirthdate);
     }
 
 

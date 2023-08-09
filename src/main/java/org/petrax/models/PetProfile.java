@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity
@@ -15,17 +16,16 @@ public class PetProfile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int petId;
 
-    private String name;
+    private String petName;
     private PetType petType;
-    private String breed;
-    private Double age;
-    private Double weight;
-    private LocalDate birthdate;
-    private String medication;
-    private String allergy;
-    private String microchip;
-    private String diagnoses;
-
+    private String petBreed;
+    private Double petAge;
+    private Double petWeight;
+    private Date petBirthdate;
+    private String petMedication;
+    private String petAllergy;
+    private String petMicrochip;
+    private String petDiagnoses;
 
     public int getPetId() {
         return petId;
@@ -35,12 +35,12 @@ public class PetProfile {
         this.petId = petId;
     }
 
-    public String getName() {
-        return name;
+    public String getPetName() {
+        return petName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPetName(String petName) {
+        this.petName = petName;
     }
 
     public PetType getPetType() {
@@ -51,68 +51,67 @@ public class PetProfile {
         this.petType = petType;
     }
 
-    public String getBreed() {
-        return breed;
+    public String getPetBreed() {
+        return petBreed;
     }
 
-    public void setBreed(String breed) {
-        this.breed = breed;
+    public void setPetBreed(String petBreed) {
+        this.petBreed = petBreed;
     }
 
-    public Double getAge() {
-        return age;
+    public Double getPetAge() {
+        return petAge;
     }
 
-    public void setAge(Double age) {
-        this.age = age;
+    public void setPetAge(Double petAge) {
+        this.petAge = petAge;
     }
 
-    public Double getWeight() {
-        return weight;
+    public Double getPetWeight() {
+        return petWeight;
     }
 
-    public void setWeight(Double weight) {
-        this.weight = weight;
+    public void setPetWeight(Double petWeight) {
+        this.petWeight = petWeight;
     }
 
-    public LocalDate getBirthdate() {
-        return birthdate;
+    public Date getPetBirthdate() {
+        return petBirthdate;
     }
 
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
+    public void setPetBirthdate(Date petBirthdate) {
+        this.petBirthdate = petBirthdate;
     }
 
-    public String getMedication() {
-        return medication;
+    public String getPetMedication() {
+        return petMedication;
     }
 
-    public void setMedication(String medication) {
-        this.medication = medication;
+    public void setPetMedication(String petMedication) {
+        this.petMedication = petMedication;
     }
 
-    public String getAllergy() {
-        return allergy;
+    public String getPetAllergy() {
+        return petAllergy;
     }
 
-    public void setAllergy(String allergy) {
-        this.allergy = allergy;
+    public void setPetAllergy(String petAllergy) {
+        this.petAllergy = petAllergy;
     }
 
-    public String getMicrochip() {
-        return microchip;
+    public String getPetMicrochip() {
+        return petMicrochip;
     }
 
-    public void setMicrochip(String microchip) {
-        this.microchip = microchip;
+    public void setPetMicrochip(String petMicrochip) {
+        this.petMicrochip = petMicrochip;
     }
 
-    public String getDiagnoses() {
-        return diagnoses;
+    public String getPetDiagnoses() {
+        return petDiagnoses;
     }
 
-    public void setDiagnoses(String diagnoses) {
-        this.diagnoses = diagnoses;
+    public void setPetDiagnoses(String petDiagnoses) {
+        this.petDiagnoses = petDiagnoses;
     }
-
 }
