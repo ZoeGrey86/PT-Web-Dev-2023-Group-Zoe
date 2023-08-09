@@ -3,6 +3,7 @@ package org.petrax.controllers;
 import org.petrax.data.UserRepository;
 import org.petrax.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -12,96 +13,36 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
-@Controller
-@RequestMapping("/users")  ///api/v1
+@RestController
+@RequestMapping("/api/v1/users")
 public class UserController {
-    private UserRepository userRepository;
+
     @Autowired
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    public UserRepository userRepository;
+ //   private static final String USER_SESSION_KEY = "user";
+ @GetMapping("/all")
+ public ResponseEntity<Iterable<User>> displayAllUsers() {
+     return ResponseEntity.ok(userRepository.findAll());
+ }
 
-
-    private static final String userSessionKey = "user";
-
-//    public static User getUserFromSession(HttpSession session) {
-//        HttpSession userId = (HttpSession) session.getAttribute(userSessionKey);
-//        if (userId == null) {
-//            return null;
-//        }
-//
-//        Optional<User> user = userRepository.findById(userId);
-//
-//        if (user.isEmpty()) {
-//            return null;
-//        }
-//
-//        return user.get();
-//    }
-
-    private static void setUserInSession(HttpSession session, User user) {
-        session.setAttribute(userSessionKey, user.getId());
-    }
-
-    //test list all users
-    @GetMapping("/users")
-    @CrossOrigin(origins = "http://localhost:4200")
-    public List<User> getAllUsers(){
-        return (List<User>) userRepository.findAll();
-    }
-
-    @GetMapping("/all")
-    public String displayAllUsers(Model model) {
-        model.addAttribute("title", "All Users");
-        model.addAttribute("users", userRepository.findAll());
-        return "users/index";
-    }
-
-    @GetMapping("/create")
-    public String displayCreateUserForm(Model model) {
-        model.addAttribute("title", "Create User");
-        model.addAttribute(new User());
-        return "users/create";
-    }
-
-    @PostMapping("create")
-    public String processCreateUserForm(@ModelAttribute @Valid User newUser,
-                                        Errors errors, Model model) {
+    @PostMapping("/register")
+    public ResponseEntity<String> processCreateUserForm(@RequestBody @Valid User newUser, Errors errors) {
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Create User");
-            return "users/create";
+            return ResponseEntity.badRequest().body(errors.getAllErrors().toString());
         }
-        // Set the address field based on the auto-populated value
-        newUser.setAddress(newUser.getAddress());
 
         userRepository.save(newUser);
-        return "redirect:/users/success"; // Redirect to the success page
+        return ResponseEntity.ok("Registration successful");
     }
 
-
-    @GetMapping("success")
-    public String showSuccessPage(Model model) {
-        model.addAttribute("title", "Registration Successful");
-        return "users/success";
-    }
-
-    @GetMapping("delete")
-    public String displayDeleteUserForm(Model model) {
-        model.addAttribute("title", "Delete Users");
-        model.addAttribute("users", userRepository.findAll());
-        return "users/delete";
-    }
-
-    @PostMapping("delete")
-    public String processDeleteUsersForm(@RequestParam(required = false) int[] userIds) {
+    @PostMapping("/delete")
+    public ResponseEntity<String> processDeleteUsersForm(@RequestParam(required = false) int[] userIds) {
         if (userIds != null) {
             for (int id : userIds) {
                 userRepository.deleteById(id);
             }
         }
-
-        return "redirect:";
+        return ResponseEntity.ok("Deletion successful");
     }
 }

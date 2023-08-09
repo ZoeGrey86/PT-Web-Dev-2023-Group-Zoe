@@ -19,48 +19,31 @@ import java.util.Optional;
 @RequestMapping("authentication")
 public class AuthenticationController {
     @Autowired
-    public
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    private UserService userService;
-
-
-
+    public UserService userService;
     // The key to store user IDs
-    private static final String userSessionKey = "user";
-
-
+    private static final String USER_SESSION_KEY = "user";
 
     public User getUserFromSession(HttpSession session) {
-        Integer userId = (Integer) session.getAttribute(userSessionKey);
-        if (userId == null) {
-            return null;
-        }
-        Optional<User> user = userRepository.findById(userId);
-        if (user.isEmpty()) {
-            return null;
-        }
-//        return user.get(); //***replace with return user.orElse(null); ??
-        return user.orElse(null);
+        Integer userId = (Integer) session.getAttribute(USER_SESSION_KEY);
+        return userRepository.findById(userId).orElse(null);
     }
-    // Stores key/value pair with session key and user ID
+
     private static void setUserInSession(HttpSession session, User user) {
-        session.setAttribute(userSessionKey, user.getId());
+        session.setAttribute(USER_SESSION_KEY, user.getId());
     }
-    @GetMapping("authentication/")
+
+    @GetMapping("/")
     public String displayAuthenticationIndex() {
         return "authentication/index";
     }
 
-    // Handlers for registration form
-//    @GetMapping("/register") //***remove slash?
     @GetMapping("/register")
     public String displayRegistrationForm(Model model) {
-        model.addAttribute("Create an Account", "Register");
+        model.addAttribute("title", "Register");
         model.addAttribute("registerFormDTO", new RegisterFormDTO());
-        model.addAttribute(new RegisterFormDTO()); //***should this be (new User()) ?
-//        model.addAttribute(new User());
         return "authentication/register";
     }
 
