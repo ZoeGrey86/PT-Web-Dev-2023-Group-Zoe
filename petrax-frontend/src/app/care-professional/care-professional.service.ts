@@ -19,4 +19,7 @@ export class CareProfessionalService {
   createCareProfessional (careProfessional: CareProfessional): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}/add`, careProfessional)
   }
+  getProfessionalById(id: number): Observable<CareProfessional>{
+    return this.httpClient.get<CareProfessional>(`${this.baseURL}/${id}`);
+  }
 }
