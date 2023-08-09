@@ -27,3 +27,11 @@
 
 </form>
 
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <h2>Registration Successful</h2>
+    <p>You have successfully registered! Please click below to login.</p>
+    <button (click)="navigateToLogin()">Login</button>
+  </div>
+</div>
+

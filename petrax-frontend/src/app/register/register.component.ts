@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit {
    pwHashConfirm: string = '';
    address: string = '';
    errorMessage: string = '';  // For displaying errors to the user
+   showModal: boolean = false;  // This controls the visibility of the modal.
+
 
   constructor(private registerService: RegisterService, private router: Router) { }
  // Injecting the RegisterService
@@ -34,11 +36,15 @@ export class RegisterComponent implements OnInit {
          contactEmail: this.contactEmail,
          pwHash: this.pwHash,
          address: this.address
-}).subscribe(response => {
-    console.log("Registration successful", response);
-    this.router.navigate(['/login']);  // Navigate to the login page
-}, error => {
-    this.errorMessage = "Error during registration. Please try again.";
-});
-   }
-}
+    }).subscribe(response => {
+      console.log("Registration successful", response);
+      // Display the modal instead of directly navigating.
+         this.showModal = true;
+    });
+  }
+
+    // New method to navigate to login when the button in the modal is clicked.
+     navigateToLogin() {
+        this.router.navigate(['/login']);
+     }
+  }

@@ -12,6 +12,6 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   registerUser(user: any) {
-    return this.http.post(`${this.API_URL}/register`, user);
+      return this.http.post(`${this.API_URL}/register`, user, {responseType: 'text'});
   }
 }
