@@ -76,7 +76,7 @@ initializePetProfile() {
 
 
   handlePetClick(petInfo) {
-    const petName = petInfo.pet.petName;
+    const petName = petInfo.pet.name;
     const petType = petInfo.pet.petType;
     const petBreed = petInfo.pet.petBreed;
     const petAge = petInfo.pet.petAge;

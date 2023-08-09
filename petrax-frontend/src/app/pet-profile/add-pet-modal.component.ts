@@ -10,16 +10,16 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class AddPetModalComponent {
 
 newPet: any = { // Object to store the new pet details
-    petName: '',
+    name: '',
     petType: '',
-    petBreed: '',
-    petAge: '',
-    petWeight: '',
-    petBirthdate: '',
-    petMedication: '',
-    petAllergy: '',
-    petMicrochip: '',
-    petDiagnoses: ''
+    breed: '',
+    age: '',
+    weight: '',
+    birthdate: '',
+    medication: '',
+    allergy: '',
+    microchip: '',
+    diagnoses: ''
 
   };
 
