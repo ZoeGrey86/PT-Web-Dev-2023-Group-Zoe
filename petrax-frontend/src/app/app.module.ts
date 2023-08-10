@@ -24,6 +24,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { AddPetModalComponent } from './pet-profile/add-pet-modal.component';
+import { PetDetailModalComponent } from './pet-profile/pet-detail-modal.component';
+import { CareProfessionalComponent } from './care-professional/care-professional.component';
+import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
+
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
 
@@ -31,19 +36,25 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
 @NgModule({
   declarations: [
-    AddEventModalComponent,
+    AppComponent,
+    UserListComponent,
     CalendarComponent,
-    EventDetailModalComponent,
-    FaqComponent,
-    FooterComponent,
     HomeComponent,
-    LogInComponent,
+    FaqComponent,
+    PetProfileComponent,
+    EventDetailModalComponent,
+    AddEventModalComponent,
     NavbarComponent,
     PetProfileComponent,
     UserListComponent,
     AppComponent,
-    RegisterComponent
-    ],
+    RegisterComponent,
+    FooterComponent,
+    AddPetModalComponent,
+    PetDetailModalComponent,
+    CareProfessionalComponent,
+    AddCareProfessionalComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
