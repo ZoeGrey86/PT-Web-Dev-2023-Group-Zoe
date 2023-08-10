@@ -29,6 +29,8 @@ import { PetDetailModalComponent } from './pet-profile/pet-detail-modal.componen
 import { CareProfessionalComponent } from './care-professional/care-professional.component';
 import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
 
+import { LogInComponent } from './log-in/log-in.component';
+import { RegisterComponent } from './register/register.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -43,6 +45,10 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     EventDetailModalComponent,
     AddEventModalComponent,
     NavbarComponent,
+    PetProfileComponent,
+    UserListComponent,
+    AppComponent,
+    RegisterComponent,
     FooterComponent,
     AddPetModalComponent,
     PetDetailModalComponent,
