@@ -3,10 +3,9 @@ export class User {
     firstName: string;
     lastName: string;
     contactEmail: string;
-    userName: string;
+    password: string; // Add this line
     address: string;
 }
-
 
 
 
