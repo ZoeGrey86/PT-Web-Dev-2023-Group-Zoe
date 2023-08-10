@@ -14,15 +14,15 @@ export enum PetType {
 export interface PetProfile {
 
      petId: number;
-     name: string;
+     petName: string;
      petType: PetType;
-     breed: string;
-     age: number;
-     weight: number;
-     birthday: Date;
-     medication: string;
-     allergy: string;
-     microchip: string;
-     diagnoses: string;
+     petBreed: string;
+     petAge: number;
+     petWeight: number;
+     petBirthdate: Date;
+     petMdication: string;
+     petAllergy: string;
+     petMicrochip: string;
+     petDiagnoses: string;
 
 }

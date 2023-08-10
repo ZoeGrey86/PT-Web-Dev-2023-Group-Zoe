@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-// import { PetProfile } from './pet-profile';
+import { PetProfile } from './pet-profile.model';
 
 
 @Component({
