@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("authentication")
-public class AuthenticationController {
+public class  AuthenticationController {
     @Autowired
     private UserRepository userRepository;
 
