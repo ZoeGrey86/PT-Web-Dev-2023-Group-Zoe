@@ -5,7 +5,7 @@
       <h2>Pets</h2>
       <ul>
         <li *ngFor="let pet of pets">
-          <span class="petName">{{ pet.petName }}</span>
+          <span *ngIf="isPetPresent(pet.petId)" class="petName">{{ pet.petName }}</span>
           <button class="delete-pet-button" (click)="openDeletePetModal(pet.petId)">Remove Pet</button>
         </li>
       </ul>

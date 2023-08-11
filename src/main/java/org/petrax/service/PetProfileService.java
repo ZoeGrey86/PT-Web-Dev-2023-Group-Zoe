@@ -40,9 +40,17 @@ public class PetProfileService {
         }
     }
 
-    public void deletePet(int petId) {
-        petProfileRepository.deleteById(petId);
+
+    public Optional<Object> deletePetById(int petId) {
+        Optional<PetProfile> petProfileOptional = petProfileRepository.findById(petId);
+        if (petProfileOptional.isPresent()) {
+            petProfileRepository.delete(petProfileOptional.get());
+        } else {
+            return Optional.empty();
+        }
+        return null;
     }
 
 
 }
+

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { PetProfileService } from './pet-profile.service';
+import { PetProfileUpdateService } from './pet-profile-update.service';
+
 
 @Component({
   selector: 'app-delete-pet-modal',
@@ -10,7 +12,8 @@ import { PetProfileService } from './pet-profile.service';
 export class DeletePetModalComponent {
   constructor(
     public activeModal: NgbActiveModal,
-    private petProfileService: PetProfileService
+//     private petProfileService: PetProfileService,
+//     private petProfileUpdateService: PetProfileUpdateService // Add this line
   ) {}
 
   petIdToDelete: any = {};
@@ -21,9 +24,10 @@ export class DeletePetModalComponent {
 
   onDelete() {
     // Call the deletePet method from the service
-    this.petProfileService.deletePet(this.petIdToDelete).subscribe(
+    this.petProfileService.deleteByPetId(this.petIdToDelete).subscribe(
       () => {
         // Handle successful deletion
+        this.petProfileUpdateService.triggerPetDeleted(this.petIdToDelete); // Trigger the event
         this.activeModal.close();
       },
       (error) => {
@@ -33,4 +37,6 @@ export class DeletePetModalComponent {
       }
     );
   }
+
 }
+

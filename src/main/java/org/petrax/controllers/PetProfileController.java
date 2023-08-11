@@ -65,10 +65,9 @@ public class PetProfileController {
 
     @DeleteMapping("/{petId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletePet(@PathVariable String petName, Date petBirthdate) {
-        PetProfileRepository.findFirstByNameAndBirthdate(petName, petBirthdate);
+    public void deleteByPetId(@PathVariable int petId) {
+        petProfileService.deletePetById(petId); // Utilize the service method to delete by petId
     }
-
 
 }
 

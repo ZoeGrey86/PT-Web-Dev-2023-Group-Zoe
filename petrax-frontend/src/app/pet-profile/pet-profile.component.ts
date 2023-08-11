@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // provides the Angular implementation of the Bootstrap Modal component.
 import { HttpClient } from '@angular/common/http';
@@ -10,8 +10,11 @@ import { PetDetailModalComponent } from './pet-detail-modal.component';
 import { DeletePetModalComponent } from './delete-pet-modal.component';
 //allows users to delete pets from profile
 import { PetProfile } from './pet-profile.model';
-// import { PetProfileService } from '../pet-profile.service';
-import { PetProfileService } from './pet-profile.service'
+import { PetProfileService } from './pet-profile.service';
+import { PetProfileUpdateService } from './pet-profile-update.service';
+import { ActivatedRoute, Router } from '@angular/router';
+//refreshes page after remove pet clicked
+
 
 
 @Component({
@@ -19,10 +22,19 @@ import { PetProfileService } from './pet-profile.service'
   templateUrl: './pet-profile.component.html',
   styleUrls: ['./pet-profile.component.css']
 })
+
 export class PetProfileComponent implements OnInit {
   pets: PetProfile[] = [];
 
-  constructor(private modalService: NgbModal, private http: HttpClient, private petProfileService: PetProfileService) {}
+  constructor(
+    private modalService: NgbModal,
+    private http: HttpClient,
+    private petProfileService: PetProfileService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private cdr: ChangeDetectorRef,
+    private petProfileUpdateService: PetProfileUpdateService
+  ) {}
 
 
   ngOnInit() {
@@ -76,6 +88,9 @@ initializePetProfile() {
     modalRef.componentInstance.petDiagnoses = petDiagnoses;
   }
 
+ isPetPresent(petId: number): boolean {
+    return this.pets.some((pet) => pet.petId === petId);
+  }
 
 openAddPetModal() {
   const modalRef = this.modalService.open(AddPetModalComponent);
@@ -92,30 +107,48 @@ openAddPetModal() {
             });
           }
 
-  openDeletePetModal(petId) {
+
+openDeletePetModal(petId: number) {
     const modalRef = this.modalService.open(DeletePetModalComponent);
+    modalRef.componentInstance.petIdToDelete = petId; // Pass the petId to the modal
     modalRef.result.then((result) => {
       if (result === 'delete') {
         // Call a service method to delete the pet
-        this.petProfileService.deletePet(petId).subscribe(response => {
-          console.log('Pet deleted from database:', response);
-          // Update the local list of pets (assuming you have a pets array)
-          this.pets = this.pets.filter(pet => pet.petId !== petId);
-        }, error => {
-          console.error('Error deleting pet:', error);
-        });
+        this.petProfileService.deleteByPetId(petId).subscribe(
+          (response) => {
+            console.log('Pet deleted from database:', response);
+            // Notify the pet profile component that a pet has been deleted
+            this.petProfileUpdateService.triggerPetDeleted(petId); // Trigger the event
+          },
+          (error) => {
+            console.error('Error deleting pet:', error);
+          }
+        );
       }
     });
   }
 
 
-
-  // In your "delete-pet-modal.component.ts" file
-//   onDelete() {
-//     // This method is called when the "Remove Pet" button is clicked in the modal
-//     // You can pass a result to indicate the action to take
-//     this.activeModal.close('delete');
-//   }
+//THIS REMOVES FROM DB, NOT FROM PROFILE
+//   openDeletePetModal(petId: number) {
+//       const modalRef = this.modalService.open(DeletePetModalComponent);
+//       modalRef.componentInstance.petIdToDelete = petId; // Pass the petId to the modal
+//       modalRef.result.then((result) => {
+//         if (result === 'delete') {
+//           // Call a service method to delete the pet
+//           this.petProfileService.deleteByPetId(petId).subscribe(
+//             (response) => {
+//               console.log('Pet deleted from database:', response);
+//               // Update the local list of pets (assuming you have a pets array)
+//               this.pets = this.pets.filter((pet) => pet.petId !== petId);
+//            },
+//             (error) => {
+//               console.error('Error deleting pet:', error);
+//             }
+//           );
+//         }
+//       });
+//     }
 
 
 
