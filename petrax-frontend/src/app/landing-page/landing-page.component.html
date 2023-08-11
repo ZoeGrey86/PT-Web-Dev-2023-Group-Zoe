@@ -1,0 +1,23 @@
+<div class = "welcome">
+    <h1>Welcome, UserName!</h1>
+</div>
+<div class="profile-link">
+    <a >My Profile</a>
+</div>
+
+<!-- Diplay Links to pet profiles -->
+<!-- Needs: 
+Router links to individual profile for each user
+router link to add new pet page -->
+<div>
+    <div *ngFor="let pet of pets" class="pet-card">{{pet.petName}}</div>
+    <div class="pet-card">
+        <a>Add New Pet!</a>
+    </div>
+</div>
+
+<!-- Upcoming Events Section
+Needs: 
+List upcoming events for a user within a time frame-- if none say "No events to show"
+Link to Calendar at the bottom of the section -->
+<div class="container"></div>

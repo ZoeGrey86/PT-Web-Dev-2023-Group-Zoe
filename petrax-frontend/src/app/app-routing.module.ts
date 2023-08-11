@@ -11,6 +11,7 @@ import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { RegisterComponent } from './register/register.component';
 import { CareProfessionalComponent } from './care-professional/care-professional.component';
 import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'faq', component: FaqComponent}, //Route for FAQ
   {path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
   {path: 'care-professional', component: CareProfessionalComponent},
-  {path: 'add-care-professional', component:AddCareProfessionalComponent}
+  {path: 'add-care-professional', component:AddCareProfessionalComponent}, 
+  {path: 'welcome', component:LandingPageComponent}
 
 
   // Add more routes as needed
