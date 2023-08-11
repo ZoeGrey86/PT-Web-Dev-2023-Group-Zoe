@@ -53,7 +53,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AddPetModalComponent,
     PetDetailModalComponent,
     CareProfessionalComponent,
-    AddCareProfessionalComponent
+    AddCareProfessionalComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-log-in',
@@ -7,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent {
   email: string = '';
-  password: string = '';
+  pwHash: string = '';
+
+constructor() { }
 
   onSubmit() {
-    //implementing the logic for handling form submission.
+   // Here, you can send the email and pwHash to your backend for authentication
     console.log('Email:', this.email);
-    console.log('Password:', this.password);
+    console.log('Password:', this.pwHash);
+
+   // Reset the form for next use or on success/failure
+    this.email = '';
+    this.pwHash = '';
 
   }
 

@@ -1,0 +1,35 @@
+/* Style for the overall container of the login page, which could be a div or the form itself. */
+.login-container {
+  max-width: 400px; /* constraining the form to 400 pixels width. */
+  margin: 0 auto; /* centers the form on the screen horizontally. */
+  padding: 40px 20px; /* spacing around the form. */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* subtle shadow to lift the form up a bit. */
+  border-radius: 5px; /* rounded corners. */
+  background-color: #ffffff; /* white background. */
+}
+
+/* Style for the input fields inside the login form. */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%; /* takes the full width of its container, which is .login-container */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc; /* light gray border. */
+  border-radius: 4px; /* slightly rounded corners for the input fields. */
+}
+
+/* Style for the login button. */
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF; /* Blue color, you can adjust to your preference. */
+  color: #fff; /* White text color. */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-container button:hover {
+  background-color: #0056b3; /* Darker blue color on hover. */
+}
