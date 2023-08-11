@@ -25,6 +25,7 @@ import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddPetModalComponent } from './pet-profile/add-pet-modal.component';
 import { PetDetailModalComponent } from './pet-profile/pet-detail-modal.component';
+import { DeletePetModalComponent } from './pet-profile/delete-pet-modal.component';
 
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
@@ -41,7 +42,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AddEventModalComponent,
     NavbarComponent,
     AddPetModalComponent,
-    PetDetailModalComponent
+    PetDetailModalComponent,
+    DeletePetModalComponent
 
   ],
   imports: [

@@ -6,6 +6,7 @@
       <ul>
         <li *ngFor="let pet of pets">
           <span class="petName">{{ pet.petName }}</span>
+          <button class="delete-pet-button" (click)="openDeletePetModal(pet.petId)">Remove Pet</button>
         </li>
       </ul>
       <button class="add-pet-button" (click)="openAddPetModal()">Add Pet</button>

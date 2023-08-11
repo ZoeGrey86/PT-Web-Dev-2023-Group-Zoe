@@ -7,6 +7,8 @@ import { AddPetModalComponent } from './add-pet-modal.component';
 //allows users to add new pets to the profile
 import { PetDetailModalComponent } from './pet-detail-modal.component';
 //displays the details of a pet
+import { DeletePetModalComponent } from './delete-pet-modal.component';
+//allows users to delete pets from profile
 import { PetProfile } from './pet-profile.model';
 // import { PetProfileService } from '../pet-profile.service';
 import { PetProfileService } from './pet-profile.service'
@@ -19,32 +21,6 @@ import { PetProfileService } from './pet-profile.service'
 })
 export class PetProfileComponent implements OnInit {
   pets: PetProfile[] = [];
-//   {
-//      petName: 'Tegan',
-//      petType: 'Cat',
-//      petBreed: 'Sphynx',
-//      petAge: '6',
-//      petWeight: '11',
-//      petBirthdate: '2017-03-03',
-//      petMedication: 'None',
-//      petAllergy: 'None',
-//      petMicrochip: '123456789',
-//      petDiagnoses: 'Gingivitis',
-//   },
-//   {
-//         petName: 'Gordon',
-//         petType: 'Dog',
-//         petBreed: 'Pittador',
-//         petAge: '7',
-//         petWeight: '33',
-//         petBirthdate: '2016-01-04',
-//         petMedication: 'Apoquel',
-//         petAllergy: 'None',
-//         petMicrochip: '987654321',
-//         petDiagnoses: 'Anxiety',
-//
-//   }
-
 
   constructor(private modalService: NgbModal, private http: HttpClient, private petProfileService: PetProfileService) {}
 
@@ -115,6 +91,32 @@ openAddPetModal() {
               }
             });
           }
+
+  openDeletePetModal(petId) {
+    const modalRef = this.modalService.open(DeletePetModalComponent);
+    modalRef.result.then((result) => {
+      if (result === 'delete') {
+        // Call a service method to delete the pet
+        this.petProfileService.deletePet(petId).subscribe(response => {
+          console.log('Pet deleted from database:', response);
+          // Update the local list of pets (assuming you have a pets array)
+          this.pets = this.pets.filter(pet => pet.petId !== petId);
+        }, error => {
+          console.error('Error deleting pet:', error);
+        });
+      }
+    });
+  }
+
+
+
+  // In your "delete-pet-modal.component.ts" file
+//   onDelete() {
+//     // This method is called when the "Remove Pet" button is clicked in the modal
+//     // You can pass a result to indicate the action to take
+//     this.activeModal.close('delete');
+//   }
+
 
 
 }
