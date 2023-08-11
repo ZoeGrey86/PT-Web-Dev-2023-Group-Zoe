@@ -22,4 +22,11 @@ export class CareProfessionalService {
   getProfessionalById(id: number): Observable<CareProfessional>{
     return this.httpClient.get<CareProfessional>(`${this.baseURL}/${id}`);
   }
+  updateProfessional(id: number, professional: CareProfessional): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${id}`, professional);
+  }
+
+  deleteProfessional(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
 }

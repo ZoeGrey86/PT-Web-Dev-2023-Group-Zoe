@@ -26,7 +26,13 @@ export class CareProfessionalComponent implements OnInit {
 
   updateProfessional(id: number){
     this.router.navigate(['update-care-professional', id]);
+  }
 
+  deleteProfessional(id: number) {
+    this.careProfessionalService.deleteProfessional(id).subscribe( data => {
+      console.log(data);
+      this.getCareProfessionals();
+    })
   }
 
 }
