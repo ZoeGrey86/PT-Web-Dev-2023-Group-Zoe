@@ -67,7 +67,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AppRoutingModule,
     FullCalendarModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

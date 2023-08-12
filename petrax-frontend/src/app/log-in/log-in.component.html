@@ -12,6 +12,7 @@
             <label for="pwHash">Password</label>
             <input type="password" id="pwHash" name="pwHash" [(ngModel)]="pwHash" required class="form-control">
 
+
             <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 <!--        </div>-->
         <button type="submit" [disabled]="!loginForm.valid">Login</button>

@@ -17,6 +17,8 @@ export class LogInComponent implements OnInit {
 constructor(private loginService: LoginService, private router: Router) { }
  // Injecting the LoginService
 
+    ngOnInit() { }
+
   onSubmit() {
 //    if (this.pwHash !== this.pwHashConfirm) {
 //             this.errorMessage = "Username or Password is incorrect";
@@ -24,8 +26,8 @@ constructor(private loginService: LoginService, private router: Router) { }
 //          }
    // Reset the form for next use or on success/failure
   this.LoginService.loginUser({
-      this.email = '',
-      this.pwHash = '';
+      email: this.email,
+      pwHash: this.pwHash,
 
   }).subscribe(response => {
         console.log("Login successful", response);
