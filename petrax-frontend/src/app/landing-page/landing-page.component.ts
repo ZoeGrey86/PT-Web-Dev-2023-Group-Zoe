@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Route } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddPetModalComponent } from '../pet-profile/add-pet-modal.component';
+import { PetDetailModalComponent } from '../pet-profile/pet-detail-modal.component';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,6 +11,10 @@ import { Route } from '@angular/router';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+
+  initializePetProfile() {
+    //    this.petName.pets = this.pets
+       }
 
   pets: any[] = [
     {
@@ -40,9 +48,25 @@ export class LandingPageComponent implements OnInit {
     ];
 
 
-  constructor() { }
+  constructor(private modalService:NgbModal, private http:HttpClient) { }
 
   ngOnInit(): void {
+  }
+  openAddPetModal() {
+    const modalRef = this.modalService.open(AddPetModalComponent);
+    modalRef.result.then((result) => {
+      if (result) {
+        this.petProfileService.addPet(result).subscribe(
+          (response) => {
+            console.log('Pet added to database:', response);
+            this.pets.push(result); // Add the new pet to the local array
+          },
+          (error) => {
+            console.error('Error adding pet:', error);
+          }
+        );
+      }
+    });
   }
 
 }

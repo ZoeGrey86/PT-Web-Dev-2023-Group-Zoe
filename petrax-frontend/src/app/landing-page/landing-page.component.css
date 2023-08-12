@@ -58,23 +58,16 @@ body, html {
     border: 2.50px #F05D23 solid
 }
 .pet-card{
+    color:#222E50;
     display: inline-flex;
-    width: 175px; 
-    height: 175px;
-    margin: 25px 25px; 
+    text-align: center;
+    padding:25px;
+    margin: 10px 10px; 
+    border-radius: 9999px;
+    /* border:  solid 2.5px; */
     background: #D9D9D9
 }
-.pet-card .petName { 
-    position: absolute;
-    bottom:0;
-    left: 0;
-    text-align: center; 
-    color: #222E50; 
-    font-size: 40px; 
-    font-family: Outfit; 
-    font-weight: 400; 
-    word-wrap: break-word 
-}
+
 .events-header{
     text-align: center;
     padding:5px 5px;

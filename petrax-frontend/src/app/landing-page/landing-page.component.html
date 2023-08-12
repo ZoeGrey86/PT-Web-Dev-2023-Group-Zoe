@@ -12,12 +12,13 @@
     Router links to individual profile for each user
     router link to add new pet page -->
     <div>
-        <div *ngFor="let pet of pets" class="pet-card">
-            <h4>{{pet.petName}}</h4>
+        <div >
+            <h4 *ngFor="let pet of pets" class="pet-card">{{pet.petName}}
+                <!-- <button (click)="openPetDetailModal"></button> -->
+            </h4>
+            
         </div>
-        <div class="pet-card">
-            <a class = "PetName">Add New Pet!</a>
-        </div>
+        <h4><a  class="pet-card" (click)="openAddPetModal()">Add New Pet!</a></h4>
     </div>
 
     <!-- Upcoming Events Section
