@@ -30,9 +30,6 @@ export class PetProfileComponent implements OnInit {
     private modalService: NgbModal,
     private http: HttpClient,
     private petProfileService: PetProfileService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private cdr: ChangeDetectorRef,
     private petProfileUpdateService: PetProfileUpdateService
   ) {}
 
@@ -64,7 +61,8 @@ initializePetProfile() {
 
 
   handlePetClick(petInfo) {
-    const petName = petInfo.pet.name;
+    const petId = petInfo.pet.petId;
+    const petName = petInfo.pet.petName;
     const petType = petInfo.pet.petType;
     const petBreed = petInfo.pet.petBreed;
     const petAge = petInfo.pet.petAge;
@@ -76,6 +74,7 @@ initializePetProfile() {
     const petDiagnoses = petInfo.pet.petDiagnoses;
 
     const modalRef = this.modalService.open(PetDetailModalComponent);
+    modalRef.componentInstance.petId = petId;
     modalRef.componentInstance.petName = petName;
     modalRef.componentInstance.petType = petType;
     modalRef.componentInstance.petBreed = petBreed;
@@ -108,47 +107,27 @@ openAddPetModal() {
           }
 
 
-openDeletePetModal(petId: number) {
-    const modalRef = this.modalService.open(DeletePetModalComponent);
-    modalRef.componentInstance.petIdToDelete = petId; // Pass the petId to the modal
-    modalRef.result.then((result) => {
-      if (result === 'delete') {
-        // Call a service method to delete the pet
-        this.petProfileService.deleteByPetId(petId).subscribe(
-          (response) => {
-            console.log('Pet deleted from database:', response);
-            // Notify the pet profile component that a pet has been deleted
-            this.petProfileUpdateService.triggerPetDeleted(petId); // Trigger the event
-          },
-          (error) => {
-            console.error('Error deleting pet:', error);
-          }
-        );
-      }
-    });
-  }
-
 
 //THIS REMOVES FROM DB, NOT FROM PROFILE
-//   openDeletePetModal(petId: number) {
-//       const modalRef = this.modalService.open(DeletePetModalComponent);
-//       modalRef.componentInstance.petIdToDelete = petId; // Pass the petId to the modal
-//       modalRef.result.then((result) => {
-//         if (result === 'delete') {
-//           // Call a service method to delete the pet
-//           this.petProfileService.deleteByPetId(petId).subscribe(
-//             (response) => {
-//               console.log('Pet deleted from database:', response);
-//               // Update the local list of pets (assuming you have a pets array)
-//               this.pets = this.pets.filter((pet) => pet.petId !== petId);
-//            },
-//             (error) => {
-//               console.error('Error deleting pet:', error);
-//             }
-//           );
-//         }
-//       });
-//     }
+  openDeletePetModal(petId: number) {
+      const modalRef = this.modalService.open(DeletePetModalComponent);
+      modalRef.componentInstance.petIdToDelete = petId; // Pass the petId to the modal
+      modalRef.result.then((result) => {
+        if (result === 'delete') {
+          // Call a service method to delete the pet
+          this.petProfileService.deleteByPetId(petId).subscribe(
+            (response) => {
+              console.log('Pet deleted from database:', response);
+              // Update the local list of pets (assuming you have a pets array)
+              this.pets = this.pets.filter((pet) => pet.petId !== petId);
+           },
+            (error) => {
+              console.error('Error deleting pet:', error);
+            }
+          );
+        }
+      });
+    }
 
 
 

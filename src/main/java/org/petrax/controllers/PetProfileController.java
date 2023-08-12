@@ -31,6 +31,7 @@ public class PetProfileController {
         });
     }
 
+    @Autowired
     private final PetProfileService petProfileService;   // Use the service instead of the repository directly
 
     @Autowired
@@ -66,7 +67,7 @@ public class PetProfileController {
     @DeleteMapping("/{petId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteByPetId(@PathVariable int petId) {
-        petProfileService.deletePetById(petId); // Utilize the service method to delete by petId
+        petProfileService.deleteByPetId(petId); // Utilize the service method to delete by petId
     }
 
 }

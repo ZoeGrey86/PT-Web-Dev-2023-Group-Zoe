@@ -41,7 +41,7 @@ public class PetProfileService {
     }
 
 
-    public Optional<Object> deletePetById(int petId) {
+    public Optional<Object> deleteByPetId(int petId) {
         Optional<PetProfile> petProfileOptional = petProfileRepository.findById(petId);
         if (petProfileOptional.isPresent()) {
             petProfileRepository.delete(petProfileOptional.get());
@@ -50,6 +50,7 @@ public class PetProfileService {
         }
         return null;
     }
+
 
 
 }

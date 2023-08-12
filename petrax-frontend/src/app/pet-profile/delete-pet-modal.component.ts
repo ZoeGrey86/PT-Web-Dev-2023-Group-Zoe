@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { PetProfileService } from './pet-profile.service';
 import { PetProfileUpdateService } from './pet-profile-update.service';
+import { HttpClient } from '@angular/common/http';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @Component({
@@ -10,17 +13,20 @@ import { PetProfileUpdateService } from './pet-profile-update.service';
   styleUrls: ['./delete-pet-modal.component.css']
 })
 export class DeletePetModalComponent {
+
   constructor(
-    public activeModal: NgbActiveModal,
-//     private petProfileService: PetProfileService,
-//     private petProfileUpdateService: PetProfileUpdateService // Add this line
-  ) {}
+      public activeModal: NgbActiveModal,
+      private http: HttpClient,
+      private petProfileService: PetProfileService,
+      private petProfileUpdateService: PetProfileUpdateService
+    ) {}
 
   petIdToDelete: any = {};
 
   closeModal() {
     this.activeModal.dismiss();
   }
+
 
   onDelete() {
     // Call the deletePet method from the service
