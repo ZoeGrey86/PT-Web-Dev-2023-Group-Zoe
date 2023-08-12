@@ -17,7 +17,11 @@
 
 .pet-profile-container {
   flex: 2;
-  margin-right: 20px; /* Add some space between the pet profile and other content */
+  margin-right: 20px;
+  width: 1440px;
+  height: 1706px;
+  flex-shrink: 0;
+  background: #F7F7F2;
 }
 
 .other-content {
@@ -29,4 +33,4 @@
   padding: 10px;
 }
 
-/* Add any other styles as needed for your pet profile and other content */
+
