@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // provides the Angular implementation of the Bootstrap Modal component.
 import { HttpClient } from '@angular/common/http';
@@ -7,8 +7,13 @@ import { AddPetModalComponent } from './add-pet-modal.component';
 //allows users to add new pets to the profile
 import { PetDetailModalComponent } from './pet-detail-modal.component';
 //displays the details of a pet
-// import { PetProfile } from '../pet-profile';
-// import { PetProfileService } from '../pet-profile.service';
+import { DeletePetModalComponent } from './delete-pet-modal.component';
+//allows users to delete pets from profile
+import { PetProfile } from './pet-profile.model';
+import { PetProfileService } from './pet-profile.service';
+import { PetProfileUpdateService } from './pet-profile-update.service';
+import { ActivatedRoute, Router } from '@angular/router';
+//refreshes page after remove pet clicked
 
 
 
@@ -17,55 +22,46 @@ import { PetDetailModalComponent } from './pet-detail-modal.component';
   templateUrl: './pet-profile.component.html',
   styleUrls: ['./pet-profile.component.css']
 })
+
 export class PetProfileComponent implements OnInit {
-  pets: any[] = [
-  {
-     petName: 'Tegan',
-     petType: 'Cat',
-     petBreed: 'Sphynx',
-     petAge: '6',
-     petWeight: '11',
-     petBirthdate: '2017-03-03',
-     petMedication: 'None',
-     petAllergy: 'None',
-     petMicrochip: '123456789',
-     petDiagnoses: 'Gingivitis',
-  },
-  {
-        petName: 'Gordon',
-        petType: 'Dog',
-        petBreed: 'Pittador',
-        petAge: '7',
-        petWeight: '33',
-        petBirthdate: '2016-01-04',
-        petMedication: 'Apoquel',
-        petAllergy: 'None',
-        petMicrochip: '987654321',
-        petDiagnoses: 'Anxiety',
+  pets: PetProfile[] = [];
 
-  }
-  ];
-
-  constructor(private modalService: NgbModal, private http: HttpClient) {}
+  constructor(
+    private modalService: NgbModal,
+    private http: HttpClient,
+    private petProfileService: PetProfileService,
+    private petProfileUpdateService: PetProfileUpdateService
+  ) {}
 
 
   ngOnInit() {
+    this.initializePetProfile();
     this.fetchPetsFromServer();
   }
 
   fetchPetsFromServer() {
-    this.http.get<any[]>('/api/pet-profile', { params: { page: '0', size: '3' } })
+    this.http.get<PetProfile[]>('http://localhost:8080/api/petProfile', { params: { page: '0', size: '3' } })
       .subscribe((data) => {
         this.pets = [...this.pets, ...data];
           this.initializePetProfile();
-      });
+      },
+      (error) => {
+           console.error('Error fetching pets', error);
+        }
+     );
   }
 
-   initializePetProfile() {
-//    this.petName.pets = this.pets
-   }
+initializePetProfile() {
+  // Loop through each pet in the pets array
+  this.pets = this.pets.map(pet => ({
+    ...pet
+  }));
+}
+
+
 
   handlePetClick(petInfo) {
+    const petId = petInfo.pet.petId;
     const petName = petInfo.pet.petName;
     const petType = petInfo.pet.petType;
     const petBreed = petInfo.pet.petBreed;
@@ -78,6 +74,7 @@ export class PetProfileComponent implements OnInit {
     const petDiagnoses = petInfo.pet.petDiagnoses;
 
     const modalRef = this.modalService.open(PetDetailModalComponent);
+    modalRef.componentInstance.petId = petId;
     modalRef.componentInstance.petName = petName;
     modalRef.componentInstance.petType = petType;
     modalRef.componentInstance.petBreed = petBreed;
@@ -90,20 +87,49 @@ export class PetProfileComponent implements OnInit {
     modalRef.componentInstance.petDiagnoses = petDiagnoses;
   }
 
+ isPetPresent(petId: number): boolean {
+    return this.pets.some((pet) => pet.petId === petId);
+  }
 
 openAddPetModal() {
   const modalRef = this.modalService.open(AddPetModalComponent);
   modalRef.result.then((result) => {
     if (result) {
-      const newPet = result;
-      this.pets.push(newPet);
-      this.http.post('/api/pet-profile', newPet).subscribe(() => {
-        console.log('Pet added successfully.');
-        this.initializePetProfile();
+      this.petProfileService.addPet(result).subscribe(response => {
+                 console.log('Pet added to database:', response);
+                 this.pets.push(result);
+                 this.initializePetProfile();
+               }, error => {
+                 console.error('Error adding pet:', error);
+               });
+              }
+            });
+          }
+
+
+
+//THIS REMOVES FROM DB, NOT FROM PROFILE
+  openDeletePetModal(petId: number) {
+      const modalRef = this.modalService.open(DeletePetModalComponent);
+      modalRef.componentInstance.petIdToDelete = petId; // Pass the petId to the modal
+      modalRef.result.then((result) => {
+        if (result === 'delete') {
+          // Call a service method to delete the pet
+          this.petProfileService.deleteByPetId(petId).subscribe(
+            (response) => {
+              console.log('Pet deleted from database:', response);
+              // Update the local list of pets (assuming you have a pets array)
+              this.pets = this.pets.filter((pet) => pet.petId !== petId);
+           },
+            (error) => {
+              console.error('Error deleting pet:', error);
+            }
+          );
+        }
       });
     }
-  });
- }
-}
 
+
+
+}
 
