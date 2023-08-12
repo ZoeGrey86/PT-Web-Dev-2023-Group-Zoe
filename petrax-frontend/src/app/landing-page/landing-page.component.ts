@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/router';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddPetModalComponent } from '../pet-profile/add-pet-modal.component';
 import { PetDetailModalComponent } from '../pet-profile/pet-detail-modal.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { PetProfileService } from '../pet-profile/pet-profile.service';
+import { CalendarComponent } from '../calendar/calendar.component';
+import { CalendarService } from '../calendar/calendar.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -48,9 +51,27 @@ export class LandingPageComponent implements OnInit {
     ];
 
 
-  constructor(private modalService:NgbModal, private http:HttpClient) { }
+  constructor(private modalService:NgbModal,
+     private http:HttpClient, 
+     private petProfileService: PetProfileService,
+     private router:Router,) { }
 
   ngOnInit(): void {
+    this.fetchEventsFromServer();
+  }
+  fetchEventsFromServer() {
+    this.http.get<any[]>('http://localhost:8080/api/events', { params: { page: '0', size: '3' } })
+    .subscribe(
+      (data) => {
+        this.events = [...this.events, ...data];
+      },
+      (error) => {
+        console.error('Error fetching events', error);
+       }
+    );
+}
+  navigateToCalendar() {
+    this.router.navigate(['/calendar']);
   }
   openAddPetModal() {
     const modalRef = this.modalService.open(AddPetModalComponent);

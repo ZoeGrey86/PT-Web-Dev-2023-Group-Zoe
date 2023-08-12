@@ -30,13 +30,18 @@
     </div>
     <div class="events-container">
         <ul>
-            <li *ngFor = "let event of events">{{event.name}}</li>
-        </ul>
-        <h3 class = "calendar-link">
-            <a href="">Go To Calendar</a>
-        </h3>
+            <li *ngFor="let event of events">
+              <span class="event-title">{{ event.title }}</span>
+              <span class="event-date">{{ event.start | date }}</span>
+            </li>
+          </ul>
+        <div class = "calendar-link">
+            <button (click)="navigateToCalendar()">Go To Calendar</button>
+        </div>
     </div>
 
 
     </div>
 </div>
+
+    

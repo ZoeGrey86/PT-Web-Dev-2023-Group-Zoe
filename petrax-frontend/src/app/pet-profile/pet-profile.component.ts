@@ -41,14 +41,15 @@ export class PetProfileComponent implements OnInit {
 
   fetchPetsFromServer() {
     this.http.get<PetProfile[]>('http://localhost:8080/api/petProfile', { params: { page: '0', size: '3' } })
-      .subscribe((data) => {
-        this.pets = [...this.pets, ...data];
-          this.initializePetProfile();
-      },
-      (error) => {
-           console.error('Error fetching pets', error);
+      .subscribe(
+        (data) => {
+          // Update the pets array with the fetched data
+          this.pets = [...this.pets, ...data];
+        },
+        (error) => {
+          console.error('Error fetching pets', error);
         }
-     );
+      );
   }
 
 initializePetProfile() {
