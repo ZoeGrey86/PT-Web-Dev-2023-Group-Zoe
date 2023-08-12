@@ -38,3 +38,10 @@
 .navbar-item:hover {
     color: #F7F7F2;
 }
+
+.navbar-logo {
+  height: 30px;    /* Adjust this value as needed for your navbar */
+  width: auto;     /* Keep the logo's aspect ratio */
+  vertical-align: middle;   /* Vertically center the logo in the navbar */
+  margin-right: 20px;   /* Space between the logo and the text */
+}
