@@ -4,7 +4,7 @@ import { PetProfileService } from './pet-profile.service';
 import { PetProfileUpdateService } from './pet-profile-update.service';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class DeletePetModalComponent {
   constructor(
       public activeModal: NgbActiveModal,
       private http: HttpClient,
-      private router: Router,
+//       private router: Router,
       private petProfileService: PetProfileService,
       private petProfileUpdateService: PetProfileUpdateService
     ) {}
