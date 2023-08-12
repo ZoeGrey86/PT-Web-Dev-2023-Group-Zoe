@@ -2,7 +2,7 @@ PETrax :paw_prints:
 
 A dedicated platform for pet owners to ensure the well-being of their furry family members.
 
-![PETrax Logo](assets/logos/PETraxlogo.png)
+![PETrax Logo](petrax-frontend/src/assets/logos/PETraxlogo.png)
 
 **Overview**
 
