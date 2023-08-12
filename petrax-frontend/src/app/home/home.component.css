@@ -35,22 +35,20 @@ body, html {
 }
 
 .login-btn, .signup-btn {
-    padding: 10px 20px;       /* button size */
-    border: none;
+    width: 150px;                /* Set a fixed width */
+    height: 50px;                /* Set a fixed height */
+    padding: 10px 20px;
+    background-color: #222E50;  /* Blue background */
+    border: 2px solid #1BB46F;  /* Green outline */
+    color: #F7F7F2;             /* Text color from your earlier code */
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif; /* Use Outfit font, fallback to sans-serif */
     cursor: pointer;
-    font-size: 16px;
-}
-
-.login-btn {
-    background-color: #222E50;
-    color: #F7F7F2;
-    border-radius: 5px;
-}
-
-.signup-btn {
-    background-color: #F05D23;
-    color: #F7F7F2;
-    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;         /* To make sure text is centered if the buttons have a fixed width */
+    display: flex;              /* Flexbox to perfectly center the text */
+    justify-content: center;    /* Center the text horizontally */
+    align-items: center;        /* Center the text vertically */
 }
 
 .intro-text {
@@ -59,3 +57,14 @@ body, html {
     max-width: 90%;  /* to prevent text from stretching too wide */
 }
 
+.website-graphic {
+  max-width: 90%;  /* to keep the image consistent with your text's width */
+  height: auto;   /* maintain aspect ratio */
+  margin-bottom: 20px;  /* add some space between the graphic and the text */
+}
+
+.footer-graphic {
+  max-width: 100%;
+  height: auto;
+  margin-top: 60px;
+  }

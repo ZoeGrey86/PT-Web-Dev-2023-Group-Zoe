@@ -13,6 +13,7 @@ import { CareProfessionalComponent } from './care-professional/care-professional
 import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
+import { UpdateProfessionalComponent } from './care-professional/update-professional/update-professional.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route redirects to home
@@ -27,8 +28,10 @@ const routes: Routes = [
   {path: 'faq', component: FaqComponent}, //Route for FAQ
   {path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
   {path: 'care-professional', component: CareProfessionalComponent},
-  {path: 'add-care-professional', component:AddCareProfessionalComponent}, 
+  {path: 'add-care-professional', component:AddCareProfessionalComponent},
   {path: 'welcome', component:LandingPageComponent}
+  {path: 'add-care-professional', component:AddCareProfessionalComponent},
+  {path: 'update-care-professional/:id', component:UpdateProfessionalComponent}
 
 
   // Add more routes as needed
