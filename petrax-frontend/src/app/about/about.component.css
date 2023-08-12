@@ -1,0 +1,69 @@
+.center-container {
+    width: 100%; /* take full width of its parent */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Allow it to grow and consume available space */
+}
+
+.main-content {
+    flex: 1; /* Let the main content area take all the available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center items horizontally */
+    justify-content: center; /* center items vertically */
+}
+
+.rectangle {
+    width: 800px;
+    max-height: 80%;
+    background: #B5BAB6;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.about-header {
+    background-color: #222E50;  /* Blue background */
+    color: #F7F7F2;  /* Text color (light) for contrast */
+    border: 2px solid #1BB46F;  /* Orange outline */
+    padding: 10px 20px;  /* Some padding to give it space */
+    border-radius: 10px;  /* Rounded corners */
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;  /* Space below the header */
+    font-family: 'Georgia', serif;  /* Maintain the same font family */
+}
+
+.about-title {
+    font-size: 28px;
+    color: #222E50;  /* Blue text color */
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center; /* Keeping the main title centered as it often looks good as a focal point */
+    font-family: 'Georgia', serif;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #F05D23;  /* Green text color */
+    margin: 20px 0;  /* Space at the top and bottom */
+    text-align: left; /* As per your request */
+    font-family: 'Georgia', serif; /* Complimentary serif font */
+    align-self: flex-start; /* this will align the section to listen to this container and not info above */
+}
+
+.about-content {
+    font-size: 18px;
+    text-align: left;
+    max-width: 90%;  /* maintain consistency with intro-text */
+    color: #333;     /* Dark gray text for readability */
+    line-height: 1.5; /* Spacing between lines */
+    font-family: 'Outfit', sans-serif; /* Consistency in font family */
+}
+
+/* Given the center-container class you have, no need for additional styles for alignment. */

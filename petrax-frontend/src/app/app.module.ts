@@ -31,6 +31,7 @@ import { AddCareProfessionalComponent } from './care-professional/add-care-profe
 
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
+import { AboutComponent } from './about/about.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -53,7 +54,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AddPetModalComponent,
     PetDetailModalComponent,
     CareProfessionalComponent,
-    AddCareProfessionalComponent
+    AddCareProfessionalComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { RegisterComponent } from './register/register.component';
 import { CareProfessionalComponent } from './care-professional/care-professional.component';
 import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
-
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route redirects to home
@@ -20,13 +20,14 @@ const routes: Routes = [
   { path: 'login', component: LogInComponent }, // Route for LogInComponent
   { path: 'user-list', component: UserListComponent }, //
   { path: 'faq', component: FaqComponent}, //Route for FAQ
-  { path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
-  { path: 'register', component: RegisterComponent}, //Route for RegisterComponent
+  { path: 'pet-profile', component: PetProfileComponent }, //Route for PetProfileComponent
+  { path: 'register', component: RegisterComponent }, //Route for RegisterComponent
   { path: 'users', component: UserListComponent }, // Route for CalendarComponent
-  {path: 'faq', component: FaqComponent}, //Route for FAQ
-  {path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
-  {path: 'care-professional', component: CareProfessionalComponent},
-  {path: 'add-care-professional', component:AddCareProfessionalComponent}
+  { path: 'faq', component: FaqComponent }, //Route for FAQ
+  { path: 'pet-profile', component: PetProfileComponent }, //Route for PetProfileComponent
+  { path: 'care-professional', component: CareProfessionalComponent },
+  { path: 'add-care-professional', component:AddCareProfessionalComponent },
+  { path: 'about', component: AboutComponent } //Route for AboutComponent
 
 
   // Add more routes as needed
