@@ -14,20 +14,20 @@ export class LogInComponent implements OnInit {
   errorMessage: string = '';  // For displaying errors to the user
   showModal: boolean = false;  // This controls the visibility of the modal.
 
-constructor(private authService: AuthService, private loginService: LoginService, private router: Router) { }
+constructor(private loginService: LoginService, private router: Router) { }
  // Injecting the LoginService
 
     ngOnInit() { }
 
   onSubmit() {
-          this.authService.login(this.email, this.password).subscribe(
+          this.loginService.loginUser(this.email, this.pwHash).subscribe(
             (response) => {
               // Authentication successful
-              this.router.navigate(['/dashboard']); // Redirect to the dashboard or another authenticated page
+              this.router.navigate(['/home']);
             },
             (error) => {
               // Authentication failed, handle error
-              console.error('Authentication failed:', error);
+              console.error('Username or Password incorrect', error);
             }
   this.loginService.loginUser({
       email: this.email,
@@ -37,7 +37,7 @@ constructor(private authService: AuthService, private loginService: LoginService
         console.log("Login successful", response);
         // Display the modal instead of directly navigating.
            this.showModal = true;
-      });
+      })
     }
 
       // New method to navigate to home when the button in the modal is clicked.
