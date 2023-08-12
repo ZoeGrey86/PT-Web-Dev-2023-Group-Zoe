@@ -61,7 +61,6 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     CareProfessionalComponent,
     AddCareProfessionalComponent,
     UpdateProfessionalComponent
->>>>>>> main
   ],
   imports: [
     BrowserModule,

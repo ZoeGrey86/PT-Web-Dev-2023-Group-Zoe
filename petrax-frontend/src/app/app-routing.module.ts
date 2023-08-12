@@ -24,7 +24,6 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent}, //Route for RegisterComponent
   { path: 'users', component: UserListComponent }, // Route for CalendarComponent
   {path: 'faq', component: FaqComponent}, //Route for FAQ
-  {path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
   {path: 'care-professional', component: CareProfessionalComponent},
   {path: 'add-care-professional', component:AddCareProfessionalComponent},
   {path: 'update-care-professional/:id', component:UpdateProfessionalComponent}
