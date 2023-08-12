@@ -35,6 +35,10 @@ export class LandingPageComponent implements OnInit {
   
     }
     ];
+    events: any[] = [
+      {name: "vetappt"}
+    ];
+
 
   constructor() { }
 

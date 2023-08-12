@@ -6,6 +6,8 @@ body, html {
     flex-direction: column;
 }
 
+
+
 .main-content {
     flex: 1; /* Let the main content area take all the available space */
     display: flex;
@@ -21,4 +23,73 @@ body, html {
     justify-content: center;
     align-items: center;
     flex: 1; /* Allow it to grow and consume available space */
+}
+.rectangle {
+    width: 800px;
+    max-height: 80%;
+    background: #B5BAB6;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.welcome {
+    background-color: #222E50;
+    color: #F7F7F2;
+    border: #F05D23 solid;
+    border-radius: 5px;
+    padding: 15px;
+    display: inline-flex;
+}
+.profile-link { 
+    background-color: #1BB46F;
+    color:#F7F7F2;
+    border: #222E50 solid;
+    border-radius: 5px;
+    padding: 5px 100px;
+}
+
+.events-container {
+    width: 700px; 
+    height: auto; 
+    background: #F7F7F2; 
+    border-radius: 5px; 
+    border: 2.50px #F05D23 solid
+}
+.pet-card{
+    display: inline-flex;
+    width: 175px; 
+    height: 175px;
+    margin: 25px 25px; 
+    background: #D9D9D9
+}
+.pet-card .petName { 
+    position: absolute;
+    bottom:0;
+    left: 0;
+    text-align: center; 
+    color: #222E50; 
+    font-size: 40px; 
+    font-family: Outfit; 
+    font-weight: 400; 
+    word-wrap: break-word 
+}
+.events-header{
+    text-align: center;
+    padding:5px 5px;
+    margin: 0px 100px;
+    background-color: #222E50;
+    color:#F7F7F2;
+    border-radius: 5px;
+    border: 2.50px #F05D23 solid
+}
+.calendar-link {
+    text-align: center;
+    padding:5px auto;
+    margin: 5px 100px;
+    background-color: #222E50;
+    color:#F7F7F2;
+    border-radius: 5px;
+    border: 2.50px #F05D23 solid
 }
