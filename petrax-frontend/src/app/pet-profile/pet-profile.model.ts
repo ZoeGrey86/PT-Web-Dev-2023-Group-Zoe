@@ -20,7 +20,7 @@ export interface PetProfile {
      petAge: number;
      petWeight: number;
      petBirthdate: Date;
-     petMdication: string;
+     petMedication: string;
      petAllergy: string;
      petMicrochip: string;
      petDiagnoses: string;

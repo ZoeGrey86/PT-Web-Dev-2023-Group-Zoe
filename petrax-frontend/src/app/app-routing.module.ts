@@ -19,9 +19,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent }, // Route for HomeComponent
   { path: 'calendar', component: CalendarComponent }, // Route for CalendarComponent
   { path: 'login', component: LogInComponent }, // Route for LogInComponent
-  { path: 'user-list', component: UserListComponent }, //
-  { path: 'faq', component: FaqComponent}, //Route for FAQ
-  { path: 'pet-profile', component: PetProfileComponent }, //Route for PetProfileComponent
+  { path: 'user-list', component: UserListComponent },
   { path: 'register', component: RegisterComponent }, //Route for RegisterComponent
   { path: 'users', component: UserListComponent }, // Route for CalendarComponent
   { path: 'faq', component: FaqComponent }, //Route for FAQ
