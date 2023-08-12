@@ -32,6 +32,8 @@ import { AddCareProfessionalComponent } from './care-professional/add-care-profe
 
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginService } from './log-in/login.service';
+
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -48,13 +50,14 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     NavbarComponent,
     PetProfileComponent,
     UserListComponent,
-    AppComponent,
     RegisterComponent,
     FooterComponent,
     AddPetModalComponent,
     PetDetailModalComponent,
     CareProfessionalComponent,
-    AddCareProfessionalComponent
+    AddCareProfessionalComponent,
+    AddCareProfessionalComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AppRoutingModule,
     FullCalendarModule
   ],
-  providers: [LoginService],
+  providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

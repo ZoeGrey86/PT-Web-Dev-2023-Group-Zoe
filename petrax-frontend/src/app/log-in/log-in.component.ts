@@ -12,20 +12,24 @@ export class LogInComponent implements OnInit {
   email: string = '';
   pwHash: string = '';
   errorMessage: string = '';  // For displaying errors to the user
-   showModal: boolean = false;  // This controls the visibility of the modal.
+  showModal: boolean = false;  // This controls the visibility of the modal.
 
-constructor(private loginService: LoginService, private router: Router) { }
+constructor(private authService: AuthService, private loginService: LoginService, private router: Router) { }
  // Injecting the LoginService
 
     ngOnInit() { }
 
   onSubmit() {
-//    if (this.pwHash !== this.pwHashConfirm) {
-//             this.errorMessage = "Username or Password is incorrect";
-//             return;
-//          }
-   // Reset the form for next use or on success/failure
-  this.LoginService.loginUser({
+          this.authService.login(this.email, this.password).subscribe(
+            (response) => {
+              // Authentication successful
+              this.router.navigate(['/dashboard']); // Redirect to the dashboard or another authenticated page
+            },
+            (error) => {
+              // Authentication failed, handle error
+              console.error('Authentication failed:', error);
+            }
+  this.loginService.loginUser({
       email: this.email,
       pwHash: this.pwHash,
 
