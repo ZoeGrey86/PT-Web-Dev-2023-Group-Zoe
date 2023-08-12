@@ -28,6 +28,7 @@ import { AddPetModalComponent } from './pet-profile/add-pet-modal.component';
 import { PetDetailModalComponent } from './pet-profile/pet-detail-modal.component';
 import { CareProfessionalComponent } from './care-professional/care-professional.component';
 import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
+import { UpdateProfessionalComponent } from './care-professional/update-professional/update-professional.component';
 
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
@@ -53,7 +54,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AddPetModalComponent,
     PetDetailModalComponent,
     CareProfessionalComponent,
-    AddCareProfessionalComponent
+    AddCareProfessionalComponent,
+    UpdateProfessionalComponent
   ],
   imports: [
     BrowserModule,
