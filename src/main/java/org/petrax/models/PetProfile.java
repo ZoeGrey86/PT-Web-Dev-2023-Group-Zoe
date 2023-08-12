@@ -2,95 +2,31 @@ package org.petrax.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Objects;
 
 @Entity
-//@Validated
 public class PetProfile {
 
     //private fields petId, name, breed, age, weight, birthday, medications, allergies, microchip number, and diagnoses
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int petId;
 
-    //The field to store the uploaded image as a byte array (BLOB)
-    private byte[] petPic;
-
-    //    @NotBlank(message = "Name is required")
-    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
-    private String name;
-
-    //Enum class PetType
-    @NotNull(message = "Must select pet type")
+    private String petName;
     private PetType petType;
+    private String petBreed;
+    private Double petAge;
+    private Double petWeight;
+    private Date petBirthdate;
+    private String petMedication;
+    private String petAllergy;
+    private String petMicrochip;
+    private String petDiagnoses;
 
-    @NotBlank(message = "Breed is required")
-    @Size(min = 3, max = 50, message = "Breed must be between 3 and 50 characters")
-    private String breed;
-
-    @NotNull(message = "Age is required")
-    private Double age;
-
-    @NotNull(message = "Weight is required")
-    private Double weight;
-
-    @NotNull(message = "Birthdate is required")
-
-    private LocalDate birthdate;
-
-    @NotBlank(message = "Enter 'None' if not applicable")
-    @Size(max = 500, message = "Medications too long!")
-    private String medication;
-
-    @NotBlank(message = "Enter 'None' if not applicable")
-    @Size(max = 500, message = "Allergies too long!")
-    private String allergy;
-
-    @NotBlank(message = "Enter 'None' if not applicable")
-    @Size(max = 500, message = "Microchip number too long!")
-    //Some microchip #s are alpha-numeric, so string not double
-    private String microchip;
-
-    @NotBlank(message = "Enter 'None' if not applicable")
-    @Size(max = 500, message = "Diagnoses too long!")
-    private String diagnoses;
-
-
-    //public empty constructor, what the JPA uses to instantiate an object (entity class)
-    public PetProfile() {}
-
-
-    //public constructor used to instantiate an object
-    //Refresher: petId value not added since it will be auto-generated
-    //automatically when the object is persisted or saved.
-    public PetProfile(String name, byte[] petPic, PetType petType, String breed, double age, double weight, LocalDate birthdate,
-                      String medication, String allergy, String microchip, String diagnoses) {
-        this.name = name;
-        this.petPic = petPic; //blob SQL type
-        this.petType = petType; //enum declaration
-        this.breed = breed;
-        this.age = age;
-        this.weight = weight;
-        this.birthdate = birthdate;
-        this.medication = medication;
-        this.allergy = allergy;
-        this.microchip = microchip;
-        this.diagnoses = diagnoses;
-    }
-
-
-
-    //public getters & setters
-    //Refresher: Setter methods are used to set the value of a field/property in an object
-    //If a field is not meant to be changed once it is set, omit the setter
-    //No setter for name, breed, birthdate, microchip, or petId (petId will be auto-generated)
-    //Added setters to all, trying to resolve sql connection issue
     public int getPetId() {
         return petId;
     }
@@ -99,20 +35,12 @@ public class PetProfile {
         this.petId = petId;
     }
 
-    public byte[] getPetPic() {
-        return petPic;
+    public String getPetName() {
+        return petName;
     }
 
-    public void setPetPic(byte[] petPic) {
-        this.petPic = petPic;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setPetName(String petName) {
+        this.petName = petName;
     }
 
     public PetType getPetType() {
@@ -123,107 +51,67 @@ public class PetProfile {
         this.petType = petType;
     }
 
-    public String getBreed() {
-        return breed;
+    public String getPetBreed() {
+        return petBreed;
     }
 
-    public void setBreed(String breed) {
-        this.breed = breed;
+    public void setPetBreed(String petBreed) {
+        this.petBreed = petBreed;
     }
 
-    public Double getAge() {
-        return age;
+    public Double getPetAge() {
+        return petAge;
     }
 
-    public void setAge(Double age) {
-        this.age = age;
+    public void setPetAge(Double petAge) {
+        this.petAge = petAge;
     }
 
-    public Double getWeight() {
-        return weight;
+    public Double getPetWeight() {
+        return petWeight;
     }
 
-    public void setWeight(Double weight) {
-        this.weight = weight;
+    public void setPetWeight(Double petWeight) {
+        this.petWeight = petWeight;
     }
 
-    public LocalDate getBirthdate() {
-        return birthdate;
+    public Date getPetBirthdate() {
+        return petBirthdate;
     }
 
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
+    public void setPetBirthdate(Date petBirthdate) {
+        this.petBirthdate = petBirthdate;
     }
 
-    public String getMedication() {
-        return medication;
+    public String getPetMedication() {
+        return petMedication;
     }
 
-    public void setMedication(String medication) {
-        this.medication = medication;
+    public void setPetMedication(String petMedication) {
+        this.petMedication = petMedication;
     }
 
-    public String getAllergy() {
-        return allergy;
+    public String getPetAllergy() {
+        return petAllergy;
     }
 
-    public void setAllergy(String allergy) {
-        this.allergy = allergy;
+    public void setPetAllergy(String petAllergy) {
+        this.petAllergy = petAllergy;
     }
 
-    public String getMicrochip() {
-        return microchip;
+    public String getPetMicrochip() {
+        return petMicrochip;
     }
 
-    public void setMicrochip(String microchip) {
-        this.microchip = microchip;
+    public void setPetMicrochip(String petMicrochip) {
+        this.petMicrochip = petMicrochip;
     }
 
-    public String getDiagnoses() {
-        return diagnoses;
+    public String getPetDiagnoses() {
+        return petDiagnoses;
     }
 
-    public void setDiagnoses(String diagnoses) {
-        this.diagnoses = diagnoses;
+    public void setPetDiagnoses(String petDiagnoses) {
+        this.petDiagnoses = petDiagnoses;
     }
-
-
-    //public toString method of most relevant/identifying field petId
-
-    //Refresher: Typically, you would include the fields that are most relevant or important
-    //for understanding the state of the object. This can include fields that provide
-    //key information or help identify the object. It's generally a good practice to
-    //include a combination of important fields rather than blindly including all fields.
-    @Override
-    public String toString() {
-        return "PetProfile{" +
-                "petId=" + petId +
-                '}';
-    }
-
-    //public equals method checks if two PetProfile objects are equal based on the petId field only
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PetProfile that = (PetProfile) o;
-        return petId == that.petId;
-    }
-
-
-    //public hashCode method computes and returns an integer value that represents the object's hash code,
-    // typically used for efficient storage and retrieval in hash-based data structures.
-
-    //Refresher: The hashCode method is used in Java to generate a hash code for an object.
-    //The hash code is an integer value that is typically used for efficient storage and
-    //retrieval of objects in hash-based data structures like HashMap, HashSet, and others.
-    //In the hashCode method you provided, the hash code is computed based on the petId field
-    //using the Objects.hash method. By overriding the hashCode method, you ensure that
-    //objects of the PetProfile class can be used properly in hash-based data structures.
-    @Override
-    public int hashCode() {
-        return Objects.hash(petId);
-    }
-
-
 }

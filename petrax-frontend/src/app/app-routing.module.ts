@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { CareProfessionalComponent } from './care-professional/care-professional.component';
 import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
 import { AboutComponent } from './about/about.component';
+import { UpdateProfessionalComponent } from './care-professional/update-professional/update-professional.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route redirects to home
@@ -28,7 +29,7 @@ const routes: Routes = [
   { path: 'care-professional', component: CareProfessionalComponent },
   { path: 'add-care-professional', component:AddCareProfessionalComponent },
   { path: 'about', component: AboutComponent } //Route for AboutComponent
-
+  { path: 'update-care-professional/:id', component:UpdateProfessionalComponent }
 
   // Add more routes as needed
 ];

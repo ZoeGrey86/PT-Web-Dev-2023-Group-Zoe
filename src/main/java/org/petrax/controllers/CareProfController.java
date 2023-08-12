@@ -1,15 +1,19 @@
 package org.petrax.controllers;
 
 import org.petrax.data.CareProfRepository;
+import org.petrax.exceptions.ResourceNotFoundException;
 import org.petrax.models.CareProfessional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/professionals")
@@ -27,6 +31,42 @@ public class CareProfController {
     @PostMapping("/add")
     public CareProfessional createNewCareProfessional (@RequestBody CareProfessional newCareProfessional){
         return careProfRepository.save(newCareProfessional);
+    }
+
+    //get by ID
+    @GetMapping("/{id}")
+    public ResponseEntity<CareProfessional> getProfessionalById(@PathVariable int id) {
+        CareProfessional careProfessional = careProfRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("This professional does not exist"));
+        return ResponseEntity.ok(careProfessional);
+    }
+
+    //update professional api
+    @PutMapping("/{id}")
+    public ResponseEntity<CareProfessional> updateCareProfessional(@PathVariable int id, @RequestBody CareProfessional careProfessionalUpdate){
+        CareProfessional careProfessional = careProfRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("This professional does not exist"));
+        careProfessional.setCareType(careProfessionalUpdate.getCareType());
+        careProfessional.setBusinessName(careProfessional.getBusinessName());
+        careProfessional.setName(careProfessionalUpdate.getName());
+        careProfessional.setWebsite(careProfessionalUpdate.getWebsite());
+        careProfessional.setPhoneNumber(careProfessionalUpdate.getPhoneNumber());
+
+        CareProfessional updatedProfessional = careProfRepository.save(careProfessional);
+        return ResponseEntity.ok(updatedProfessional);
+    }
+
+    //delete
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteProfessional(@PathVariable int id){
+        CareProfessional careProfessional = careProfRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("This professional does not exist"));
+
+        careProfRepository.deleteById(id);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return ResponseEntity.ok(response);
+
     }
 
 //    @GetMapping
