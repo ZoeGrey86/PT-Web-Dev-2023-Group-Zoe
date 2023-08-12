@@ -23,13 +23,19 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 import { AddPetModalComponent } from './pet-profile/add-pet-modal.component';
 import { PetDetailModalComponent } from './pet-profile/pet-detail-modal.component';
 import { DeletePetModalComponent } from './pet-profile/delete-pet-modal.component';
-
 import { PetProfileService } from './pet-profile/pet-profile.service';
 import { PetProfileUpdateService } from './pet-profile/pet-profile-update.service';
+import { CareProfessionalComponent } from './care-professional/care-professional.component';
+import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
+import { UpdateProfessionalComponent } from './care-professional/update-professional/update-professional.component';
 
+
+import { LogInComponent } from './log-in/log-in.component';
+import { RegisterComponent } from './register/register.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -44,9 +50,18 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     EventDetailModalComponent,
     AddEventModalComponent,
     NavbarComponent,
+    PetProfileComponent,
+    UserListComponent,
+    AppComponent,
+    RegisterComponent,
+    FooterComponent,
     AddPetModalComponent,
     PetDetailModalComponent,
-    DeletePetModalComponent
+    DeletePetModalComponent,
+    CareProfessionalComponent,
+    AddCareProfessionalComponent,
+    UpdateProfessionalComponent
+>>>>>>> main
   ],
   imports: [
     BrowserModule,

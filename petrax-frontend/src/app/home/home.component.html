@@ -1,9 +1,17 @@
 <div class="center-container">
   <div class="rectangle">
+    <img src="/assets/logos/PETraxlogoBlueBackground.png" alt="PETrax" class="website-graphic">
     <div class="intro-text">
-      Welcome to our website...
+      Welcome! Please sign in or sign up!
     </div>
-    <button class="login-btn">Login</button>
-    <button class="signup-btn">Sign Up</button>
+
+    <button class="login-btn" [routerLink]="['/login']">Login</button>
+    <button class="signup-btn" [routerLink]="['/register']">Sign Up</button>
+
+
+    <div class="footer-graphic">
+      <img src="/assets/graphics/petraxbanner.png" alt="PETrax" class="footer-graphic">
+    </div>
   </div>
 </div>
+<router-outlet></router-outlet>

@@ -10,6 +10,4 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
     User findByContactEmail(String contactEmail);
-
-    Optional<User> findById(HttpSession userId);
 }

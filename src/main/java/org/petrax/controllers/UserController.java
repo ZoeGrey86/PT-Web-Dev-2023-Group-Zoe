@@ -1,107 +1,45 @@
 package org.petrax.controllers;
 
-import org.petrax.data.UserRepository;
+import org.petrax.service.UserService;
 import org.petrax.models.User;
+import org.petrax.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.List;
-import java.util.Optional;
 
-@Controller
-@RequestMapping("/users")  ///api/v1
+@RestController
+@RequestMapping("/api/v1/users")
 public class UserController {
-    private UserRepository userRepository;
+
     @Autowired
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
-
-    private static final String userSessionKey = "user";
-
-//    public static User getUserFromSession(HttpSession session) {
-//        HttpSession userId = (HttpSession) session.getAttribute(userSessionKey);
-//        if (userId == null) {
-//            return null;
-//        }
-//
-//        Optional<User> user = userRepository.findById(userId);
-//
-//        if (user.isEmpty()) {
-//            return null;
-//        }
-//
-//        return user.get();
-//    }
-
-    private static void setUserInSession(HttpSession session, User user) {
-        session.setAttribute(userSessionKey, user.getId());
-    }
-
-    //test list all users
-    @GetMapping("/users")
-    @CrossOrigin(origins = "http://localhost:4200")
-    public List<User> getAllUsers(){
-        return (List<User>) userRepository.findAll();
-    }
+    private UserService userService;
 
     @GetMapping("/all")
-    public String displayAllUsers(Model model) {
-        model.addAttribute("title", "All Users");
-        model.addAttribute("users", userRepository.findAll());
-        return "users/index";
+    public ResponseEntity<Iterable<User>> displayAllUsers() {
+        return ResponseEntity.ok(userService.findAllUsers());
     }
 
-    @GetMapping("/create")
-    public String displayCreateUserForm(Model model) {
-        model.addAttribute("title", "Create User");
-        model.addAttribute(new User());
-        return "users/create";
-    }
+    @PostMapping("/register")
+    public ResponseEntity<String> processCreateUserForm(@RequestBody @Valid RegisterFormDTO registerFormDTO) {
+        // Check validation in DTO (you might need to add appropriate validation annotations in RegisterFormDTO)
 
-    @PostMapping("create")
-    public String processCreateUserForm(@ModelAttribute @Valid User newUser,
-                                        Errors errors, Model model) {
-        if (errors.hasErrors()) {
-            model.addAttribute("title", "Create User");
-            return "users/create";
+        User savedUser = userService.createUser(registerFormDTO);
+        if (savedUser != null) {
+            return ResponseEntity.ok("Registration successful");
+        } else {
+            return ResponseEntity.badRequest().body("Registration failed");
         }
-        // Set the address field based on the auto-populated value
-        newUser.setAddress(newUser.getAddress());
-
-        userRepository.save(newUser);
-        return "redirect:/users/success"; // Redirect to the success page
     }
 
-
-    @GetMapping("success")
-    public String showSuccessPage(Model model) {
-        model.addAttribute("title", "Registration Successful");
-        return "users/success";
-    }
-
-    @GetMapping("delete")
-    public String displayDeleteUserForm(Model model) {
-        model.addAttribute("title", "Delete Users");
-        model.addAttribute("users", userRepository.findAll());
-        return "users/delete";
-    }
-
-    @PostMapping("delete")
-    public String processDeleteUsersForm(@RequestParam(required = false) int[] userIds) {
-        if (userIds != null) {
-            for (int id : userIds) {
-                userRepository.deleteById(id);
-            }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable int id) {
+        try {
+            userService.deleteUser(id);
+            return ResponseEntity.ok("Deletion successful");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Deletion failed: " + e.getMessage());
         }
-
-        return "redirect:";
     }
 }

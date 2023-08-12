@@ -1,0 +1,27 @@
+<p>care-professional works!</p>
+<h2> My Care Professionals</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+           <th>Care Type</th>
+           <th>Name</th>
+           <th>Business Name</th>
+           <th>Website</th> 
+           <th>Phone Number</th>
+           <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let professional of professionals">
+            <td> {{professional.careType}} </td>
+            <td> {{professional.name}} </td>
+            <td> {{professional.businessName}} </td>
+            <td> {{professional.website}} </td>
+            <td> {{professional.phoneNumber}} </td>
+            <td>
+                <button (click)="updateProfessional(professional.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteProfessional(professional.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
