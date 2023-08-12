@@ -2,9 +2,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { AppComponent } from './app.component';
@@ -59,6 +60,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     NgbModule,
     RouterModule.forRoot([]), // Make sure you have this line for routing to work
