@@ -4,7 +4,7 @@ import { PetProfileService } from './pet-profile.service';
 import { PetProfileUpdateService } from './pet-profile-update.service';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,6 +17,7 @@ export class DeletePetModalComponent {
   constructor(
       public activeModal: NgbActiveModal,
       private http: HttpClient,
+      private router: Router,
       private petProfileService: PetProfileService,
       private petProfileUpdateService: PetProfileUpdateService
     ) {}
@@ -35,6 +36,7 @@ export class DeletePetModalComponent {
         // Handle successful deletion
         this.petProfileUpdateService.triggerPetDeleted(this.petIdToDelete); // Trigger the event
         this.activeModal.close();
+        this.reloadPage(); // Reload the page
       },
       (error) => {
         // Handle error
@@ -43,6 +45,12 @@ export class DeletePetModalComponent {
       }
     );
   }
+
+private reloadPage() {
+  // Reload the current page
+  window.location.reload();
+}
+
 
 }
 
