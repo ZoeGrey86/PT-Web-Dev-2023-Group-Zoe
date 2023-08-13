@@ -37,6 +37,7 @@ import { UpdateProfessionalComponent } from './care-professional/update-professi
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AboutComponent } from './about/about.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -53,7 +54,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     NavbarComponent,
     PetProfileComponent,
     UserListComponent,
-    AppComponent,
+    LogInComponent,
     RegisterComponent,
     FooterComponent,
     AddPetModalComponent,
@@ -66,6 +67,9 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AddCareProfessionalComponent,
     LandingPageComponent
   ],
+    AboutComponent,
+    UpdateProfessionalComponent
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,
