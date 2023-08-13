@@ -61,7 +61,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     DeletePetModalComponent,
     CareProfessionalComponent,
     AddCareProfessionalComponent,
-    UpdateProfessionalComponent
+    UpdateProfessionalComponent,
 
     AddCareProfessionalComponent,
     LandingPageComponent

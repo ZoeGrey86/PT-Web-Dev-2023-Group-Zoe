@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
   {path: 'care-professional', component: CareProfessionalComponent},
   {path: 'add-care-professional', component:AddCareProfessionalComponent},
-  {path: 'welcome', component:LandingPageComponent}
+  {path: 'welcome', component:LandingPageComponent},
   {path: 'add-care-professional', component:AddCareProfessionalComponent},
   {path: 'update-care-professional/:id', component:UpdateProfessionalComponent}
 
