@@ -1,0 +1,21 @@
+.professional-info {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+  
+table {
+    width: 100%;
+}
+  
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 200px;
+    text-align: center;
+}
+table td button {
+    display: block;
+    margin: 5px auto; /* Center-align buttons vertically */
+  }
+  

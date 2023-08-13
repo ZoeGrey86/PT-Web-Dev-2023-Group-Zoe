@@ -37,6 +37,7 @@ import { UpdateProfessionalComponent } from './care-professional/update-professi
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -61,7 +62,8 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     CareProfessionalComponent,
     AddCareProfessionalComponent,
     AboutComponent,
-    UpdateProfessionalComponent
+    UpdateProfessionalComponent,
+    UserProfileComponent
     ],
   imports: [
     BrowserModule,
