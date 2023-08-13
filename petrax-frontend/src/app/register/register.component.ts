@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegisterService } from './register.service';
 import { Router } from '@angular/router';
 
-declare let google: any;
+declare let google: any;  
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
