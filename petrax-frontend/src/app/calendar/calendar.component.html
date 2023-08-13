@@ -8,7 +8,7 @@
       <div class="event-list-container">
         <h2>Upcoming Events</h2>
         <ul>
-          <li *ngFor="let event of events">
+          <li *ngFor="let event of events" (click)="openEventDetailModal(event)">
             <span class="event-date">{{ event.start | date }}</span>
             <span class="event-title">{{ event.title }}</span>
           </li>

@@ -27,4 +27,37 @@
   padding: 10px;
 }
 
-/* Add any other styles as needed for your calendar and events list */
+/* Styling for the event list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the event date */
+.event-date {
+  font-weight: bold;
+  margin-right: 20px; /* Add spacing between date and title */
+}
+
+/* Styling for the event title */
+.event-title {
+  /* Add your preferred styles for the event title here */
+}
+
+/* Optional hover effect for the list items */
+li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Optional focus effect for accessibility */
+li:focus {
+  outline: none;
+  background-color: #f0f0f0;
+}
