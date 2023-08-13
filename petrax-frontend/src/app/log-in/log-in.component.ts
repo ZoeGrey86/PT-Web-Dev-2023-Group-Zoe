@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component } from '@angular/core';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 
@@ -8,40 +7,38 @@ import { Router } from '@angular/router';
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css']
 })
-export class LogInComponent implements OnInit {
+export class LogInComponent {
   email: string = '';
   pwHash: string = '';
-  errorMessage: string = '';  // For displaying errors to the user
-  showModal: boolean = false;  // This controls the visibility of the modal.
+  errorMessage: string = ''; // For displaying errors to the user
+  showModal: boolean = false; // This controls the visibility of the modal.
 
-constructor(private loginService: LoginService, private router: Router) { }
- // Injecting the LoginService
-
-    ngOnInit() { }
+  constructor(private loginService: LoginService, private router: Router) {}
 
   onSubmit() {
-          this.loginService.loginUser(this.email, this.pwHash).subscribe(
-            (response) => {
-              // Authentication successful
-              this.router.navigate(['/home']);
-            },
-            (error) => {
-              // Authentication failed, handle error
-              console.error('Username or Password incorrect', error);
-            }
-  this.loginService.loginUser({
+    const user = {
       email: this.email,
       pwHash: this.pwHash,
+    };
 
-  }).subscribe(response => {
+    this.loginService.loginUser(user).subscribe(
+      (response) => {
+        // Authentication successful
         console.log("Login successful", response);
         // Display the modal instead of directly navigating.
-           this.showModal = true;
-      })
-    }
+        this.showModal = true;
+      },
+      (error) => {
+        // Authentication failed, handle error
+        console.log("user.email");
+        console.error('Username or Password incorrect', error);
+        this.errorMessage = 'Username or password incorrect';
+      }
+    );
+  }
 
-      // New method to navigate to home when the button in the modal is clicked.
-       navigateToHome() {
-          this.router.navigate(['/home']);
-       }
-    }
+  // Navigate to home route
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
+}

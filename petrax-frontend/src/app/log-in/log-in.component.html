@@ -1,26 +1,26 @@
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-<!--    <div class="login-container">-->
+
         <h2>Login</h2>
         <div class="form-group">
 
             <label for="email">Email</label>
             <input type="text" id="email" name="email" [(ngModel)]="email" required class="form-control">
 
-<!--        </div>-->
-<!--        <div class="form-group">-->
+
 
             <label for="pwHash">Password</label>
             <input type="password" id="pwHash" name="pwHash" [(ngModel)]="pwHash" required class="form-control">
 
 
             <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
-<!--        </div>-->
+
         <button type="submit" [disabled]="!loginForm.valid">Login</button>
     </div>
 </form>
 
 <div class="modal" *ngIf="showModal">
     <div class="modal-content">
+
         <h2>Login Successful</h2>
         <p>Welcome to PETRAX! Please click below to continue.</p>
         <button (click)="navigateToHome()">Home</button>

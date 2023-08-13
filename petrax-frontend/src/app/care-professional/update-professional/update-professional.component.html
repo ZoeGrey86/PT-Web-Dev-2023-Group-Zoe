@@ -1,0 +1,38 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Update Care Professional</h3>
+    <form (ngSubmit)="onSubmit()">
+    
+        <div class="form-group">
+            <label for="">Care Type</label>
+            <input type="text" class="form-control" id="careType"
+            [(ngModel)] = "careProfessional.careType" name="careType">
+        </div>
+    
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control" id="name"
+            [(ngModel)] = "careProfessional.name" name="name">
+        </div>
+    
+        <div class="form-group">
+            <label for="">Business Name</label>
+            <input type="text" class="form-control" id="businessName"
+            [(ngModel)] = "careProfessional.businessName" name="businessName">
+        </div>
+    
+        <div class="form-group">
+            <label for="">website</label>
+            <input type="text" class="form-control" id="website"
+            [(ngModel)] = "careProfessional.website" name="website">
+        </div>
+    
+        <div class="form-group">
+            <label for="">Phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber"
+            [(ngModel)] = "careProfessional.phoneNumber" name="phoneNumber">
+        </div>
+    
+        <button class="btn btn-success" type="submit">Submit</button>
+    
+    </form>
+    </div>

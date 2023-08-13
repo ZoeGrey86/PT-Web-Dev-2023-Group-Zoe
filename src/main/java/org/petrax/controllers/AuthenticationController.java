@@ -15,8 +15,8 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 
-@Controller
-@RequestMapping("authentication")
+@RestController
+@RequestMapping("/api/v1/users/authentication")
 public class  AuthenticationController {
     @Autowired
     private UserRepository userRepository;
@@ -83,7 +83,7 @@ public class  AuthenticationController {
         User newUser = userService.createUser(registerFormDTO);
         setUserInSession(request.getSession(), newUser);
 
-        return "redirect:user/success";
+        return "redirect:users/success";
     }
     // Handlers for login form
     @GetMapping("/login")
@@ -107,12 +107,12 @@ public class  AuthenticationController {
         User theUser = userRepository.findByContactEmail(loginFormDTO.getContactEmail());
 
         // Get the hashed password from the user
-        String hashedPassword = theUser.getPwHash();
+        String passwordHash = theUser.getPwHash();
 
         // Send user back to form if username does not exist OR if password hash doesn't match
         // "Security through obscurity" — don't reveal which one was the problem
         // Check if password matches
-        if (theUser != null && userService.isMatchingPassword(theUser, loginFormDTO.getPassword())) {
+        if (userService.isMatchingPassword(theUser, loginFormDTO.getPassword())) {
             setUserInSession(request.getSession(), theUser);
             return "redirect:/authentication/success";
         } else {

@@ -2,6 +2,8 @@ package org.petrax.data;
 import org.petrax.models.PetProfile;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import java.sql.Date;
 import java.time.LocalDate;
 
 
@@ -11,13 +13,12 @@ import java.time.LocalDate;
     @Repository
     public interface PetProfileRepository extends CrudRepository<PetProfile, Integer> {
 
-//        PetProfile findByName(String name);
-//
-//        PetProfile findByBirthdate(String birthdate);
 
-        PetProfile findFirstByNameAndBirthdate(String name, LocalDate birthdate);
-
-
+    static PetProfile findFirstByNameAndBirthdate(String petName, Date petBirthdate) {
+        return null;
     }
+
+
+}
 
 
