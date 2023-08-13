@@ -4,7 +4,6 @@ import { PetProfileService } from './pet-profile.service';
 import { PetProfileUpdateService } from './pet-profile-update.service';
 import { HttpClient } from '@angular/common/http';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-// import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,6 +27,10 @@ export class DeletePetModalComponent {
     this.activeModal.dismiss();
   }
 
+private reloadPage() {
+  // Reload the current page
+  window.location.reload();
+}
 
   onDelete() {
     // Call the deletePet method from the service
@@ -46,11 +49,5 @@ export class DeletePetModalComponent {
     );
   }
 
-private reloadPage() {
-  // Reload the current page
-  window.location.reload();
-}
-
 
 }
-
