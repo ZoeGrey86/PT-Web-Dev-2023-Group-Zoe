@@ -6,6 +6,7 @@
       <ul>
         <li *ngFor="let pet of pets">
           <span *ngIf="isPetPresent(pet.petId)" class="petName">{{ pet.petName }}</span>
+          <span class="petEmoji">{{ determineProfilePictureEmoji(pet.petType) }}</span>
           <button class="view-pet-button" (click)="openPetDetailModal(pet)">Details</button>
           <button class="delete-pet-button" (click)="openDeletePetModal(pet.petId)">Remove Pet</button>
         </li>

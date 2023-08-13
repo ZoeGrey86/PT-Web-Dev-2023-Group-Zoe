@@ -7,7 +7,7 @@ public enum  PetType {
     BIRD("Bird"),
     FISH("Fish"),
     REPTILE("Reptile"),
-    OTHER("Other"); //other category with blank field they can edit
+    OTHER("Other");
 
 
     private final String petType;

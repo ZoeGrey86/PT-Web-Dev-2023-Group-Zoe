@@ -15,7 +15,14 @@ import { PetProfileUpdateService } from './pet-profile-update.service';
 import { ActivatedRoute, Router } from '@angular/router';
 //refreshes page after remove pet clicked
 
-
+export enum PetType {
+    CAT = '🐈',
+    DOG = '🐕',
+    BIRD = '🦜',
+    FISH = '🐠',
+    REPTILE = '🐍',
+    OTHER = '❤️'
+  }
 
 @Component({
   selector: 'app-pet-profile',
@@ -37,6 +44,35 @@ export class PetProfileComponent implements OnInit {
   ngOnInit() {
     this.fetchPetsFromServer();
   }
+
+// Method to determine the emoji based on the pet type
+determineProfilePictureEmoji(petType: PetType): string {
+  switch (petType) {
+    case PetType.CAT:
+      console.log('Selected pet type: CAT');
+      return "🐈";
+    case PetType.DOG:
+      console.log('Selected pet type: DOG');
+      return "🐕";
+    case PetType.BIRD:
+      console.log('Selected pet type: BIRD');
+      return "🦜";
+    case PetType.FISH:
+      console.log('Selected pet type: FISH');
+      return "🐠";
+    case PetType.REPTILE:
+      console.log('Selected pet type: REPTILE');
+      return "🦎";
+    case PetType.OTHER:
+      console.log('Selected pet type: OTHER');
+      return "❤️";
+    default:
+      console.log('Selected pet type: Unknown');
+      return "❓"; // Default emoji
+  }
+}
+
+
 
 fetchPetsFromServer() {
   this.http.get<PetProfile[]>('http://localhost:8080/api/petProfile', { params: { page: '0', size: '3' } })

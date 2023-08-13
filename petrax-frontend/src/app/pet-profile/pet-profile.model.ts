@@ -9,8 +9,6 @@ export enum PetType {
     OTHER = 'Other'
   }
 
-// these have to match the conventions in Java exactly and a couple didn't match
-
 export interface PetProfile {
 
      petId: number;
