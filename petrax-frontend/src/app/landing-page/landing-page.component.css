@@ -50,6 +50,8 @@ body, html {
     padding: 5px 100px;
 }
 
+
+
 .events-container {
     width: 700px; 
     height: auto; 
@@ -57,15 +59,39 @@ body, html {
     border-radius: 5px; 
     border: 2.50px #F05D23 solid
 }
+.pet-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px; /* Adjust this value for spacing between cards */
+}
 .pet-card{
+    flex: 0 0 calc(33.33% - 20px); 
     color:#222E50;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     padding:25px;
-    margin: 10px 10px; 
+    margin: 10px; 
     border-radius: 9999px;
     /* border:  solid 2.5px; */
     background: #D9D9D9
+}
+.pet-info {
+    flex: 1;
+}
+.pet-button{
+    margin-top: 10px;
+    background-color: #222E50; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: #F7F7F2;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .events-header{

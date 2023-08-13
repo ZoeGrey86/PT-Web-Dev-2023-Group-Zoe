@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PetProfileService } from '../pet-profile/pet-profile.service';
 import { CalendarComponent } from '../calendar/calendar.component';
 import { CalendarService } from '../calendar/calendar.service';
+import { PetProfile } from '../pet-profile/pet-profile.model';
 
 @Component({
   selector: 'app-landing-page',
@@ -20,34 +21,9 @@ export class LandingPageComponent implements OnInit {
        }
 
   pets: any[] = [
-    {
-       petName: 'Tegan',
-       petType: 'Cat',
-       petBreed: 'Sphynx',
-       petAge: '6',
-       petWeight: '11',
-       petBirthdate: '2017-03-03',
-       petMedication: 'None',
-       petAllergy: 'None',
-       petMicrochip: '123456789',
-       petDiagnoses: 'Gingivitis',
-    },
-    {
-          petName: 'Gordon',
-          petType: 'Dog',
-          petBreed: 'Pittador',
-          petAge: '7',
-          petWeight: '33',
-          petBirthdate: '2016-01-04',
-          petMedication: 'Apoquel',
-          petAllergy: 'None',
-          petMicrochip: '987654321',
-          petDiagnoses: 'Anxiety',
-  
-    }
     ];
+    
     events: any[] = [
-      {name: "vetappt"}
     ];
 
 
@@ -58,7 +34,49 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchEventsFromServer();
+    this.fetchPetsFromServer();
   }
+
+  handlePetClick(petInfo) {
+    const petId = petInfo.pet.petId;
+    const petName = petInfo.pet.petName;
+    const petType = petInfo.pet.petType;
+    const petBreed = petInfo.pet.petBreed;
+    const petAge = petInfo.pet.petAge;
+    const petWeight = petInfo.pet.petWeight;
+    const petBirthdate = petInfo.pet.petBirthdate;
+    const petMedication = petInfo.pet.petMedication;
+    const petAllergy = petInfo.pet.petAllergy;
+    const petMicrochip = petInfo.pet.petMicrochip;
+    const petDiagnoses = petInfo.pet.petDiagnoses;
+
+    const modalRef = this.modalService.open(PetDetailModalComponent);
+    modalRef.componentInstance.petId = petId;
+    modalRef.componentInstance.petName = petName;
+    modalRef.componentInstance.petType = petType;
+    modalRef.componentInstance.petBreed = petBreed;
+    modalRef.componentInstance.petAge = petAge;
+    modalRef.componentInstance.petWeight = petWeight;
+    modalRef.componentInstance.petBirthdate = petBirthdate;
+    modalRef.componentInstance.petMedication = petMedication;
+    modalRef.componentInstance.petAllergy = petAllergy;
+    modalRef.componentInstance.petMicrochip = petMicrochip;
+    modalRef.componentInstance.petDiagnoses = petDiagnoses;
+  }
+  
+  fetchPetsFromServer() {
+    this.http.get<PetProfile[]>('http://localhost:8080/api/petProfile', { params: { page: '0', size: '3' } })
+      .subscribe(
+        (data) => {
+          // Update the pets array with the fetched data
+          this.pets = [...this.pets, ...data];
+        },
+        (error) => {
+          console.error('Error fetching pets', error);
+        }
+      );
+  }
+
   fetchEventsFromServer() {
     this.http.get<any[]>('http://localhost:8080/api/events', { params: { page: '0', size: '3' } })
     .subscribe(
