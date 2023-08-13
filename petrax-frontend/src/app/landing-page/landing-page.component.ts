@@ -37,31 +37,18 @@ export class LandingPageComponent implements OnInit {
     this.fetchPetsFromServer();
   }
 
-  handlePetClick(petInfo) {
-    const petId = petInfo.pet.petId;
-    const petName = petInfo.pet.petName;
-    const petType = petInfo.pet.petType;
-    const petBreed = petInfo.pet.petBreed;
-    const petAge = petInfo.pet.petAge;
-    const petWeight = petInfo.pet.petWeight;
-    const petBirthdate = petInfo.pet.petBirthdate;
-    const petMedication = petInfo.pet.petMedication;
-    const petAllergy = petInfo.pet.petAllergy;
-    const petMicrochip = petInfo.pet.petMicrochip;
-    const petDiagnoses = petInfo.pet.petDiagnoses;
-
+  openPetDetailModal(pet: PetProfile) {
     const modalRef = this.modalService.open(PetDetailModalComponent);
-    modalRef.componentInstance.petId = petId;
-    modalRef.componentInstance.petName = petName;
-    modalRef.componentInstance.petType = petType;
-    modalRef.componentInstance.petBreed = petBreed;
-    modalRef.componentInstance.petAge = petAge;
-    modalRef.componentInstance.petWeight = petWeight;
-    modalRef.componentInstance.petBirthdate = petBirthdate;
-    modalRef.componentInstance.petMedication = petMedication;
-    modalRef.componentInstance.petAllergy = petAllergy;
-    modalRef.componentInstance.petMicrochip = petMicrochip;
-    modalRef.componentInstance.petDiagnoses = petDiagnoses;
+    modalRef.componentInstance.petName = pet.petName;
+    modalRef.componentInstance.petType = pet.petType;
+    modalRef.componentInstance.petBreed = pet.petBreed;
+    modalRef.componentInstance.petAge = pet.petAge;
+    modalRef.componentInstance.petWeight = pet.petWeight;
+    modalRef.componentInstance.petBirthdate = pet.petBirthdate;
+    modalRef.componentInstance.petMedication = pet.petMedication;
+    modalRef.componentInstance.petAllergy = pet.petAllergy;
+    modalRef.componentInstance.petMicrochip = pet.petMicrochip;
+    modalRef.componentInstance.petDiagnoses = pet.petDiagnoses;
   }
   
   fetchPetsFromServer() {

@@ -17,7 +17,7 @@
             <h4>{{ pet.petName }}</h4>
             </div>
             <div >
-                <button class="pet-button">View</button>
+                <button class="pet-button" (click)="openPetDetailModal(pet)">View</button>
             </div>
       </div>
     </div>
@@ -27,20 +27,21 @@
     Needs: 
     List upcoming events for a user within a time frame-- if none say "No events to show"
     Link to Calendar at the bottom of the section -->
-    <div>
-    <h2 class="events-header">Upcoming Events</h2>
-    </div>
     <div class="events-container">
-        <ul>
+        <div class="events-list-container">
+          <h2 class="events-header">Upcoming Events</h2>
+          <ul class="event-list">
             <li *ngFor="let event of events">
-              <span class="event-title">{{ event.title }}</span>
-              <span class="event-date">{{ event.start | date }}</span>
+                <span class="event-date">{{ event.start | date }}</span>
+                <span class="event-title">{{ event.title }}</span>  
             </li>
           </ul>
-        <div class = "calendar-link">
-            <button (click)="navigateToCalendar()">Go To Calendar</button>
         </div>
-    </div>
+        <div class="calendar-button-container">
+          <button class="calendar-link" (click)="navigateToCalendar()">Go To Calendar</button>
+        </div>
+      </div>
+      
 
 
     </div>

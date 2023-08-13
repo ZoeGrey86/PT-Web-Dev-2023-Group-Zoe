@@ -52,13 +52,7 @@ body, html {
 
 
 
-.events-container {
-    width: 700px; 
-    height: auto; 
-    background: #F7F7F2; 
-    border-radius: 5px; 
-    border: 2.50px #F05D23 solid
-}
+
 .pet-card-container {
         display: flex;
         flex-wrap: wrap;
@@ -93,7 +87,17 @@ body, html {
     display: inline-block;
     font-size: 16px;
 }
-
+.events-container {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  height: auto;
+  background: #f7f7f2;
+  border-radius: 5px;
+  border: 2.5px #f05d23 solid;
+  margin: 0 auto;
+}
 .events-header{
     text-align: center;
     padding:5px 5px;
@@ -104,11 +108,38 @@ body, html {
     border: 2.50px #F05D23 solid
 }
 .calendar-link {
-    text-align: center;
-    padding:5px auto;
-    margin: 5px 100px;
-    background-color: #222E50;
-    color:#F7F7F2;
+    margin-top: 10px;
+    background-color: #222E50; /* Green */
+    border: #F05D23 2.5px solid;
     border-radius: 5px;
-    border: 2.50px #F05D23 solid
+    color: #F7F7F2;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+.events-list-container {
+    flex: 1; /* Allow events list to grow and take available space */
+    width: 100%;
+    padding: 10px; /* Add padding for spacing */
+}
+
+.calendar-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align the button to the bottom of the container */
+    margin-top: 10px;
+}
+
+.event-list{
+    margin: 15px;
+    list-style-type: none;
+
+}
+li{
+    margin: 1;
+}
+.event-date{
+    font-weight: bold;
+    margin-right: 10px;
 }
