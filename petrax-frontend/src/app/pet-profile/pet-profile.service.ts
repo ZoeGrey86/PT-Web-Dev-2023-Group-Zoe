@@ -16,9 +16,11 @@ export class PetProfileService {
 getAllPets(): Observable<PetProfile[]> {
     return this.http.get<PetProfile[]>(this.apiUrl);
   }
+
   addPet(pet: PetProfile): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}`, pet);
   }
+
  deleteByPetId(petId: number): Observable<any> {
    const url = `${this.apiUrl}/${petId}`;
    return this.http.delete<any>(url);

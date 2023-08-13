@@ -15,7 +15,14 @@ import { PetProfileUpdateService } from './pet-profile-update.service';
 import { ActivatedRoute, Router } from '@angular/router';
 //refreshes page after remove pet clicked
 
-
+enum PetType {
+  CAT = '🐈',
+  DOG = '🐕',
+  BIRD = '🦜',
+  FISH = '🐠',
+  REPTILE = '🦎',
+  OTHER = '❤️'
+}
 
 @Component({
   selector: 'app-pet-profile',
@@ -24,7 +31,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class PetProfileComponent implements OnInit {
+
   pets: PetProfile[] = [];
+
 
   constructor(
     private modalService: NgbModal,
@@ -134,6 +143,25 @@ openAddPetModal() {
       });
     }
 
+// Method to determine the emoji based on the pet type
+determineProfilePictureEmoji(petType: PetType): string {
+  switch (petType) {
+    case PetType.CAT:
+      return "🐈";
+    case PetType.DOG:
+      return "🐕";
+    case PetType.BIRD:
+      return "🦜";
+    case PetType.FISH:
+      return "🐠";
+    case PetType.REPTILE:
+      return "🦎";
+    case PetType.OTHER:
+      return "❤️";
+    default:
+      return "❓"; // Default emoji
+  }
+}
 
 
 }

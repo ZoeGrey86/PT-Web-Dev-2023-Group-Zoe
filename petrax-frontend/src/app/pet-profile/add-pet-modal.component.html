@@ -17,12 +17,12 @@
     <div class="form-group">
       <label for="petType">Pet Type</label>
       <select class="form-control" id="petType" name="petType" [(ngModel)]="newPet.petType" required>
-        <option value="CAT">Cat</option>
-        <option value="DOG">Dog</option>
-        <option value="BIRD">Bird</option>
-        <option value="FISH">Fish</option>
-        <option value="REPTILE">Reptile</option>
-        <option value="OTHER">Other</option>
+        <option value="🐈">Cat</option>
+        <option value="🐕">Dog</option>
+        <option value="🦜">Bird</option>
+        <option value="🐠">Fish</option>
+        <option value="🦎">Reptile</option>
+        <option value="❤️">Other</option>
       </select>
     </div>
 
@@ -69,7 +69,6 @@
   </form>
 </div>
 <div class="modal-footer">
-  <!--  <button class="add-pet-button" (click)="openAddPetModal()">Add New Pet</button>-->
   <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Pet</button>
   <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
 </div>
