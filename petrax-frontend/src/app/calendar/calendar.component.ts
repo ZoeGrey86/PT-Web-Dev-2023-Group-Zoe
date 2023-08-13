@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions } from '@fullcalendar/angular';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -71,21 +72,25 @@ fetchEventsFromServer() {
     modalRef.componentInstance.eventStart = eventStart;
     modalRef.componentInstance.eventEnd = eventEnd;
     modalRef.componentInstance.eventDescription = eventDescription;
+    modalRef.componentInstance.eventDeleted.subscribe((deletedEventId: number) => {
+        // Remove the event from the events array
+        const eventIndex = this.events.findIndex(event => event.id === deletedEventId);
+        if (eventIndex > -1) {
+          this.events.splice(eventIndex, 1);
+          this.initializeCalendar();  // Re-initialize the calendar
+        }
+     });
   }
 
   openAddEventModal() {
-     const modalRef = this.modalService.open(AddEventModalComponent);
-     modalRef.result.then((result) => {
-       if (result) {
-         this.calendarService.addEvent(result).subscribe(response => {
-           console.log('Event added to database:', response);
-           this.events.push(result);
-           this.initializeCalendar(); // refresh the calendar to display the new event
-         }, error => {
-           console.error('Error adding event:', error);
-         });
-       }
-     });
-   }
-
+    const modalRef = this.modalService.open(AddEventModalComponent);
+    modalRef.result.then((newEvent) => {
+      // Update your calendar here with the new event
+      // This could be by adding it to the local events array, or by re-fetching all events
+      this.events.push(newEvent);
+      this.initializeCalendar(); // Refresh the calendar to display the new event
+    }).catch((error) => {
+      console.log('Modal dismissed without saving', error);
+    });
+  }
 }

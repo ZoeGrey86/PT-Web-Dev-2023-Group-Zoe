@@ -18,4 +18,8 @@ export class CalendarService {
     return this.http.post<any>(`${this.apiUrl}`, event);
   }
 
+  deleteEvent(eventId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${eventId}`);
+  }
+
 }
