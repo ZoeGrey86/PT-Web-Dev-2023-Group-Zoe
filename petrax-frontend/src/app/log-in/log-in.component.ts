@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LogInComponent implements OnInit {
   email: string = '';
-  pwHash: string = '';
+  password: string = '';
   errorMessage: string = ''; // For displaying errors to the user
   showModal: boolean = false; // This controls the visibility of the modal.
 
@@ -30,7 +30,7 @@ export class LogInComponent implements OnInit {
   onSubmit() {
     const user = {
       email: this.email,
-      pwHash: this.pwHash,
+      password: this.password,
     };
         console.log(user.email);
     this.loginService.loginUser(user).subscribe(
