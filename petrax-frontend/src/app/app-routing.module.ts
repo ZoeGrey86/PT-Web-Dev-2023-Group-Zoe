@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'update-care-professional/:id', component:UpdateProfessionalComponent},
   { path: 'my-profile', component:UserProfileComponent}
 
+
   // Add more routes as needed
 ];
 
