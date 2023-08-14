@@ -1,19 +1,21 @@
+<!-- pet-profile.component.html -->
+
 <div class="app-container">
-  <h1 class="app-heading">PETrax 🐈 🐕 🦜 🐠 🐍</h1>
   <div class="content-container">
     <div class="pet-profile-container">
-      <h2>Pets</h2>
-      <ul>
+      <ul class="pet-list">
         <li *ngFor="let pet of pets">
           <div class="pet-profile">
-            <div class="pet-profile-image">
-              <span class="petEmoji">{{ determineProfilePictureEmoji(pet.petType) }}</span>
-            </div>
-            <div class="pet-profile-details">
-              <span *ngIf="isPetPresent(pet.petId)" class="petName">{{ pet.petName }}</span>
-              <div class="profile-buttons">
-                <button class="view-pet-button" (click)="openPetDetailModal(pet)">Details</button>
-                <button class="delete-pet-button" (click)="openDeletePetModal(pet.petId)">Remove Pet</button>
+            <div class="profile-content">
+              <div class="pet-profile-image">
+                <span class="petEmoji">{{ determineProfilePictureEmoji(pet.petType) }}</span>
+              </div>
+              <div class="pet-details">
+                <span *ngIf="isPetPresent(pet.petId)" class="petName">{{ pet.petName }}</span>
+                <div class="profile-buttons">
+                  <button class="view-pet-button" (click)="openPetDetailModal(pet)">Details</button>
+                  <button class="delete-pet-button" (click)="openDeletePetModal(pet.petId)">Remove Pet</button>
+                </div>
               </div>
             </div>
           </div>
@@ -21,3 +23,5 @@
       </ul>
       <button class="add-pet-button" (click)="openAddPetModal()">Add Pet</button>
     </div>
+  </div>
+</div>
