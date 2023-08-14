@@ -85,14 +85,18 @@ body, html {
 
 
 @media (max-width: 768px) {
+  .page-title{
+    padding: 15px 50px;
+  }
   .info-container {
-    width: 100%; 
+    width: 50%; 
   }
 
   h2 {
     /* Adjust styles for the heading on smaller screens */
     padding: 10px;
     font-size: 18px;
+    text-align: center;
   }
 
   /* Adjust styles for the table on smaller screens */
