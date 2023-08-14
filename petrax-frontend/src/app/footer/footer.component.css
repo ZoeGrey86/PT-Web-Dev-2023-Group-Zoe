@@ -41,7 +41,7 @@ main {
 
 .footer-links {
     display: flex;
-    align-itmes: center;
+    align-items: center;
 }
 
 .footer-link {
@@ -56,7 +56,7 @@ main {
 .footer-copyright {
      color: #F7F7F2;
      font-size: 20px;
-     font-family: Outfit;
+     font-family: sans-serif;
      font-weight: 400;
  }
 
@@ -64,4 +64,16 @@ main {
 /* Optional: add hover effect for the Contact us link */
 .footer-link:hover {
     color: #F05D23;
+}
+@media (max-width: 768px){
+    .footer-container {
+        font-size: 14px;
+    }
+    .footer-link{
+        display: none;
+    }
+    .footer-copyright{
+        text-align: center;
+        margin-right:15px ;
+    }
 }
