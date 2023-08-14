@@ -7,6 +7,11 @@ import { LoginService } from '../log-in/login.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+ onHomePage: boolean;
+  isMenuOpen=false;
+
+  toggleMenu() {
+    this.isMenuOpen=!this.isMenuOpen;}
 
   constructor(private loginService: LoginService) { } // inject the service here
 
