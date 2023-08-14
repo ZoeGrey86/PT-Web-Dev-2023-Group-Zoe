@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../log-in/login.service';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -7,27 +8,15 @@ import { LoginService } from '../log-in/login.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
- onHomePage: boolean;
-  isMenuOpen=false;
+  onHomePage: boolean;
 
-  toggleMenu() {
-    this.isMenuOpen=!this.isMenuOpen;}
-
-  constructor(private loginService: LoginService) { } // inject the service here
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-  }
-
-  onLogout(): void {
-    this.loginService.logout().subscribe(
-      response => {
-        console.log('Logout successful');
-        // Here you can navigate the user to a different page if needed
-      },
-      error => {
-        console.error('Error during logout:', error);
-      }
-    );
-  }
-
-}
+ this.router.events.pipe(
+     filter(event => event instanceof NavigationEnd)
+   ).subscribe((event: NavigationEnd) => {
+     this.onHomePage = event.urlAfterRedirects === '/home';
+   });
+ }
+ }
