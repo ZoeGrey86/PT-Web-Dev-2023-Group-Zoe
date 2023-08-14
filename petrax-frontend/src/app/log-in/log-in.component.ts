@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-  email: string = '';
+  contactEmail: string = '';
   password: string = '';
   errorMessage: string = ''; // For displaying errors to the user
   showModal: boolean = false; // This controls the visibility of the modal.
@@ -29,13 +29,13 @@ export class LogInComponent implements OnInit {
 
   onSubmit() {
     const user = {
-      email: this.email,
+      contactEmail: this.contactEmail,
       password: this.password,
     };
-        console.log(user.email);
     this.loginService.loginUser(user).subscribe(
       (response) => {
         // Authentication successful
+        console.log(user.contactEmail);
         console.log("Login successful", response);
         // Display the modal instead of directly navigating.
         this.showModal = true;
