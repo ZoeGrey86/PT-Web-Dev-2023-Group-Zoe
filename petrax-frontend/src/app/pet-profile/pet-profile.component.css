@@ -4,6 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 1441px;
+  height: 1607px;
+  background: #F7F7F2;
 }
 
 .content-container {
@@ -18,6 +21,10 @@
 .pet-profile-container {
   flex: 2;
   margin-right: 20px; /* Add some space between the pet profile and other content */
+  width: 1068px;
+  height: 1820px;
+  flex-shrink: 0;
+  background: #B5BAB6;
 }
 
 .other-content {
@@ -29,4 +36,51 @@
   padding: 10px;
 }
 
-/* Add any other styles as needed for your pet profile and other content */
+.pet-profile {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.pet-profile-image {
+  width: 236px;
+  height: 236px;
+  flex-shrink: 0;
+  fill: #222E50;
+  stroke-width: 5px;
+  stroke: #F05D23;
+}
+
+.petEmoji {
+  font-size: 36px; /* Adjust the font size as needed */
+  display: inline-block;
+  width: 80px; /* Adjust the width and height as needed for the circular shape */
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%; /* Creates the circular shape */
+  background-color: #f05d23; /* Set the background color */
+  color: #fff; /* Set the text color */
+}
+
+.pet-profile-details {
+  flex: 1;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.petName {
+width: 525px;
+height: 126px;
+flex-shrink: 0;
+border-radius: 5px;
+border: 3px solid #222E50;
+background: #1BB46F;
+}
