@@ -1,29 +1,26 @@
 package org.petrax.controllers;
+
 import org.petrax.data.UserRepository;
 import org.petrax.models.User;
 import org.petrax.models.dto.LoginFormDTO;
 import org.petrax.models.dto.RegisterFormDTO;
 import org.petrax.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.Optional;
 
-
-@Controller
-@RequestMapping("authentication")
+@RestController
+@RequestMapping("/api/v1/users/authentication")
 public class AuthenticationController {
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
     public UserService userService;
-    // The key to store user IDs
+
     private static final String USER_SESSION_KEY = "user";
 
     public User getUserFromSession(HttpSession session) {
@@ -31,103 +28,87 @@ public class AuthenticationController {
         return userRepository.findById(userId).orElse(null);
     }
 
-    private static void setUserInSession(HttpSession session, User user) {
-        session.setAttribute(USER_SESSION_KEY, user.getId());
-    }
-
-    @GetMapping("/")
-    public String displayAuthenticationIndex() {
-        return "authentication/index";
-    }
-
-    @GetMapping("/register")
-    public String displayRegistrationForm(Model model) {
-        model.addAttribute("title", "Register");
-        model.addAttribute("registerFormDTO", new RegisterFormDTO());
-        return "authentication/register";
-    }
 
     @PostMapping("/register")
-    public String processRegistrationForm(@ModelAttribute @Valid RegisterFormDTO registerFormDTO,
-                                          Errors errors, HttpServletRequest request,
-                                          Model model) {
-
-        // Send user back to form if errors are found
+    public ResponseEntity<String> registerUser(@RequestBody @Valid RegisterFormDTO registerFormDTO,
+                                               Errors errors) {
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Register");
-            return "authentication/register";
+            return ResponseEntity.badRequest().body("Invalid registration data");
         }
 
-        // Look up user in database using email they provided in the form
+        // Check if the email is already registered
         User existingUser = userRepository.findByContactEmail(registerFormDTO.getContactEmail());
-
-        // Send user back to form if username already exists
         if (existingUser != null) {
-            errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
-            model.addAttribute("title", "Register");
-            return "authentication/register";
-        }
-        // Send user back to form if passwords didn't match
-        String password = registerFormDTO.getPwHash();
-        String verifyPassword = registerFormDTO.getPwHashConfirm();
-        if (!password.equals(verifyPassword)) {
-            errors.rejectValue("password", "passwords.mismatch", "Passwords do not match");
-            model.addAttribute("title", "Register");
-            return "authentication/register";
+            return ResponseEntity.badRequest().body("Email already registered");
         }
 
-        // OTHERWISE, save new username and hashed password in database, start a new session, and redirect to home page
-//        User newUser = new User(registerFormDTO.getFirstName(),registerFormDTO.getLastName(),registerFormDTO.getDescription(), registerFormDTO.getContactEmail(), registerFormDTO.getUsername(), registerFormDTO.getPassword());
+        // Check if passwords match
+        if (!registerFormDTO.getPassword().equals(registerFormDTO.getVerifyPassword())) {
+            return ResponseEntity.badRequest().body("Passwords do not match");
+        }
 
-        // Create a new user with hashed password and save it
         User newUser = userService.createUser(registerFormDTO);
-        setUserInSession(request.getSession(), newUser);
+        // You might want to return the created user ID or a success message here
+        return ResponseEntity.ok("Registration successful");
+    }
 
-        return "redirect:user/success";
-    }
-    // Handlers for login form
-    @GetMapping("/login")
-    public String displayLoginForm(Model model) {
-        model.addAttribute(new LoginFormDTO());
-        model.addAttribute("title", "Log In");
-        return "authentication/login";
-    }
     @PostMapping("/login")
-    public String processLoginForm(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
-                                   Errors errors, HttpServletRequest request,
-                                   Model model) {
+    public ResponseEntity<String> loginUser(@RequestBody @Valid LoginFormDTO loginFormDTO,
+                                            Errors errors,
+                                            HttpSession session) {
 
-        // Send user back to form if errors are found
+        System.out.println("Received login data:");
+        System.out.println("Email: " + loginFormDTO.getContactEmail());
+        System.out.println("Password: " + loginFormDTO.getPassword());
+
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Log In");
-            return "authentication/login";
+            return ResponseEntity.badRequest().body("Invalid login data");
         }
 
-        // Look up user in database using username they provided in the form
         User theUser = userRepository.findByContactEmail(loginFormDTO.getContactEmail());
 
-        // Get the hashed password from the user
-        String hashedPassword = theUser.getPwHash();
-
-        // Send user back to form if username does not exist OR if password hash doesn't match
-        // "Security through obscurity" — don't reveal which one was the problem
-        // Check if password matches
-        if (theUser != null && userService.isMatchingPassword(theUser, loginFormDTO.getPassword())) {
-            setUserInSession(request.getSession(), theUser);
-            return "redirect:/authentication/success";
-        } else {
-            errors.rejectValue("password", "password.invalid", "Invalid password");
-            model.addAttribute("title", "Log In");
-            return "authentication/login";
+        if (theUser == null || !userService.isMatchingPassword(theUser, loginFormDTO.getPassword())) {
+            return ResponseEntity.badRequest().body("Invalid email or password");
         }
+
+        session.setAttribute(USER_SESSION_KEY, theUser.getId());
+        return ResponseEntity.ok().body("{\"message\": \"Login Successful\"}");
     }
 
-    // Handler for logout
-    @GetMapping("/logout")
-    public String logout(HttpServletRequest request){
-        request.getSession().invalidate();
 
-//        return "redirect:/login"; //*** replace with return "redirect:/authentication/login"; ?
-        return "redirect:/authentication/login";
+//    @PostMapping("/login")
+//    public ResponseEntity<String> loginUser(@RequestBody @Valid LoginFormDTO loginFormDTO,
+//                                            Errors errors,
+//                                            HttpSession session) {
+//
+//        System.out.println("Received login data:");
+//        System.out.println("Email: " + loginFormDTO.getContactEmail());
+//        System.out.println("Password: " + loginFormDTO.getPassword());
+//
+//        if (errors.hasErrors()) {
+//            return ResponseEntity.badRequest().body("Invalid login data");
+//        }
+//
+//        User theUser = userRepository.findByContactEmail(loginFormDTO.getContactEmail());
+//
+//        if (theUser != null && theUser.getContactEmail().equals(loginFormDTO.getContactEmail())) {
+//            // Email matches
+//        } else {
+//            // Email doesn't match or user not found
+//        }
+//
+//        if (theUser == null || !userService.isMatchingPassword(theUser, loginFormDTO.getPassword())) {
+//            return ResponseEntity.badRequest().body("Invalid email or password");
+//        }
+//
+//        session.setAttribute(USER_SESSION_KEY, theUser.getId());
+////        return ResponseEntity.ok("Login successful");
+//        return ResponseEntity.ok().body("{\"message\": \"Login Successful\"}");
+//
+//    }
+    @GetMapping("/logout")
+    public ResponseEntity<String> logout(HttpSession session) {
+        session.invalidate();
+        return ResponseEntity.ok("Logout successful");
     }
 }

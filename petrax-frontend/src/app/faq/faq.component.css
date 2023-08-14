@@ -1,52 +1,84 @@
+.center-container {
+  width: 100%; /* take full width of its parent */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* Allow it to grow and consume available space */
+}
+.rectangle {
+  width: 800px;
+  max-height: 80%;
+  background: #B5BAB6;
+  padding: 60px;
+  margin: 0 20px; /* Adding side margins */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.body {
+  font-family: Outfit;
+  background-color:  #B5BAB6;
+  margin: 0;
+  padding: 0;
+}
 
-  
-body {
-    font-family: Outfit;
-    background-color:  #B5BAB6;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1 {
-    text-align: center;
-    padding: 20px;
-    color: #333;
-  }
-  
-  .faq {
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 20px;
-  }
-  
-  .faq h2 {
-    color: #f05d23;
-    margin-bottom: 10px;
-  }
-  
-  .faq p {
-    color: #555;
-  }
-  
-  #factElement {
-    color: #222E50;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    text-align: center;
-  }
 
-  #RandomFact {
-    color: #222E50;
-    
-              
-  }
+h1 {
+  background-color: #222E50;  /* Blue background */
+  color: #F7F7F2;  /* Text color (light) for contrast */
+  border: 2px solid #1BB46F;  /* Orange outline */
+  padding: 10px 20px;  /* Some padding to give it space */
+  border-radius: 10px;  /* Rounded corners */
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;  /* Space below the header */
+  font-family: 'Georgia', serif;  /* Maintain the same font family */
+}
+
+.faq {
+  font-size: 24px;
+  color: #F05D23;  /* Green text color */
+  margin: 20px 0;  /* Space at the top and bottom */
+  text-align: left; /* As per your request */
+  font-family: 'Georgia', serif; /* Complimentary serif font */
+  align-self: flex-start; /* this will align the section to listen to this container and not info above */
+}
+
+.faq h2 {
+  color: #f05d23;
+  margin-bottom: 10px;
+}
+
+
+#answer {
+  font-size: 18px;
+  text-align: left;
+  max-width: 90%;  /* maintain consistency with intro-text */
+  color: #333;     /* Dark gray text for readability */
+  line-height: 1.5; /* Spacing between lines */
+  font-family: 'Outfit', sans-serif; /* Consistency in font family */
+}
+
+#factElement {
+  color: #222E50;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#RandomFact {
+  color: #222E50;
   
-  .gcse-search {
-    text-align: center;
-    margin: 20px;
-  }
-  
+            
+}
+
+.gcse-search {
+  text-align: center;
+  margin: 20px;
+}

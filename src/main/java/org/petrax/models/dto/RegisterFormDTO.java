@@ -26,14 +26,14 @@ public class RegisterFormDTO {
 
     @NotBlank(message = "Password is required.")
     @Size(min = 5, message = "Password must be at least 5 characters.")
-    private String pwHash;
+    private String password;
 
     @NotBlank(message = "Please confirm your password.")
-    private String pwHashConfirm;
+    private String verifyPassword;
 
     @PostConstruct
     private void validatePasswords() {
-        if (this.pwHash != null && this.pwHashConfirm != null && !this.pwHash.equals(pwHashConfirm)) {
+        if (this.password != null && this.verifyPassword != null && !this.password.equals(verifyPassword)) {
             throw new ConstraintViolationException("Passwords do not match", new HashSet<>());
         }
     }
@@ -70,19 +70,19 @@ public class RegisterFormDTO {
         this.contactEmail = contactEmail;
     }
 
-    public String getPwHash() {
-        return pwHash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPwHash(String pwHash) {
-        this.pwHash = pwHash;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getPwHashConfirm() {
-        return pwHashConfirm;
+    public String getVerifyPassword() {
+        return verifyPassword;
     }
 
-    public void setPwHashConfirm(String pwHashConfirm) {
-        this.pwHashConfirm = pwHashConfirm;
+    public void setVerifyPassword(String verifyPassword) {
+        this.verifyPassword = verifyPassword;
     }
 }

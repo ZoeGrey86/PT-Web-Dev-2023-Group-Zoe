@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { LoginService } from '../log-in/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,15 +7,22 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  onHomePage: boolean;
 
-  constructor(private router: Router) {}
+  constructor(private loginService: LoginService) { } // inject the service here
 
   ngOnInit(): void {
- this.router.events.pipe(
-     filter(event => event instanceof NavigationEnd)
-   ).subscribe((event: NavigationEnd) => {
-     this.onHomePage = event.urlAfterRedirects === '/home';
-   });
- }
- }
+  }
+
+  onLogout(): void {
+    this.loginService.logout().subscribe(
+      response => {
+        console.log('Logout successful');
+        // Here you can navigate the user to a different page if needed
+      },
+      error => {
+        console.error('Error during logout:', error);
+      }
+    );
+  }
+
+}

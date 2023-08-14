@@ -1,0 +1,86 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure both body and html take the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1; /* Let the main content area take all the available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center items horizontally */
+    justify-content: center; /* center items vertically */
+}
+
+.center-container {
+    width: 100%; /* take full width of its parent */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Allow it to grow and consume available space */
+}
+
+.rectangle {
+    width: 800px;
+    max-height: 80%;
+    background: #B5BAB6;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.page-title{
+    background-color: #1BB46F;
+    color: #F7F7F2;
+    border: #222E50 2.5px solid;
+    border-radius: 5px;
+    padding: 20px 150px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    background: #f7f7f2;
+    border-radius: 5px;
+    border: 2.5px #f05d23 solid;
+    margin: 0 auto;
+    overflow: hidden; /* Add overflow to contain table within container */
+  }
+  
+  h2 {
+    background-color: #222E50;
+    color: #F7F7F2;
+    padding: 15px 50px;
+    border-radius: 5px;
+    border: 2.5px #f05d23 solid;
+    width: 100%; /* Ensure the h2 spans the full width */
+    margin: 0; /* Remove margin to align with container */
+  }
+  
+  table {
+    width: 100%;
+    table-layout: fixed; /* Enforce fixed table layout */
+  }
+  
+  table th,
+  table td {
+    width: 16.66%; /* Distribute the columns evenly */
+    text-align: center;
+    padding: 10px 5px; /* Add padding for spacing */
+  }
+  
+  table th:nth-child(6),
+  table td:nth-child(6) {
+    width: 16.66%; /* Adjust the last column width */
+    text-align: center;
+    padding: 10px 5px; /* Add padding for spacing */
+  }
+  
+
