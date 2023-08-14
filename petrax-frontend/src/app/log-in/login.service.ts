@@ -14,4 +14,7 @@
     loginUser(user: any) {
         return this.http.post(`${this.API_URL}/login`, user, {responseType: 'text'});
     }
+    logout() {
+        return this.http.get(`${this.API_URL}/logout`, {responseType: 'text'});
+     }
   }

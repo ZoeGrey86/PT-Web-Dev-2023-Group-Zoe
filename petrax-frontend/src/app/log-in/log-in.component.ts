@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
+import { ChangeDetectorRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-log-in',
@@ -13,9 +15,10 @@ export class LogInComponent implements OnInit {
   errorMessage: string = ''; // For displaying errors to the user
   showModal: boolean = false; // This controls the visibility of the modal.
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(private loginService: LoginService, private router: Router, private cdr: ChangeDetectorRef) {}
 
     ngOnInit() { // Implement ngOnInit lifecycle hook
+//         this.showModal = false; // force modal to show up to ensure the modal works
         const sessionToken = this.getStoredSessionToken();
 
      if (sessionToken) {
@@ -36,13 +39,15 @@ export class LogInComponent implements OnInit {
     console.log("36 - is this working?")
 
     this.loginService.loginUser(user).subscribe(
-      (response) => {
+      (response: any) => {
         // Authentication successful
-        console.log("41 - is this working?")
-        console.log("Login successful - frontend", response);
-        // Display the modal instead of directly navigating.
-        this.showModal = true;
-      },
+        console.log("Login successful", response)
+       if (response && response.token) {
+               document.cookie = `sessionToken=${response.token}; path=/`;  // Store the token in a cookie
+           }
+           this.showModal = true;
+           this.cdr.detectChanges(); // Manually trigger change detection
+       },
       (error) => {
         // Authentication failed, handle error
         console.log("48 - is this working?")

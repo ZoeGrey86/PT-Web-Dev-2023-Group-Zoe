@@ -33,3 +33,25 @@
 .login-container button:hover {
   background-color: #0056b3; /* Darker blue color on hover. */
 }
+.modal {
+  position: fixed; /* Fix the modal to the viewport */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050; /* Ensure it's on top of other elements */
+  display: flex;
+  justify-content: center; /* Center modal horizontally */
+  align-items: center; /* Center modal vertically */
+  background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 500px; /* Or whatever width you desire */
+  padding: 20px;
+  background-color: #fff; /* White background for the modal content */
+  border-radius: 5px; /* Rounded corners for aesthetics */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* A bit of shadow for depth */
+  text-align: center; /* Center the content within the modal */
+}

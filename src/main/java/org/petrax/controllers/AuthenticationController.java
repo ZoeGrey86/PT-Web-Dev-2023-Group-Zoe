@@ -43,7 +43,7 @@ public class AuthenticationController {
         }
 
         // Check if passwords match
-        if (!registerFormDTO.getPwHash().equals(registerFormDTO.getPwHashConfirm())) {
+        if (!registerFormDTO.getPassword().equals(registerFormDTO.getVerifyPassword())) {
             return ResponseEntity.badRequest().body("Passwords do not match");
         }
 
@@ -67,22 +67,45 @@ public class AuthenticationController {
 
         User theUser = userRepository.findByContactEmail(loginFormDTO.getContactEmail());
 
-        if (theUser != null && theUser.getContactEmail().equals(loginFormDTO.getContactEmail())) {
-            // Email matches
-        } else {
-            // Email doesn't match or user not found
-        }
-
         if (theUser == null || !userService.isMatchingPassword(theUser, loginFormDTO.getPassword())) {
             return ResponseEntity.badRequest().body("Invalid email or password");
         }
 
         session.setAttribute(USER_SESSION_KEY, theUser.getId());
-//        return ResponseEntity.ok("Login successful");
-        return ResponseEntity.ok().body("{\"message\": \"Login Successful - backend\"}");
-
+        return ResponseEntity.ok().body("{\"message\": \"Login Successful\"}");
     }
 
+
+//    @PostMapping("/login")
+//    public ResponseEntity<String> loginUser(@RequestBody @Valid LoginFormDTO loginFormDTO,
+//                                            Errors errors,
+//                                            HttpSession session) {
+//
+//        System.out.println("Received login data:");
+//        System.out.println("Email: " + loginFormDTO.getContactEmail());
+//        System.out.println("Password: " + loginFormDTO.getPassword());
+//
+//        if (errors.hasErrors()) {
+//            return ResponseEntity.badRequest().body("Invalid login data");
+//        }
+//
+//        User theUser = userRepository.findByContactEmail(loginFormDTO.getContactEmail());
+//
+//        if (theUser != null && theUser.getContactEmail().equals(loginFormDTO.getContactEmail())) {
+//            // Email matches
+//        } else {
+//            // Email doesn't match or user not found
+//        }
+//
+//        if (theUser == null || !userService.isMatchingPassword(theUser, loginFormDTO.getPassword())) {
+//            return ResponseEntity.badRequest().body("Invalid email or password");
+//        }
+//
+//        session.setAttribute(USER_SESSION_KEY, theUser.getId());
+////        return ResponseEntity.ok("Login successful");
+//        return ResponseEntity.ok().body("{\"message\": \"Login Successful\"}");
+//
+//    }
     @GetMapping("/logout")
     public ResponseEntity<String> logout(HttpSession session) {
         session.invalidate();
