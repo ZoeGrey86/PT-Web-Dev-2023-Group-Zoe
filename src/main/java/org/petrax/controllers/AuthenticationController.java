@@ -80,6 +80,7 @@ public class AuthenticationController {
         session.setAttribute(USER_SESSION_KEY, theUser.getId());
 //        return ResponseEntity.ok("Login successful");
         return ResponseEntity.ok().body("{\"message\": \"Login Successful\"}");
+
     }
 
     @GetMapping("/logout")

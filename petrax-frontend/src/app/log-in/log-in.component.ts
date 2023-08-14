@@ -32,16 +32,20 @@ export class LogInComponent implements OnInit {
       contactEmail: this.contactEmail,
       password: this.password,
     };
+
+    console.log("36 - is this working?")
+
     this.loginService.loginUser(user).subscribe(
       (response) => {
         // Authentication successful
-        console.log(user.contactEmail);
+        console.log("41 - is this working?")
         console.log("Login successful", response);
         // Display the modal instead of directly navigating.
         this.showModal = true;
       },
       (error) => {
         // Authentication failed, handle error
+        console.log("48 - is this working?")
         console.error('Username or Password incorrect', error);
         this.errorMessage = 'Username or password incorrect';
       }
