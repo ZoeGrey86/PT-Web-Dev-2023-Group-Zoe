@@ -9,8 +9,8 @@
         <h2>Upcoming Events</h2>
         <ul>
           <li *ngFor="let event of events">
-            <span class="event-title">{{ event.title }}</span>
             <span class="event-date">{{ event.start | date }}</span>
+            <span class="event-title">{{ event.title }}</span>
           </li>
         </ul>
         <button class="add-event-button" (click)="openAddEventModal()">Add Event</button>
