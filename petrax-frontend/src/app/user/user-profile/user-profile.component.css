@@ -82,14 +82,34 @@ body, html {
     text-align: center;
     padding: 10px 5px; /* Add padding for spacing */
   }
+  .add-button{
+    width: 100;
+    margin: 0;
+    background-color: #222E50;
+    color:#F7F7F2;
+    border: #f05d23 2.5px solid;
+    border-radius: 5px;
+    padding: 5px 15px;
+  }
+  .add-button:hover{
+    background-color: #f05d23;
+    font-weight: bold;
+  }
 
 
 @media (max-width: 768px) {
+  .center-container {
+    align-items: center;
+}
+.rectangle {
+    width: 95%;
+    padding: 20px;
+}
   .page-title{
     padding: 15px 50px;
   }
   .info-container {
-    width: 50%; 
+    width: 95%; 
   }
 
   h2 {
