@@ -1,12 +1,17 @@
 <header class="navbar-container">
   <img src="/assets/logos/PETraxlogonameonly.png" alt="PETrax Logo" class="navbar-logo">
-  <div class="menu-items">
-    <a class="navbar-item" routerLink="/home">Home</a>
-    <a class="navbar-item" routerLink="/calendar">Calendar</a>
-    <a class="navbar-item" routerLink="/faq">FAQ</a>
-    <!-- More nav pages can be put here -->
-    <!-- User Profile might go where home is, not sure yet -->
-    <a class="navbar-item" href="javascript:void(0)" (click)="onLogout()">Logout</a>
 
+  <div class="menu-items">
+    <!-- For the homepage -->
+    <a *ngIf="onHomePage" class="navbar-item" routerLink="/about">About</a>
+
+    <!-- For all other pages -->
+    <ng-container *ngIf="!onHomePage">
+      <a class="navbar-item" routerLink="/home">Home</a>
+      <a class="navbar-item" routerLink="/calendar">Calendar</a>
+      <a class="navbar-item" routerLink="/faq">FAQ</a>
+      <a class="navbar-item" routerLink="/pet-profile">Pet Profile</a>
+      <a class="navbar-item" routerLink="/my-profile">My Profile</a>
+    </ng-container>
   </div>
 </header>

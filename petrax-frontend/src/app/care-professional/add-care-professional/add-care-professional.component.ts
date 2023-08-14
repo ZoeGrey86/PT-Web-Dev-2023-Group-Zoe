@@ -21,13 +21,13 @@ export class AddCareProfessionalComponent implements OnInit {
   saveCareProfessional(){
     this.careProfessionalService.createCareProfessional(this.careProfessional).subscribe( data =>{
       console.log(data);
-      this.goToProfessionalList();
+      this.goToMyProfile();
     },
     error => console.log(error))
   }
 
-  goToProfessionalList(){
-    this.router.navigate(['/care-professional']);
+  goToMyProfile(){
+    this.router.navigate(['/my-profile']);
   }
 
   onSubmit(){
