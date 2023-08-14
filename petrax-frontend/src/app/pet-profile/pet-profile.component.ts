@@ -9,7 +9,7 @@ import { PetDetailModalComponent } from './pet-detail-modal.component';
 //displays the details of a pet
 import { DeletePetModalComponent } from './delete-pet-modal.component';
 //allows users to delete pets from profile
-import { PetProfile } from './pet-profile.model';
+import { PetProfile, PetType } from './pet-profile.model';
 import { PetProfileService } from './pet-profile.service';
 import { PetProfileUpdateService } from './pet-profile-update.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -24,6 +24,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class PetProfileComponent implements OnInit {
   pets: PetProfile[] = [];
+  PetType = PetType;
 
   constructor(
     private modalService: NgbModal,
@@ -37,8 +38,10 @@ export class PetProfileComponent implements OnInit {
     this.fetchPetsFromServer();
   }
 
-// Method to determine the emoji based on the pet type
-  determineProfilePictureEmoji(petType: PetProfile['petType']): string {
+
+
+// Method to use the mapped value
+determineProfilePictureEmoji(petType: PetType): string {
   switch (petType) {
     case PetType.CAT:
       console.log('Selected pet type: CAT');
@@ -54,7 +57,7 @@ export class PetProfileComponent implements OnInit {
       return "🐠";
     case PetType.REPTILE:
       console.log('Selected pet type: REPTILE');
-      return "🦎";
+      return "🐍";
     case PetType.OTHER:
       console.log('Selected pet type: OTHER');
       return "❤️";
@@ -63,7 +66,6 @@ export class PetProfileComponent implements OnInit {
       return "❓"; // Default emoji
   }
 }
-
 
 
 fetchPetsFromServer() {
