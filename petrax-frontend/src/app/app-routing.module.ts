@@ -36,6 +36,7 @@ const routes: Routes = [
   { path: 'update-care-professional/:id', component:UpdateProfessionalComponent}
 
 
+
   // Add more routes as needed
 ];
 
