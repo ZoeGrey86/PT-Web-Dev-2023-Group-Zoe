@@ -25,15 +25,15 @@ public class UserService {
         newUser.setAddress(registerFormDTO.getAddress());
 
         // Encode and set password
-        String encodedPassword = passwordEncoder.encode(registerFormDTO.getPwHash());
-        newUser.setPwHash(encodedPassword);
+        String encodedPassword = passwordEncoder.encode(registerFormDTO.getPassword());
+        newUser.setPassword(encodedPassword);
 
         return userRepository.save(newUser);
     }
 
     // Use this method to validate a user's password during login or other operations
     public boolean isMatchingPassword(User user, String password) {
-        return passwordEncoder.matches(password, user.getPwHash());
+        return passwordEncoder.matches(password, user.getPassword());
     }
 
     // Removed the previous 'addUser' to avoid confusion and potential misuse.

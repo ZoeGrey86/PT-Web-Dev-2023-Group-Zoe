@@ -12,8 +12,8 @@ export class RegisterComponent implements OnInit {
    firstName: string = '';
    lastName: string = '';
    contactEmail: string = '';
-   pwHash: string = '';
-   pwHashConfirm: string = '';
+   password: string = '';
+   verifyPassword: string = '';
    address: string = '';
    errorMessage: string = '';  // For displaying errors to the user
    showModal: boolean = false;  // This controls the visibility of the modal.
@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
     }
 
    onSubmit() {
-      if (this.pwHash !== this.pwHashConfirm) {
+      if (this.password !== this.verifyPassword) {
          this.errorMessage = "Passwords do not match!";
          return;
       }
@@ -58,8 +58,8 @@ export class RegisterComponent implements OnInit {
          firstName: this.firstName,
          lastName: this.lastName,
          contactEmail: this.contactEmail,
-         pwHash: this.pwHash,
-         pwHashConfirm: this.pwHashConfirm,
+         password: this.password,
+         verifyPassword: this.verifyPassword,
          address: this.address
     }).subscribe(response => {
       console.log("Registration successful", response);
