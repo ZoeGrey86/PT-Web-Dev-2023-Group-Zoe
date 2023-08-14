@@ -39,7 +39,7 @@ export class LogInComponent implements OnInit {
       (response) => {
         // Authentication successful
         console.log("41 - is this working?")
-        console.log("Login successful", response);
+        console.log("Login successful - frontend", response);
         // Display the modal instead of directly navigating.
         this.showModal = true;
       },
