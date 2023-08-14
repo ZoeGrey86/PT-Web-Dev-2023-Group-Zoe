@@ -1,6 +1,7 @@
+<!--<head><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtSNbZXisyon_iyVc0zzReieqXRO0mXto&libraries=places"></script></head>-->
 <h1>User Registration</h1>
 <!--commenting out for now-->
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtSNbZXisyon_iyVc0zzReieqXRO0mXto&libraries=places"></script>-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtSNbZXisyon_iyVc0zzReieqXRO0mXto&libraries=places">-->
 
 <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
   <label for="firstName">First Name:</label>
@@ -12,20 +13,22 @@
   <label for="contactEmail">Email:</label>
   <input type="email" id="contactEmail" name="contactEmail" [(ngModel)]="contactEmail" required><br>
 
-  <label for="pwHash">Password:</label>
-  <input type="password" id="pwHash" name="pwHash" [(ngModel)]="pwHash" required><br>
+  <label for="password">Password: *must be at least 6 characters</label>
+  <input type="password" id="password" name="password" [(ngModel)]="password" required><br>
 
-  <label for="pwHashConfirm">Confirm Password:</label>
-  <input type="password" id="pwHashConfirm" name="pwHashConfirm" [(ngModel)]="pwHashConfirm" required><br>
+  <label for="verifyPassword">Confirm Password:</label>
+  <input type="password" id="verifyPassword" name="verifyPassword" [(ngModel)]="verifyPassword" required><br>
 
   <label for="address">Address:</label>
-  <input type="text" id="address" name="address" [(ngModel)]="address" required autocomplete="off"><br>
+<input type="text" id="address" name="address" [(ngModel)]="address" required autocomplete="off">
+<!-- Add a new <div> for the autocomplete input -->
+<div id="autocomplete"></div>
 
   <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 
   <input type="submit" value="Register" [disabled]="!registrationForm.valid">
 
-</form>
+</form> 
 
 <div class="modal" *ngIf="showModal">
   <div class="modal-content">

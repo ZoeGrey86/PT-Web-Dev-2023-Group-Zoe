@@ -20,8 +20,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent }, // Route for HomeComponent
   { path: 'calendar', component: CalendarComponent }, // Route for CalendarComponent
   { path: 'login', component: LogInComponent }, // Route for LogInComponent
-  { path: 'user-list', component: UserListComponent },
-  { path: 'register', component: RegisterComponent }, //Route for RegisterComponent
+  { path: 'user-list', component: UserListComponent }, //
+  { path: 'faq', component: FaqComponent}, //Route for FAQ
+  { path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
+  { path: 'register', component: RegisterComponent}, //Route for RegisterComponent
   { path: 'users', component: UserListComponent }, // Route for CalendarComponent
   { path: 'faq', component: FaqComponent }, //Route for FAQ
   { path: 'pet-profile', component: PetProfileComponent }, //Route for PetProfileComponent
@@ -29,13 +31,9 @@ const routes: Routes = [
   { path: 'add-care-professional', component:AddCareProfessionalComponent },
   { path: 'about', component: AboutComponent }, //Route for AboutComponent
   { path: 'update-care-professional/:id', component:UpdateProfessionalComponent },
-  {path: 'faq', component: FaqComponent}, //Route for FAQ
-  {path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
-  {path: 'care-professional', component: CareProfessionalComponent},
-  {path: 'add-care-professional', component:AddCareProfessionalComponent},
-  {path: 'welcome', component:LandingPageComponent},
-  {path: 'add-care-professional', component:AddCareProfessionalComponent},
-  {path: 'update-care-professional/:id', component:UpdateProfessionalComponent}
+  { path: 'welcome', component:LandingPageComponent},
+  { path: 'add-care-professional', component:AddCareProfessionalComponent},
+  { path: 'update-care-professional/:id', component:UpdateProfessionalComponent}
 
 
   // Add more routes as needed

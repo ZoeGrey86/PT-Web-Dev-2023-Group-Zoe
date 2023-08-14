@@ -31,7 +31,7 @@ public class User {
     private String contactEmail;
 
     @NotNull
-    private String pwHash;
+    private String password;
 
     private String address;
 
@@ -47,7 +47,7 @@ public class User {
 //
 //    public User(String contactEmail, String password) {
 //        this.contactEmail = contactEmail;
-//        this.pwHash = password; // Store the raw password here
+//        this.password = password; // Store the raw password here
 //
 //    }
 
@@ -74,12 +74,12 @@ public class User {
         this.contactEmail = contactEmail;
     }
 
-    public String getPwHash() {
-        return pwHash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPwHash(String pwHash) {
-        this.pwHash = pwHash;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getAddress() {
@@ -103,7 +103,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", contactEmail='" + contactEmail + '\'' +
-                ", pwHash='" + pwHash + '\'' +
+                ", password='" + password + '\'' +
                 ", address='" + address + '\'' +
                 '}';
         }
