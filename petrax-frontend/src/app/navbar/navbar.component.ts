@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +10,11 @@ import { filter } from 'rxjs/operators';
 })
 export class NavbarComponent implements OnInit {
   onHomePage: boolean;
+  isMenuOpen=false;
+
+  toggleMenu() {
+    this.isMenuOpen=!this.isMenuOpen;
+  }
 
   constructor(private router: Router) {}
 

@@ -39,6 +39,9 @@ import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
+import { MatMenuModule } from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
 @NgModule({
@@ -73,7 +76,9 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     NgbModule,
     RouterModule.forRoot([]), // Make sure you have this line for routing to work
     AppRoutingModule,
-    FullCalendarModule
+    FullCalendarModule,
+    MatMenuModule,
+    BrowserAnimationsModule,
   ],
   providers: [PetProfileService, PetProfileUpdateService],
   bootstrap: [AppComponent],

@@ -82,5 +82,29 @@ body, html {
     text-align: center;
     padding: 10px 5px; /* Add padding for spacing */
   }
-  
+
+
+@media (max-width: 768px) {
+  .info-container {
+    width: 100%; 
+  }
+
+  h2 {
+    /* Adjust styles for the heading on smaller screens */
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  /* Adjust styles for the table on smaller screens */
+  table {
+    width: 100%;
+  }
+
+  table th,
+  table td {
+    width: auto;
+    padding: 5px;
+  }
+}
+
 

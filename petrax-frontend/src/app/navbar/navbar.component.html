@@ -7,6 +7,20 @@
 
     <!-- For all other pages -->
     <ng-container *ngIf="!onHomePage">
+      <div class="mobile-menu">
+        <button class="menu-button" mat-icon-button [matMenuTriggerFor]="menu" (click)="toggleMenu()">
+          <mat-icon>Menu</mat-icon>
+        </button>
+        
+        <mat-menu #menu="matMenu" [class.menu-open]="isMenuOpen">
+          <button mat-menu-item routerLink="/home">Home</button>
+          <button mat-menu-item routerLink="/calendar">Calendar</button>
+          <button mat-menu-item routerLink="/faq">FAQ</button>
+          <button mat-menu-item routerLink="/pet-profile">Pet Profile</button>
+          <button mat-menu-item routerLink="/my-profile">My Profile</button>
+        </mat-menu>
+    </div>
+
       <a class="navbar-item" routerLink="/home">Home</a>
       <a class="navbar-item" routerLink="/calendar">Calendar</a>
       <a class="navbar-item" routerLink="/faq">FAQ</a>
