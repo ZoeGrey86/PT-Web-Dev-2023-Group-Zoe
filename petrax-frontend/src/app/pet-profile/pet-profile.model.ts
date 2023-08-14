@@ -1,15 +1,13 @@
 // src/app/pet-profile.model.ts
 
 export enum PetType {
-    CAT = 'Cat',
-    DOG = 'Dog',
-    BIRD = 'Bird',
-    FISH = 'Fish',
-    REPTILE = 'Reptile',
-    OTHER = 'Other'
+    CAT = 'CAT',
+    DOG = 'DOG',
+    BIRD = 'BIRD',
+    FISH = 'FISH',
+    REPTILE = 'REPTILE',
+    OTHER = 'OTHER'
   }
-
-// these have to match the conventions in Java exactly and a couple didn't match
 
 export interface PetProfile {
 

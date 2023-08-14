@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'pet-profile', component: PetProfileComponent }, //Route for PetProfileComponent
   { path: 'care-professional', component: CareProfessionalComponent },
   { path: 'add-care-professional', component:AddCareProfessionalComponent },
+  { path: 'about', component: AboutComponent }, //Route for AboutComponent
   { path: 'update-care-professional/:id', component:UpdateProfessionalComponent }
 
 
