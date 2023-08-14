@@ -68,3 +68,22 @@ body, html {
   height: auto;
   margin-top: 60px;
   }
+
+@media (max-width: 768px){
+    .center-container {
+        align-items: center;
+    }
+
+    .rectangle {
+        width: 90%;
+        padding: 20px;
+    }
+    .website-graphic {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .footer-graphic {
+        max-width: 100%;
+    }
+}

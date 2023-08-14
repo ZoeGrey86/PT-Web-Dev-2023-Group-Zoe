@@ -87,9 +87,14 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  h1{
-    width:60%;
-  }
+  .center-container {
+    align-items: center;
+}
+.rectangle {
+    width: 95%;
+    padding: 20px;
+}
+
   .faq-container{
     max-width: 100%;
     justify-content: center;
@@ -101,7 +106,7 @@ h1 {
   .faq {
     /* text-align: center; */
     margin: 5px auto;
-    max-width: 53%;
+    /* max-width: 53%; */
     padding-left:10px;
     background-color: #F7F7F2;
     border-radius: 5px;

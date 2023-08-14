@@ -66,4 +66,25 @@
     font-family: 'Outfit', sans-serif; /* Consistency in font family */
 }
 
-/* Given the center-container class you have, no need for additional styles for alignment. */
+@media(max-width: 768px) {
+    .center-container {
+        align-items: center;
+    }
+    .rectangle {
+        width: 95%;
+        padding: 20px;
+    }
+    .about-section{
+        margin-top: 10px;
+        /* text-align: center; */
+        background-color: #F7F7F2;
+        border-radius: 5px;
+        padding: 3px;
+    }
+    .section-title {
+        text-align: center;
+    }
+    p {
+        margin-left: 5px;
+    }
+}
