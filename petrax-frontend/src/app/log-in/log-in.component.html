@@ -3,7 +3,8 @@
          <div class="Rectangle17">
              <img src="/assets/logos/PETraxlogoBlueBackground.png" alt="PETrax" class="website-graphic">
          </div>
-            <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+         <div class="login-text">
+         <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
 
                 <h2>Login</h2>
                 <div class="form-group">
@@ -17,9 +18,10 @@
 
                 <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 
-            <button type="submit" [disabled]="!loginForm.valid">Login</button>
+            <button class="submit-btn" [disabled]="!loginForm.valid">Login</button>
                   </div>
             </form>
+         <div>
     </div>
 <div class="modal" *ngIf="showModal">
     <div class="modal-content">
