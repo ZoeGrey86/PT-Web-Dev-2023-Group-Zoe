@@ -1,5 +1,8 @@
 package org.petrax.controllers;
+import org.petrax.data.EventRepository;
+import org.petrax.data.UserRepository;
 import org.petrax.models.PetProfile;
+import org.petrax.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
@@ -35,10 +38,13 @@ public class PetProfileController {
     private final PetProfileService petProfileService;   // Use the service instead of the repository directly
 
     @Autowired
-    public PetProfileController(PetProfileService petProfileService) {  // Constructor injection for service
-        this.petProfileService = petProfileService;
-    }
+    private final UserRepository userRepository;
 
+    @Autowired
+    public PetProfileController(PetProfileService petProfileService, UserRepository userRepository) {
+        this.petProfileService = petProfileService;
+        this.userRepository = userRepository; // Initialize userRepository
+    }
 
     @GetMapping
     public List<PetProfile> getAllPets() {
@@ -53,9 +59,16 @@ public class PetProfileController {
 
     @PostMapping
     public ResponseEntity<PetProfile> addPet(@RequestBody PetProfile pet) {
-        PetProfile savedPet = petProfileService.addPet(pet);   // Utilize the service method here
+        User user = userRepository.findById(pet.user_id).orElse(null);
+        pet.setUser(user);
+
+        PetProfile savedPet = petProfileService.addPet(pet);
         return new ResponseEntity<>(savedPet, HttpStatus.CREATED);
     }
+
+//        PetProfile savedPet = petProfileService.addPet(pet);   // Utilize the service method here
+//        return new ResponseEntity<>(savedPet, HttpStatus.CREATED);
+//    }
 
     @PutMapping("/{petId}")
     public ResponseEntity<PetProfile> updatePet(@PathVariable int petId, @RequestBody PetProfile updatedPet) {
