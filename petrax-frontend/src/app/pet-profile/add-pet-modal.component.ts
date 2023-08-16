@@ -27,7 +27,7 @@ newPet: PetProfile = { // Use the imported PetProfile type
           lastName: 'Doe',
           contactEmail: 'john@example.com',
           password: 'yourPassword',
-          address: '123 Main St' }
+          address: '123 Main St' } as User
   };
 
   constructor(public activeModal: NgbActiveModal) {}

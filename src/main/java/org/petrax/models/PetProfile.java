@@ -25,12 +25,12 @@ public class PetProfile {
     private String petDiagnoses;
 
     @ManyToOne // Establish the many-to-one relationship
-    @JoinColumn(name = "user_id") // Define the foreign key column
+    @JoinColumn(name = "id") // Define the foreign key column
     private User user; // Reference to the associated user
 
     @Transient // Add this annotation to indicate that it's not a persistent property
     public
-    int user_id; // This property is used for receiving user_id from the frontend
+    int id; // This property is used for receiving user_id from the frontend
 
 
     public int getPetId() {

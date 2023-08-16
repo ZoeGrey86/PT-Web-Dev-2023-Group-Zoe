@@ -59,7 +59,7 @@ public class PetProfileController {
 
     @PostMapping
     public ResponseEntity<PetProfile> addPet(@RequestBody PetProfile pet) {
-        User user = userRepository.findById(pet.user_id).orElse(null);
+        User user = userRepository.findById(pet.id).orElse(null);
         pet.setUser(user);
 
         PetProfile savedPet = petProfileService.addPet(pet);
