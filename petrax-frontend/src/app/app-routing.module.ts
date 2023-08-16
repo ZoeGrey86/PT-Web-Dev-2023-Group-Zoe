@@ -14,7 +14,6 @@ import { AddCareProfessionalComponent } from './care-professional/add-care-profe
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutComponent } from './about/about.component';
 import { UpdateProfessionalComponent } from './care-professional/update-professional/update-professional.component';
-import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route redirects to home
