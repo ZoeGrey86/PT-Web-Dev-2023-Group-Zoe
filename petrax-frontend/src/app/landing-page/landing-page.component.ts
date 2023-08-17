@@ -78,6 +78,12 @@ export class LandingPageComponent implements OnInit {
   navigateToCalendar() {
     this.router.navigate(['/calendar']);
   }
+  navigateToProfile() {
+    this.router.navigate(['my-profile']);
+  }
+  navigateToProfessionals() {
+    this.router.navigate(['care-professional']);
+  }
   openAddPetModal() {
     const modalRef = this.modalService.open(AddPetModalComponent);
     modalRef.result.then((result) => {

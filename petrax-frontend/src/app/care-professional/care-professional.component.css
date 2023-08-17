@@ -1,3 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure both body and html take the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1; /* Let the main content area take all the available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center items horizontally */
+    justify-content: center; /* center items vertically */
+}
+
+.center-container {
+    width: 100%; /* take full width of its parent */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Allow it to grow and consume available space */
+}
+
+.rectangle {
+    width: 60%;
+    max-height: 80%;
+    background: #B5BAB6;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.page-title{
+    background-color: #1BB46F;
+    color: #F7F7F2;
+    border: #222E50 2.5px solid;
+    border-radius: 5px;
+    padding: 20px 100px;
+}
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #f7f7f2;
+    border-radius: 5px;
+    border: 2.5px #f05d23 solid;
+    margin: auto;
+}
 .professional-info {
     padding: 10px;
     border: 1px solid #ccc;
@@ -18,4 +70,20 @@ table td button {
     display: block;
     margin: 5px auto; /* Center-align buttons vertically */
   }
-  
+
+button{
+    margin-top: 10px;
+    background-color: #222E50; /* Green */
+    border: #F05D23 2.5px solid;
+    border-radius: 5px;
+    color: #F7F7F2;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #F05D23;
+    color:#F7F7F2;
+    text-decoration: none;
+}

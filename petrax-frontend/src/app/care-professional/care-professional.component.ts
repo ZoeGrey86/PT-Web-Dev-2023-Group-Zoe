@@ -34,5 +34,7 @@ export class CareProfessionalComponent implements OnInit {
       this.getCareProfessionals();
     })
   }
+  navigateToAddProfessional(){
+    this.router.navigate(['/add-care-professional']);}
 
 }

@@ -27,6 +27,17 @@ export class UserProfileComponent implements OnInit {
   }
 
   navigateToAddProfessional(){
-    this.router.navigate(['/add-care-professional']);
+    this.router.navigate(['/add-care-professional']);}
+
+    updateProfessional(id: number){
+      this.router.navigate(['update-care-professional', id]);
+    }
+  
+    deleteProfessional(id: number) {
+      this.careProfessionalService.deleteProfessional(id).subscribe( data => {
+        console.log(data);
+        this.getCareProfessionals();
+      })
+    }
   }
-}
+

@@ -1,27 +1,37 @@
+<div class="center-container">
+  <div class="rectangle">
+    <h1 class="page-title">My Care Professionals</h1>
 
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Professional Information</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let professional of professionals">
-        <td>
-          <div class="professional-info">
-            <p><strong>Care Type:</strong> {{ professional.careType }}</p>
-            <p><strong>Name:</strong> {{ professional.name }}</p>
-            <p><strong>Business Name:</strong> {{ professional.businessName }}</p>
-            <p><strong>Website:</strong> {{ professional.website }}</p>
-            <p><strong>Phone Number:</strong> {{ professional.phoneNumber }}</p>
-          </div>
-        </td>
-        <td>
-          <button (click)="updateProfessional(professional.id)" class="btn btn-info">Update</button>
-          <button (click)="deleteProfessional(professional.id)" class="btn btn-danger" style="margin-top: 10px">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="info-container">   
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Professional Information</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let professional of professionals">
+              <td>
+                <div class="professional-info">
+                  <p><strong>Care Type:</strong> {{ professional.careType }}</p>
+                  <p><strong>Name:</strong> {{ professional.name }}</p>
+                  <p><strong>Business Name:</strong> {{ professional.businessName }}</p>
+                  <p><strong>Website:</strong> {{ professional.website }}</p>
+                  <p><strong>Phone Number:</strong> {{ professional.phoneNumber }}</p>
+                </div>
+              </td>
+              <td>
+                <button (click)="updateProfessional(professional.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteProfessional(professional.id)" class="btn btn-danger" style="margin-top: 10px">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <button (click)="navigateToAddProfessional()">Add New Professional</button>
+      </div> 
+    </div>
+</div>
+</div>
   
