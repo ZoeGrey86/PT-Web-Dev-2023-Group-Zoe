@@ -48,8 +48,19 @@ body, html {
     padding: 5px 100px;
 }
 
-
-
+.profile-link button {
+    display: inline-flex;
+    background-color: #222E50;
+    color: #F7F7F2;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+}
+.profile-link button:hover{
+    color:#F05D23;
+    background-color: #F7F7F2;
+    font-weight: bold;
+}
 
 .pet-card-container {
         display: flex;
