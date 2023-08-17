@@ -1,16 +1,15 @@
 package org.petrax.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Objects;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
+
 @Entity
 public class User {
 
@@ -34,6 +33,11 @@ public class User {
     private String password;
 
     private String address;
+
+    // One-to-many relationship with PetProfile
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PetProfile> petProfiles;
+
 
     public User () {
 
@@ -96,6 +100,15 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
+
+    public List<PetProfile> getPetProfiles() {
+        return petProfiles;
+    }
+
+    public void setPetProfiles(List<PetProfile> petProfiles) {
+        this.petProfiles = petProfiles;
+    }
+
     @Override
     public String toString() {
         return "User{" +

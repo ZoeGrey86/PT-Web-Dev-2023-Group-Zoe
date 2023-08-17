@@ -8,6 +8,7 @@ import { PetProfileService } from '../pet-profile/pet-profile.service';
 import { CalendarComponent } from '../calendar/calendar.component';
 import { CalendarService } from '../calendar/calendar.service';
 import { PetProfile } from '../pet-profile/pet-profile.model';
+import { LoginService } from '../log-in/login.service'
 
 @Component({
   selector: 'app-landing-page',
@@ -16,25 +17,33 @@ import { PetProfile } from '../pet-profile/pet-profile.model';
 })
 export class LandingPageComponent implements OnInit {
 
-  initializePetProfile() {
-    //    this.petName.pets = this.pets
-       }
-
-  pets: any[] = [
-    ];
-    
-    events: any[] = [
-    ];
-
+   userId: number;
+   pets: any[] = [];
+   events: any[] = [];
+   userFirstName: string = ''; // Added this line to store the logged-in user's first name
 
   constructor(private modalService:NgbModal,
-     private http:HttpClient, 
+     private http:HttpClient,
      private petProfileService: PetProfileService,
-     private router:Router,) { }
+     private router:Router,
+     private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.fetchEventsFromServer();
     this.fetchPetsFromServer();
+
+    // Get the logged-in user's first name
+    this.loginService.getCurrentUser().subscribe(
+      (currentUser) => {
+        if (currentUser) {
+          this.userFirstName = currentUser.firstName;
+          this.userId = currentUser.id;
+        }
+      },
+      (error) => {
+        console.error('Error fetching current user:', error);
+      }
+    );
   }
 
   openPetDetailModal(pet: PetProfile) {
@@ -50,7 +59,7 @@ export class LandingPageComponent implements OnInit {
     modalRef.componentInstance.petMicrochip = pet.petMicrochip;
     modalRef.componentInstance.petDiagnoses = pet.petDiagnoses;
   }
-  
+
   fetchPetsFromServer() {
     this.http.get<PetProfile[]>('http://localhost:8080/api/petProfile', { params: { page: '0', size: '3' } })
       .subscribe(
@@ -75,13 +84,15 @@ export class LandingPageComponent implements OnInit {
        }
     );
 }
+
   navigateToCalendar() {
     this.router.navigate(['/calendar']);
   }
+
   openAddPetModal() {
     const modalRef = this.modalService.open(AddPetModalComponent);
     modalRef.result.then((result) => {
-      if (result) {
+      if (result && this.userId) {
         this.petProfileService.addPet(result).subscribe(
           (response) => {
             console.log('Pet added to database:', response);
@@ -90,9 +101,21 @@ export class LandingPageComponent implements OnInit {
           (error) => {
             console.error('Error adding pet:', error);
           }
-        );
+             );
+        } else if (!this.userId) {
+          console.error('Failed to add pet because userId is not defined');
       }
     });
-  }
+}
+    isLoggedIn(): boolean {
+        return this.loginService.isLoggedIn();
+      }
+
+
+      handleLogout(): void {
+        this.loginService.logout();
+        // You can redirect the user after logging out, for example:
+        this.router.navigate(['/login']);  // Redirect to login page after logout
+     }
 
 }

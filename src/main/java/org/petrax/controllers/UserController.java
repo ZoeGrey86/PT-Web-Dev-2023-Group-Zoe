@@ -42,4 +42,9 @@ public class UserController {
             return ResponseEntity.badRequest().body("Deletion failed: " + e.getMessage());
         }
     }
+
+    @GetMapping("/welcome")
+    public ResponseEntity<String> getUserDashboard() {
+        return ResponseEntity.ok("Welcome to the user dashboard!");
+    }
 }

@@ -10,16 +10,19 @@ import { PetProfile } from './pet-profile.model';
 })
 export class PetDetailModalComponent {
 
-  @Input() petName: string;
-  @Input() petType: string;
-  @Input() petBreed: string;
-  @Input() petAge: number;
-  @Input() petWeight: number;
-  @Input() petBirthdate: Date;
-  @Input() petMedication: string;
-  @Input() petAllergy: string;
-  @Input() petMicrochip: string;
-  @Input() petDiagnoses: string;
+  @Input() pet: PetProfile;
+
+// refactored above
+//   @Input() petName: string;
+//   @Input() petType: string;
+//   @Input() petBreed: string;
+//   @Input() petAge: number;
+//   @Input() petWeight: number;
+//   @Input() petBirthdate: Date;
+//   @Input() petMedication: string;
+//   @Input() petAllergy: string;
+//   @Input() petMicrochip: string;
+//   @Input() petDiagnoses: string;
 
 constructor(public activeModal: NgbActiveModal) {}
 

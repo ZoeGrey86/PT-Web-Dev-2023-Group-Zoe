@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // provides the Angular implementation of the Bootstrap Modal component.
 import { HttpClient } from '@angular/common/http';
@@ -11,10 +11,7 @@ import { DeletePetModalComponent } from './delete-pet-modal.component';
 //allows users to delete pets from profile
 import { PetProfile, PetType } from './pet-profile.model';
 import { PetProfileService } from './pet-profile.service';
-import { PetProfileUpdateService } from './pet-profile-update.service';
-import { ActivatedRoute, Router } from '@angular/router';
-//refreshes page after remove pet clicked
-
+import { LoginService } from '../log-in/login.service';
 
 @Component({
   selector: 'app-pet-profile',
@@ -25,20 +22,29 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PetProfileComponent implements OnInit {
   pets: PetProfile[] = [];
   PetType = PetType;
+  userId: number | null = null; // Declare the userId property
 
   constructor(
     private modalService: NgbModal,
     private http: HttpClient,
     private petProfileService: PetProfileService,
-    private petProfileUpdateService: PetProfileUpdateService
+    private loginService: LoginService
   ) {}
 
+ngOnInit() {
+  this.loginService.getCurrentUser().subscribe(user => {
+      this.userId = user ? user.id : null;
 
-  ngOnInit() {
-    this.fetchPetsFromServer();
-  }
+      // Check if user is logged in
+      if (!this.userId) {
+          console.error("User is not logged in!");
+          // TODO: Maybe navigate back to login or handle this scenario appropriately
+          return;
+      }
 
-
+      this.fetchPetsFromServer();
+  });
+}
 
 // Method to use the mapped value
 determineProfilePictureEmoji(petType: PetType): string {
@@ -67,47 +73,24 @@ determineProfilePictureEmoji(petType: PetType): string {
   }
 }
 
-
 fetchPetsFromServer() {
-  this.http.get<PetProfile[]>('http://localhost:8080/api/petProfile', { params: { page: '0', size: '3' } })
-    .subscribe(
-      (data) => {
-        // Update the pets array with the fetched data
-        this.pets = [...this.pets, ...data];
-      },
-      (error) => {
-        console.error('Error fetching pets', error);
-      }
-    );
+  this.http.get<PetProfile[]>('http://localhost:8080/api/petProfile',
+      { params: { page: '0', size: '3', userId: this.userId } })
+  .subscribe(
+    (data) => {
+      // Update the pets array with the fetched data
+      this.pets = [...this.pets, ...data];
+    },
+    (error) => {
+      console.error('Error fetching pets', error);
+    }
+  );
 }
 
+handlePetClick(petInfo) {
+  this.openPetDetailModal(petInfo.pet);
+}
 
-  handlePetClick(petInfo) {
-    const petId = petInfo.pet.petId;
-    const petName = petInfo.pet.petName;
-    const petType = petInfo.pet.petType;
-    const petBreed = petInfo.pet.petBreed;
-    const petAge = petInfo.pet.petAge;
-    const petWeight = petInfo.pet.petWeight;
-    const petBirthdate = petInfo.pet.petBirthdate;
-    const petMedication = petInfo.pet.petMedication;
-    const petAllergy = petInfo.pet.petAllergy;
-    const petMicrochip = petInfo.pet.petMicrochip;
-    const petDiagnoses = petInfo.pet.petDiagnoses;
-
-    const modalRef = this.modalService.open(PetDetailModalComponent);
-    modalRef.componentInstance.petId = petId;
-    modalRef.componentInstance.petName = petName;
-    modalRef.componentInstance.petType = petType;
-    modalRef.componentInstance.petBreed = petBreed;
-    modalRef.componentInstance.petAge = petAge;
-    modalRef.componentInstance.petWeight = petWeight;
-    modalRef.componentInstance.petBirthdate = petBirthdate;
-    modalRef.componentInstance.petMedication = petMedication;
-    modalRef.componentInstance.petAllergy = petAllergy;
-    modalRef.componentInstance.petMicrochip = petMicrochip;
-    modalRef.componentInstance.petDiagnoses = petDiagnoses;
-  }
 
  isPetPresent(petId: number): boolean {
     return this.pets.some((pet) => pet.petId === petId);
@@ -130,19 +113,11 @@ openAddPetModal() {
   });
 }
 
- openPetDetailModal(pet: PetProfile) {
-    const modalRef = this.modalService.open(PetDetailModalComponent);
-    modalRef.componentInstance.petName = pet.petName;
-    modalRef.componentInstance.petType = pet.petType;
-    modalRef.componentInstance.petBreed = pet.petBreed;
-    modalRef.componentInstance.petAge = pet.petAge;
-    modalRef.componentInstance.petWeight = pet.petWeight;
-    modalRef.componentInstance.petBirthdate = pet.petBirthdate;
-    modalRef.componentInstance.petMedication = pet.petMedication;
-    modalRef.componentInstance.petAllergy = pet.petAllergy;
-    modalRef.componentInstance.petMicrochip = pet.petMicrochip;
-    modalRef.componentInstance.petDiagnoses = pet.petDiagnoses;
-  }
+openPetDetailModal(pet: PetProfile) {
+  const modalRef = this.modalService.open(PetDetailModalComponent);
+  modalRef.componentInstance.pet = pet;
+}
+
 
   openDeletePetModal(petId: number) {
       const modalRef = this.modalService.open(DeletePetModalComponent);
@@ -163,7 +138,4 @@ openAddPetModal() {
         }
       });
     }
-
-
-
 }

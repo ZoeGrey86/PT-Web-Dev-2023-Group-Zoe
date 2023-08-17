@@ -1,23 +1,23 @@
 <!-- pet-detail-modal.component.html -->
 
 <div class="modal-header">
-  <h4 class="modal-title">{{ petName }}</h4>
+  <h4 class="modal-title">{{ pet.petName }}</h4>
   <button type="button" class="close" aria-label="Close" (click)="closeModal()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 
 <div class="modal-body">
-  <p><strong>Name:</strong> {{ petName }}</p>
-  <p><strong>Type:</strong> {{ petType }}</p>
-  <p><strong>Breed:</strong> {{ petBreed }}</p>
-  <p><strong>Age:</strong> {{ petAge | number }}</p>
-  <p><strong>Weight:</strong> {{ petWeight | number }}</p>
-  <p><strong>Birthdate:</strong> {{ petBirthdate | date }}</p>
-  <p><strong>Medication:</strong> {{ petMedication }}</p>
-  <p><strong>Allergy:</strong> {{ petAllergy }}</p>
-  <p><strong>Microchip:</strong> {{ petMicrochip }}</p>
-  <p><strong>Diagnoses:</strong> {{ petDiagnoses }}</p>
+  <p><strong>Name:</strong> {{ pet.petName }}</p>
+  <p><strong>Type:</strong> {{ pet.petType }}</p>
+  <p><strong>Breed:</strong> {{ pet.petBreed }}</p>
+  <p><strong>Age:</strong> {{ pet.petAge | number }}</p>
+  <p><strong>Weight:</strong> {{ pet.petWeight | number }}</p>
+  <p><strong>Birthdate:</strong> {{ pet.petBirthdate | date }}</p>
+  <p><strong>Medication:</strong> {{ pet.petMedication }}</p>
+  <p><strong>Allergy:</strong> {{ pet.petAllergy }}</p>
+  <p><strong>Microchip:</strong> {{ pet.petMicrochip }}</p>
+  <p><strong>Diagnoses:</strong> {{ pet.petDiagnoses }}</p>
 </div>
 
 <div class="modal-footer">

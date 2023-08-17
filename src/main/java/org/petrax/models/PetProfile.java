@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Date;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import org.petrax.models.PetType;
 
 @Entity
@@ -26,6 +28,11 @@ public class PetProfile {
     private String petAllergy;
     private String petMicrochip;
     private String petDiagnoses;
+
+    // Add the User field here with annotations for the many-to-one relationship
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public int getPetId() {
         return petId;
@@ -113,5 +120,13 @@ public class PetProfile {
 
     public void setPetDiagnoses(String petDiagnoses) {
         this.petDiagnoses = petDiagnoses;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

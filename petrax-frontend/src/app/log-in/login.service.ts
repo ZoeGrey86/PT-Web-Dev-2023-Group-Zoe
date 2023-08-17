@@ -1,20 +1,45 @@
-  import { Injectable } from '@angular/core';
-  import { HttpClient } from '@angular/common/http';
-  import { User } from '../user/user';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { Observable } from 'rxjs';
 
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class LoginService {
+import { User } from '../user/user';
 
-    private API_URL = 'http://localhost:8080/api/v1/users/authentication'; // or whatever your endpoint is
+@Injectable({
+  providedIn: 'root'
+})
+export class LoginService {
 
-    constructor(private http: HttpClient) { }
+  private readonly API_URL = 'http://localhost:8080/api/v1/users/authentication';
+  private readonly USER_KEY = 'currentUser';
 
-    loginUser(user: any) {
-        return this.http.post(`${this.API_URL}/login`, user, {responseType: 'text'});
-    }
-    logout() {
-        return this.http.get(`${this.API_URL}/logout`, {responseType: 'text'});
-     }
+  constructor(private http: HttpClient) {}
+
+  loginUser(user: any): Observable<User> {
+    return this.http.post<User>(`${this.API_URL}/login`, user).pipe(
+      tap((response: User) => {
+        if (response && response.id) {
+          localStorage.setItem(this.USER_KEY, JSON.stringify(response));
+        }
+      })
+    );
   }
+
+  getCurrentUser(): Observable<User | null> {
+    const userString = localStorage.getItem(this.USER_KEY);
+    if (userString) {
+      return of(JSON.parse(userString));
+    }
+    return of(null);
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.getCurrentUser();
+  }
+
+  logout(): Observable<string> {
+    localStorage.removeItem(this.USER_KEY);
+    return this.http.get(`${this.API_URL}/logout`, {responseType: 'text'});
+  }
+}

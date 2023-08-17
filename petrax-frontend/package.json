@@ -24,6 +24,7 @@
     "@fullcalendar/daygrid": "^5.11.5",
     "@fullcalendar/interaction": "^5.11.5",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "@types/glob": "^8.1.0",
     "bootstrap": "^4.5.0",
     "bootstrap-icons": "^1.10.5",
     "glob-parent": "^6.0.2",
