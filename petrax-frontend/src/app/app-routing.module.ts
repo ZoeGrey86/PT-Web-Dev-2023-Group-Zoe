@@ -17,6 +17,7 @@ import { UpdateProfessionalComponent } from './care-professional/update-professi
 import { AboutComponent } from './about/about.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route redirects to home
   { path: 'home', component: HomeComponent }, // Route for HomeComponent
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'pet-profile', component: PetProfileComponent}, //Route for PetProfileComponent
   { path: 'register', component: RegisterComponent}, //Route for RegisterComponent
   { path: 'users', component: UserListComponent }, // Route for CalendarComponent
+
   { path: 'care-professional', component: CareProfessionalComponent },
   { path: 'add-care-professional', component:AddCareProfessionalComponent },
   { path: 'about', component: AboutComponent }, //Route for AboutComponent

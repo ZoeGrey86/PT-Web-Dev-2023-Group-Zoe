@@ -1,22 +1,23 @@
-<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-
-        <h2>Login</h2>
-        <div class="form-group">
-
-            <label for="contactEmail">Email</label>
-            <input type="text" id="contactEmail" name="contactEmail" [(ngModel)]="contactEmail" required class="form-control">
-
-
-
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" [(ngModel)]="password" required class="form-control">
-
-
-            <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
-
-        <button type="submit" [disabled]="!loginForm.valid">Login</button>
+<div class="center-container">
+    <div class="rectangle">
+        <div class="Rectangle17">
+            <img src="/assets/logos/PETraxlogoBlueBackground.png" alt="PETrax" class="website-graphic">
+        </div>
+        <div class="login-text">
+            <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="contactEmail">Email</label>
+                    <input type="text" id="contactEmail" name="contactEmail" [(ngModel)]="contactEmail" required class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" [(ngModel)]="password" required class="form-control">
+                    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+                    <button class="submit-btn" [disabled]="!loginForm.valid">Login</button>
+                </div>
+            </form>
+        </div>
     </div>
-</form>
+</div>
 
 <div class="modal" *ngIf="showModal">
     <div class="modal-content">
@@ -25,4 +26,3 @@
         <button (click)="navigateToHome()">Calendar</button>
     </div>
 </div>
-
