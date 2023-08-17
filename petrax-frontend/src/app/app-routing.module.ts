@@ -12,7 +12,6 @@ import { RegisterComponent } from './register/register.component';
 import { CareProfessionalComponent } from './care-professional/care-professional.component';
 import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { AboutComponent } from './about/about.component';
 import { UpdateProfessionalComponent } from './care-professional/update-professional/update-professional.component';
 import { AboutComponent } from './about/about.component';
 
