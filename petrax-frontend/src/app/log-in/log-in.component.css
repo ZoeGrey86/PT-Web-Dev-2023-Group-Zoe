@@ -18,6 +18,7 @@
     align-items: center;
     flex: 1; /* Allow it to grow and consume available space */
     }
+
 .Rectangle17 {
    width: 311px;
    height: 181px;
@@ -61,8 +62,8 @@
   padding: 10px;
   background-color: #222E50;
   color: #fff; /* White text color. */
-  border: none;
-  border-radius: 4px;
+  border: 2px;
+  border-radius: 4px #1BB46F;
   cursor: pointer;
   margin-top: 10px;
 }
