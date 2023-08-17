@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { PetProfile, PetType } from './pet-profile.model';
+import { User } from '../user/user';
 
 @Component({
   selector: 'app-add-pet-modal',
@@ -20,7 +21,13 @@ newPet: PetProfile = { // Use the imported PetProfile type
     petMedication: '',
     petAllergy: '',
     petMicrochip: '',
-    petDiagnoses: ''
+    petDiagnoses: '',
+    user: { id: 123,
+          firstName: 'John',
+          lastName: 'Doe',
+          contactEmail: 'john@example.com',
+          password: 'yourPassword',
+          address: '123 Main St' } as User
   };
 
   constructor(public activeModal: NgbActiveModal) {}

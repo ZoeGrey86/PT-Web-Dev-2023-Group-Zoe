@@ -1,4 +1,6 @@
 // src/app/pet-profile.model.ts
+import { User } from '../user/user';
+
 
 export enum PetType {
     CAT = 'CAT',
@@ -22,5 +24,12 @@ export interface PetProfile {
      petAllergy: string;
      petMicrochip: string;
      petDiagnoses: string;
-
+      user: {
+        id: number;
+        firstName: string;
+        lastName: string;
+        contactEmail: string;
+        password: string;
+        address: string;
+       };
 }
