@@ -4,29 +4,102 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%; /* Set to 100% for responsiveness */
+  background: #F7F7F2;
+  padding: 20px; /* Add some padding for spacing */
+  box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 .content-container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column; /* Change to column for responsiveness */
+  align-items: center;
   max-width: 1200px; /* Adjust the max-width as needed */
   width: 100%;
+  margin-top: 20px; /* Add margin for spacing */
 }
 
 .pet-profile-container {
-  flex: 2;
-  margin-right: 20px; /* Add some space between the pet profile and other content */
+  width: 100%; /* Set the width to 100% for responsiveness */
+  max-width: 800px; /* Adjust the max-width as needed */
+  background: #B5BAB6;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box; /* Include padding in the width calculation */
+  margin-bottom: 20px; /* Add margin for spacing */
 }
 
 .other-content {
-  flex: 1;
+  width: 100%; /* Set the width to 100% for responsiveness */
+  margin-top: 20px; /* Add margin for spacing */
 }
 
 .pet-details {
-  background-color: #f5f5f5; /* Optional: Add background color to the pet details */
-  padding: 10px;
+  margin-top: 10px;
 }
 
-/* Add any other styles as needed for your pet profile and other content */
+.pet-profile {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pet-profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pet-profile-image {
+  margin-bottom: 10px;
+}
+
+.petEmoji {
+  font-size: 48px;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  background-color: #f05d23;
+  color: #fff;
+  display: block; /* Center the emoji */
+  margin: 0 auto;
+}
+
+.pet-profile-details {
+  flex: 1;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.add-pet-button {
+  align: center;
+}
+
+.petName {
+  width: 100%; /* Set the width to 100% for responsiveness */
+  max-width: 525px; /* Limit the width to avoid excessive stretching */
+  height: 126px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 3px solid #222E50;
+  background: #1BB46F;
+  font-size: 18px;
+}
+
+
+.pet-list {
+  list-style-type: none; /* Remove bullet points */
+}

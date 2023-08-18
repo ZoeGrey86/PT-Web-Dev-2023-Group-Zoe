@@ -1,11 +1,8 @@
 package org.petrax.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
-import java.time.LocalDate;
+import org.petrax.models.PetType;
 
 @Entity
 public class PetProfile {
@@ -26,6 +23,15 @@ public class PetProfile {
     private String petAllergy;
     private String petMicrochip;
     private String petDiagnoses;
+
+    @ManyToOne // Establish the many-to-one relationship
+    @JoinColumn(name = "id") // Define the foreign key column
+    private User user; // Reference to the associated user
+
+    @Transient // Add this annotation to indicate that it's not a persistent property
+    public
+    int id; // This property is used for receiving user_id from the frontend
+
 
     public int getPetId() {
         return petId;
@@ -114,4 +120,16 @@ public class PetProfile {
     public void setPetDiagnoses(String petDiagnoses) {
         this.petDiagnoses = petDiagnoses;
     }
+
+
+    // Getter and setter for the user
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
 }

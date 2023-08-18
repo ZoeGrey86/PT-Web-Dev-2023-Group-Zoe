@@ -24,7 +24,7 @@ body, html {
 }
 
 .rectangle {
-    width: 60%;
+    width: 800px;
     max-height: 80%;
     background: #B5BAB6;
     padding: 60px;
@@ -33,57 +33,54 @@ body, html {
     align-items: center;
     gap: 15px;
 }
+
 .page-title{
     background-color: #1BB46F;
     color: #F7F7F2;
     border: #222E50 2.5px solid;
     border-radius: 5px;
-    padding: 20px 100px;
+    padding: 20px 150px;
 }
+
 .info-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    background-color: #f7f7f2;
+    width: 700px;
+    background: #f7f7f2;
     border-radius: 5px;
     border: 2.5px #f05d23 solid;
-    margin: auto;
-}
-.professional-info {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 5px 0;
-}
-  
-table {
-    width: 100%;
-}
-  
-table th:nth-child(2),
-table td:nth-child(2) {
-    width: 200px;
-    text-align: center;
-}
-table td button {
-    display: block;
-    margin: 5px auto; /* Center-align buttons vertically */
+    margin: 0 auto;
+    overflow: hidden; /* Add overflow to contain table within container */
   }
-
-button{
-    margin-top: 10px;
-    background-color: #222E50; /* Green */
-    border: #F05D23 2.5px solid;
-    border-radius: 5px;
+  
+  h2 {
+    background-color: #222E50;
     color: #F7F7F2;
-    padding: 15px 32px;
+    padding: 15px 50px;
+    border-radius: 5px;
+    border: 2.5px #f05d23 solid;
+    width: 100%; /* Ensure the h2 spans the full width */
+    margin: 0; /* Remove margin to align with container */
+  }
+  
+  table {
+    width: 100%;
+    table-layout: fixed; /* Enforce fixed table layout */
+  }
+  
+  table th,
+  table td {
+    width: 16.66%; /* Distribute the columns evenly */
     text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-}
-button:hover {
-    background-color: #F05D23;
-    color:#F7F7F2;
-    text-decoration: none;
-}
+    padding: 10px 5px; /* Add padding for spacing */
+  }
+  
+  table th:nth-child(6),
+  table td:nth-child(6) {
+    width: 16.66%; /* Adjust the last column width */
+    text-align: center;
+    padding: 10px 5px; /* Add padding for spacing */
+  }
+  
+

@@ -14,11 +14,6 @@ import java.time.LocalDate;
     public interface PetProfileRepository extends CrudRepository<PetProfile, Integer> {
 
 
-    static PetProfile findFirstByNameAndBirthdate(String petName, Date petBirthdate) {
-        return null;
-    }
-
-
 }
 
 

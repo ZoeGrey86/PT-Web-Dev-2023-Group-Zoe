@@ -1,19 +1,28 @@
-<!--<div class="login-container">-->
-<!--    <h2>Login</h2>-->
-<!--    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">-->
-<!--        <div class="form-group">-->
-<!--            <label for="email">Email</label>-->
-<!--            <input type="text" id="email" name="email" [(ngModel)]="email" required />-->
-<!--        </div>-->
+<div class="center-container">
+    <div class="rectangle">
+        <div class="Rectangle17">
+            <img src="/assets/logos/PETraxlogoBlueBackground.png" alt="PETrax" class="website-graphic">
+        </div>
+        <div class="login-text">
+            <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="contactEmail">Email</label>
+                    <input type="text" id="contactEmail" name="contactEmail" [(ngModel)]="contactEmail" required class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" [(ngModel)]="password" required class="form-control">
+                    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+                    <button class="submit-btn" [disabled]="!loginForm.valid">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
-<!--        <div class="form-group">-->
-<!--            <label for="password">Password</label>-->
-<!--            <input type="password" id="password" name="password" [(ngModel)]="password" required />-->
-<!--        </div>-->
-
-<!--        <button type="submit" [disabled]="!loginForm.valid">Login</button>-->
-<!--    </form>-->
-<!--</div>-->
-<div>
-    <h1>LOGIN Page</h1>
+<div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+        <h2>Login Successful</h2>
+        <p>Welcome to PETRAX! Please click below to continue.</p>
+        <button (click)="navigateToHome()">Calendar</button>
+    </div>
 </div>

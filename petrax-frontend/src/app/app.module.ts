@@ -2,9 +2,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { AppComponent } from './app.component';
@@ -34,7 +35,9 @@ import { AddCareProfessionalComponent } from './care-professional/add-care-profe
 import { UpdateProfessionalComponent } from './care-professional/update-professional/update-professional.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutComponent } from './about/about.component';
+import { LoginService } from './log-in/login.service';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -45,12 +48,12 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     CalendarComponent,
     HomeComponent,
     FaqComponent,
+    PetProfileComponent,
     EventDetailModalComponent,
     AddEventModalComponent,
     NavbarComponent,
     PetProfileComponent,
     UserListComponent,
-    LogInComponent,
     RegisterComponent,
     FooterComponent,
     AddPetModalComponent,
@@ -58,13 +61,18 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     DeletePetModalComponent,
     CareProfessionalComponent,
     AddCareProfessionalComponent,
+    UpdateProfessionalComponent,
     AboutComponent,
-    UpdateProfessionalComponent
-    ],
+    AddCareProfessionalComponent,
+    LandingPageComponent,
+    LogInComponent
+  ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     NgbModule,
     RouterModule.forRoot([]), // Make sure you have this line for routing to work

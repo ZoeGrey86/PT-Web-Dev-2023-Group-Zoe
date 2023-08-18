@@ -17,12 +17,12 @@
     <div class="form-group">
       <label for="petType">Pet Type</label>
       <select class="form-control" id="petType" name="petType" [(ngModel)]="newPet.petType" required>
-        <option value="CAT">Cat</option>
-        <option value="DOG">Dog</option>
-        <option value="BIRD">Bird</option>
-        <option value="FISH">Fish</option>
-        <option value="REPTILE">Reptile</option>
-        <option value="OTHER">Other</option>
+        <option value="CAT">CAT</option>
+        <option value="DOG">DOG</option>
+        <option value="BIRD">BIRD</option>
+        <option value="FISH">FISH</option>
+        <option value="REPTILE">REPTILE</option>
+        <option value="OTHER">OTHER</option>
       </select>
     </div>
 
@@ -53,7 +53,7 @@
 
     <div class="form-group">
       <label for="petAllergy">Allergy</label>
-      <input type="text" class="form-control" id="petAllergy" name="petMedication" [(ngModel)]="newPet.petAllergy" required>
+      <input type="text" class="form-control" id="petAllergy" name="petAllergy" [(ngModel)]="newPet.petAllergy" required>
     </div>
 
     <div class="form-group">
@@ -69,7 +69,6 @@
   </form>
 </div>
 <div class="modal-footer">
-  <!--  <button class="add-pet-button" (click)="openAddPetModal()">Add New Pet</button>-->
   <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Pet</button>
   <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
 </div>

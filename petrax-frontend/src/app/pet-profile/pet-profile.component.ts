@@ -9,12 +9,11 @@ import { PetDetailModalComponent } from './pet-detail-modal.component';
 //displays the details of a pet
 import { DeletePetModalComponent } from './delete-pet-modal.component';
 //allows users to delete pets from profile
-import { PetProfile } from './pet-profile.model';
+import { PetProfile, PetType } from './pet-profile.model';
 import { PetProfileService } from './pet-profile.service';
 import { PetProfileUpdateService } from './pet-profile-update.service';
 import { ActivatedRoute, Router } from '@angular/router';
 //refreshes page after remove pet clicked
-
 
 
 @Component({
@@ -25,6 +24,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class PetProfileComponent implements OnInit {
   pets: PetProfile[] = [];
+  PetType = PetType;
 
   constructor(
     private modalService: NgbModal,
@@ -37,6 +37,36 @@ export class PetProfileComponent implements OnInit {
   ngOnInit() {
     this.fetchPetsFromServer();
   }
+
+
+
+// Method to use the mapped value
+determineProfilePictureEmoji(petType: PetType): string {
+  switch (petType) {
+    case PetType.CAT:
+      console.log('Selected pet type: CAT');
+      return "🐈";
+    case PetType.DOG:
+      console.log('Selected pet type: DOG');
+      return "🐕";
+    case PetType.BIRD:
+      console.log('Selected pet type: BIRD');
+      return "🦜";
+    case PetType.FISH:
+      console.log('Selected pet type: FISH');
+      return "🐠";
+    case PetType.REPTILE:
+      console.log('Selected pet type: REPTILE');
+      return "🐍";
+    case PetType.OTHER:
+      console.log('Selected pet type: OTHER');
+      return "❤️";
+    default:
+      console.log('Selected pet type: Unknown');
+      return "❓"; // Default emoji
+  }
+}
+
 
 fetchPetsFromServer() {
   this.http.get<PetProfile[]>('http://localhost:8080/api/petProfile', { params: { page: '0', size: '3' } })
@@ -137,4 +167,3 @@ openAddPetModal() {
 
 
 }
-

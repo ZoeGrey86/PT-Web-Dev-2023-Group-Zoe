@@ -1,15 +1,15 @@
 // src/app/pet-profile.model.ts
+import { User } from '../user/user';
+
 
 export enum PetType {
-    CAT = 'Cat',
-    DOG = 'Dog',
-    BIRD = 'Bird',
-    FISH = 'Fish',
-    REPTILE = 'Reptile',
-    OTHER = 'Other'
+    CAT = 'CAT',
+    DOG = 'DOG',
+    BIRD = 'BIRD',
+    FISH = 'FISH',
+    REPTILE = 'REPTILE',
+    OTHER = 'OTHER'
   }
-
-// these have to match the conventions in Java exactly and a couple didn't match
 
 export interface PetProfile {
 
@@ -24,5 +24,12 @@ export interface PetProfile {
      petAllergy: string;
      petMicrochip: string;
      petDiagnoses: string;
-
+      user: {
+        id: number;
+        firstName: string;
+        lastName: string;
+        contactEmail: string;
+        password: string;
+        address: string;
+       };
 }
