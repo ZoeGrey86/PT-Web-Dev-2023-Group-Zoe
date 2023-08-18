@@ -7,6 +7,7 @@ import { AddEventModalComponent } from './add-event-modal.component';
 
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import rrulePlugin from '@fullcalendar/rrule';
 
 import { CalendarOptions } from '@fullcalendar/angular';
 
@@ -15,11 +16,13 @@ import { CalendarOptions } from '@fullcalendar/angular';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
+
 export class CalendarComponent implements OnInit {
-  events: Event[] = [];
+  allEvents: Event[] = [];
+  upcomingEvents: Event [] = [];
 
   calendarOptions: CalendarOptions = {
-    plugins: [dayGridPlugin, interactionPlugin],
+    plugins: [dayGridPlugin, interactionPlugin, rrulePlugin],
     initialView: 'dayGridMonth',
     headerToolbar: {
       left: 'prev,next today',
@@ -31,28 +34,49 @@ export class CalendarComponent implements OnInit {
 
   constructor(private modalService: NgbModal, private http: HttpClient) {}
 
-  ngOnInit() {
-    this.fetchEventsFromServer();
-  }
+ ngOnInit() {
+     this.fetchAllEventsForCalendar();
+     this.fetchUpcomingEvents();
+   }
 
-  fetchEventsFromServer() {
-    this.http.get<any[]>('http://localhost:8080/api/events', { params: { page: '0', size: '3' } })
-      .subscribe(
-        (data) => {
-          this.events = [...this.events, ...data];
-        },
-        (error) => {
-          console.error('Error fetching events', error);
-        }
-      );
-  }
+   fetchAllEventsForCalendar() {
+     this.http.get<any[]>('http://localhost:8080/api/events')
+       .subscribe(
+         (data) => {
+           this.allEvents = data;
+           this.initializeCalendar();
+         },
+         (error) => {
+           console.error('Error fetching all events', error);
+         }
+       );
+   }
 
- initializeCalendar() {
-    this.calendarOptions.events = this.events.map(event => ({
-      ...event,
-      id: event.id.toString()
-    }));
-  }
+   fetchUpcomingEvents() {
+        this.http.get<any[]>('http://localhost:8080/api/events', { params: { page: '0', size: '5' } })
+          .subscribe(
+            (data) => {
+              this.upcomingEvents = data;
+            },
+            (error) => {
+              console.error('Error fetching upcoming events', error);
+            }
+          );
+      }
+
+
+   initializeCalendar() {
+     this.calendarOptions.events = this.allEvents.map(event => ({
+         ...event,
+         id: event.id.toString(),
+         rrule: event.rrule ? {
+             freq: event.rrule.freq,
+             interval: event.rrule.interval,
+             byweekday: event.rrule.byweekday,
+             dtstart: event.rrule.dtstart
+         } : null
+     }));
+   }
 
   handleEventClick(eventInfo) {
     const eventId = eventInfo.event.id;
@@ -68,18 +92,17 @@ export class CalendarComponent implements OnInit {
     modalRef.componentInstance.eventEnd = eventEnd;
     modalRef.componentInstance.eventDescription = eventDescription;
     modalRef.componentInstance.eventDeleted.subscribe((deletedEventId: number) => {
-      const eventIndex = this.events.findIndex(event => event.id === deletedEventId);
+      const eventIndex = this.allEvents.findIndex(event => event.id === deletedEventId);
       if (eventIndex > -1) {
-        this.events.splice(eventIndex, 1);
+        this.allEvents.splice(eventIndex, 1);
       }
     });
   }
 
-
   openAddEventModal() {
     const modalRef = this.modalService.open(AddEventModalComponent);
     modalRef.result.then((newEvent) => {
-      this.events.push(newEvent);
+      this.allEvents.push(newEvent);
     }).catch((error) => {
       console.log('Modal dismissed without saving', error);
     });
@@ -93,9 +116,9 @@ export class CalendarComponent implements OnInit {
     modalRef.componentInstance.eventEnd = event.end;
     modalRef.componentInstance.eventDescription = event.description || event.description;
     modalRef.componentInstance.eventDeleted.subscribe((deletedEventId: number) => {
-      const eventIndex = this.events.findIndex(e => e.id === deletedEventId);
+      const eventIndex = this.allEvents.findIndex(e => e.id === deletedEventId);
       if (eventIndex > -1) {
-        this.events.splice(eventIndex, 1);
+        this.allEvents.splice(eventIndex, 1);
       }
     });
   }

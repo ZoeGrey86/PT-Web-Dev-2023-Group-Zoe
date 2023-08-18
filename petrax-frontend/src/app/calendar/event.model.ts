@@ -6,4 +6,10 @@ export interface Event {
   start: Date;
   end: Date;
   description: string;
+  rrule: {
+    freq: string;
+    interval: number;
+    byweekday?: string;
+    dtstart: string;
+  };
 }
