@@ -33,8 +33,6 @@ import { PetProfileUpdateService } from './pet-profile/pet-profile-update.servic
 import { CareProfessionalComponent } from './care-professional/care-professional.component';
 import { AddCareProfessionalComponent } from './care-professional/add-care-professional/add-care-professional.component';
 import { UpdateProfessionalComponent } from './care-professional/update-professional/update-professional.component';
-
-
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';

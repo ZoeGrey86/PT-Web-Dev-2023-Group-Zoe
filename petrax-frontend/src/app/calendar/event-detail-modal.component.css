@@ -1,0 +1,71 @@
+/* Styles for Modal Header */
+.modal-header {
+    background-color: #222E50;
+    color: #F7F7F2;
+    border-radius: 12px 12px 0 0; /* Rounded corners at the top */
+    border-bottom: 1.5px #F05D23 solid;
+}
+
+.modal-title {
+    font-family: Outfit;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.close {
+    color: #F7F7F2;
+}
+
+.close:hover {
+    color: #F05D23; /* On hover, color changes to match the border */
+}
+
+/* Styles for Modal Body */
+.modal-body {
+    font-family: Outfit;
+    font-weight: 400;
+    padding: 20px;
+}
+
+p {
+    margin-bottom: 15px; /* Spacing between paragraphs */
+}
+
+strong {
+    font-weight: 500;
+    margin-right: 5px; /* Spacing between label and content */
+}
+
+/* Styles for Modal Footer */
+.modal-footer {
+    border-top: 1.5px #F05D23 solid; /* Match the border color from header */
+    padding: 15px 20px; /* Consistent padding with modal body */
+}
+
+.btn {
+    font-family: Outfit;
+    border-radius: 8px;
+    font-weight: 400;
+    margin-right: 10px; /* Spacing between buttons */
+}
+
+.btn-danger {
+    background-color: #e74c3c; /* Red color for delete button */
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b; /* Darken color on hover */
+}
+
+.btn-secondary {
+    background-color: #F7F7F2;
+    color: #222E50;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #ddd;
+    color: #222E50;
+}

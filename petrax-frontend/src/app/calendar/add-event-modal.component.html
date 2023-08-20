@@ -19,6 +19,38 @@
       <label for="end">End Date</label>
       <input type="datetime-local" class="form-control" id="end" name="end" [(ngModel)]="newEvent.end" required>
     </div>
+
+    <!-- Recurring Options -->
+    <div class="form-group">
+      <label for="isRecurring">Is this event recurring?</label>
+      <input type="checkbox" id="isRecurring" name="isRecurring" [(ngModel)]="newEvent.isRecurring">
+    </div>
+    <div *ngIf="newEvent.isRecurring">
+      <div class="form-group">
+        <label for="recurrenceFrequency">Recurrence Frequency</label>
+        <select class="form-control" id="recurrenceFrequency" name="recurrenceFrequency" [(ngModel)]="newEvent.recurrenceFrequency">
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+          <!-- Add more frequencies if necessary -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="recurrenceEnd">Ends:</label>
+        <select class="form-control" id="recurrenceEnd" name="recurrenceEnd" [(ngModel)]="newEvent.recurrenceEnd">
+          <option value="2weeks">In 2 weeks</option>
+          <option value="4weeks">In 4 weeks</option>
+          <option value="6weeks">In 6 weeks</option>
+          <option value="date">On a specific date</option>
+          <option value="never">Never</option>
+        </select>
+      </div>
+      <div class="form-group" *ngIf="newEvent.recurrenceEnd === 'date'">
+        <label for="recurrenceEndDate">End Date:</label>
+        <input type="date" class="form-control" id="recurrenceEndDate" name="recurrenceEndDate" [(ngModel)]="newEvent.recurrenceEndDate">
+      </div>
+    </div>
+    <!-- End of Recurring Options -->
     <div class="form-group">
       <label for="description">Description</label>
       <textarea class="form-control" id="description" name="description" [(ngModel)]="newEvent.description" rows="3"></textarea>

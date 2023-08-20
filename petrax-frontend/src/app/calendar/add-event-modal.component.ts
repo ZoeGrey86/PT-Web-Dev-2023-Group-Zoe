@@ -1,7 +1,6 @@
-// add-event-modal.component.ts
-
 import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarService } from './calendar.service';
 
 @Component({
   selector: 'app-add-event-modal',
@@ -9,22 +8,29 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./add-event-modal.component.css']
 })
 export class AddEventModalComponent {
-  newEvent: any = { // Object to store the new event details
+  newEvent: any = {
     title: '',
     start: '',
     end: '',
     description: ''
   };
 
-  constructor(public activeModal: NgbActiveModal) {}
+  constructor(
+    public activeModal: NgbActiveModal,
+    private calendarService: CalendarService
+  ) {}
 
   closeModal() {
     this.activeModal.dismiss();
   }
 
   onSubmit() {
-    // Implement the logic to add the new event to the calendar and save it to the server
-    // For demonstration purposes, let's just pass the new event data back to the parent component
-    this.activeModal.close(this.newEvent);
+    this.calendarService.addEvent(this.newEvent).subscribe(response => {
+        console.log('Event added to database:', response);
+        // Close the modal and send the new event back to the parent
+        this.activeModal.close(response);
+    }, error => {
+        console.error('Error adding event:', error);
+    });
   }
 }
