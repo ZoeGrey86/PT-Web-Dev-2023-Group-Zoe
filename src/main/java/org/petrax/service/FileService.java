@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.petrax.models.FileEntity;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service
 public class FileService {
@@ -20,5 +21,9 @@ public class FileService {
         fileEntity.setData(file.getBytes());
 
         return fileRepository.save(fileEntity);
+    }
+
+    public List<FileEntity> getAllFiles() {
+        return (List<FileEntity>) fileRepository.findAll();
     }
 }

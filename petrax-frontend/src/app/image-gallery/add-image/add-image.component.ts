@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-image',
@@ -15,7 +17,8 @@ export class AddImageComponent implements OnInit {
     console.log('Selected file: ',this.selectedFile);
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router,
+     public activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {
   }
@@ -29,11 +32,17 @@ export class AddImageComponent implements OnInit {
     this.http.post(`${this.baseUrl}/upload`, formData).subscribe(
       (response) => {
         console.log("File uploaded",response);
+
+       this.activeModal.close();
       },  
       (error) => {
         console.error("error uploading file", error);
       }
     );
+  }
+
+  navigateToImageGallery(): void{
+    this.router.navigate(['/image-gallery']);
   }
 
 }

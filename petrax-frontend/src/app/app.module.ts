@@ -40,6 +40,7 @@ import { AboutComponent } from './about/about.component';
 import { LoginService } from './log-in/login.service';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 import { AddImageComponent } from './image-gallery/add-image/add-image.component';
+import { ImageModalComponent } from './image-gallery/image-modal/image-modal.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -69,8 +70,10 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     LandingPageComponent,
     LogInComponent,
     ImageGalleryComponent,
-    AddImageComponent
+    AddImageComponent,
+    ImageModalComponent
   ],
+
 
   imports: [
     BrowserModule,
@@ -81,7 +84,7 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     NgbModule,
     RouterModule.forRoot([]), // Make sure you have this line for routing to work
     AppRoutingModule,
-    FullCalendarModule
+    FullCalendarModule,
   ],
   providers: [PetProfileService, PetProfileUpdateService],
   bootstrap: [AppComponent],
