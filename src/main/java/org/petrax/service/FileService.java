@@ -23,6 +23,10 @@ public class FileService {
         return fileRepository.save(fileEntity);
     }
 
+    public void deleteFile(Long fileId) {
+        fileRepository.deleteById(fileId);
+    }
+
     public List<FileEntity> getAllFiles() {
         return (List<FileEntity>) fileRepository.findAll();
     }

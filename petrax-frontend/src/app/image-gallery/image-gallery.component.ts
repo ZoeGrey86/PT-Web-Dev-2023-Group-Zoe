@@ -26,6 +26,9 @@ export class ImageGalleryComponent implements OnInit {
   openImageModal(image: any): void{
     const modalRef = this.modalService.open(ImageModalComponent, {size: 'lg'});
     modalRef.componentInstance.image = image;
+    modalRef.componentInstance.imageDeleted.subscribe(() => {
+      this.loadImages();
+    });
   }
 
     loadImages(): void {

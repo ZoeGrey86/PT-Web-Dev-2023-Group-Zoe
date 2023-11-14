@@ -1,0 +1,34 @@
+.modal-items {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-items img {
+    width: 75%;
+ 
+    object-fit: contain;
+}
+.modal-items button {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #f05d23;
+    background-color: #222E50;
+    color: #F7F7F2;
+    cursor: pointer;
+}
+.modal-items button:hover {
+    background-color: #F05D23;
+    color: #F7F7F2;
+    border: #222E50 solid;
+    border-radius: 5px;
+    padding: 15px;
+    display: inline-flex;
+    cursor: pointer;
+}
+

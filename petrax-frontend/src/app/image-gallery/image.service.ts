@@ -13,4 +13,8 @@ export class ImageService {
   getImages(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/all`);
   }
+
+  deleteImage(imageId: number) {
+    return this.http.delete(`${this.baseUrl}/${imageId}`);
+  }
 }
