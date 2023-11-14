@@ -15,6 +15,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UpdateProfessionalComponent } from './care-professional/update-professional/update-professional.component';
 import { AboutComponent } from './about/about.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { AddImageComponent } from './image-gallery/add-image/add-image.component';
+import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 
 
 const routes: Routes = [
@@ -32,7 +34,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent }, //Route for AboutComponent
   { path: 'update-care-professional/:id', component:UpdateProfessionalComponent },
   { path: 'welcome', component:LandingPageComponent},
-  { path: 'my-profile', component:UserProfileComponent }
+  { path: 'my-profile', component:UserProfileComponent },
+  { path: 'add-image', component:AddImageComponent },
+  { path: 'image-gallery', component:ImageGalleryComponent }
 
 
 

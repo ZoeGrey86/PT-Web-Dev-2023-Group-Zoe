@@ -20,11 +20,13 @@ export class LogInComponent implements OnInit {
     ngOnInit() { // Implement ngOnInit lifecycle hook
 //         this.showModal = false; // force modal to show up to ensure the modal works
         const sessionToken = this.getStoredSessionToken();
-
+        console.log(sessionToken);
      if (sessionToken) {
+      console.log(sessionToken);
       // A session token is present, user is logged in
       // You can proceed to fetch user data or display authorized content
      } else {
+      console.log("no session token");
       // No session token, user is not logged in
       // You might redirect to a login page or show non-logged-in content
     }
@@ -41,9 +43,12 @@ export class LogInComponent implements OnInit {
     this.loginService.loginUser(user).subscribe(
       (response: any) => {
         // Authentication successful
-        console.log("Login successful", response)
+        console.log("Login successful", response,)
        if (response && response.token) {
-               document.cookie = `sessionToken=${response.token}; path=/`;  // Store the token in a cookie
+               const sessionToken = response.token;
+               console.log("sessionToken", sessionToken);
+               document.cookie = `sessionToken=${sessionToken}; path=/`;
+               console.log(document.cookie);  // Store the token in a cookie
            }
            this.showModal = true;
            this.cdr.detectChanges(); // Manually trigger change detection
@@ -61,7 +66,8 @@ export class LogInComponent implements OnInit {
   navigateToHome() {
     this.router.navigate(['/calendar']);
   }
-   private getStoredSessionToken(): string | null {
+
+  private getStoredSessionToken(): string | null {
      const sessionCookie = document.cookie
          .split('; ')
          .find(row => row.startsWith('sessionToken='));

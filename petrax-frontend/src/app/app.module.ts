@@ -38,6 +38,8 @@ import { RegisterComponent } from './register/register.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutComponent } from './about/about.component';
 import { LoginService } from './log-in/login.service';
+import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
+import { AddImageComponent } from './image-gallery/add-image/add-image.component';
 
 FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
 
@@ -65,7 +67,9 @@ FullCalendarModule.registerPlugins([dayGridPlugin, interactionPlugin]);
     AboutComponent,
     AddCareProfessionalComponent,
     LandingPageComponent,
-    LogInComponent
+    LogInComponent,
+    ImageGalleryComponent,
+    AddImageComponent
   ],
 
   imports: [
