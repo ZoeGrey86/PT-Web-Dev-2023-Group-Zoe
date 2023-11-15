@@ -72,6 +72,7 @@ public class AuthenticationController {
         }
 
         session.setAttribute(USER_SESSION_KEY, theUser.getId());
+        System.out.println(USER_SESSION_KEY);
         return ResponseEntity.ok().body("{\"message\": \"Login Successful\"}");
     }
 

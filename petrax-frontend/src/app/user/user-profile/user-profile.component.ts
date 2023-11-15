@@ -18,6 +18,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCareProfessionals();
+    
   }
 
   private getCareProfessionals(){

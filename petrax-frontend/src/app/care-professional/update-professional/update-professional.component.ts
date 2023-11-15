@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CareProfessional } from '../care-professional';
 import { CareProfessionalService } from '../care-professional.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,9 @@ export class UpdateProfessionalComponent implements OnInit {
   id:number;
   professional: CareProfessional = new CareProfessional();
   constructor(private careProfessionalService: CareProfessionalService,
-     private route: ActivatedRoute) { }
+     private route: ActivatedRoute, 
+     private router: Router) 
+     { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -23,7 +26,19 @@ export class UpdateProfessionalComponent implements OnInit {
       this.careProfessional = data;
     }, error=>console.log(error));
   }
+  goToCareProf(){
+    this.router.navigate(['/care-professional']);
+  }
 
-  onSubmit(): void {}
+  onSubmit(): void {
+    if(this.careProfessional) {
+      this.careProfessionalService.updateProfessional(this.id, this.careProfessional).subscribe(data => {
+        console.log(data);
+        this.careProfessional = new CareProfessional();
+        this.goToCareProf();
+      }, error=>console.log(error));
+    }
+    
+  }
 
 }

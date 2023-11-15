@@ -1,0 +1,15 @@
+
+<div class="center-container">
+    <div class="rectangle">
+
+    <h2 class="welcome">My Pet Gallery</h2>
+    <button (click)="openAddImageModal()">Add a New Photo!</button>
+
+        <div class="image-gallery">    
+            <div *ngFor="let image of images">
+                <img [src]="'data:image/jpeg;base64,' +image.data" alt="Image" (click)="openImageModal(image)">
+            </div>
+        </div>
+
+    </div>
+</div>
